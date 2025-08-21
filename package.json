@@ -1,0 +1,135 @@
+{
+  "name": "axiome",
+  "displayName": "Axiome",
+  "description": "World-class VS Code theme extension boilerplate.",
+  "publisher": "alexf",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/axiome.git"
+  },
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": ["Themes"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "axiome.showLogs",
+        "title": "Axiome: Show Logs",
+        "category": "Axiome"
+      },
+      {
+        "command": "axiome.applyPreset.globalAdditive",
+        "title": "Axiome: Apply Preset Globally (Additive, keep existing settings)",
+        "category": "Axiome"
+      },
+      {
+        "command": "axiome.applyPreset.globalOverwrite",
+        "title": "Axiome: Apply Preset Globally (Overwrite conflicts)",
+        "category": "Axiome"
+      },
+      {
+        "command": "axiome.applyPreset.additive",
+        "title": "Axiome: Apply Preset (Additive, keep existing settings)",
+        "category": "Axiome"
+      },
+      {
+        "command": "axiome.applyPreset.overwrite",
+        "title": "Axiome: Apply Preset (Overwrite conflicts)",
+        "category": "Axiome"
+      },
+      {
+        "command": "axiome.openPreset",
+        "title": "Axiome: Open Full Preset",
+        "category": "Axiome"
+      }
+    ],
+    "configurationDefaults": {
+      "[Axiome Black]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "modificationsIfAvailable",
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "always",
+          "source.fixAll": "always",
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.ruff": "explicit"
+        },
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "typescript.tsserver.maxTsServerMemory": 6144,
+        "typescript.tsserver.useSeparateSyntaxServer": true,
+        "typescript.disableAutomaticTypeAcquisition": true,
+        "typescript.preferences.importModuleSpecifier": "shortest",
+        "javascript.preferences.importModuleSpecifier": "shortest",
+        "javascript.format.enable": false,
+        "editor.stickyScroll.enabled": true,
+        "editor.stickyScroll.maxLineCount": 6,
+        "editor.guides.bracketPairs": true,
+        "editor.guides.indentation": true,
+        "editor.renderLineHighlight": "all",
+        "editor.cursorBlinking": "smooth",
+        "editor.cursorSmoothCaretAnimation": "on",
+        "editor.smoothScrolling": true,
+        "editor.minimap.enabled": true,
+        "editor.minimap.renderCharacters": false,
+        "editor.minimap.showSlider": "always",
+        "editor.rulers": [100, 120],
+        "editor.hover.delay": 120,
+        "editor.foldingImportsByDefault": true,
+  "editor.inlineSuggest.enabled": true,
+        "editor.suggest.insertMode": "replace",
+        "editor.suggest.localityBonus": true,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.snippetSuggestions": "inline",
+        "editor.gotoLocation.multipleDefinitions": "peek",
+        "editor.gotoLocation.multipleReferences": "peek",
+  "editor.inlayHints.enabled": "on",
+        "editor.inlayHints.padding": true,
+        "breadcrumbs.enabled": true,
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.wrapTabs": true,
+        "workbench.tree.indent": 14,
+        "diffEditor.hideUnchangedRegions.enabled": true,
+        "git.autofetch": true,
+        "scm.defaultViewMode": "tree",
+        "problems.sortOrder": "severity",
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "terminal.integrated.defaultLocation": "editor",
+        "terminal.integrated.scrollback": 40000
+      }
+    },
+    "themes": [
+      {
+        "label": "Axiome Dark — Balanced Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/axiome-dark-color-theme.json"
+      },
+      {
+        "label": "Axiome Black — Pure Black UI",
+        "uiTheme": "vs-dark",
+        "path": "./themes/axiome-black-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "echo 'No lint configured'",
+    "package": "npx @vscode/vsce package",
+    "install:vsix": "pwsh -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
+    "package-and-install": "npm run package && npm run install:vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.26.0"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.2.0"
+  },
+  "license": "MIT",
+  "keywords": ["theme", "dark", "axiome"],
+  "galleryBanner": { "color": "#0B0D10", "theme": "dark" }
+}

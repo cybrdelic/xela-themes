@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
+    "ms-python.black-formatter",
+    "charliermarsh.ruff",
+    "rust-lang.rust-analyzer",
+    "golang.Go",
+    "SonarSource.sonarlint-vscode",
+    "christian-kohler.path-intellisense",
+    "PKief.material-icon-theme",
+    "miguelsolorio.fluent-icons"
+  ]
+}
