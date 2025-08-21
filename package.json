@@ -1,14 +1,14 @@
 {
-  "name": "axiome",
-  "displayName": "Axiome",
+  "name": "xela-themes",
+  "displayName": "XELA Themes",
   "description": "World-class VS Code theme extension boilerplate.",
   "publisher": "alexf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "main": "./extension.js",
   "repository": {
     "type": "git",
-    "url": "https://example.com/axiome.git"
+    "url": "https://example.com/xela-themes.git"
   },
   "engines": {
     "vscode": "^1.86.0"
@@ -17,38 +17,38 @@
   "contributes": {
     "commands": [
       {
-        "command": "axiome.showLogs",
-        "title": "Axiome: Show Logs",
-        "category": "Axiome"
+        "command": "xela.showLogs",
+        "title": "XELA: Show Logs",
+        "category": "XELA"
       },
       {
-        "command": "axiome.applyPreset.globalAdditive",
-        "title": "Axiome: Apply Preset Globally (Additive, keep existing settings)",
-        "category": "Axiome"
+        "command": "xela.applyPreset.globalAdditive",
+        "title": "XELA: Apply Preset Globally (Additive, keep existing settings)",
+        "category": "XELA"
       },
       {
-        "command": "axiome.applyPreset.globalOverwrite",
-        "title": "Axiome: Apply Preset Globally (Overwrite conflicts)",
-        "category": "Axiome"
+        "command": "xela.applyPreset.globalOverwrite",
+        "title": "XELA: Apply Preset Globally (Overwrite conflicts)",
+        "category": "XELA"
       },
       {
-        "command": "axiome.applyPreset.additive",
-        "title": "Axiome: Apply Preset (Additive, keep existing settings)",
-        "category": "Axiome"
+        "command": "xela.applyPreset.additive",
+        "title": "XELA: Apply Preset (Additive, keep existing settings)",
+        "category": "XELA"
       },
       {
-        "command": "axiome.applyPreset.overwrite",
-        "title": "Axiome: Apply Preset (Overwrite conflicts)",
-        "category": "Axiome"
+        "command": "xela.applyPreset.overwrite",
+        "title": "XELA: Apply Preset (Overwrite conflicts)",
+        "category": "XELA"
       },
       {
-        "command": "axiome.openPreset",
-        "title": "Axiome: Open Full Preset",
-        "category": "Axiome"
+        "command": "xela.openPreset",
+        "title": "XELA: Open Full Preset",
+        "category": "XELA"
       }
     ],
     "configurationDefaults": {
-      "[Axiome Black]": {
+      "[XELA Black]": {
         "editor.formatOnSave": true,
         "editor.formatOnSaveMode": "modificationsIfAvailable",
         "editor.codeActionsOnSave": {
@@ -79,14 +79,14 @@
         "editor.rulers": [100, 120],
         "editor.hover.delay": 120,
         "editor.foldingImportsByDefault": true,
-  "editor.inlineSuggest.enabled": true,
+        "editor.inlineSuggest.enabled": true,
         "editor.suggest.insertMode": "replace",
         "editor.suggest.localityBonus": true,
         "editor.suggestSelection": "recentlyUsedByPrefix",
         "editor.snippetSuggestions": "inline",
         "editor.gotoLocation.multipleDefinitions": "peek",
         "editor.gotoLocation.multipleReferences": "peek",
-  "editor.inlayHints.enabled": "on",
+        "editor.inlayHints.enabled": "on",
         "editor.inlayHints.padding": true,
         "breadcrumbs.enabled": true,
         "workbench.editor.enablePreview": false,
@@ -105,23 +105,120 @@
       }
     },
     "themes": [
-      {
-        "label": "Axiome Dark — Balanced Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/axiome-dark-color-theme.json"
-      },
-      {
-        "label": "Axiome Black — Pure Black UI",
-        "uiTheme": "vs-dark",
-        "path": "./themes/axiome-black-color-theme.json"
-      }
+  {
+  "label": "XELA Dark — Balanced Dark",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-dark-color-theme.json"
+  },
+  {
+  "label": "XELA Black — Pure Black UI",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-black-color-theme.json"
+  },
+  {
+  "label": "XELA Graph Paper — Light Grid",
+    "uiTheme": "vs",
+    "path": "./themes/xela-graph-paper-color-theme.json"
+  },
+  {
+  "label": "XELA Blueprint — Technical Drafting",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-blueprint-color-theme.json"
+  },
+  {
+  "label": "XELA Night Vision — Red/Amber Dark",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-night-vision-color-theme.json"
+  },
+  {
+  "label": "XELA Circuitboard — Soldermask Green",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-circuitboard-color-theme.json"
+  },
+  {
+  "label": "XELA Bauhaus — Primary Geometry",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-bauhaus-color-theme.json"
+  },
+  {
+  "label": "XELA Iridescence — Prismatic Black",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-iridescence-color-theme.json"
+  },
+  {
+  "label": "XELA AMOLED+ — Pure Black Max",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-amoled-plus-color-theme.json"
+  },
+  {
+  "label": "XELA Obsidian Glass — Black + Glass",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-obsidian-glass-color-theme.json"
+  },
+  {
+  "label": "XELA Neon Noir — Cyber Noir",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-neon-noir-color-theme.json"
+  },
+  {
+  "label": "XELA Phosphor Green — CRT Monochrome",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-phosphor-green-color-theme.json"
+  },
+  {
+  "label": "XELA Monastic — Near‑Monochrome Focus",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-monastic-color-theme.json"
+  },
+  {
+  "label": "XELA Terminalist — ANSI Native",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-terminalist-color-theme.json"
+  },
+  {
+  "label": "XELA Terra — Organic Warmth",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-terra-color-theme.json"
+  },
+  {
+  "label": "XELA Deep — Abyssal Bioluminescence",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-deep-color-theme.json"
+  },
+  {
+  "label": "XELA Arctic — Pristine Light",
+    "uiTheme": "vs",
+    "path": "./themes/xela-arctic-color-theme.json"
+  },
+  {
+  "label": "XELA Arctic Glass — Frosted Light",
+    "uiTheme": "vs",
+    "path": "./themes/xela-arctic-glass-color-theme.json"
+  },
+  {
+  "label": "XELA E‑Ink Sepia — Paper Light",
+    "uiTheme": "vs",
+    "path": "./themes/xela-e-ink-sepia-color-theme.json"
+  },
+  {
+  "label": "XELA Ink — Print Typography",
+    "uiTheme": "vs",
+    "path": "./themes/xela-ink-color-theme.json"
+  },
+  {
+  "label": "XELA Vapor — Synthwave Retrowave",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-vapor-color-theme.json"
+  }
     ]
   },
   "scripts": {
     "lint": "echo 'No lint configured'",
     "package": "npx @vscode/vsce package",
     "install:vsix": "pwsh -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
-    "package-and-install": "npm run package && npm run install:vsix"
+    "package-and-install": "npm run package && npm run install:vsix",
+    "apply:md": "node ./scripts/apply-markdown-tokens.mjs",
+    "apply:md:install": "npm run apply:md && npm run package-and-install"
   },
   "devDependencies": {
     "@vscode/vsce": "^2.26.0"
@@ -130,6 +227,6 @@
     "jsonc-parser": "^3.2.0"
   },
   "license": "MIT",
-  "keywords": ["theme", "dark", "axiome"],
+  "keywords": ["theme", "dark", "xela"],
   "galleryBanner": { "color": "#0B0D10", "theme": "dark" }
 }

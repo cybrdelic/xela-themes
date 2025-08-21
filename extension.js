@@ -1,4 +1,4 @@
-// Axiome preset commands with robust logging and safeguards.
+// XELA preset commands with robust logging and safeguards.
 
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +7,7 @@ const { parse, parseTree, modify, applyEdits } = require('jsonc-parser');
 
 let output;
 function getChannel() {
-  if (!output) output = vscode.window.createOutputChannel('Axiome');
+  if (!output) output = vscode.window.createOutputChannel('XELA');
   return output;
 }
 function log(msg, data) {
@@ -25,58 +25,58 @@ function log(msg, data) {
 
 /** @param {vscode.ExtensionContext} context */
 function activate(context) {
-  const showLogs = vscode.commands.registerCommand('axiome.showLogs', () => {
+  const showLogs = vscode.commands.registerCommand('xela.showLogs', () => {
     getChannel().show(true);
   });
 
-  const applyAdditive = vscode.commands.registerCommand('axiome.applyPreset.additive', async () => {
+  const applyAdditive = vscode.commands.registerCommand('xela.applyPreset.additive', async () => {
     try {
       await applyPreset({ overwrite: false });
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      vscode.window.showErrorMessage(`Axiome preset failed: ${msg}`);
+    vscode.window.showErrorMessage(`XELA preset failed: ${msg}`);
       log('applyPreset(additive) failed', err);
       getChannel().show(true);
     }
   });
 
-  const applyOverwrite = vscode.commands.registerCommand('axiome.applyPreset.overwrite', async () => {
+  const applyOverwrite = vscode.commands.registerCommand('xela.applyPreset.overwrite', async () => {
     try {
       await applyPreset({ overwrite: true });
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      vscode.window.showErrorMessage(`Axiome preset failed: ${msg}`);
+    vscode.window.showErrorMessage(`XELA preset failed: ${msg}`);
       log('applyPreset(overwrite) failed', err);
       getChannel().show(true);
     }
   });
 
   // Global (User) settings variants
-  const applyGlobalAdditive = vscode.commands.registerCommand('axiome.applyPreset.globalAdditive', async () => {
+  const applyGlobalAdditive = vscode.commands.registerCommand('xela.applyPreset.globalAdditive', async () => {
     try {
       await applyPresetGlobal({ overwrite: false });
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      vscode.window.showErrorMessage(`Axiome preset (global) failed: ${msg}`);
+    vscode.window.showErrorMessage(`XELA preset (global) failed: ${msg}`);
       log('applyPresetGlobal(additive) failed', err);
       getChannel().show(true);
     }
   });
 
-  const applyGlobalOverwrite = vscode.commands.registerCommand('axiome.applyPreset.globalOverwrite', async () => {
+  const applyGlobalOverwrite = vscode.commands.registerCommand('xela.applyPreset.globalOverwrite', async () => {
     try {
       await applyPresetGlobal({ overwrite: true });
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      vscode.window.showErrorMessage(`Axiome preset (global) failed: ${msg}`);
+    vscode.window.showErrorMessage(`XELA preset (global) failed: ${msg}`);
       log('applyPresetGlobal(overwrite) failed', err);
       getChannel().show(true);
     }
   });
 
-  const openPreset = vscode.commands.registerCommand('axiome.openPreset', async () => {
+  const openPreset = vscode.commands.registerCommand('xela.openPreset', async () => {
     try {
-      const presetPath = path.join(context.extensionPath, 'presets', 'axiome-black.settings.jsonc');
+      const presetPath = path.join(context.extensionPath, 'presets', 'xela-black.settings.jsonc');
       log('Open preset request', { presetPath });
       const uri = vscode.Uri.file(presetPath);
       vscode.window.showTextDocument(uri, { preview: false });
@@ -95,7 +95,7 @@ async function pickWorkspaceFolder() {
   const folders = vscode.workspace.workspaceFolders;
   if (!folders || folders.length === 0) return undefined;
 
-  // If only one folder is open, try to be smarter about targeting a project folder inside (e.g., 'axiome').
+  // If only one folder is open, try to be smarter about targeting a project folder inside (e.g., 'xela').
   if (folders.length === 1) {
     const only = folders[0];
     // Prefer the folder that contains the active editor file
@@ -116,10 +116,10 @@ async function pickWorkspaceFolder() {
         const hasVS = await fileExists(path.join(full, '.vscode'));
         if (hasPkg || hasVS) candidates.push({ name: d.name, fsPath: full });
       }
-      // Put 'axiome' at the top if present
+      // Put 'xela' at the top if present
       candidates.sort((a, b) => {
-        if (a.name.toLowerCase() === 'axiome') return -1;
-        if (b.name.toLowerCase() === 'axiome') return 1;
+        if (a.name.toLowerCase() === 'xela') return -1;
+        if (b.name.toLowerCase() === 'xela') return 1;
         return a.name.localeCompare(b.name);
       });
       const items = [
@@ -127,7 +127,7 @@ async function pickWorkspaceFolder() {
         ...candidates.map(c => ({ label: c.name, description: c.fsPath, kind: 'child' }))
       ];
       const picked = await vscode.window.showQuickPick(items, {
-        placeHolder: 'Select where to apply the Axiome preset (workspace root or a child project)'
+        placeHolder: 'Select where to apply the XELA preset (workspace root or a child project)'
       });
       if (!picked) return undefined;
       if (picked.kind === 'root') return only;
@@ -147,7 +147,7 @@ async function pickWorkspaceFolder() {
   }
   const selection = await vscode.window.showQuickPick(
     folders.map(f => ({ label: f.name, description: f.uri.fsPath })),
-    { placeHolder: 'Select the workspace folder to apply the Axiome preset' }
+  { placeHolder: 'Select the workspace folder to apply the XELA preset' }
   );
   if (!selection) return undefined;
   return folders.find(f => f.name === selection.label);
@@ -165,11 +165,11 @@ async function fileExists(p) {
 async function applyPreset({ overwrite }) {
   log('Begin applyPreset', { overwrite });
 
-  const ext = vscode.extensions.getExtension('alexf.axiome');
+  const ext = vscode.extensions.getExtension('alexf.xela-themes');
   if (!ext) {
-    throw new Error('Extension metadata not found (alexf.axiome). Is the extension installed?');
+    throw new Error('Extension metadata not found (alexf.xela-themes). Is the extension installed?');
   }
-  const presetPath = path.join(ext.extensionPath, 'presets', 'axiome-black.settings.jsonc');
+  const presetPath = path.join(ext.extensionPath, 'presets', 'xela-black.settings.jsonc');
   const presetUri = vscode.Uri.file(presetPath);
   const presetRaw = (await vscode.workspace.fs.readFile(presetUri)).toString();
   let preset;
@@ -182,7 +182,7 @@ async function applyPreset({ overwrite }) {
 
   const folder = await pickWorkspaceFolder();
   if (!folder) {
-    throw new Error('No workspace folder selected/open. Open a folder to apply the Axiome preset.');
+  throw new Error('No workspace folder selected/open. Open a folder to apply the XELA preset.');
   }
 
   const wsRoot = folder.uri.fsPath;
@@ -191,7 +191,7 @@ async function applyPreset({ overwrite }) {
   log('Target workspace + settings', { wsRoot, settingsPath });
 
   await vscode.window.withProgress(
-    { location: vscode.ProgressLocation.Notification, title: 'Applying Axiome preset…', cancellable: false },
+  { location: vscode.ProgressLocation.Notification, title: 'Applying XELA preset…', cancellable: false },
     async () => {
       try {
         await fs.promises.mkdir(vsDir, { recursive: true });
@@ -235,7 +235,7 @@ async function applyPreset({ overwrite }) {
 
         await fs.promises.writeFile(settingsPath, current, 'utf8');
         log('Preset application complete', { changed, kept });
-        vscode.window.showInformationMessage(`Axiome preset applied (${overwrite ? 'overwrite' : 'additive'}). Updated: ${changed}, kept: ${kept}.`);
+  vscode.window.showInformationMessage(`XELA preset applied (${overwrite ? 'overwrite' : 'additive'}). Updated: ${changed}, kept: ${kept}.`);
       } catch (e) {
         const msg = e instanceof Error ? e.message : String(e);
         log('Error while applying preset', { error: msg });
@@ -248,11 +248,11 @@ async function applyPreset({ overwrite }) {
 async function applyPresetGlobal({ overwrite }) {
   log('Begin applyPresetGlobal', { overwrite });
 
-  const ext = vscode.extensions.getExtension('alexf.axiome');
+  const ext = vscode.extensions.getExtension('alexf.xela-themes');
   if (!ext) {
-    throw new Error('Extension metadata not found (alexf.axiome). Is the extension installed?');
+    throw new Error('Extension metadata not found (alexf.xela-themes). Is the extension installed?');
   }
-  const presetPath = path.join(ext.extensionPath, 'presets', 'axiome-black.settings.jsonc');
+  const presetPath = path.join(ext.extensionPath, 'presets', 'xela-black.settings.jsonc');
   const presetUri = vscode.Uri.file(presetPath);
   const presetRaw = (await vscode.workspace.fs.readFile(presetUri)).toString();
   let preset;
@@ -264,7 +264,7 @@ async function applyPresetGlobal({ overwrite }) {
   }
 
   await vscode.window.withProgress(
-    { location: vscode.ProgressLocation.Notification, title: 'Applying Axiome preset to User Settings…', cancellable: false },
+  { location: vscode.ProgressLocation.Notification, title: 'Applying XELA preset to User Settings…', cancellable: false },
     async () => {
       const cfg = vscode.workspace.getConfiguration();
       let changed = 0, kept = 0;
@@ -287,8 +287,8 @@ async function applyPresetGlobal({ overwrite }) {
         }
       }
 
-      log('Global preset application complete', { changed, kept });
-      vscode.window.showInformationMessage(`Axiome preset applied to User Settings (${overwrite ? 'overwrite' : 'additive'}). Updated: ${changed}, kept: ${kept}.`);
+  log('Global preset application complete', { changed, kept });
+  vscode.window.showInformationMessage(`XELA preset applied to User Settings (${overwrite ? 'overwrite' : 'additive'}). Updated: ${changed}, kept: ${kept}.`);
     }
   );
 }
