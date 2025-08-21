@@ -229,7 +229,10 @@
     "quick": "git add . && git commit -m 'chore: quick save' && git push origin master",
     "release:tag": "node scripts/release-tag.js",
     "publish:force": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true",
-    "publish:dry": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true -f dry_run=true"
+  "publish:dry": "gh workflow run publish.yml -f force_publish=true -f dry_run=true",
+  "ci:dry": "node scripts/ci-trigger.js --dry",
+  "ci:publish": "node scripts/ci-trigger.js --publish",
+  "ci:logs": "node scripts/ci-trigger.js --logs"
   },
   "devDependencies": {
     "@vscode/vsce": "^2.26.0"
