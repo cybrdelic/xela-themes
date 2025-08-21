@@ -3,7 +3,7 @@
   "displayName": "XELA Themes",
   "description": "World-class VS Code theme extension boilerplate.",
   "publisher": "cybrdelic",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "main": "./extension.js",
   "repository": {

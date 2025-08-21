@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4
+- Trigger automated Marketplace publish (no functional changes).
+
 ## 0.1.3
 - Add automated publish on tag push & marketplace badges.
 - Prepare release notes automation.
