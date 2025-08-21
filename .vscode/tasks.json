@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: package",
+      "type": "npm",
+      "script": "package",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Watch for theme changes",
+      "type": "shell",
+      "command": "echo",
+      "args": ["Theme files changed - reload Extension Development Host to see changes"],
+      "group": "build",
+      "isBackground": true,
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "Clean test environment",
+      "type": "shell",
+      "command": "rm",
+      "args": ["-rf", ".vscode-test-data"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "windows": {
+        "command": "rmdir",
+        "args": ["/s", "/q", ".vscode-test-data"]
+      }
+    },
+    {
+      "label": "Package and Install (Legacy)",
+      "type": "npm", 
+      "script": "package-and-install",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

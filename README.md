@@ -13,30 +13,54 @@ World-class theme boilerplate with fast local iteration and packaging.
 - Optional CI workflow for publishing.
 
 ## Dev workflow
-1) Edit themes
-- Add a new file under `themes/` (e.g. `xela-mytheme-color-theme.json`).
-- Validate keys against VS Code color schema; prefer transparent overlays where required.
 
-2) Wire up contributes
-- In `package.json` add an entry under `contributes.themes`:
-	- label: Display name in the picker (e.g., "XELA MyTheme").
-	- uiTheme: `vs-dark` | `vs-light` | `hc-black`.
-	- path: `./themes/<file>.json`.
-
-3) Test locally
-- Press F5 to launch Extension Development Host.
-- In the host window, open Command Palette → Color Theme → pick "XELA Black" or "XELA Dark".
-
-4) Package and install locally
+### 🚀 Quick Start (Recommended)
+```bash
+npm install
+npm run dev:check    # Verify everything is set up correctly
+npm run dev:help     # See full workflow guide
 ```
-npm i
+**Press F5** to launch Extension Development Host → Edit themes → **Developer: Reload Window** to see changes instantly!
+
+### 📝 Detailed Steps
+
+1) **Edit themes**
+   - Add a new file under `themes/` (e.g. `xela-mytheme-color-theme.json`).
+   - Validate keys against VS Code color schema; prefer transparent overlays where required.
+   - Auto-save is enabled for fast iteration.
+
+2) **Wire up contributes**
+   - In `package.json` add an entry under `contributes.themes`:
+     - label: Display name in the picker (e.g., "XELA MyTheme").
+     - uiTheme: `vs-dark` | `vs-light` | `hc-black`.
+     - path: `./themes/<file>.json`.
+
+3) **Test instantly** ⚡
+   - **Press F5** to launch Extension Development Host with clean, isolated environment.
+   - In the host window, open Command Palette → **Preferences: Color Theme** → pick your theme.
+   - Edit theme files → **Developer: Reload Window** in the test instance to see changes.
+   - No packaging or installation needed during development!
+
+4) **Available launch configs:**
+   - `Run Extension` - Standard development with temp profile
+   - `Run Extension (Clean Profile)` - Completely isolated test environment
+   - `Debug Extension (Isolated)` - For debugging with clean state
+
+### 🛠️ Development Scripts
+```bash
+npm run dev              # Shows quick start guide
+npm run dev:help         # Shows detailed workflow
+npm run dev:check        # Verifies development environment
+npm run dev:clean        # Cleans test environment
+npm run test:themes      # Guide for testing themes
+```
+
+### 📦 Package and Install (Final Testing)
+```bash
 npm run package-and-install
 ```
-- This produces a `.vsix` and installs the newest one via the VS Code CLI.
-
-5) Iterate quickly
-- Edit JSON → re-run `npm run package-and-install` to apply changes.
-- Or reload the Dev Host (Developer: Reload Window) when running via F5.
+- Use this only for final testing or sharing with others.
+- During development, use F5 workflow instead!
 
 ## DX preset (optional per-project)
 - Use the full preset at `presets/xela-black.settings.jsonc` (copy into your repo’s `.vscode/settings.json`).
