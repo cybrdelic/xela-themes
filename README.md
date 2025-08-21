@@ -1,5 +1,10 @@
 # XELA Themes Extension
 
+[![Version](https://img.shields.io/visual-studio-marketplace/v/cybrdelic.xela-themes?color=blue&label=VS%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/cybrdelic.xela-themes)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/cybrdelic.xela-themes)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
+[![CI](https://github.com/cybrdelic/xela-themes/actions/workflows/publish.yml/badge.svg)](https://github.com/cybrdelic/xela-themes/actions/workflows/publish.yml)
+
 World-class theme boilerplate with fast local iteration and packaging.
 
 ## What’s included
@@ -53,3 +58,6 @@ npx @vscode/vsce publish
 code --install-extension cybrdelic.xela-themes
 ```
 Or install locally-built `.vsix` from `npm run package`.
+
+### CI Auto-Publish
+Pushing a tag like `v0.1.2` triggers the workflow in `.github/workflows/publish.yml` to build and publish automatically (requires `VSCE_TOKEN` secret containing a Personal Access Token created via `vsce create-pat`). Manual dispatch still works via the Actions tab.
