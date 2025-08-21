@@ -2,6 +2,15 @@ name: CI / Publish VS Code Extension
 
 on:
   workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Force publish even without tag (for testing)'
+        required: false
+        default: 'false'
+      dry_run:
+        description: 'Skip actual publish (simulate)'
+        required: false
+        default: 'false'
   push:
     branches:
       - master
@@ -13,26 +22,74 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Determine version/tag context
+        id: meta
+        run: |
+          VERSION=$(jq -r .version package.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            TAG=${GITHUB_REF#refs/tags/}
+          else
+            TAG="(no tag)"
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Package version: $VERSION";
+          echo "Ref tag: $TAG";
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm ci
+      - name: Verify VSCE_TOKEN presence (informational)
+        run: |
+          if [ -n "${{ secrets.VSCE_TOKEN }}" ]; then echo 'VSCE_TOKEN: PRESENT'; else echo 'VSCE_TOKEN: MISSING (publish will fail)'; fi
+      - name: Count theme files
+        id: themes
+        run: |
+          COUNT=$(ls themes/*-color-theme.json | wc -l)
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          echo "Theme file count: $COUNT"
       - run: npx vsce package
       - uses: actions/upload-artifact@v4
         with:
           name: xela-vsix
           path: ./*.vsix
+      - name: Build Job Summary
+        run: |
+          {
+            echo '## Build Summary';
+            echo "* Version: ${{ steps.meta.outputs.version }}";
+            echo "* Ref Tag: ${{ steps.meta.outputs.tag }}";
+            echo "* Theme Files: ${{ steps.themes.outputs.count }}";
+            echo "* VSCE Token Present: $([ -n \"${{ secrets.VSCE_TOKEN }}\" ] && echo Yes || echo No)";
+          } >> $GITHUB_STEP_SUMMARY
 
   publish:
     needs: build
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    # Publish on version tag OR workflow_dispatch with force_publish=true
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && github.event.inputs.force_publish == 'true')
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm ci
+      - name: Decide publish mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo 'dry_run=true' >> $GITHUB_OUTPUT
+            echo 'Dry run enabled; skipping marketplace publish.'
+          else
+            echo 'dry_run=false' >> $GITHUB_OUTPUT
+          fi
       - name: Generate Release Notes
         id: notes
         run: |
@@ -53,6 +110,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG=${GITHUB_REF#refs/tags/}
+          if [ -z "$TAG" ] || [ "$TAG" = "refs/heads/master" ]; then TAG="manual-${{ github.run_id }}"; fi
           gh release create "$TAG" -F RELEASE_NOTES.md || echo "Release already exists"
       - name: Publish to Marketplace
+        if: steps.mode.outputs.dry_run == 'false'
         run: npx vsce publish -p ${{ secrets.VSCE_TOKEN }}
+      - name: Publish Job Summary
+        run: |
+          {
+            echo '## Publish Summary';
+            echo "* Dry Run: ${{ steps.mode.outputs.dry_run }}";
+            echo "* Tag Ref: ${GITHUB_REF}";
+            echo "* Force Publish Input: ${{ github.event.inputs.force_publish }}";
+          } >> $GITHUB_STEP_SUMMARY
