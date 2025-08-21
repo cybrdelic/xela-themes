@@ -3,7 +3,7 @@
   "displayName": "XELA Themes",
   "description": "World-class VS Code theme extension boilerplate.",
   "publisher": "cybrdelic",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "main": "./extension.js",
   "repository": {
@@ -223,7 +223,13 @@
     "install:vsix": "pwsh -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
     "package-and-install": "npm run package && npm run install:vsix",
     "apply:md": "node ./scripts/apply-markdown-tokens.mjs",
-    "apply:md:install": "npm run apply:md && npm run package-and-install"
+    "apply:md:install": "npm run apply:md && npm run package-and-install",
+    "commit": "git add . && git commit -m",
+    "push": "git push origin master",
+    "quick": "git add . && git commit -m 'chore: quick save' && git push origin master",
+    "release:tag": "node scripts/release-tag.js",
+    "publish:force": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true",
+    "publish:dry": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true -f dry_run=true"
   },
   "devDependencies": {
     "@vscode/vsce": "^2.26.0"
