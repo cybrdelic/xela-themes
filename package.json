@@ -209,6 +209,11 @@
   "label": "XELA Vapor — Synthwave Retrowave",
     "uiTheme": "vs-dark",
     "path": "./themes/xela-vapor-color-theme.json"
+  },
+  {
+  "label": "XELA Matrix Rain — Hyperphosphor Cascade",
+    "uiTheme": "vs-dark",
+    "path": "./themes/xela-matrix-rain-color-theme.json"
   }
     ]
   },
