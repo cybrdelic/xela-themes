@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+- Add automated publish on tag push & marketplace badges.
+- Prepare release notes automation.
+
 ## 0.1.2
 - Change extension publisher to `cybrdelic` for Marketplace release.
 

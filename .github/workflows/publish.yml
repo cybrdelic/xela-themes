@@ -31,5 +31,26 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - name: Generate Release Notes
+        id: notes
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          PREV=$(git describe --tags --abbrev=0 $(git rev-list --tags --skip=1 --max-count=1) 2>/dev/null || echo '')
+          if [ -n "$PREV" ]; then
+            RANGE="$PREV..$TAG"
+            echo "Previous tag: $PREV";
+          else
+            RANGE=$(git rev-list --max-parents=0 HEAD)..$TAG
+          fi
+          echo "Range: $RANGE"
+          BODY=$(git log --pretty=format:'- %s' $RANGE | sed 's/\"/"/g')
+          printf "%s\n\n%s\n" "# $TAG" "$BODY" > RELEASE_NOTES.md
+          echo "notes_path=RELEASE_NOTES.md" >> $GITHUB_OUTPUT
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          gh release create "$TAG" -F RELEASE_NOTES.md || echo "Release already exists"
       - name: Publish to Marketplace
         run: npx vsce publish -p ${{ secrets.VSCE_TOKEN }}
