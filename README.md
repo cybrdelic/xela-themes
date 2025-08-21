@@ -38,10 +38,18 @@ npm run package-and-install
 - Open this repo and VS Code will suggest recommended extensions from `.vscode/extensions.json`.
 
 ## Publish (optional)
-1) Create a publisher and login: `vsce create-publisher <you>` and `vsce login <you>`.
-2) Bump version in `package.json`.
+1) (One-time) Create publisher if you don’t have it yet:
+```
+vsce create-publisher cybrdelic
+vsce login cybrdelic
+```
+2) Bump version in `package.json` (already at 0.1.2 for publisher switch).
 3) Publish:
 ```
 npx @vscode/vsce publish
 ```
-Or upload the generated `.vsix` from `npm run package`.
+4) Install from Marketplace (after publish):
+```
+code --install-extension cybrdelic.xela-themes
+```
+Or install locally-built `.vsix` from `npm run package`.
