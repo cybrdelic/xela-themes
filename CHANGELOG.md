@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+- Change extension publisher to `cybrdelic` for Marketplace release.
+
 ## 0.1.1
 - Rename and rebrand to XELA across code, themes, and docs.
 - Add comprehensive Markdown token colors to all themes.

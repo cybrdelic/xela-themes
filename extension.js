@@ -165,9 +165,9 @@ async function fileExists(p) {
 async function applyPreset({ overwrite }) {
   log('Begin applyPreset', { overwrite });
 
-  const ext = vscode.extensions.getExtension('alexf.xela-themes');
+  const ext = vscode.extensions.getExtension('cybrdelic.xela-themes');
   if (!ext) {
-    throw new Error('Extension metadata not found (alexf.xela-themes). Is the extension installed?');
+  throw new Error('Extension metadata not found (cybrdelic.xela-themes). Is the extension installed?');
   }
   const presetPath = path.join(ext.extensionPath, 'presets', 'xela-black.settings.jsonc');
   const presetUri = vscode.Uri.file(presetPath);
@@ -248,9 +248,9 @@ async function applyPreset({ overwrite }) {
 async function applyPresetGlobal({ overwrite }) {
   log('Begin applyPresetGlobal', { overwrite });
 
-  const ext = vscode.extensions.getExtension('alexf.xela-themes');
+  const ext = vscode.extensions.getExtension('cybrdelic.xela-themes');
   if (!ext) {
-    throw new Error('Extension metadata not found (alexf.xela-themes). Is the extension installed?');
+  throw new Error('Extension metadata not found (cybrdelic.xela-themes). Is the extension installed?');
   }
   const presetPath = path.join(ext.extensionPath, 'presets', 'xela-black.settings.jsonc');
   const presetUri = vscode.Uri.file(presetPath);

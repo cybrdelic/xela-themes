@@ -2,13 +2,13 @@
   "name": "xela-themes",
   "displayName": "XELA Themes",
   "description": "World-class VS Code theme extension boilerplate.",
-  "publisher": "alexf",
-  "version": "0.1.1",
-  "private": true,
+  "publisher": "cybrdelic",
+  "version": "0.1.2",
+  "private": false,
   "main": "./extension.js",
   "repository": {
     "type": "git",
-    "url": "https://example.com/xela-themes.git"
+    "url": "https://github.com/cybrdelic/xela-themes.git"
   },
   "engines": {
     "vscode": "^1.86.0"
