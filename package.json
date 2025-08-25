@@ -220,7 +220,7 @@
   "scripts": {
     "lint": "echo 'No lint configured'",
     "package": "npx @vscode/vsce package",
-    "install:vsix": "pwsh -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
+    "install:vsix": "powershell -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
     "package-and-install": "npm run package && npm run install:vsix",
     "apply:md": "node ./scripts/apply-markdown-tokens.mjs",
     "apply:md:install": "npm run apply:md && npm run package-and-install",
@@ -229,7 +229,7 @@
     "quick": "git add . && git commit -m 'chore: quick save' && git push origin master",
     "release:tag": "node scripts/release-tag.js",
     "publish:force": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true",
-  "publish:dry": "gh workflow run publish.yml -f force_publish=true -f dry_run=true",
+    "publish:dry": "gh workflow run publish.yml -f force_publish=true -f dry_run=true",
   "ci:dry": "node scripts/ci-trigger.js --dry",
   "ci:publish": "node scripts/ci-trigger.js --publish",
   "ci:logs": "node scripts/ci-trigger.js --logs"
