@@ -1,0 +1,290 @@
+// Experimental themes — radical aesthetic explorations
+import { withAlpha } from './roles.js';
+
+export const experimentalThemes = [
+  {
+    id: 'xela-borderless-minimal',
+    name: 'XELA Borderless Minimal — Chrome-less Focus',
+    type: 'dark',
+    roles: {
+      surface0: '#0E1012',
+      surface1: '#101214',
+      surface2: '#121518',
+      surface3: '#14181B',
+      panel: '#101214',
+      overlay: '#0E1012E6',
+      backdrop: '#00000099',
+      border: '#14181B', // virtually indistinguishable (borderless feel)
+      focus: withAlpha('#3D9EFF',0.55),
+      textPrimary: '#DDE2E6',
+      textSecondary: '#B7C0C7',
+      textMuted: '#6F7A82',
+      textInverted: '#0E1012',
+      accentPrimary: '#3D9EFF',
+      accentPrimaryAlt: '#5ABEFF',
+      accentInfo: '#5ABEFF',
+      accentWarn: '#FFB347',
+      accentError: '#FF5A6B',
+      accentSuccess: '#37D99E',
+      accentSelection: withAlpha('#3D9EFF',0.18),
+      accentLink: '#5ABEFF'
+    },
+    tokens(c){
+      return {
+        comment: '#546069',
+        keyword: '#3D9EFF',
+        function: '#5ABEFF',
+        variable: '#DDE2E6',
+        string: '#37D99E',
+        number: '#FFB347',
+        constant: '#5ABEFF',
+        storage: '#FF5A6B',
+        type: '#5ABEFF',
+        punctuation: c.textPrimary,
+        invalid: '#FF5A6B',
+        code: c.textPrimary,
+        heading: c.accentPrimary,
+        h1: '#3D9EFF',
+        h2: '#5ABEFF',
+        h3: '#37D99E',
+        h4: '#FFB347',
+        h5: '#FF5A6B',
+        h6: c.textMuted,
+        textPrimary: c.textPrimary
+      };
+    },
+    htmlScheme: {
+      htmlTag: '#3D9EFF', htmlStructureTag: '#5ABEFF', htmlInlineTag: '#37D99E', htmlScriptTag: '#FFB347',
+      htmlAttribute: '#5ABEFF', htmlClassAttribute: '#37D99E', htmlIdAttribute: '#3D9EFF', htmlStyleAttribute: '#37D99E', htmlEventAttribute: '#FFB347',
+      htmlAttributeValue: '#37D99E', htmlAttributeValueString: '#5ABEFF', htmlTagBrackets: '#6F7A82', htmlPunctuation: '#546069', htmlStringPunctuation: '#6F7A82', htmlComment: '#546069', htmlEntity: '#FFB347', htmlEntityPunctuation: '#3D9EFF', htmlDoctype: '#FF5A6B', embeddedCss: '#37D99E', embeddedCssBlock: '#3D9EFF', embeddedJs: '#FFB347', embeddedJsBlock: '#5ABEFF', htmlFormTag: '#37D99E', htmlFormAttribute: '#5ABEFF', htmlTableTag: '#3D9EFF', htmlMediaTag: '#FFB347', htmlLinkTag: '#5ABEFF', htmlHrefAttribute: '#37D99E', htmlSemanticTag: '#37D99E', htmlText: '#DDE2E6'
+    }
+  },
+  {
+    id: 'xela-neon-wireframe',
+    name: 'XELA Neon Wireframe — Vector Grid',
+    type: 'dark',
+    roles: {
+      surface0: '#01050B',
+      surface1: '#030A14',
+      surface2: '#06101F',
+      surface3: '#0A162B',
+      panel: '#030A14',
+      overlay: '#01050BE8',
+      backdrop: '#00000099',
+      border: '#0F223F',
+      focus: withAlpha('#00F5FF',0.75),
+      textPrimary: '#DDF6FF',
+      textSecondary: '#B9EFFF',
+      textMuted: '#6FB3CC',
+      textInverted: '#01050B',
+      accentPrimary: '#00F5FF',
+      accentPrimaryAlt: '#FF2BFF',
+      accentInfo: '#00CFFF',
+      accentWarn: '#FFC300',
+      accentError: '#FF4F6F',
+      accentSuccess: '#37FFB0',
+      accentSelection: withAlpha('#00F5FF',0.25),
+      accentLink: '#00CFFF'
+    },
+    tokens(c){
+      return {
+        comment: '#2F5C66',
+        keyword: '#FF2BFF',
+        function: '#00F5FF',
+        variable: '#DDF6FF',
+        string: '#37FFB0',
+        number: '#FFC300',
+        constant: '#00CFFF',
+        storage: '#FF2BFF',
+        type: '#00F5FF',
+        punctuation: c.textPrimary,
+        invalid: '#FF4F6F',
+        code: c.textPrimary,
+        heading: c.accentPrimary,
+        h1: '#00F5FF',
+        h2: '#FF2BFF',
+        h3: '#00CFFF',
+        h4: '#37FFB0',
+        h5: '#FFC300',
+        h6: c.textMuted,
+        textPrimary: c.textPrimary
+      };
+    },
+    htmlScheme: {
+      htmlTag: '#00F5FF', htmlStructureTag: '#FF2BFF', htmlInlineTag: '#00CFFF', htmlScriptTag: '#FFC300',
+      htmlAttribute: '#00F5FF', htmlClassAttribute: '#37FFB0', htmlIdAttribute: '#00F5FF', htmlStyleAttribute: '#00CFFF', htmlEventAttribute: '#FFC300',
+      htmlAttributeValue: '#37FFB0', htmlAttributeValueString: '#00F5FF', htmlTagBrackets: '#6FB3CC', htmlPunctuation: '#2F5C66', htmlStringPunctuation: '#6FB3CC', htmlComment: '#2F5C66', htmlEntity: '#FFC300', htmlEntityPunctuation: '#00F5FF', htmlDoctype: '#FF4F6F', embeddedCss: '#00CFFF', embeddedCssBlock: '#00F5FF', embeddedJs: '#FFC300', embeddedJsBlock: '#FF2BFF', htmlFormTag: '#37FFB0', htmlFormAttribute: '#00F5FF', htmlTableTag: '#00F5FF', htmlMediaTag: '#FFC300', htmlLinkTag: '#FF2BFF', htmlHrefAttribute: '#37FFB0', htmlSemanticTag: '#00CFFF', htmlText: '#DDF6FF'
+    }
+  },
+  {
+    id: 'xela-void-mist',
+    name: 'XELA Void Mist — Diffuse Nebula',
+    type: 'dark',
+    roles: {
+      surface0: '#08090D',
+      surface1: '#0D0F14',
+      surface2: '#13161E',
+      surface3: '#1A1F29',
+      panel: '#0D0F14',
+      overlay: '#08090DE6',
+      backdrop: '#00000099',
+      border: '#202837',
+      focus: withAlpha('#A47CFF',0.65),
+      textPrimary: '#E6ECF5',
+      textSecondary: '#CBD5E2',
+      textMuted: '#8292A8',
+      textInverted: '#08090D',
+      accentPrimary: '#A47CFF',
+      accentPrimaryAlt: '#6FB7FF',
+      accentInfo: '#6FB7FF',
+      accentWarn: '#FFC878',
+      accentError: '#FF6F88',
+      accentSuccess: '#4DD6A3',
+      accentSelection: withAlpha('#A47CFF',0.22),
+      accentLink: '#6FB7FF'
+    },
+    tokens(c){
+      return {
+        comment: '#5A6B80',
+        keyword: '#A47CFF',
+        function: '#6FB7FF',
+        variable: '#E6ECF5',
+        string: '#4DD6A3',
+        number: '#FFC878',
+        constant: '#6FB7FF',
+        storage: '#FF6F88',
+        type: '#A47CFF',
+        punctuation: c.textPrimary,
+        invalid: '#FF6F88',
+        code: c.textPrimary,
+        heading: c.accentPrimary,
+        h1: '#A47CFF',
+        h2: '#6FB7FF',
+        h3: '#4DD6A3',
+        h4: '#FFC878',
+        h5: '#FF6F88',
+        h6: c.textMuted,
+        textPrimary: c.textPrimary
+      };
+    },
+    htmlScheme: {
+      htmlTag: '#A47CFF', htmlStructureTag: '#6FB7FF', htmlInlineTag: '#4DD6A3', htmlScriptTag: '#FFC878',
+      htmlAttribute: '#6FB7FF', htmlClassAttribute: '#4DD6A3', htmlIdAttribute: '#A47CFF', htmlStyleAttribute: '#4DD6A3', htmlEventAttribute: '#FFC878',
+      htmlAttributeValue: '#4DD6A3', htmlAttributeValueString: '#6FB7FF', htmlTagBrackets: '#8292A8', htmlPunctuation: '#5A6B80', htmlStringPunctuation: '#8292A8', htmlComment: '#5A6B80', htmlEntity: '#FFC878', htmlEntityPunctuation: '#A47CFF', htmlDoctype: '#FF6F88', embeddedCss: '#4DD6A3', embeddedCssBlock: '#A47CFF', embeddedJs: '#FFC878', embeddedJsBlock: '#6FB7FF', htmlFormTag: '#4DD6A3', htmlFormAttribute: '#6FB7FF', htmlTableTag: '#A47CFF', htmlMediaTag: '#FFC878', htmlLinkTag: '#6FB7FF', htmlHrefAttribute: '#4DD6A3', htmlSemanticTag: '#4DD6A3', htmlText: '#E6ECF5'
+    }
+  },
+  {
+    id: 'xela-solar-ink',
+    name: 'XELA Solar Ink — Warm Print Light',
+    type: 'light',
+    roles: {
+      surface0: '#FDF8F2',
+      surface1: '#F9F3EB',
+      surface2: '#F4EDDF',
+      surface3: '#EEE6D4',
+      panel: '#F9F3EB',
+      overlay: '#FDF8F2E6',
+      backdrop: '#FFFFFFAA',
+      border: '#E4D9C7',
+      focus: withAlpha('#B25800',0.55),
+      textPrimary: '#2C2A27',
+      textSecondary: '#4A453F',
+      textMuted: '#7A7065',
+      textInverted: '#FDF8F2',
+      accentPrimary: '#B25800',
+      accentPrimaryAlt: '#CB7A1F',
+      accentInfo: '#007A72',
+      accentWarn: '#D48806',
+      accentError: '#B7352E',
+      accentSuccess: '#317344',
+      accentSelection: withAlpha('#B25800',0.18),
+      accentLink: '#007A72'
+    },
+    tokens(c){
+      return {
+        comment: '#8A7B6B',
+        keyword: '#B25800',
+        function: '#007A72',
+        variable: '#2C2A27',
+        string: '#317344',
+        number: '#D48806',
+        constant: '#CB7A1F',
+        storage: '#B7352E',
+        type: '#007A72',
+        punctuation: c.textPrimary,
+        invalid: '#B7352E',
+        code: c.textPrimary,
+        heading: c.accentPrimary,
+        h1: '#2C2A27',
+        h2: '#B25800',
+        h3: '#007A72',
+        h4: '#317344',
+        h5: '#D48806',
+        h6: c.textMuted,
+        textPrimary: c.textPrimary
+      };
+    },
+    htmlScheme: {
+      htmlTag: '#B25800', htmlStructureTag: '#007A72', htmlInlineTag: '#CB7A1F', htmlScriptTag: '#D48806',
+      htmlAttribute: '#007A72', htmlClassAttribute: '#317344', htmlIdAttribute: '#B25800', htmlStyleAttribute: '#CB7A1F', htmlEventAttribute: '#D48806',
+      htmlAttributeValue: '#317344', htmlAttributeValueString: '#007A72', htmlTagBrackets: '#7A7065', htmlPunctuation: '#8A7B6B', htmlStringPunctuation: '#7A7065', htmlComment: '#8A7B6B', htmlEntity: '#D48806', htmlEntityPunctuation: '#B25800', htmlDoctype: '#B7352E', embeddedCss: '#CB7A1F', embeddedCssBlock: '#B25800', embeddedJs: '#D48806', embeddedJsBlock: '#007A72', htmlFormTag: '#317344', htmlFormAttribute: '#007A72', htmlTableTag: '#B25800', htmlMediaTag: '#D48806', htmlLinkTag: '#007A72', htmlHrefAttribute: '#317344', htmlSemanticTag: '#CB7A1F', htmlText: '#2C2A27'
+    }
+  },
+  {
+    id: 'xela-retro-terminal-amber',
+    name: 'XELA Retro Terminal Amber — Monochrome CRT',
+    type: 'dark',
+    roles: {
+      surface0: '#060400',
+      surface1: '#0A0802',
+      surface2: '#120F05',
+      surface3: '#1A170B',
+      panel: '#0A0802',
+      overlay: '#060400E8',
+      backdrop: '#000000AA',
+      border: '#241E10',
+      focus: withAlpha('#FFB648',0.6),
+      textPrimary: '#FFE4B5',
+      textSecondary: '#FFD89B',
+      textMuted: '#B89664',
+      textInverted: '#060400',
+      accentPrimary: '#FFB648',
+      accentPrimaryAlt: '#FFC978',
+      accentInfo: '#FF9C2B',
+      accentWarn: '#FFCF66',
+      accentError: '#FF6A3D',
+      accentSuccess: '#FFC978',
+      accentSelection: withAlpha('#FFB648',0.22),
+      accentLink: '#FFC978'
+    },
+    tokens(c){
+      return {
+        comment: '#8F7349',
+        keyword: '#FFB648',
+        function: '#FFC978',
+        variable: '#FFE4B5',
+        string: '#FFC978',
+        number: '#FFCF66',
+        constant: '#FFD89B',
+        storage: '#FFB648',
+        type: '#FFC978',
+        punctuation: c.textPrimary,
+        invalid: '#FF6A3D',
+        code: c.textPrimary,
+        heading: c.accentPrimary,
+        h1: '#FFB648',
+        h2: '#FFC978',
+        h3: '#FFD89B',
+        h4: '#FFCF66',
+        h5: '#FF9C2B',
+        h6: c.textMuted,
+        textPrimary: c.textPrimary
+      };
+    },
+    htmlScheme: {
+      htmlTag: '#FFB648', htmlStructureTag: '#FFC978', htmlInlineTag: '#FFD89B', htmlScriptTag: '#FFCF66',
+      htmlAttribute: '#FFC978', htmlClassAttribute: '#FFC978', htmlIdAttribute: '#FFB648', htmlStyleAttribute: '#FFD89B', htmlEventAttribute: '#FFCF66',
+      htmlAttributeValue: '#FFC978', htmlAttributeValueString: '#FFC978', htmlTagBrackets: '#B89664', htmlPunctuation: '#8F7349', htmlStringPunctuation: '#B89664', htmlComment: '#8F7349', htmlEntity: '#FFCF66', htmlEntityPunctuation: '#FFB648', htmlDoctype: '#FF6A3D', embeddedCss: '#FFD89B', embeddedCssBlock: '#FFB648', embeddedJs: '#FFCF66', embeddedJsBlock: '#FFC978', htmlFormTag: '#FFC978', htmlFormAttribute: '#FFC978', htmlTableTag: '#FFB648', htmlMediaTag: '#FFCF66', htmlLinkTag: '#FFC978', htmlHrefAttribute: '#FFC978', htmlSemanticTag: '#FFD89B', htmlText: '#FFE4B5'
+    }
+  }
+];

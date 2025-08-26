@@ -14,7 +14,9 @@
   "engines": {
     "vscode": "^1.86.0"
   },
-  "categories": ["Themes"],
+  "categories": [
+    "Themes"
+  ],
   "contributes": {
     "commands": [
       {
@@ -77,7 +79,10 @@
         "editor.minimap.enabled": true,
         "editor.minimap.renderCharacters": false,
         "editor.minimap.showSlider": "always",
-        "editor.rulers": [100, 120],
+        "editor.rulers": [
+          100,
+          120
+        ],
         "editor.hover.delay": 120,
         "editor.foldingImportsByDefault": true,
         "editor.inlineSuggest.enabled": true,
@@ -106,116 +111,251 @@
       }
     },
     "themes": [
-  {
-  "label": "XELA Dark — Balanced Dark",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-dark-color-theme.json"
-  },
-  {
-  "label": "XELA Black — Pure Black UI",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-black-color-theme.json"
-  },
-  {
-  "label": "XELA Graph Paper — Light Grid",
-    "uiTheme": "vs",
-    "path": "./themes/xela-graph-paper-color-theme.json"
-  },
-  {
-  "label": "XELA Blueprint — Technical Drafting",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-blueprint-color-theme.json"
-  },
-  {
-  "label": "XELA Night Vision — Red/Amber Dark",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-night-vision-color-theme.json"
-  },
-  {
-  "label": "XELA Circuitboard — Soldermask Green",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-circuitboard-color-theme.json"
-  },
-  {
-  "label": "XELA Bauhaus — Primary Geometry",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-bauhaus-color-theme.json"
-  },
-  {
-  "label": "XELA Iridescence — Prismatic Black",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-iridescence-color-theme.json"
-  },
-  {
-  "label": "XELA AMOLED+ — Pure Black Max",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-amoled-plus-color-theme.json"
-  },
-  {
-  "label": "XELA Obsidian Glass — Black + Glass",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-obsidian-glass-color-theme.json"
-  },
-  {
-  "label": "XELA Neon Noir — Cyber Noir",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-neon-noir-color-theme.json"
-  },
-  {
-  "label": "XELA Phosphor Green — CRT Monochrome",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-phosphor-green-color-theme.json"
-  },
-  {
-  "label": "XELA Monastic — Near‑Monochrome Focus",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-monastic-color-theme.json"
-  },
-  {
-  "label": "XELA Terminalist — ANSI Native",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-terminalist-color-theme.json"
-  },
-  {
-  "label": "XELA Terra — Organic Warmth",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-terra-color-theme.json"
-  },
-  {
-  "label": "XELA Deep — Abyssal Bioluminescence",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-deep-color-theme.json"
-  },
-  {
-  "label": "XELA Arctic — Pristine Light",
-    "uiTheme": "vs",
-    "path": "./themes/xela-arctic-color-theme.json"
-  },
-  {
-  "label": "XELA Arctic Glass — Frosted Light",
-    "uiTheme": "vs",
-    "path": "./themes/xela-arctic-glass-color-theme.json"
-  },
-  {
-  "label": "XELA E‑Ink Sepia — Paper Light",
-    "uiTheme": "vs",
-    "path": "./themes/xela-e-ink-sepia-color-theme.json"
-  },
-  {
-  "label": "XELA Ink — Print Typography",
-    "uiTheme": "vs",
-    "path": "./themes/xela-ink-color-theme.json"
-  },
-  {
-  "label": "XELA Vapor — Synthwave Retrowave",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-vapor-color-theme.json"
-  },
-  {
-  "label": "XELA Matrix Rain — Hyperphosphor Cascade",
-    "uiTheme": "vs-dark",
-    "path": "./themes/xela-matrix-rain-color-theme.json"
-  }
+      {
+        "label": "XELA AMOLED+ — Pure Black Max",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-amoled-plus-color-theme.json"
+      },
+      {
+        "label": "XELA Arctic — Crystal Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-arctic-color-theme.json"
+      },
+      {
+        "label": "XELA Arctic Glass — Crystal Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-arctic-glass-color-theme.json"
+      },
+      {
+        "label": "XELA Aurora Borealis — Northern Lights",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-aurora-borealis-color-theme.json"
+      },
+      {
+        "label": "XELA Bauhaus — Primary Geometry",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-bauhaus-color-theme.json"
+      },
+      {
+        "label": "XELA Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-black-color-theme.json"
+      },
+      {
+        "label": "XELA Blueprint — Technical Drafting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-blueprint-color-theme.json"
+      },
+      {
+        "label": "XELA Borderless Minimal — Chrome-less Focus",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-borderless-minimal-color-theme.json"
+      },
+      {
+        "label": "XELA Brutalist — Raw Concrete",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-brutalist-color-theme.json"
+      },
+      {
+        "label": "XELA Circuitboard — Soldermask Green",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-circuitboard-color-theme.json"
+      },
+      {
+        "label": "XELA Cosmic Aurora — Stellar Dance",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-cosmic-aurora-color-theme.json"
+      },
+      {
+        "label": "XELA Cosmic Void — Event Horizon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-cosmic-void-color-theme.json"
+      },
+      {
+        "label": "XELA Crystalline Matrix — Diamond Lattice",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-crystalline-matrix-color-theme.json"
+      },
+      {
+        "label": "XELA Cyberpunk 2077 — Night City",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-cyberpunk-2077-color-theme.json"
+      },
+      {
+        "label": "XELA Dark — Balanced Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-dark-color-theme.json"
+      },
+      {
+        "label": "XELA Deep — Abyssal Bioluminescence",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-deep-color-theme.json"
+      },
+      {
+        "label": "XELA Digital Rain — Data Cascade",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-digital-rain-color-theme.json"
+      },
+      {
+        "label": "XELA E‑Ink Sepia — Paper Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-e-ink-sepia-color-theme.json"
+      },
+      {
+        "label": "XELA Ethereal Mist — Spirit Realm",
+        "uiTheme": "vs",
+        "path": "./themes/xela-ethereal-mist-color-theme.json"
+      },
+      {
+        "label": "XELA Forest Cathedral — Sacred Canopy",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-forest-cathedral-color-theme.json"
+      },
+      {
+        "label": "XELA Golden Horizon — Sunset Blaze",
+        "uiTheme": "vs",
+        "path": "./themes/xela-golden-horizon-color-theme.json"
+      },
+      {
+        "label": "XELA Graph Paper — Light Grid",
+        "uiTheme": "vs",
+        "path": "./themes/xela-graph-paper-color-theme.json"
+      },
+      {
+        "label": "XELA Holographic — Dimensional Shift",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-holographic-color-theme.json"
+      },
+      {
+        "label": "XELA Holographic Spectrum — Rainbow Prism",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-holographic-spectrum-color-theme.json"
+      },
+      {
+        "label": "XELA Hyperfocus Monochrome — Cognitive Isolation",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-hyperfocus-monochrome-color-theme.json"
+      },
+      {
+        "label": "XELA Ink — Print Typography",
+        "uiTheme": "vs",
+        "path": "./themes/xela-ink-color-theme.json"
+      },
+      {
+        "label": "XELA Iridescence — Prismatic Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-iridescence-color-theme.json"
+      },
+      {
+        "label": "XELA Matrix Rain — Hyperphosphor Cascade",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-matrix-rain-color-theme.json"
+      },
+      {
+        "label": "XELA Midnight Cosmos — Stellar Deep",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-midnight-cosmos-color-theme.json"
+      },
+      {
+        "label": "XELA Monastic — Near‑Monochrome Focus",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-monastic-color-theme.json"
+      },
+      {
+        "label": "XELA Neon Noir — Cyber Noir",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-neon-noir-color-theme.json"
+      },
+      {
+        "label": "XELA Neon Wireframe — Vector Grid",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-neon-wireframe-color-theme.json"
+      },
+      {
+        "label": "XELA Neural Network — AI Synapses",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-neural-network-color-theme.json"
+      },
+      {
+        "label": "XELA Night Vision",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-night-vision-color-theme.json"
+      },
+      {
+        "label": "XELA Obsidian Glass — Black + Glass",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-obsidian-glass-color-theme.json"
+      },
+      {
+        "label": "XELA Phosphor Green — Monochrome CRT",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-phosphor-green-color-theme.json"
+      },
+      {
+        "label": "XELA Plasma Storm — Electric Current",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-plasma-storm-color-theme.json"
+      },
+      {
+        "label": "XELA Quantum Flux — Probability Waves",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-quantum-flux-color-theme.json"
+      },
+      {
+        "label": "XELA Retro Terminal Amber — Monochrome CRT",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-retro-terminal-amber-color-theme.json"
+      },
+      {
+        "label": "XELA Retrowave Synthesis — Neon Dreams",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-retrowave-synthesis-color-theme.json"
+      },
+      {
+        "label": "XELA Shadow Realm — Void Walker",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-shadow-realm-color-theme.json"
+      },
+      {
+        "label": "XELA Solar Ink — Warm Print Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-solar-ink-color-theme.json"
+      },
+      {
+        "label": "XELA Synthwave Outrun — Neon Highway",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-synthwave-outrun-color-theme.json"
+      },
+      {
+        "label": "XELA Terminalist — ANSI Native",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-terminalist-color-theme.json"
+      },
+      {
+        "label": "XELA Terra — Organic Warmth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-terra-color-theme.json"
+      },
+      {
+        "label": "XELA Vapor — Neon Retrowave",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-vapor-color-theme.json"
+      },
+      {
+        "label": "XELA Void Mist — Diffuse Nebula",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-void-mist-color-theme.json"
+      },
+      {
+        "label": "XELA Volcanic Forge — Molten Core",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-volcanic-forge-color-theme.json"
+      },
+      {
+        "label": "XELA Zen Garden — Peaceful Minimalism",
+        "uiTheme": "vs",
+        "path": "./themes/xela-zen-garden-color-theme.json"
+      }
     ]
   },
   "scripts": {
@@ -225,6 +365,7 @@
     "package-and-install": "npm run package && npm run install:vsix",
     "build:themes": "node ./scripts/theme-system/build-themes.mjs",
     "test:themes": "node ./scripts/theme-system/test-build.mjs",
+    "update:package": "node ./scripts/theme-system/update-package-themes.mjs",
     "build:test": "npm run build:themes && npm run test:themes",
     "prepackage": "npm run build:themes && npm run test:themes",
     "rebuild": "npm run build:themes && npm run package-and-install",
@@ -245,6 +386,13 @@
     "jsonc-parser": "^3.2.0"
   },
   "license": "MIT",
-  "keywords": ["theme", "dark", "xela"],
-  "galleryBanner": { "color": "#0B0D10", "theme": "dark" }
+  "keywords": [
+    "theme",
+    "dark",
+    "xela"
+  ],
+  "galleryBanner": {
+    "color": "#0B0D10",
+    "theme": "dark"
+  }
 }

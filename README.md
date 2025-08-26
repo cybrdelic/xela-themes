@@ -5,37 +5,43 @@
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/cybrdelic.xela-themes)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
 [![CI](https://github.com/cybrdelic/xela-themes/actions/workflows/publish.yml/badge.svg)](https://github.com/cybrdelic/xela-themes/actions/workflows/publish.yml)
 
-World-class theme boilerplate with automated generation and fast local iteration.
+🎨 **Professional-grade VS Code theme collection with 43 revolutionary designs and automated generation system.**
 
 ## What's included
-- **23 distinct themes**: XELA Dark, XELA Black (pure-black UI), Matrix Rain, Night Vision, Arctic, and many more.
-- **Central theme generation system**: No more magic numbers or manual duplication.
-- **Enhanced HTML/XML syntax highlighting**: Comprehensive token definitions for tags, attributes, entities, and embedded content.
-- **Automated testing and validation**: Ensures theme consistency and quality.
-- **Packaging via @vscode/vsce** and a robust install script.
-- **Optional CI workflow** for publishing.
+- **43 extraordinary themes**: From classic XELA Dark/Black to cutting-edge Neural Network, Quantum Flux, Holographic Spectrum, and Cosmic Aurora
+- **Advanced theme generation system**: Centralized palette, role-based color mapping, and comprehensive automation
+- **Superior HTML/XML syntax highlighting**: Industry-leading token definitions for tags, attributes, entities, and embedded content
+- **Automated testing and validation**: Ensures theme consistency, quality, and completeness
+- **Professional packaging**: @vscode/vsce integration with robust install scripts
+- **Optional CI workflow**: Streamlined publishing and distribution
 
 ## Dev workflow
 
 ### Modern Theme Generation (Recommended)
 1) **Edit theme configuration**
-   - Modify `scripts/theme-system/theme-config.js` to add/update themes
+   - Add themes to `scripts/theme-system/theme-config*.js` files
    - Use central color palette from `scripts/theme-system/palette.js`
-   - Define roles and token mappings via the archetype system
+   - Define roles and token mappings via the advanced archetype system
 
 2) **Build and test themes**
    ```
    npm run build:test
    ```
-   This generates all theme JSONs and validates them.
+   Generates all 43 theme JSONs and validates them.
 
-3) **Test locally**
+3) **Update package.json**
+   ```
+   npm run update:package
+   ```
+   Automatically syncs all themes to package.json manifest.
+
+4) **Test locally**
    ```
    npm run rebuild
    ```
    Builds themes + packages + installs the extension locally.
 
-4) **Package for distribution**
+5) **Package for distribution**
    ```
    npm run package
    ```
