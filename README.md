@@ -1,54 +1,71 @@
-# XELA Themes Extension
+# XELA Themes
 
 [![Version](https://img.shields.io/visual-studio-marketplace/v/cybrdelic.xela-themes?color=blue&label=VS%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/cybrdelic.xela-themes)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/cybrdelic.xela-themes)](https://marketplace.visualstudio.com/items?itemName=cybrdelic.xela-themes)
 [![CI](https://github.com/cybrdelic/xela-themes/actions/workflows/publish.yml/badge.svg)](https://github.com/cybrdelic/xela-themes/actions/workflows/publish.yml)
 
-World-class theme boilerplate with fast local iteration and packaging.
+World-class theme boilerplate with automated generation and fast local iteration.
 
-## What’s included
-- Themes: XELA Dark, XELA Black (pure-black UI surfaces).
-- Packaging via @vscode/vsce and a robust install script.
-- Optional CI workflow for publishing.
+## What's included
+- **23 distinct themes**: XELA Dark, XELA Black (pure-black UI), Matrix Rain, Night Vision, Arctic, and many more.
+- **Central theme generation system**: No more magic numbers or manual duplication.
+- **Enhanced HTML/XML syntax highlighting**: Comprehensive token definitions for tags, attributes, entities, and embedded content.
+- **Automated testing and validation**: Ensures theme consistency and quality.
+- **Packaging via @vscode/vsce** and a robust install script.
+- **Optional CI workflow** for publishing.
 
 ## Dev workflow
-1) Edit themes
-- Add a new file under `themes/` (e.g. `xela-mytheme-color-theme.json`).
-- Validate keys against VS Code color schema; prefer transparent overlays where required.
 
-2) Wire up contributes
-- In `package.json` add an entry under `contributes.themes`:
-	- label: Display name in the picker (e.g., "XELA MyTheme").
-	- uiTheme: `vs-dark` | `vs-light` | `hc-black`.
-	- path: `./themes/<file>.json`.
+### Modern Theme Generation (Recommended)
+1) **Edit theme configuration**
+   - Modify `scripts/theme-system/theme-config.js` to add/update themes
+   - Use central color palette from `scripts/theme-system/palette.js`
+   - Define roles and token mappings via the archetype system
 
-3) Test locally
-- Press F5 to launch Extension Development Host.
-- In the host window, open Command Palette → Color Theme → pick "XELA Black" or "XELA Dark".
+2) **Build and test themes**
+   ```
+   npm run build:test
+   ```
+   This generates all theme JSONs and validates them.
 
-4) Package and install locally
-```
-npm i
-npm run package-and-install
-```
-- This produces a `.vsix` and installs the newest one via the VS Code CLI.
+3) **Test locally**
+   ```
+   npm run rebuild
+   ```
+   Builds themes + packages + installs the extension locally.
 
-5) Iterate quickly
-- Edit JSON → re-run `npm run package-and-install` to apply changes.
-- Or reload the Dev Host (Developer: Reload Window) when running via F5.
+4) **Package for distribution**
+   ```
+   npm run package
+   ```
+   Themes are auto-built before packaging via the prepackage hook.
+
+### Legacy Manual Editing (Deprecated)
+- Direct JSON editing in `themes/` is no longer recommended
+- Use the generation system for consistency and maintainability
+
+## Theme System Architecture
+
+- **`palette.js`**: Central color primitives and utilities
+- **`roles.js`**: Role definitions and color manipulation helpers
+- **`theme-config.js`**: Theme definitions with role mappings
+- **`token-base.js`**: Base token templates for syntax highlighting
+- **`html-tokens.js`**: Specialized HTML/XML token generation
+- **`build-themes.mjs`**: Main build script that generates all theme JSONs
+- **`test-build.mjs`**: Validation and testing for generated themes
 
 ## DX preset (optional per-project)
-- Use the full preset at `presets/xela-black.settings.jsonc` (copy into your repo’s `.vscode/settings.json`).
+- Use the full preset at `presets/xela-black.settings.jsonc` (copy into your repo's `.vscode/settings.json`).
 - Open this repo and VS Code will suggest recommended extensions from `.vscode/extensions.json`.
 
 ## Publish (optional)
-1) (One-time) Create publisher if you don’t have it yet:
+1) (One-time) Create publisher if you don't have it yet:
 ```
 vsce create-publisher cybrdelic
 vsce login cybrdelic
 ```
-2) Bump version in `package.json` (already at 0.1.2 for publisher switch).
+2) Bump version in `package.json`.
 3) Publish:
 ```
 npx @vscode/vsce publish
@@ -57,7 +74,6 @@ npx @vscode/vsce publish
 ```
 code --install-extension cybrdelic.xela-themes
 ```
-Or install locally-built `.vsix` from `npm run package`.
 
 ### CI Auto-Publish
 Pushing a tag like `v0.1.2` triggers the workflow in `.github/workflows/publish.yml` to build and publish automatically (requires `VSCE_TOKEN` secret containing a Personal Access Token created via `vsce create-pat`). Manual dispatch still works via the Actions tab.
