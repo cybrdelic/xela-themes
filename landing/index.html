@@ -6,34 +6,48 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="description" content="Reset minimal scaffold: multi-image isometric formation + empty transition timeline." />
 <style>
-  :root { --progress: 0; }
+  :root { --progress: 0; --maskOpacity:0; --heroOpacity:1; }
   * { box-sizing: border-box; margin:0; padding:0; }
   html,body { height:100%; }
   body { font-family: system-ui, sans-serif; background:#fff; color:#111; overflow:hidden; }
   main { position:fixed; inset:0; display:grid; place-items:center; perspective:1400px; perspective-origin:50% 55%; }
   /* Isometric group */
-  #isoGroup { --tiltX:55deg; --tiltZ:-32deg; --lift:0px; --scale:1; position:relative; width:0; height:0; transform-style:preserve-3d; transition:transform .8s cubic-bezier(.22,1,.24,1); }
-  #isoGroup.isometric { transform: translateY(var(--lift)) rotateX(var(--tiltX)) rotateZ(var(--tiltZ)) scale(var(--scale)); }
-  .cardImg { position:absolute; top:0; left:0; width:220px; height:136px; object-fit:cover; border-radius:0; box-shadow:0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08); transform-style:preserve-3d; background:#f2f4f7; }
+  #isoGroup { --tiltX:55deg; --tiltZ:-32deg; --lift:0px; --scale:1; --shiftX:0px; --shiftY:0px; position:relative; width:0; height:0; transform-style:preserve-3d; transition:transform .8s cubic-bezier(.22,1,.24,1); }
+  #isoGroup.isometric { transform: translate(var(--shiftX), var(--shiftY)) translateY(var(--lift)) rotateX(var(--tiltX)) rotateZ(var(--tiltZ)) scale(var(--scale)); }
+  .cardImg { position:absolute; top:0; left:0; width:220px; height:136px; object-fit:cover; border-radius:0; box-shadow:0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08); transform-style:preserve-3d; background:#111; }
   .cardImg::selection { background:#2563eb; color:#fff; }
-  .cardImg { transition:box-shadow .6s cubic-bezier(.22,1,.24,1), transform .8s cubic-bezier(.22,1,.24,1); }
+  .cardImg { transition:box-shadow .6s cubic-bezier(.22,1,.24,1), transform .8s cubic-bezier(.22,1,.24,1), opacity .4s ease; }
   #progressBar { position:fixed; left:0; bottom:0; height:4px; width:calc(var(--progress)*100%); background:linear-gradient(90deg,#2563eb,#3b82f6); pointer-events:none; opacity:.35; transition:width .15s linear; }
+  /* Gradient mask overlay fading edges as grid settles bottom-right */
+  #gradientMask { position:fixed; inset:0; pointer-events:none; z-index:10; background:radial-gradient(at 80% 80%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 46%, rgba(255,255,255,.55) 72%, #fff 90%); opacity:var(--maskOpacity); transition:opacity .9s cubic-bezier(.22,1,.24,1); }
+  /* Hero typography */
+  #hero { position:fixed; left:clamp(28px,5vw,90px); top:50%; transform:translateY(-50%); max-width:34ch; z-index:4; pointer-events:none; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif; }
+  #hero h1 { line-height:.78; font-size:clamp(3.4rem,12vw,10rem); font-weight:900; letter-spacing:-.045em; background:linear-gradient(145deg,#111 0%,#222 35%,#4a4a4a 55%,#000 80%); -webkit-background-clip:text; background-clip:text; color:transparent; position:relative; text-shadow:0.5px 0.5px 0 #000,1px 1px 0 #000,1.5px 1.5px 0 #000,2px 2px 0 #000,3px 3px 2px rgba(0,0,0,.4),6px 10px 28px rgba(0,0,0,.35); filter:drop-shadow(0 8px 18px rgba(0,0,0,.25)); }
+  #hero h1::after { content:""; position:absolute; inset:0; background:linear-gradient(160deg,rgba(255,255,255,.35),rgba(255,255,255,0) 55%); mix-blend-mode:overlay; pointer-events:none; }
+  #hero p { margin-top:1.2rem; font-size:clamp(.9rem,1.4vw,1.15rem); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#222; text-shadow:0 2px 6px rgba(0,0,0,.08); }
+  #hero { opacity:var(--heroOpacity); transition:opacity .9s cubic-bezier(.22,1,.24,1); }
 </style>
 </head>
 <body>
 <main>
+  <!-- Hero typography -->
+  <div id="hero" aria-hidden="false">
+    <!-- Changed heading from NOCTURNE to XELA THEMES for brand consistency -->
+    <h1 aria-label="XELA dark themes collection">XELA THEMES</h1>
+    <p>DARK. FOCUSED. REFINED.</p>
+  </div>
   <!-- Multi-image isometric formation -->
   <div id="isoGroup" class="isometric" aria-label="XELA theme previews"></div>
 </main>
+<div id="gradientMask" aria-hidden="true"></div>
 <div id="progressBar" aria-hidden="true"></div>
 <script>
 // Multi-image isometric formation + empty transition timeline
-let progress = 0;
-let targetProgress = 0;
-let animating = false;
-
+let progress = 0, targetProgress = 0, animating = false;
 const isoGroup = document.getElementById('isoGroup');
-const SLUGS = [
+const heroEl = document.getElementById('hero');
+// Raw theme slugs (may include light variants in future; we filter below)
+const RAW_SLUGS = [
   'xela_dark_balanced_dark',
   'xela_amoled_pure_black_max',
   'xela_neon_noir_cyber_noir',
@@ -46,135 +60,93 @@ const SLUGS = [
   'xela_proto_grid_early_wireframe_ux',
   'xela_plasma_storm_electric_current'
 ];
+// Expanded light-ish keywords (aggressive)
+const LIGHT_KEYWORDS = /(white|light|sepia|paper|liminal|inkwell|mist|holo|holographic|spectrum|prism|pastel|cloud)/i;
+// Manual excludes (add any bright/light slugs here explicitly)
+const MANUAL_EXCLUDE = new Set(['xela_holographic_spectrum_rainbow_prism']);
+const SLUGS = RAW_SLUGS.filter(s => !LIGHT_KEYWORDS.test(s) && !MANUAL_EXCLUDE.has(s));
 let nodes = [];
 
 // Telekinetic phase timing: deck -> monotonic expansion (no pulse retract) -> grid spread
-const HOVER_START = 0.08;  // deck begins to energize
-const HOVER_END   = 0.22;  // expansion completes; grid spread starts immediately after
+const HOVER_START = 0.08, HOVER_END = 0.22;
 
 function humanize(slug){ return slug.replace(/^xela[_-]?/, '').replace(/_/g,' '); }
 function pathFor(slug){ return `../screenshots-vscode/${slug}/${slug}-1-code.png`; }
 
 function buildImages(){
-  isoGroup.innerHTML = SLUGS.map((s,i)=>`<img class="cardImg" data-i='${i}' src='${pathFor(s)}' alt='${humanize(s)} theme preview' loading='lazy' decoding='async' />`).join('');
+  const base = SLUGS.map((s,i)=>`<img class=\"cardImg\" data-slug='${s}' data-i='${i}' src='${pathFor(s)}' alt='${humanize(s)} theme preview' loading='lazy' decoding='async' />`);
+  const EXTRA = 10; // still add 10 more dark images (duplicates acceptable)
+  const darkPool = [...SLUGS];
+  const clones = [];
+  for(let c=0;c<EXTRA;c++){
+    const slug = darkPool[c % darkPool.length];
+    clones.push(`<img class=\"cardImg\" data-clone='1' data-slug='${slug}' data-i='${SLUGS.length + c}' src='${pathFor(slug)}' alt='${humanize(slug)} theme preview duplicate' loading='lazy' decoding='async' />`);
+  }
+  isoGroup.innerHTML = base.concat(clones).join('');
   nodes = [...isoGroup.querySelectorAll('.cardImg')];
+  // After load, analyze brightness and cull any bright images.
+  filterByBrightness();
 }
 
-const clamp = (v,min,max) => v < min ? min : v > max ? max : v;
+const clamp = (v,min,max)=>v<min?min:v>max?max:v;
+function computeSpread(p){ if(p <= HOVER_START) return 0; if(p >= HOVER_END) return clamp((p - HOVER_END)/(1 - HOVER_END),0,1); return 0; }
 
 function layoutImages(){
   if(!nodes.length) return;
-  const cols = 4;
-  const spacingBase = 260;
-
-  // Grid spread (after expansion completes)
-  let spread;
-  if(progress <= HOVER_START){
-    spread = 0;
-  } else if(progress >= HOVER_END){
-    spread = (progress - HOVER_END) / (1 - HOVER_END);
-  } else {
-    spread = 0; // still stacked during expansion
-  }
-  spread = clamp(spread,0,1);
-
-  // Monotonic deck expansion factor 0->1 (ease-out) then held
+  const cols=4, spacingBase=260;
+  const spread=computeSpread(progress);
   let deckExpFactor;
-  if(progress <= HOVER_START){
-    deckExpFactor = 0;
-  } else if(progress < HOVER_END){
-    const t = (progress - HOVER_START) / (HOVER_END - HOVER_START);
-    deckExpFactor = 1 - Math.pow(1 - t, 2); // easeOutQuad
-  } else {
-    deckExpFactor = 1; // hold max until spread takes over
-  }
-
+  if(progress<=HOVER_START) deckExpFactor=0;
+  else if(progress<HOVER_END){ const t=(progress-HOVER_START)/(HOVER_END-HOVER_START); deckExpFactor=1-Math.pow(1-t,2);}
+  else deckExpFactor=1;
   nodes.forEach((el,i)=>{
-    const col = i % cols;
-    const row = (i / cols) | 0;
-    const colCenter = (cols - 1)/2;
-    const rows = Math.ceil(nodes.length / cols);
-    const rowCenter = (rows - 1)/2;
-
-    const gridX = (col - colCenter) * spacingBase * spread;
-    const gridY = (row - rowCenter) * spacingBase * 0.62 * spread;
-
-    const depthStagger = i * 5 * (0.4 + 0.6 * spread); // mild ordering depth (stable)
-    const overlapScale = 1 + 0.04 * (1 - spread);
-
-    el.style.transform = `translate3d(${gridX}px,${gridY}px,${depthStagger}px) scale(${overlapScale})`;
-    el.style.opacity = 1;
-
-    // Shadow deepens as expansion progresses (no retraction)
-    if(progress < HOVER_END){
-      const intens = 0.25 + 0.35 * deckExpFactor;
-      el.style.boxShadow = `0 18px 40px -18px rgba(0,0,0,${intens}),0 0 0 1px rgba(0,0,0,.08)`;
-    } else {
-      el.style.boxShadow = '0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08)';
-    }
+    const col=i%cols; const row=(i/cols)|0; const colCenter=(cols-1)/2; const rows=Math.ceil(nodes.length/cols); const rowCenter=(rows-1)/2;
+    const gridX=(col-colCenter)*spacingBase*spread; const gridY=(row-rowCenter)*spacingBase*0.62*spread; const depthStagger=i*5*(0.4+0.6*spread); const overlapScale=1+0.04*(1-spread);
+    el.style.transform=`translate3d(${gridX}px,${gridY}px,${depthStagger}px) scale(${overlapScale})`;
+    if(progress<HOVER_END){ const intens=0.25+0.35*deckExpFactor; el.style.boxShadow=`0 18px 40px -18px rgba(0,0,0,${intens}),0 0 0 1px rgba(0,0,0,.08)`;}
+    else { el.style.boxShadow='0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08)'; }
   });
-
-  // Deck (group) scale: persistent expansion * spread growth
-  const tiltComp = 1 - 0.35 * spread;
-  const deckExpansionScale = 1 + deckExpFactor * 0.18; // up to +18%, held
-  const baseSpreadScale = 1 + 0.15 * spread * tiltComp;
-  const finalScale = (baseSpreadScale * deckExpansionScale).toFixed(3);
-  isoGroup.style.setProperty('--scale', finalScale);
+  const tiltComp=1-0.35*spread; const deckExpansionScale=1+deckExpFactor*0.18; const baseSpreadScale=1+0.15*spread*tiltComp;
+  isoGroup.style.setProperty('--scale',(baseSpreadScale*deckExpansionScale).toFixed(3));
 }
 
 function applyIso(){
-  const t = progress;
-  const tiltX = 55 - 28 * t;
-  const tiltZ = -32 + 20 * t;
-  const lift  = (-40 * t) + 'px';
-  isoGroup.style.setProperty('--tiltX', tiltX + 'deg');
-  isoGroup.style.setProperty('--tiltZ', tiltZ + 'deg');
-  isoGroup.style.setProperty('--lift', lift);
+  const t=progress;
+  isoGroup.style.setProperty('--tiltX',(55-28*t)+'deg');
+  isoGroup.style.setProperty('--tiltZ',(-32+20*t)+'deg');
+  isoGroup.style.setProperty('--lift',(-40*t)+'px');
+  const spread=computeSpread(t);
+  if(spread>0){
+    const margin=120; const maxShiftX=(innerWidth/2)-margin; const maxShiftY=(innerHeight/2)-margin;
+    isoGroup.style.setProperty('--shiftX',(spread*maxShiftX)+'px');
+    isoGroup.style.setProperty('--shiftY',(spread*maxShiftY)+'px');
+  } else { isoGroup.style.setProperty('--shiftX','0px'); isoGroup.style.setProperty('--shiftY','0px'); }
+  document.documentElement.style.setProperty('--maskOpacity',spread.toFixed(3));
+  // Fade hero as spread progresses
+  const heroFade = 1 - spread*0.92; // nearly gone at full spread
+  document.documentElement.style.setProperty('--heroOpacity', heroFade.toFixed(3));
   layoutImages();
 }
 
-function frame(){
-  progress += (targetProgress - progress) * 0.12;
-  if (Math.abs(targetProgress - progress) < 0.0005) progress = targetProgress;
-  document.documentElement.style.setProperty('--progress', progress.toFixed(4));
-  applyIso();
-  if (progress !== targetProgress) {
-    requestAnimationFrame(frame);
-  } else {
-    animating = false;
-  }
-}
-function kick(){ if(!animating){ animating = true; requestAnimationFrame(frame);} }
+function frame(){ progress += (targetProgress-progress)*0.12; if(Math.abs(targetProgress-progress)<0.0005) progress=targetProgress; document.documentElement.style.setProperty('--progress',progress.toFixed(4)); applyIso(); if(progress!==targetProgress) requestAnimationFrame(frame); else animating=false; }
+function kick(){ if(!animating){ animating=true; requestAnimationFrame(frame);} }
+function onWheel(e){ e.preventDefault(); targetProgress=clamp(targetProgress+(e.deltaY*0.0012),0,1); kick(); }
+function onKey(e){ let step=0; switch(e.key){ case 'ArrowRight': case 'ArrowDown': step=0.05; break; case 'ArrowLeft': case 'ArrowUp': step=-0.05; break; case 'Home': targetProgress=0; break; case 'End': targetProgress=1; break; case 'PageDown': step=0.15; break; case 'PageUp': step=-0.15; break; default: return;} e.preventDefault(); if(step) targetProgress=clamp(targetProgress+step,0,1); kick(); }
+addEventListener('wheel',onWheel,{passive:false}); addEventListener('keydown',onKey); addEventListener('resize',()=>applyIso());
 
-function onWheel(e){
-  e.preventDefault();
-  targetProgress = clamp(targetProgress + (e.deltaY * 0.0012), 0, 1);
-  kick();
-}
-
-function onKey(e){
-  let step = 0;
-  switch(e.key){
-    case 'ArrowRight':
-    case 'ArrowDown': step = 0.05; break;
-    case 'ArrowLeft':
-    case 'ArrowUp': step = -0.05; break;
-    case 'Home': targetProgress = 0; break;
-    case 'End': targetProgress = 1; break;
-    case 'PageDown': step = 0.15; break;
-    case 'PageUp': step = -0.15; break;
-    default: return;
-  }
-  e.preventDefault();
-  if(step) targetProgress = clamp(targetProgress + step, 0, 1);
-  kick();
+// Runtime brightness filtering
+function filterByBrightness(){
+  const MAX_LUMA = 165; // threshold (0-255). Lower = stricter.
+  const samples = nodes.map(img=>new Promise(res=>{ if(img.complete) analyze(); else img.addEventListener('load', analyze, {once:true}); function analyze(){ try { const w=Math.min(120,img.naturalWidth||120); const h=Math.min(72,img.naturalHeight||72); if(!w||!h){ return res(); } const canvas=document.createElement('canvas'); canvas.width=w; canvas.height=h; const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0,w,h); const data=ctx.getImageData(0,0,w,h).data; let sum=0,count=0; for(let i=0;i<data.length;i+=16){ // subsample every 4px
+        const r=data[i], g=data[i+1], b=data[i+2]; sum += 0.2126*r + 0.7152*g + 0.0722*b; count++; }
+      const avg=sum/count; if(avg>MAX_LUMA){ img.remove(); }
+    } catch(e) { /* ignore cross-origin issues */ }
+    res(); }
+  }));
+  Promise.all(samples).then(()=>{ nodes=[...isoGroup.querySelectorAll('.cardImg')]; layoutImages(); });
 }
 
-addEventListener('wheel', onWheel, { passive:false });
-addEventListener('keydown', onKey);
-
-buildImages();
-applyIso(); // initial paint
+buildImages(); applyIso(); // initial paint
 </script>
 </body>
 </html>
