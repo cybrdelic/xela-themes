@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>XELA Landing — Reset Scaffold</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Reset minimal scaffold: multi-image isometric formation + empty transition timeline." />
+<style>
+  :root { --progress: 0; }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html,body { height:100%; }
+  body { font-family: system-ui, sans-serif; background:#fff; color:#111; overflow:hidden; }
+  main { position:fixed; inset:0; display:grid; place-items:center; perspective:1400px; perspective-origin:50% 55%; }
+  /* Isometric group */
+  #isoGroup { --tiltX:55deg; --tiltZ:-32deg; --lift:0px; --scale:1; position:relative; width:0; height:0; transform-style:preserve-3d; transition:transform .8s cubic-bezier(.22,1,.24,1); }
+  #isoGroup.isometric { transform: translateY(var(--lift)) rotateX(var(--tiltX)) rotateZ(var(--tiltZ)) scale(var(--scale)); }
+  .cardImg { position:absolute; top:0; left:0; width:220px; height:136px; object-fit:cover; border-radius:0; box-shadow:0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08); transform-style:preserve-3d; background:#f2f4f7; }
+  .cardImg::selection { background:#2563eb; color:#fff; }
+  /* Spread / overlap states tuned via progress */
+  .cardImg { transition:box-shadow .6s cubic-bezier(.22,1,.24,1), border-radius .6s cubic-bezier(.22,1,.24,1); }
+  /* Simple visual debug of progress (hidden by default) */
+  #progressBar { position:fixed; left:0; bottom:0; height:4px; width:calc(var(--progress)*100%); background:linear-gradient(90deg,#2563eb,#3b82f6); pointer-events:none; opacity:.35; transition:width .15s linear; }
+</style>
+</head>
+<body>
+<main>
+  <!-- Multi-image isometric formation -->
+  <div id="isoGroup" class="isometric" aria-label="XELA theme previews"></div>
+</main>
+<div id="progressBar" aria-hidden="true"></div>
+<script>
+// Multi-image isometric formation + empty transition timeline
+let progress = 0;          // current eased progress (0..1)
+let targetProgress = 0;    // target progress updated by input
+let animating = false;
+
+const isoGroup = document.getElementById('isoGroup');
+const SLUGS = [
+  'xela_dark_balanced_dark',
+  'xela_amoled_pure_black_max',
+  'xela_neon_noir_cyber_noir',
+  'xela_holographic_spectrum_rainbow_prism',
+  'xela_cyberpunk_2077_night_city',
+  'xela_retrowave_synthesis_neon_dreams',
+  'xela_iridescence_prismatic_black',
+  'xela_matrix_rain_hyperphosphor_cascade',
+  'xela_neural_network_ai_synapses',
+  'xela_proto_grid_early_wireframe_ux',
+  'xela_plasma_storm_electric_current'
+];
+let nodes = [];
+
+function humanize(slug){ return slug.replace(/^xela[_-]?/, '').replace(/_/g,' '); }
+function pathFor(slug){ return `../screenshots-vscode/${slug}/${slug}-1-code.png`; }
+
+function buildImages(){
+  isoGroup.innerHTML = SLUGS.map((s,i)=>`<img class="cardImg" data-i='${i}' src='${pathFor(s)}' alt='${humanize(s)} theme preview' loading='lazy' decoding='async' />`).join('');
+  nodes = [...isoGroup.querySelectorAll('.cardImg')];
+}
+
+const clamp = (v,min,max) => v < min ? min : v > max ? max : v;
+
+function layoutImages(){
+  if(!nodes.length) return;
+  const cols = 4; // formation columns
+  const spacingBase = 260; // base spacing before progress scaling
+  const spread = progress; // 0 overlapped, 1 fully spread
+  const tiltComp = 1 - 0.35 * spread;
+
+  nodes.forEach((el,i)=>{
+    const col = i % cols;
+    const row = (i / cols) | 0;
+    const colCenter = (cols - 1)/2;
+    const rows = Math.ceil(nodes.length / cols);
+    const rowCenter = (rows - 1)/2;
+    const x = (col - colCenter) * spacingBase * spread;
+    const y = (row - rowCenter) * spacingBase * 0.62 * spread;
+    const depthStagger = i * 6 * (0.4 + 0.6 * spread);
+    const overlapScale = 1 + 0.04 * (1 - spread);
+    el.style.transform = `translate3d(${x}px,${y}px,${depthStagger}px) scale(${overlapScale})`;
+    // Removed dynamic border radius; remain square
+    el.style.opacity = 1;
+    el.style.zIndex = 100 + i;
+  });
+
+  // adjust group scale slightly as it spreads
+  isoGroup.style.setProperty('--scale', (1 + 0.15 * spread * tiltComp).toFixed(3));
+}
+
+function applyIso(){
+  // Map progress to group tilt & lift
+  const t = progress;
+  const tiltX = 55 - 28 * t;         // 55deg -> 27deg
+  const tiltZ = -32 + 20 * t;        // -32deg -> -12deg
+  const lift  = (-40 * t) + 'px';    // upward drift
+  isoGroup.style.setProperty('--tiltX', tiltX + 'deg');
+  isoGroup.style.setProperty('--tiltZ', tiltZ + 'deg');
+  isoGroup.style.setProperty('--lift', lift);
+  layoutImages();
+}
+
+function frame(){
+  progress += (targetProgress - progress) * 0.12; // easing
+  if (Math.abs(targetProgress - progress) < 0.0005) progress = targetProgress;
+  document.documentElement.style.setProperty('--progress', progress.toFixed(4));
+  applyIso();
+  if (progress !== targetProgress) {
+    requestAnimationFrame(frame);
+  } else {
+    animating = false;
+  }
+}
+function kick(){ if(!animating){ animating = true; requestAnimationFrame(frame);} }
+
+function onWheel(e){
+  e.preventDefault();
+  targetProgress = clamp(targetProgress + (e.deltaY * 0.0012), 0, 1);
+  kick();
+}
+
+function onKey(e){
+  let step = 0;
+  switch(e.key){
+    case 'ArrowRight':
+    case 'ArrowDown': step = 0.05; break;
+    case 'ArrowLeft':
+    case 'ArrowUp': step = -0.05; break;
+    case 'Home': targetProgress = 0; break;
+    case 'End': targetProgress = 1; break;
+    case 'PageDown': step = 0.15; break;
+    case 'PageUp': step = -0.15; break;
+    default: return;
+  }
+  e.preventDefault();
+  if(step) targetProgress = clamp(targetProgress + step, 0, 1);
+  kick();
+}
+
+addEventListener('wheel', onWheel, { passive:false });
+addEventListener('keydown', onKey);
+
+buildImages();
+applyIso(); // initial paint
+</script>
+</body>
+</html>

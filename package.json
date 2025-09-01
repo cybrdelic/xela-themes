@@ -157,6 +157,11 @@
         "path": "./themes/xela-brutalist-color-theme.json"
       },
       {
+        "label": "XELA Carbon Fiber — Technical Weave",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-carbon-fiber-color-theme.json"
+      },
+      {
         "label": "XELA Circuitboard — Soldermask Green",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-circuitboard-color-theme.json"
@@ -242,9 +247,19 @@
         "path": "./themes/xela-ink-color-theme.json"
       },
       {
+        "label": "XELA Inkwell Sepia — Vintage Manuscript",
+        "uiTheme": "vs",
+        "path": "./themes/xela-inkwell-sepia-color-theme.json"
+      },
+      {
         "label": "XELA Iridescence — Prismatic Black",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-iridescence-color-theme.json"
+      },
+      {
+        "label": "XELA Liminal Whiteout — Overexposed Minimal Field",
+        "uiTheme": "vs",
+        "path": "./themes/xela-liminal-whiteout-color-theme.json"
       },
       {
         "label": "XELA Matrix Rain — Hyperphosphor Cascade",
@@ -260,6 +275,11 @@
         "label": "XELA Monastic — Near‑Monochrome Focus",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-monastic-color-theme.json"
+      },
+      {
+        "label": "XELA Nebula Haze — Iridescent Fog",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-nebula-haze-color-theme.json"
       },
       {
         "label": "XELA Neon Noir — Cyber Noir",
@@ -295,6 +315,11 @@
         "label": "XELA Plasma Storm — Electric Current",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-plasma-storm-color-theme.json"
+      },
+      {
+        "label": "XELA Proto Grid — Early Wireframe UX",
+        "uiTheme": "vs",
+        "path": "./themes/xela-proto-grid-color-theme.json"
       },
       {
         "label": "XELA Quantum Flux — Probability Waves",
