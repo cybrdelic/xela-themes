@@ -16,9 +16,7 @@
   #isoGroup.isometric { transform: translateY(var(--lift)) rotateX(var(--tiltX)) rotateZ(var(--tiltZ)) scale(var(--scale)); }
   .cardImg { position:absolute; top:0; left:0; width:220px; height:136px; object-fit:cover; border-radius:0; box-shadow:0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08); transform-style:preserve-3d; background:#f2f4f7; }
   .cardImg::selection { background:#2563eb; color:#fff; }
-  /* Spread / overlap states tuned via progress */
-  .cardImg { transition:box-shadow .6s cubic-bezier(.22,1,.24,1), border-radius .6s cubic-bezier(.22,1,.24,1); }
-  /* Simple visual debug of progress (hidden by default) */
+  .cardImg { transition:box-shadow .6s cubic-bezier(.22,1,.24,1), transform .8s cubic-bezier(.22,1,.24,1); }
   #progressBar { position:fixed; left:0; bottom:0; height:4px; width:calc(var(--progress)*100%); background:linear-gradient(90deg,#2563eb,#3b82f6); pointer-events:none; opacity:.35; transition:width .15s linear; }
 </style>
 </head>
@@ -30,8 +28,8 @@
 <div id="progressBar" aria-hidden="true"></div>
 <script>
 // Multi-image isometric formation + empty transition timeline
-let progress = 0;          // current eased progress (0..1)
-let targetProgress = 0;    // target progress updated by input
+let progress = 0;
+let targetProgress = 0;
 let animating = false;
 
 const isoGroup = document.getElementById('isoGroup');
@@ -50,6 +48,10 @@ const SLUGS = [
 ];
 let nodes = [];
 
+// Telekinetic phase timing: deck -> monotonic expansion (no pulse retract) -> grid spread
+const HOVER_START = 0.08;  // deck begins to energize
+const HOVER_END   = 0.22;  // expansion completes; grid spread starts immediately after
+
 function humanize(slug){ return slug.replace(/^xela[_-]?/, '').replace(/_/g,' '); }
 function pathFor(slug){ return `../screenshots-vscode/${slug}/${slug}-1-code.png`; }
 
@@ -62,10 +64,30 @@ const clamp = (v,min,max) => v < min ? min : v > max ? max : v;
 
 function layoutImages(){
   if(!nodes.length) return;
-  const cols = 4; // formation columns
-  const spacingBase = 260; // base spacing before progress scaling
-  const spread = progress; // 0 overlapped, 1 fully spread
-  const tiltComp = 1 - 0.35 * spread;
+  const cols = 4;
+  const spacingBase = 260;
+
+  // Grid spread (after expansion completes)
+  let spread;
+  if(progress <= HOVER_START){
+    spread = 0;
+  } else if(progress >= HOVER_END){
+    spread = (progress - HOVER_END) / (1 - HOVER_END);
+  } else {
+    spread = 0; // still stacked during expansion
+  }
+  spread = clamp(spread,0,1);
+
+  // Monotonic deck expansion factor 0->1 (ease-out) then held
+  let deckExpFactor;
+  if(progress <= HOVER_START){
+    deckExpFactor = 0;
+  } else if(progress < HOVER_END){
+    const t = (progress - HOVER_START) / (HOVER_END - HOVER_START);
+    deckExpFactor = 1 - Math.pow(1 - t, 2); // easeOutQuad
+  } else {
+    deckExpFactor = 1; // hold max until spread takes over
+  }
 
   nodes.forEach((el,i)=>{
     const col = i % cols;
@@ -73,26 +95,38 @@ function layoutImages(){
     const colCenter = (cols - 1)/2;
     const rows = Math.ceil(nodes.length / cols);
     const rowCenter = (rows - 1)/2;
-    const x = (col - colCenter) * spacingBase * spread;
-    const y = (row - rowCenter) * spacingBase * 0.62 * spread;
-    const depthStagger = i * 6 * (0.4 + 0.6 * spread);
+
+    const gridX = (col - colCenter) * spacingBase * spread;
+    const gridY = (row - rowCenter) * spacingBase * 0.62 * spread;
+
+    const depthStagger = i * 5 * (0.4 + 0.6 * spread); // mild ordering depth (stable)
     const overlapScale = 1 + 0.04 * (1 - spread);
-    el.style.transform = `translate3d(${x}px,${y}px,${depthStagger}px) scale(${overlapScale})`;
-    // Removed dynamic border radius; remain square
+
+    el.style.transform = `translate3d(${gridX}px,${gridY}px,${depthStagger}px) scale(${overlapScale})`;
     el.style.opacity = 1;
-    el.style.zIndex = 100 + i;
+
+    // Shadow deepens as expansion progresses (no retraction)
+    if(progress < HOVER_END){
+      const intens = 0.25 + 0.35 * deckExpFactor;
+      el.style.boxShadow = `0 18px 40px -18px rgba(0,0,0,${intens}),0 0 0 1px rgba(0,0,0,.08)`;
+    } else {
+      el.style.boxShadow = '0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08)';
+    }
   });
 
-  // adjust group scale slightly as it spreads
-  isoGroup.style.setProperty('--scale', (1 + 0.15 * spread * tiltComp).toFixed(3));
+  // Deck (group) scale: persistent expansion * spread growth
+  const tiltComp = 1 - 0.35 * spread;
+  const deckExpansionScale = 1 + deckExpFactor * 0.18; // up to +18%, held
+  const baseSpreadScale = 1 + 0.15 * spread * tiltComp;
+  const finalScale = (baseSpreadScale * deckExpansionScale).toFixed(3);
+  isoGroup.style.setProperty('--scale', finalScale);
 }
 
 function applyIso(){
-  // Map progress to group tilt & lift
   const t = progress;
-  const tiltX = 55 - 28 * t;         // 55deg -> 27deg
-  const tiltZ = -32 + 20 * t;        // -32deg -> -12deg
-  const lift  = (-40 * t) + 'px';    // upward drift
+  const tiltX = 55 - 28 * t;
+  const tiltZ = -32 + 20 * t;
+  const lift  = (-40 * t) + 'px';
   isoGroup.style.setProperty('--tiltX', tiltX + 'deg');
   isoGroup.style.setProperty('--tiltZ', tiltZ + 'deg');
   isoGroup.style.setProperty('--lift', lift);
@@ -100,7 +134,7 @@ function applyIso(){
 }
 
 function frame(){
-  progress += (targetProgress - progress) * 0.12; // easing
+  progress += (targetProgress - progress) * 0.12;
   if (Math.abs(targetProgress - progress) < 0.0005) progress = targetProgress;
   document.documentElement.style.setProperty('--progress', progress.toFixed(4));
   applyIso();
