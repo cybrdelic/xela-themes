@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="description" content="Reset minimal scaffold: multi-image isometric formation + empty transition timeline." />
 <style>
-  :root { --progress: 0; --maskOpacity:0; --heroOpacity:1; }
+  :root { --progress: 0; --maskOpacity:0; --heroOpacity:1; --floorOpacity:0; --groundShadow:0; }
   * { box-sizing: border-box; margin:0; padding:0; }
   html,body { height:100%; }
   body { font-family: system-ui, sans-serif; background:#fff; color:#111; overflow:hidden; }
@@ -16,7 +16,9 @@
   #isoGroup.isometric { transform: translate(var(--shiftX), var(--shiftY)) translateY(var(--lift)) rotateX(var(--tiltX)) rotateZ(var(--tiltZ)) scale(var(--scale)); }
   .cardImg { position:absolute; top:0; left:0; width:220px; height:136px; object-fit:cover; border-radius:0; box-shadow:0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08); transform-style:preserve-3d; background:#111; }
   .cardImg::selection { background:#2563eb; color:#fff; }
-  .cardImg { transition:box-shadow .6s cubic-bezier(.22,1,.24,1), transform .8s cubic-bezier(.22,1,.24,1), opacity .4s ease; }
+  .cardImg { transition:box-shadow .45s cubic-bezier(.22,1,.24,1), transform .8s cubic-bezier(.22,1,.24,1), opacity .4s ease; }
+  /* Added physically-inspired ground shadow ellipse per card */
+  .cardImg::after { content:""; position:absolute; left:50%; top:100%; width:100%; height:70%; transform:translate(-50%,-10%) scale(1.18,.52); background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.38) 0%,rgba(0,0,0,.28) 20%,rgba(0,0,0,0) 72%); opacity:var(--groundShadow); filter:blur(14px); pointer-events:none; transition:opacity .6s cubic-bezier(.22,1,.24,1); mix-blend-mode:multiply; }
   #progressBar { position:fixed; left:0; bottom:0; height:4px; width:calc(min(var(--progress),1)*100%); background:linear-gradient(90deg,#2563eb,#3b82f6); pointer-events:none; opacity:.35; transition:width .15s linear; }
   /* Gradient mask overlay fading edges as grid settles bottom-right */
   #gradientMask { position:fixed; inset:0; pointer-events:none; z-index:10; background:radial-gradient(at 80% 80%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 46%, rgba(255,255,255,.55) 72%, #fff 90%); opacity:var(--maskOpacity); transition:opacity .9s cubic-bezier(.22,1,.24,1); }
@@ -26,6 +28,36 @@
   #hero h1::after { content:""; position:absolute; inset:0; background:linear-gradient(160deg,rgba(255,255,255,.35),rgba(255,255,255,0) 55%); mix-blend-mode:overlay; pointer-events:none; }
   #hero p { margin-top:1.2rem; font-size:clamp(.9rem,1.4vw,1.15rem); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#222; text-shadow:0 2px 6px rgba(0,0,0,.08); }
   #hero { opacity:var(--heroOpacity); transition:opacity .9s cubic-bezier(.22,1,.24,1); }
+  /* Floor grid plane (fades in during arc phase) */
+  #floorGrid { position:fixed; inset:0; pointer-events:none; z-index:1; mix-blend-mode:multiply; opacity:var(--floorOpacity); transition:opacity .9s ease; }
+  #floorGrid::before { content:""; position:absolute; left:50%; top:50%; width:220vmax; height:220vmax; transform:translate(-50%,-50%) rotateX(90deg) translateZ(-240px) rotateZ(0deg); background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,0.04) 0 2px,transparent 2px 120px),
+      repeating-linear-gradient(0deg,rgba(0,0,0,0.04) 0 2px,transparent 2px 120px),
+      radial-gradient(circle at 50% 50%,rgba(0,0,0,0.18),rgba(0,0,0,0.55));
+    filter:blur(3px) saturate(.9) contrast(1.05);
+    mask:radial-gradient(circle at 50% 50%,rgba(0,0,0,1) 0%,rgba(0,0,0,.85) 25%,rgba(0,0,0,.5) 55%,rgba(0,0,0,0) 75%);
+  }
+  /* Ambient procedural noise + vignette */
+  #noiseOverlay { position:fixed; inset:-10%; pointer-events:none; z-index:11; background:
+      radial-gradient(circle at 50% 65%,rgba(0,0,0,0) 0%,rgba(0,0,0,.04) 60%,rgba(0,0,0,.10) 85%),
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYV2NkYGD4z0AEMFGImBpgYGBg+M+ABBgYCA0GAAAMcQEDb4uImQAAAABJRU5ErkJggg==');
+    background-size:100% 100%, 160px 160px; mix-blend-mode:multiply; opacity:.55; animation:noisePulse 6s linear infinite; }
+  @keyframes noisePulse { 0%,100%{opacity:.52} 50%{opacity:.60} }
+  #inspectOverlay { position:fixed; inset:0; background:rgba(255,255,255,0.86); backdrop-filter:saturate(1.2) blur(18px); -webkit-backdrop-filter:saturate(1.2) blur(18px); display:none; align-items:center; justify-content:center; z-index:30; overflow:hidden; }
+  #inspectOverlay.active { display:flex; animation:fadeIn .5s ease; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  #inspectInner { max-width:92vw; max-height:84vh; position:relative; display:grid; gap:1.4rem; grid-template-columns:minmax(0,1fr) 260px; align-items:start; font-family:system-ui,sans-serif; }
+  #inspectImgWrap { position:relative; box-shadow:0 28px 68px -32px rgba(0,0,0,.35),0 4px 18px -6px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08); background:#111; }
+  #inspectImg { display:block; max-width:100%; height:auto; image-rendering:auto; }
+  #inspectMeta { font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:#222; }
+  #inspectMeta h2 { font-size:1.1rem; letter-spacing:.04em; margin:0 0 .75rem; font-weight:700; text-transform:none; color:#111; }
+  #palette { display:flex; gap:6px; margin:.75rem 0 1.25rem; }
+  #palette span { flex:1; height:32px; border:1px solid rgba(0,0,0,.08); box-shadow:inset 0 0 0 1px rgba(255,255,255,.12); }
+  #closeInspect { position:absolute; top:-48px; right:0; background:#111; color:#fff; border:0; font-size:.65rem; padding:.55rem .8rem; letter-spacing:.12em; cursor:pointer; font-weight:600; box-shadow:0 6px 18px -6px rgba(0,0,0,.4); }
+  #closeInspect:hover { background:#2563eb; }
+  #inspectHint { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); font:500 .65rem system-ui,sans-serif; letter-spacing:.12em; color:#222; opacity:.55; pointer-events:none; }
+  /* Spotlight reel dimming helper */
+  .cardImg[data-dim='1'] { filter:grayscale(.35) brightness(.82) contrast(.9); }
 </style>
 </head>
 <body>
@@ -39,14 +71,37 @@
   <!-- Multi-image isometric formation -->
   <div id="isoGroup" class="isometric" aria-label="XELA theme previews"></div>
 </main>
+<div id="floorGrid" aria-hidden="true"></div>
 <div id="gradientMask" aria-hidden="true"></div>
 <div id="progressBar" aria-hidden="true"></div>
+<div id="noiseOverlay" aria-hidden="true"></div>
+<div id="inspectOverlay" aria-hidden="true">
+  <div id="inspectInner" role="dialog" aria-modal="true" aria-label="Theme detail view">
+    <div id="inspectImgWrap"><img id="inspectImg" alt="Expanded theme preview" /></div>
+    <div id="inspectMeta">
+      <button id="closeInspect" aria-label="Close detail view (Esc)">CLOSE ✕</button>
+      <h2 id="inspectTitle"></h2>
+      <div id="palette" aria-label="Extracted palette swatches"></div>
+      <p id="inspectCaption"></p>
+      <div style="margin-top:1.75rem;font-size:.7rem;opacity:.55;line-height:1.4">Press ← → to browse • Esc to exit</div>
+    </div>
+    <div id="inspectHint">Click outside or press Esc to close</div>
+  </div>
+</div>
 <script>
-// Phase 1 (deck -> spread) + Phase 2 (arc curvature only). Light theme fly-in removed.
+// Phase 1 (deck -> spread) + Phase 2 (arc curvature only). Spotlight removed.
 let progress = 0, targetProgress = 0, animating = false;
-const MAX_PROGRESS = 2; // keep extended timeline for potential future phases
+const MAX_PROGRESS = 2.0; // unchanged upper bound
+// (Removed spotlight constants)
 const isoGroup = document.getElementById('isoGroup');
-const heroEl = document.getElementById('hero');
+// Inspection overlay elements
+const inspectOverlay = document.getElementById('inspectOverlay');
+const inspectImg = document.getElementById('inspectImg');
+const inspectTitle = document.getElementById('inspectTitle');
+const inspectCaption = document.getElementById('inspectCaption');
+const paletteEl = document.getElementById('palette');
+const closeBtn = document.getElementById('closeInspect');
+let inspectionOpen = false; let currentIndex = -1; // spotlight variables removed
 const RAW_SLUGS = [
   'xela_dark_balanced_dark',
   'xela_amoled_pure_black_max',
@@ -66,6 +121,11 @@ const SLUGS = RAW_SLUGS.filter(s => !LIGHT_KEYWORDS.test(s) && !MANUAL_EXCLUDE.h
 let nodes = [];
 // Phase 1 timings
 const HOVER_START = 0.08, HOVER_END = 0.22;
+const prefersDark = matchMedia('(prefers-color-scheme: dark)');
+let scheme = prefersDark.matches ? 'dark' : 'light';
+prefersDark.addEventListener('change', e=>{ scheme = e.matches ? 'dark':'light'; layoutImages(); });
+// Directional light approximation (for layered shadows)
+const LIGHT_DIR = { x: -0.42, y: 0.78 }; // screen-space direction (from top-left)
 function humanize(slug){ return slug.replace(/^xela[_-]?/, '').replace(/_/g,' '); }
 function pathFor(slug){ return `../screenshots-vscode/${slug}/${slug}-1-code.png`; }
 function buildImages(){
@@ -80,6 +140,7 @@ function buildImages(){
   isoGroup.innerHTML = base.concat(clones).join('');
   nodes = [...isoGroup.querySelectorAll('.cardImg')];
   filterByBrightness();
+  attachCardEvents();
 }
 const clamp = (v,min,max)=>v<min?min:v>max?max:v;
 function easeOutQuad(t){ return 1-(1-t)*(1-t); }
@@ -88,6 +149,7 @@ function layoutImages(){
   if(!nodes.length) return;
   const p1 = Math.min(progress,1);
   const p2 = progress>1 ? progress-1 : 0; // arc phase progress
+  // Spotlight removed; always full opacity & no extra lift
   const cols=4, spacingBase=260;
   const spread=computeSpread(p1);
   let deckExpFactor;
@@ -95,6 +157,8 @@ function layoutImages(){
   const arcFactor = easeOutQuad(clamp(p2,0,1));
   const baseAngleDeg = 11;
   const radius = 900;
+  const groundShadow = clamp(deckExpFactor*0.45 + spread*0.35 + arcFactor*0.4, 0, 0.65).toFixed(3);
+  document.documentElement.style.setProperty('--groundShadow', groundShadow);
   nodes.forEach((el,i)=>{
     const col=i%cols; const row=(i/cols)|0; const colCenter=(cols-1)/2; const rows=Math.ceil(nodes.length/cols); const rowCenter=(rows-1)/2;
     const gridXBase=(col-colCenter)*spacingBase*spread;
@@ -110,11 +174,32 @@ function layoutImages(){
       zArc = (1 - Math.cos(angleRad)) * radius * 0.18 * arcFactor;
       rotY = angleDeg * 0.85;
     }
-    el.style.transform=`translate3d(${gridXBase + xArc}px,${gridYBase}px,${depthStagger + zArc}px) rotateY(${rotY}deg) scale(${overlapScale})`;
-    if(p1<HOVER_END){ const intens=0.25+0.35*deckExpFactor; el.style.boxShadow=`0 18px 40px -18px rgba(0,0,0,${intens}),0 0 0 1px rgba(0,0,0,.08)`;} else { el.style.boxShadow='0 14px 34px -18px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.08)'; }
+    const transform=`translate3d(${gridXBase + xArc}px,${gridYBase}px,${depthStagger + zArc}px) rotateY(${rotY}deg) scale(${overlapScale})`;
+    el.style.transform = transform;
+    el.style.opacity = 1;
+    el.dataset.dim='0';
+    // Layered shadow model: ambient + mid + crisp directional
+    const schemeMul = scheme==='dark'?1.35:1;
+    const depthFactor = 1 + (i*0.007);
+    const spreadLift = 0.3 + 0.7*deckExpFactor;
+    const arcLift = 0.2 + 0.8*arcFactor;
+    const baseIntens = 0.18 * schemeMul;
+    const ambientOpacity = (baseIntens + 0.25*spreadLift + 0.15*arcLift) * depthFactor;
+    const midOpacity = ambientOpacity * (0.75 + 0.25*deckExpFactor);
+    const dirOpacity = 0.55 * (deckExpFactor*0.6 + 0.4) * schemeMul;
+    const offsetScale = 18 + 40*spread + 30*arcFactor;
+    const offX = (LIGHT_DIR.x * offsetScale).toFixed(2);
+    const offY = (LIGHT_DIR.y * offsetScale).toFixed(2);
+    const offXMid = (LIGHT_DIR.x * offsetScale * 0.55).toFixed(2);
+    const offYMid = (LIGHT_DIR.y * offsetScale * 0.55).toFixed(2);
+    const offXDir = (LIGHT_DIR.x * (offsetScale*0.35 + 10)).toFixed(2);
+    const offYDir = (LIGHT_DIR.y * (offsetScale*0.35 + 10)).toFixed(2);
+    el.style.boxShadow = `\n      ${offX}px ${offY}px ${42+40*spread}px -18px rgba(0,0,0,${ambientOpacity.toFixed(3)}),\n      ${offXMid}px ${offYMid}px ${26+24*spread}px -12px rgba(0,0,0,${midOpacity.toFixed(3)}),\n      ${offXDir}px ${offYDir}px ${14+10*spread}px -6px rgba(0,0,0,${dirOpacity.toFixed(3)}),\n      0 0 0 1px rgba(0,0,0,.08)`;
   });
   const tiltComp=1-0.35*spread; const deckExpansionScale=1+deckExpFactor*0.18; const baseSpreadScale=1+0.15*spread*tiltComp; const arcScaleBoost = 1 + arcFactor*0.12;
   isoGroup.style.setProperty('--scale',(baseSpreadScale*deckExpansionScale*arcScaleBoost).toFixed(3));
+  document.documentElement.style.setProperty('--floorOpacity',(arcFactor*0.55).toFixed(3));
+  // Hero fades only with spread now (no spotlight hide)
 }
 function applyIso(){
   const p1 = Math.min(progress,1); const p2 = progress>1 ? progress-1 : 0; const spread=computeSpread(p1);
@@ -127,27 +212,122 @@ function applyIso(){
     isoGroup.style.setProperty('--shiftX',(spread*maxShiftX*recenter)+'px');
     isoGroup.style.setProperty('--shiftY',(spread*maxShiftY*recenter)+'px');
   } else { isoGroup.style.setProperty('--shiftX','0px'); isoGroup.style.setProperty('--shiftY','0px'); }
-  document.documentElement.style.setProperty('--maskOpacity',spread.toFixed(3));
-  const heroFade = 1 - spread*0.92; document.documentElement.style.setProperty('--heroOpacity', heroFade.toFixed(3));
+  const heroFade = 1 - computeSpread(p1)*0.92; document.documentElement.style.setProperty('--heroOpacity', heroFade.toFixed(3));
+  document.documentElement.style.setProperty('--maskOpacity',computeSpread(p1).toFixed(3));
   layoutImages();
 }
-function frame(){
-  progress += (targetProgress-progress)*0.12;
-  if(Math.abs(targetProgress-progress)<0.0005) progress=targetProgress;
-  document.documentElement.style.setProperty('--progress',progress.toFixed(4));
-  applyIso();
-  if(progress!==targetProgress) requestAnimationFrame(frame); else animating=false;
-}
-function kick(){ if(!animating){ animating=true; requestAnimationFrame(frame);} }
-function onWheel(e){ e.preventDefault(); targetProgress=clamp(targetProgress+(e.deltaY*0.0012),0,MAX_PROGRESS); kick(); }
-function onKey(e){ let step=0; switch(e.key){ case 'ArrowRight': case 'ArrowDown': step=0.05; break; case 'ArrowLeft': case 'ArrowUp': step=-0.05; break; case 'Home': targetProgress=0; break; case 'End': targetProgress=MAX_PROGRESS; break; case 'PageDown': step=0.15; break; case 'PageUp': step=-0.15; break; default: return;} e.preventDefault(); if(step) targetProgress=clamp(targetProgress+step,0,MAX_PROGRESS); kick(); }
-addEventListener('wheel',onWheel,{passive:false}); addEventListener('keydown',onKey); addEventListener('resize',()=>applyIso());
+// Remove key handler dependency on spotlight (Enter shortcut now opens first card)
+addEventListener('keydown', e=>{ if(!inspectionOpen){ if(e.key==='Enter'){ const first = nodes[0]; if(first) openInspection(first);} return;} if(e.key==='Escape'){ closeInspection(); } else if(e.key==='ArrowRight'){ stepInspection(1); } else if(e.key==='ArrowLeft'){ stepInspection(-1); } });
+
+// ==== Restored missing logic that prevented rendering ====
 function filterByBrightness(){
-  const MAX_LUMA = 165;
-  const samples = nodes.map(img=>new Promise(res=>{ if(img.complete) analyze(); else img.addEventListener('load', analyze, {once:true}); function analyze(){ try { const w=Math.min(120,img.naturalWidth||120); const h=Math.min(72,img.naturalHeight||72); if(!w||!h){ return res(); } const canvas=document.createElement('canvas'); canvas.width=w; canvas.height=h; const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0,w,h); const data=ctx.getImageData(0,0,w,h).data; let sum=0,count=0; for(let i=0;i<data.length;i+=16){ const r=data[i], g=data[i+1], b=data[i+2]; sum += 0.2126*r + 0.7152*g + 0.0722*b; count++; } const avg=sum/count; if(avg>MAX_LUMA){ img.remove(); } } catch(e) {} res(); } }));
-  Promise.all(samples).then(()=>{ nodes=[...isoGroup.querySelectorAll('.cardImg')]; layoutImages(); });
+  // Simple brightness filter; images may not be loaded yet so attach onload
+  nodes.forEach(img => {
+    if(img.complete) analyze(img); else img.addEventListener('load', ()=>analyze(img), { once:true });
+  });
+  function analyze(img){
+    try {
+      const w = img.naturalWidth, h = img.naturalHeight;
+      if(!w||!h) return;
+      const canvas = document.createElement('canvas'); canvas.width=32; canvas.height=32;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img,0,0,32,32);
+      const data = ctx.getImageData(0,0,32,32).data;
+      let sum=0, count=0;
+      for(let i=0;i<data.length;i+=4){ const r=data[i],g=data[i+1],b=data[i+2]; const l=0.2126*r+0.7152*g+0.0722*b; sum+=l; count++; }
+      const avg = sum/count/255; // 0..1
+      if(avg>0.58){ // too bright -> remove
+        img.style.display='none';
+      }
+    } catch(err){ /* ignore CORS or draw errors */ }
+  }
 }
-buildImages(); applyIso(); // initial paint
+function openInspection(node){
+  currentIndex = nodes.indexOf(node);
+  if(currentIndex<0) return;
+  inspectionOpen = true;
+  inspectOverlay.classList.add('active');
+  updateInspection();
+}
+function closeInspection(){
+  inspectionOpen = false;
+  inspectOverlay.classList.remove('active');
+  currentIndex=-1;
+}
+function stepInspection(dir){
+  if(!inspectionOpen) return;
+  const visible = nodes.filter(n=>n.style.display!=='none');
+  const currentVisibleIndex = visible.indexOf(nodes[currentIndex]);
+  let next = (currentVisibleIndex + dir + visible.length) % visible.length;
+  currentIndex = nodes.indexOf(visible[next]);
+  updateInspection();
+}
+function extractPalette(img){
+  const canvas=document.createElement('canvas'); const ctx=canvas.getContext('2d');
+  const w=img.naturalWidth, h=img.naturalHeight; if(!w||!h) return [];
+  const size=80; canvas.width=size; canvas.height=size; ctx.drawImage(img,0,0,size,size);
+  const data=ctx.getImageData(0,0,size,size).data; const buckets={};
+  for(let i=0;i<data.length;i+=16){ // skip for speed
+    const r=data[i],g=data[i+1],b=data[i+2];
+    const key = `${(r/32)|0}-${(g/32)|0}-${(b/32)|0}`;
+    const l = 0.2126*r+0.7152*g+0.0722*b;
+    if(!buckets[key]) buckets[key]={r:0,g:0,b:0,c:0,l:0};
+    const bk=buckets[key]; bk.r+=r; bk.g+=g; bk.b+=b; bk.c++; bk.l+=l;
+  }
+  const arr = Object.values(buckets).map(b=>({ r:~~(b.r/b.c), g:~~(b.g/b.c), b:~~(b.b/b.c), l:b.l/b.c }));
+  arr.sort((a,b)=>b.l-a.l); // bright first
+  // take distinct by distance
+  const picks=[]; const distMin=80; outer: for(const c of arr){
+    for(const p of picks){ const dr=c.r-p.r,dg=c.g-p.g,db=c.b-p.b; if(dr*dr+dg*dg+db*db < distMin*distMin) continue outer; }
+    picks.push(c); if(picks.length===6) break;
+  }
+  return picks.map(c=>`rgb(${c.r},${c.g},${c.b})`);
+}
+function updateInspection(){
+  const node = nodes[currentIndex]; if(!node) return;
+  inspectImg.src = node.src; inspectTitle.textContent = humanize(node.dataset.slug||'theme');
+  inspectCaption.textContent = 'High focus dark theme variant.';
+  paletteEl.innerHTML='';
+  if(node.complete){ renderPalette(node); } else { node.addEventListener('load', ()=>renderPalette(node), { once:true }); }
+  function renderPalette(img){
+    const colors = extractPalette(img);
+    paletteEl.innerHTML = colors.map(c=>`<span style="background:${c}"></span>`).join('');
+  }
+}
+function attachCardEvents(){
+  isoGroup.addEventListener('click', e=>{
+    const img = e.target.closest('.cardImg'); if(!img) return; openInspection(img);
+  });
+  closeBtn.addEventListener('click', ()=>closeInspection());
+  inspectOverlay.addEventListener('click', e=>{ if(e.target===inspectOverlay) closeInspection(); });
+}
+function onWheel(e){
+  if(inspectionOpen) return; // freeze timeline while inspecting
+  const delta = e.deltaY || e.wheelDelta || (-e.detail);
+  const intent = delta>0 ? 1 : -1;
+  targetProgress = clamp(targetProgress + intent * 0.12, 0, MAX_PROGRESS);
+  document.documentElement.style.setProperty('--progress', targetProgress.toFixed(3));
+}
+let lastTouchY=null;
+function onTouchStart(e){ if(e.touches.length===1) lastTouchY = e.touches[0].clientY; }
+function onTouchMove(e){ if(lastTouchY==null) return; const y=e.touches[0].clientY; const dy= lastTouchY - y; lastTouchY = y; targetProgress = clamp(targetProgress + dy/600, 0, MAX_PROGRESS); document.documentElement.style.setProperty('--progress', targetProgress.toFixed(3)); }
+function onTouchEnd(){ lastTouchY=null; }
+function animate(){
+  if(Math.abs(targetProgress - progress) > 0.0005){
+    progress += (targetProgress - progress) * 0.085; // easing
+    applyIso();
+  }
+  requestAnimationFrame(animate);
+}
+// INIT
+buildImages();
+applyIso();
+addEventListener('wheel', onWheel, { passive:true });
+addEventListener('touchstart', onTouchStart, { passive:true });
+addEventListener('touchmove', onTouchMove, { passive:true });
+addEventListener('touchend', onTouchEnd, { passive:true });
+animate();
+// ========================================================
 </script>
 </body>
 </html>
