@@ -1,0 +1,74 @@
+{
+  // XELA Themes Development Environment Settings
+  // This provides a clean, optimized environment for theme development
+  
+  // Editor appearance optimized for theme development
+  "workbench.colorTheme": "XELA Black",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 14,
+  "editor.fontFamily": "'Cascadia Code', 'Fira Code', monospace",
+  "editor.fontLigatures": true,
+  
+  // File explorer optimizations
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  
+  // JSON editing for theme files
+  "json.schemas": [
+    {
+      "fileMatch": ["themes/*.json"],
+      "url": "vscode://schemas/color-theme"
+    }
+  ],
+  "json.format.enable": true,
+  "json.validate.enable": true,
+  
+  // Auto-save for faster iteration
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  
+  // Extension development specific
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "javascript.validate.enable": false,
+  
+  // Git integration
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  
+  // Terminal
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  
+  // Search exclusions for better performance
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.vscode-test-data": true,
+    "**/*.vsix": true,
+    "**/package-lock.json": true
+  },
+  
+  // File watcher exclusions
+  "files.watcherExclude": {
+    "**/.vscode-test-data/**": true,
+    "**/node_modules/**": true,
+    "**/*.vsix": true
+  },
+  
+  // Extension recommendations for this project
+  "extensions.showRecommendationsOnlyOnDemand": false,
+  
+  // Helpful for theme development
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  
+  // Color customizations to help during development
+  "workbench.colorCustomizations": {
+    "[XELA Black]": {
+      "editor.lineHighlightBackground": "#1a1a1a"
+    }
+  }
+}
