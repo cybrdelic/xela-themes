@@ -1,0 +1,2652 @@
+{
+  "generated": "2025-11-15T20:39:51.567Z",
+  "count": 54,
+  "themes": [
+    {
+      "id": "xela_amoled_pure_black_max",
+      "name": "Amoled Pure Black Max",
+      "slug": "xela_amoled_pure_black_max",
+      "screenshots": [
+        {
+          "filename": "xela_amoled_pure_black_max-1-code.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-2-html.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-3-markdown.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-4-search.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-5-suggest.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-6-terminal.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-7-settings.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_amoled_pure_black_max-8-command.png",
+          "path": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_amoled_pure_black_max/xela_amoled_pure_black_max-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_arctic_crystal_light",
+      "name": "Arctic Crystal Light",
+      "slug": "xela_arctic_crystal_light",
+      "screenshots": [
+        {
+          "filename": "xela_arctic_crystal_light-1-code.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-2-html.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-3-markdown.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-4-search.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-5-suggest.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-6-terminal.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-7-settings.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_arctic_crystal_light-8-command.png",
+          "path": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_arctic_crystal_light/xela_arctic_crystal_light-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_arctic_glass_crystal_light",
+      "name": "Arctic Glass Crystal Light",
+      "slug": "xela_arctic_glass_crystal_light",
+      "screenshots": [
+        {
+          "filename": "xela_arctic_glass_crystal_light-1-code.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-2-html.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-3-markdown.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-4-search.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-5-suggest.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-6-terminal.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-7-settings.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_arctic_glass_crystal_light-8-command.png",
+          "path": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_arctic_glass_crystal_light/xela_arctic_glass_crystal_light-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_aurora_borealis_northern_lights",
+      "name": "Aurora Borealis Northern Lights",
+      "slug": "xela_aurora_borealis_northern_lights",
+      "screenshots": [
+        {
+          "filename": "xela_aurora_borealis_northern_lights-1-code.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-2-html.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-3-markdown.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-4-search.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-5-suggest.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-6-terminal.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-7-settings.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_aurora_borealis_northern_lights-8-command.png",
+          "path": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_aurora_borealis_northern_lights/xela_aurora_borealis_northern_lights-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_bauhaus_primary_geometry",
+      "name": "Bauhaus Primary Geometry",
+      "slug": "xela_bauhaus_primary_geometry",
+      "screenshots": [
+        {
+          "filename": "xela_bauhaus_primary_geometry-1-code.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-2-html.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-3-markdown.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-4-search.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-5-suggest.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-6-terminal.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-7-settings.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_bauhaus_primary_geometry-8-command.png",
+          "path": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_bauhaus_primary_geometry/xela_bauhaus_primary_geometry-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_black",
+      "name": "Black",
+      "slug": "xela_black",
+      "screenshots": [
+        {
+          "filename": "xela_black-1-code.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_black-2-html.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_black-3-markdown.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_black-4-search.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_black-5-suggest.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_black-6-terminal.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_black-7-settings.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_black-8-command.png",
+          "path": "/screenshots-vscode/xela_black/xela_black-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_black/xela_black-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_blueprint_technical_drafting",
+      "name": "Blueprint Technical Drafting",
+      "slug": "xela_blueprint_technical_drafting",
+      "screenshots": [
+        {
+          "filename": "xela_blueprint_technical_drafting-1-code.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-2-html.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-3-markdown.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-4-search.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-5-suggest.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-6-terminal.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-7-settings.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_blueprint_technical_drafting-8-command.png",
+          "path": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_blueprint_technical_drafting/xela_blueprint_technical_drafting-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_borderless_minimal_chrome-less_focus",
+      "name": "Borderless Minimal Chrome-less Focus",
+      "slug": "xela_borderless_minimal_chrome-less_focus",
+      "screenshots": [
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-1-code.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-2-html.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-3-markdown.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-4-search.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-5-suggest.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-6-terminal.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-7-settings.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_borderless_minimal_chrome-less_focus-8-command.png",
+          "path": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_borderless_minimal_chrome-less_focus/xela_borderless_minimal_chrome-less_focus-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_brutalist_raw_concrete",
+      "name": "Brutalist Raw Concrete",
+      "slug": "xela_brutalist_raw_concrete",
+      "screenshots": [
+        {
+          "filename": "xela_brutalist_raw_concrete-1-code.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-2-html.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-3-markdown.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-4-search.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-5-suggest.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-6-terminal.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-7-settings.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_brutalist_raw_concrete-8-command.png",
+          "path": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_brutalist_raw_concrete/xela_brutalist_raw_concrete-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_carbon_fiber_technical_weave",
+      "name": "Carbon Fiber Technical Weave",
+      "slug": "xela_carbon_fiber_technical_weave",
+      "screenshots": [
+        {
+          "filename": "xela_carbon_fiber_technical_weave-1-code.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-2-html.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-3-markdown.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-4-search.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-5-suggest.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-6-terminal.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-7-settings.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_carbon_fiber_technical_weave-8-command.png",
+          "path": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_carbon_fiber_technical_weave/xela_carbon_fiber_technical_weave-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_circuitboard_soldermask_green",
+      "name": "Circuitboard Soldermask Green",
+      "slug": "xela_circuitboard_soldermask_green",
+      "screenshots": [
+        {
+          "filename": "xela_circuitboard_soldermask_green-1-code.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-2-html.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-3-markdown.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-4-search.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-5-suggest.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-6-terminal.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-7-settings.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_circuitboard_soldermask_green-8-command.png",
+          "path": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_circuitboard_soldermask_green/xela_circuitboard_soldermask_green-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_cosmic_aurora_stellar_dance",
+      "name": "Cosmic Aurora Stellar Dance",
+      "slug": "xela_cosmic_aurora_stellar_dance",
+      "screenshots": [
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-1-code.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-2-html.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-3-markdown.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-4-search.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-5-suggest.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-6-terminal.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-7-settings.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_cosmic_aurora_stellar_dance-8-command.png",
+          "path": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_cosmic_aurora_stellar_dance/xela_cosmic_aurora_stellar_dance-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_cosmic_void_event_horizon",
+      "name": "Cosmic Void Event Horizon",
+      "slug": "xela_cosmic_void_event_horizon",
+      "screenshots": [
+        {
+          "filename": "xela_cosmic_void_event_horizon-1-code.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-2-html.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-3-markdown.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-4-search.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-5-suggest.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-6-terminal.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-7-settings.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_cosmic_void_event_horizon-8-command.png",
+          "path": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_cosmic_void_event_horizon/xela_cosmic_void_event_horizon-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_crystalline_matrix_diamond_lattice",
+      "name": "Crystalline Matrix Diamond Lattice",
+      "slug": "xela_crystalline_matrix_diamond_lattice",
+      "screenshots": [
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-1-code.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-2-html.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-3-markdown.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-4-search.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-5-suggest.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-6-terminal.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-7-settings.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_crystalline_matrix_diamond_lattice-8-command.png",
+          "path": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_crystalline_matrix_diamond_lattice/xela_crystalline_matrix_diamond_lattice-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_cyberpunk_2077_night_city",
+      "name": "Cyberpunk 2077 Night City",
+      "slug": "xela_cyberpunk_2077_night_city",
+      "screenshots": [
+        {
+          "filename": "xela_cyberpunk_2077_night_city-1-code.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-2-html.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-3-markdown.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-4-search.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-5-suggest.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-6-terminal.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-7-settings.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_cyberpunk_2077_night_city-8-command.png",
+          "path": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_cyberpunk_2077_night_city/xela_cyberpunk_2077_night_city-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_dark_balanced_dark",
+      "name": "Dark Balanced Dark",
+      "slug": "xela_dark_balanced_dark",
+      "screenshots": [
+        {
+          "filename": "xela_dark_balanced_dark-1-code.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-2-html.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-3-markdown.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-4-search.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-5-suggest.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-6-terminal.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-7-settings.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_dark_balanced_dark-8-command.png",
+          "path": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_dark_balanced_dark/xela_dark_balanced_dark-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_deep_abyssal_bioluminescence",
+      "name": "Deep Abyssal Bioluminescence",
+      "slug": "xela_deep_abyssal_bioluminescence",
+      "screenshots": [
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-1-code.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-2-html.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-3-markdown.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-4-search.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-5-suggest.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-6-terminal.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-7-settings.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_deep_abyssal_bioluminescence-8-command.png",
+          "path": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_deep_abyssal_bioluminescence/xela_deep_abyssal_bioluminescence-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_digital_rain_data_cascade",
+      "name": "Digital Rain Data Cascade",
+      "slug": "xela_digital_rain_data_cascade",
+      "screenshots": [
+        {
+          "filename": "xela_digital_rain_data_cascade-1-code.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-2-html.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-3-markdown.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-4-search.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-5-suggest.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-6-terminal.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-7-settings.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_digital_rain_data_cascade-8-command.png",
+          "path": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_digital_rain_data_cascade/xela_digital_rain_data_cascade-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_e_ink_sepia_paper_light",
+      "name": "E Ink Sepia Paper Light",
+      "slug": "xela_e_ink_sepia_paper_light",
+      "screenshots": [
+        {
+          "filename": "xela_e_ink_sepia_paper_light-1-code.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-2-html.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-3-markdown.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-4-search.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-5-suggest.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-6-terminal.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-7-settings.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_e_ink_sepia_paper_light-8-command.png",
+          "path": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_e_ink_sepia_paper_light/xela_e_ink_sepia_paper_light-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_ethereal_mist_spirit_realm",
+      "name": "Ethereal Mist Spirit Realm",
+      "slug": "xela_ethereal_mist_spirit_realm",
+      "screenshots": [
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-1-code.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-2-html.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-3-markdown.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-4-search.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-5-suggest.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-6-terminal.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-7-settings.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_ethereal_mist_spirit_realm-8-command.png",
+          "path": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_ethereal_mist_spirit_realm/xela_ethereal_mist_spirit_realm-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_forest_cathedral_sacred_canopy",
+      "name": "Forest Cathedral Sacred Canopy",
+      "slug": "xela_forest_cathedral_sacred_canopy",
+      "screenshots": [
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-1-code.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-2-html.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-3-markdown.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-4-search.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-5-suggest.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-6-terminal.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-7-settings.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_forest_cathedral_sacred_canopy-8-command.png",
+          "path": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_forest_cathedral_sacred_canopy/xela_forest_cathedral_sacred_canopy-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_golden_horizon_sunset_blaze",
+      "name": "Golden Horizon Sunset Blaze",
+      "slug": "xela_golden_horizon_sunset_blaze",
+      "screenshots": [
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-1-code.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-2-html.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-3-markdown.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-4-search.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-5-suggest.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-6-terminal.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-7-settings.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_golden_horizon_sunset_blaze-8-command.png",
+          "path": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_golden_horizon_sunset_blaze/xela_golden_horizon_sunset_blaze-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_graph_paper_light_grid",
+      "name": "Graph Paper Light Grid",
+      "slug": "xela_graph_paper_light_grid",
+      "screenshots": [
+        {
+          "filename": "xela_graph_paper_light_grid-1-code.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-2-html.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-3-markdown.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-4-search.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-5-suggest.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-6-terminal.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-7-settings.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_graph_paper_light_grid-8-command.png",
+          "path": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_graph_paper_light_grid/xela_graph_paper_light_grid-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_holographic_dimensional_shift",
+      "name": "Holographic Dimensional Shift",
+      "slug": "xela_holographic_dimensional_shift",
+      "screenshots": [
+        {
+          "filename": "xela_holographic_dimensional_shift-1-code.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-2-html.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-3-markdown.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-4-search.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-5-suggest.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-6-terminal.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-7-settings.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_holographic_dimensional_shift-8-command.png",
+          "path": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_holographic_dimensional_shift/xela_holographic_dimensional_shift-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_holographic_spectrum_rainbow_prism",
+      "name": "Holographic Spectrum Rainbow Prism",
+      "slug": "xela_holographic_spectrum_rainbow_prism",
+      "screenshots": [
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-1-code.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-2-html.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-3-markdown.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-4-search.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-5-suggest.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-6-terminal.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-7-settings.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_holographic_spectrum_rainbow_prism-8-command.png",
+          "path": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_holographic_spectrum_rainbow_prism/xela_holographic_spectrum_rainbow_prism-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_hyperfocus_monochrome_cognitive_isolation",
+      "name": "Hyperfocus Monochrome Cognitive Isolation",
+      "slug": "xela_hyperfocus_monochrome_cognitive_isolation",
+      "screenshots": [
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-1-code.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-2-html.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-3-markdown.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-4-search.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-5-suggest.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-6-terminal.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-7-settings.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_hyperfocus_monochrome_cognitive_isolation-8-command.png",
+          "path": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_hyperfocus_monochrome_cognitive_isolation/xela_hyperfocus_monochrome_cognitive_isolation-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_ink_print_typography",
+      "name": "Ink Print Typography",
+      "slug": "xela_ink_print_typography",
+      "screenshots": [
+        {
+          "filename": "xela_ink_print_typography-1-code.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_ink_print_typography-2-html.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_ink_print_typography-3-markdown.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_ink_print_typography-4-search.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_ink_print_typography-5-suggest.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_ink_print_typography-6-terminal.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_ink_print_typography-7-settings.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_ink_print_typography-8-command.png",
+          "path": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_ink_print_typography/xela_ink_print_typography-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_inkwell_sepia_vintage_manuscript",
+      "name": "Inkwell Sepia Vintage Manuscript",
+      "slug": "xela_inkwell_sepia_vintage_manuscript",
+      "screenshots": [
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-1-code.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-2-html.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-3-markdown.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-4-search.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-5-suggest.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-6-terminal.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-7-settings.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_inkwell_sepia_vintage_manuscript-8-command.png",
+          "path": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_inkwell_sepia_vintage_manuscript/xela_inkwell_sepia_vintage_manuscript-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_iridescence_prismatic_black",
+      "name": "Iridescence Prismatic Black",
+      "slug": "xela_iridescence_prismatic_black",
+      "screenshots": [
+        {
+          "filename": "xela_iridescence_prismatic_black-1-code.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-2-html.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-3-markdown.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-4-search.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-5-suggest.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-6-terminal.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-7-settings.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_iridescence_prismatic_black-8-command.png",
+          "path": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_iridescence_prismatic_black/xela_iridescence_prismatic_black-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_liminal_whiteout_overexposed_minimal_field",
+      "name": "Liminal Whiteout Overexposed Minimal Field",
+      "slug": "xela_liminal_whiteout_overexposed_minimal_field",
+      "screenshots": [
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-1-code.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-2-html.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-3-markdown.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-4-search.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-5-suggest.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-6-terminal.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-7-settings.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_liminal_whiteout_overexposed_minimal_field-8-command.png",
+          "path": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_liminal_whiteout_overexposed_minimal_field/xela_liminal_whiteout_overexposed_minimal_field-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_matrix_rain_hyperphosphor_cascade",
+      "name": "Matrix Rain Hyperphosphor Cascade",
+      "slug": "xela_matrix_rain_hyperphosphor_cascade",
+      "screenshots": [
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-1-code.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-2-html.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-3-markdown.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-4-search.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-5-suggest.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-6-terminal.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-7-settings.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_matrix_rain_hyperphosphor_cascade-8-command.png",
+          "path": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_matrix_rain_hyperphosphor_cascade/xela_matrix_rain_hyperphosphor_cascade-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_midnight_cosmos_stellar_deep",
+      "name": "Midnight Cosmos Stellar Deep",
+      "slug": "xela_midnight_cosmos_stellar_deep",
+      "screenshots": [
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-1-code.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-2-html.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-3-markdown.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-4-search.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-5-suggest.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-6-terminal.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-7-settings.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_midnight_cosmos_stellar_deep-8-command.png",
+          "path": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_midnight_cosmos_stellar_deep/xela_midnight_cosmos_stellar_deep-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_monastic_near_monochrome_focus",
+      "name": "Monastic Near Monochrome Focus",
+      "slug": "xela_monastic_near_monochrome_focus",
+      "screenshots": [
+        {
+          "filename": "xela_monastic_near_monochrome_focus-1-code.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-2-html.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-3-markdown.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-4-search.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-5-suggest.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-6-terminal.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-7-settings.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_monastic_near_monochrome_focus-8-command.png",
+          "path": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_monastic_near_monochrome_focus/xela_monastic_near_monochrome_focus-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_nebula_haze_iridescent_fog",
+      "name": "Nebula Haze Iridescent Fog",
+      "slug": "xela_nebula_haze_iridescent_fog",
+      "screenshots": [
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-1-code.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-2-html.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-3-markdown.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-4-search.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-5-suggest.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-6-terminal.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-7-settings.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_nebula_haze_iridescent_fog-8-command.png",
+          "path": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_nebula_haze_iridescent_fog/xela_nebula_haze_iridescent_fog-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_neon_noir_cyber_noir",
+      "name": "Neon Noir Cyber Noir",
+      "slug": "xela_neon_noir_cyber_noir",
+      "screenshots": [
+        {
+          "filename": "xela_neon_noir_cyber_noir-1-code.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-2-html.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-3-markdown.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-4-search.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-5-suggest.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-6-terminal.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-7-settings.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_neon_noir_cyber_noir-8-command.png",
+          "path": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_neon_noir_cyber_noir/xela_neon_noir_cyber_noir-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_neon_wireframe_vector_grid",
+      "name": "Neon Wireframe Vector Grid",
+      "slug": "xela_neon_wireframe_vector_grid",
+      "screenshots": [
+        {
+          "filename": "xela_neon_wireframe_vector_grid-1-code.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-2-html.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-3-markdown.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-4-search.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-5-suggest.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-6-terminal.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-7-settings.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_neon_wireframe_vector_grid-8-command.png",
+          "path": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_neon_wireframe_vector_grid/xela_neon_wireframe_vector_grid-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_neural_network_ai_synapses",
+      "name": "Neural Network Ai Synapses",
+      "slug": "xela_neural_network_ai_synapses",
+      "screenshots": [
+        {
+          "filename": "xela_neural_network_ai_synapses-1-code.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-2-html.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-3-markdown.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-4-search.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-5-suggest.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-6-terminal.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-7-settings.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_neural_network_ai_synapses-8-command.png",
+          "path": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_neural_network_ai_synapses/xela_neural_network_ai_synapses-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_night_vision",
+      "name": "Night Vision",
+      "slug": "xela_night_vision",
+      "screenshots": [
+        {
+          "filename": "xela_night_vision-1-code.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_night_vision-2-html.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_night_vision-3-markdown.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_night_vision-4-search.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_night_vision-5-suggest.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_night_vision-6-terminal.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_night_vision-7-settings.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_night_vision-8-command.png",
+          "path": "/screenshots-vscode/xela_night_vision/xela_night_vision-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_night_vision/xela_night_vision-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_obsidian_glass_black_glass",
+      "name": "Obsidian Glass Black Glass",
+      "slug": "xela_obsidian_glass_black_glass",
+      "screenshots": [
+        {
+          "filename": "xela_obsidian_glass_black_glass-1-code.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-2-html.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-3-markdown.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-4-search.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-5-suggest.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-6-terminal.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-7-settings.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_obsidian_glass_black_glass-8-command.png",
+          "path": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_obsidian_glass_black_glass/xela_obsidian_glass_black_glass-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_phosphor_green_monochrome_crt",
+      "name": "Phosphor Green Monochrome Crt",
+      "slug": "xela_phosphor_green_monochrome_crt",
+      "screenshots": [
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-1-code.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-2-html.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-3-markdown.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-4-search.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-5-suggest.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-6-terminal.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-7-settings.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_phosphor_green_monochrome_crt-8-command.png",
+          "path": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_phosphor_green_monochrome_crt/xela_phosphor_green_monochrome_crt-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_plasma_storm_electric_current",
+      "name": "Plasma Storm Electric Current",
+      "slug": "xela_plasma_storm_electric_current",
+      "screenshots": [
+        {
+          "filename": "xela_plasma_storm_electric_current-1-code.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-2-html.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-3-markdown.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-4-search.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-5-suggest.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-6-terminal.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-7-settings.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_plasma_storm_electric_current-8-command.png",
+          "path": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_plasma_storm_electric_current/xela_plasma_storm_electric_current-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_proto_grid_early_wireframe_ux",
+      "name": "Proto Grid Early Wireframe Ux",
+      "slug": "xela_proto_grid_early_wireframe_ux",
+      "screenshots": [
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-1-code.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-2-html.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-3-markdown.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-4-search.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-5-suggest.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-6-terminal.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-7-settings.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_proto_grid_early_wireframe_ux-8-command.png",
+          "path": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_proto_grid_early_wireframe_ux/xela_proto_grid_early_wireframe_ux-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_quantum_flux_probability_waves",
+      "name": "Quantum Flux Probability Waves",
+      "slug": "xela_quantum_flux_probability_waves",
+      "screenshots": [
+        {
+          "filename": "xela_quantum_flux_probability_waves-1-code.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-2-html.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-3-markdown.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-4-search.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-5-suggest.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-6-terminal.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-7-settings.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_quantum_flux_probability_waves-8-command.png",
+          "path": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_quantum_flux_probability_waves/xela_quantum_flux_probability_waves-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_retro_terminal_amber_monochrome_crt",
+      "name": "Retro Terminal Amber Monochrome Crt",
+      "slug": "xela_retro_terminal_amber_monochrome_crt",
+      "screenshots": [
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-1-code.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-2-html.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-3-markdown.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-4-search.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-5-suggest.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-6-terminal.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-7-settings.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-7-settings.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_retro_terminal_amber_monochrome_crt-8-command.png",
+          "path": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-8-command.png",
+          "type": "terminal"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_retro_terminal_amber_monochrome_crt/xela_retro_terminal_amber_monochrome_crt-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_retrowave_synthesis_neon_dreams",
+      "name": "Retrowave Synthesis Neon Dreams",
+      "slug": "xela_retrowave_synthesis_neon_dreams",
+      "screenshots": [
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-1-code.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-2-html.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-3-markdown.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-4-search.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-5-suggest.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-6-terminal.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-7-settings.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_retrowave_synthesis_neon_dreams-8-command.png",
+          "path": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_retrowave_synthesis_neon_dreams/xela_retrowave_synthesis_neon_dreams-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_shadow_realm_void_walker",
+      "name": "Shadow Realm Void Walker",
+      "slug": "xela_shadow_realm_void_walker",
+      "screenshots": [
+        {
+          "filename": "xela_shadow_realm_void_walker-1-code.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-2-html.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-3-markdown.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-4-search.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-5-suggest.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-6-terminal.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-7-settings.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_shadow_realm_void_walker-8-command.png",
+          "path": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_shadow_realm_void_walker/xela_shadow_realm_void_walker-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_solar_ink_warm_print_light",
+      "name": "Solar Ink Warm Print Light",
+      "slug": "xela_solar_ink_warm_print_light",
+      "screenshots": [
+        {
+          "filename": "xela_solar_ink_warm_print_light-1-code.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-2-html.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-3-markdown.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-4-search.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-5-suggest.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-6-terminal.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-7-settings.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_solar_ink_warm_print_light-8-command.png",
+          "path": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_solar_ink_warm_print_light/xela_solar_ink_warm_print_light-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_synthwave_outrun_neon_highway",
+      "name": "Synthwave Outrun Neon Highway",
+      "slug": "xela_synthwave_outrun_neon_highway",
+      "screenshots": [
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-1-code.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-2-html.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-3-markdown.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-4-search.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-5-suggest.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-6-terminal.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-7-settings.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_synthwave_outrun_neon_highway-8-command.png",
+          "path": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_synthwave_outrun_neon_highway/xela_synthwave_outrun_neon_highway-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_terminalist_ansi_native",
+      "name": "Terminalist Ansi Native",
+      "slug": "xela_terminalist_ansi_native",
+      "screenshots": [
+        {
+          "filename": "xela_terminalist_ansi_native-1-code.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-2-html.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-3-markdown.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-4-search.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-5-suggest.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-6-terminal.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-7-settings.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-7-settings.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_terminalist_ansi_native-8-command.png",
+          "path": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-8-command.png",
+          "type": "terminal"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_terminalist_ansi_native/xela_terminalist_ansi_native-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_terra_organic_warmth",
+      "name": "Terra Organic Warmth",
+      "slug": "xela_terra_organic_warmth",
+      "screenshots": [
+        {
+          "filename": "xela_terra_organic_warmth-1-code.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-2-html.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-3-markdown.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-4-search.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-5-suggest.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-6-terminal.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-7-settings.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_terra_organic_warmth-8-command.png",
+          "path": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_terra_organic_warmth/xela_terra_organic_warmth-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_vapor_neon_retrowave",
+      "name": "Vapor Neon Retrowave",
+      "slug": "xela_vapor_neon_retrowave",
+      "screenshots": [
+        {
+          "filename": "xela_vapor_neon_retrowave-1-code.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-2-html.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-3-markdown.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-4-search.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-5-suggest.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-6-terminal.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-7-settings.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_vapor_neon_retrowave-8-command.png",
+          "path": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_vapor_neon_retrowave/xela_vapor_neon_retrowave-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_void_mist_diffuse_nebula",
+      "name": "Void Mist Diffuse Nebula",
+      "slug": "xela_void_mist_diffuse_nebula",
+      "screenshots": [
+        {
+          "filename": "xela_void_mist_diffuse_nebula-1-code.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-2-html.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-3-markdown.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-4-search.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-5-suggest.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-6-terminal.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-7-settings.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_void_mist_diffuse_nebula-8-command.png",
+          "path": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_void_mist_diffuse_nebula/xela_void_mist_diffuse_nebula-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_volcanic_forge_molten_core",
+      "name": "Volcanic Forge Molten Core",
+      "slug": "xela_volcanic_forge_molten_core",
+      "screenshots": [
+        {
+          "filename": "xela_volcanic_forge_molten_core-1-code.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-2-html.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-3-markdown.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-4-search.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-5-suggest.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-6-terminal.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-7-settings.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_volcanic_forge_molten_core-8-command.png",
+          "path": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_volcanic_forge_molten_core/xela_volcanic_forge_molten_core-1-code.png",
+      "screenshotCount": 8
+    },
+    {
+      "id": "xela_zen_garden_peaceful_minimalism",
+      "name": "Zen Garden Peaceful Minimalism",
+      "slug": "xela_zen_garden_peaceful_minimalism",
+      "screenshots": [
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-1-code.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-1-code.png",
+          "type": "code"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-2-html.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-2-html.png",
+          "type": "html"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-3-markdown.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-3-markdown.png",
+          "type": "markdown"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-4-search.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-4-search.png",
+          "type": "search"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-5-suggest.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-5-suggest.png",
+          "type": "suggest"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-6-terminal.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-6-terminal.png",
+          "type": "terminal"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-7-settings.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-7-settings.png",
+          "type": "settings"
+        },
+        {
+          "filename": "xela_zen_garden_peaceful_minimalism-8-command.png",
+          "path": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-8-command.png",
+          "type": "command"
+        }
+      ],
+      "thumbnail": "/screenshots-vscode/xela_zen_garden_peaceful_minimalism/xela_zen_garden_peaceful_minimalism-1-code.png",
+      "screenshotCount": 8
+    }
+  ]
+}

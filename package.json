@@ -391,6 +391,8 @@
     "build:themes": "node ./scripts/theme-system/build-themes.mjs",
     "test:themes": "node ./scripts/theme-system/test-build.mjs",
     "update:package": "node ./scripts/theme-system/update-package-themes.mjs",
+    "generate:manifest": "node scripts/generate-themes-manifest.js",
+    "serve": "npm run generate:manifest && npx serve .",
     "build:test": "npm run build:themes && npm run test:themes",
     "prepackage": "npm run build:themes && npm run test:themes",
     "rebuild": "npm run build:themes && npm run package-and-install",
@@ -402,10 +404,14 @@
     "publish:dry": "gh workflow run publish.yml -f force_publish=true -f dry_run=true",
     "ci:dry": "node scripts/ci-trigger.js --dry",
     "ci:publish": "node scripts/ci-trigger.js --publish",
-    "ci:logs": "node scripts/ci-trigger.js --logs"
+    "ci:logs": "node scripts/ci-trigger.js --logs",
+    "capture:screens": "node scripts/theme-system/capture-theme-screenshots.mjs",
+    "capture:vscode": "node scripts/theme-system/capture-theme-vscode.mjs"
   },
   "devDependencies": {
-    "@vscode/vsce": "^2.26.0"
+    "@vscode/vsce": "^2.26.0",
+    "puppeteer": "^22.13.1",
+    "playwright": "^1.47.2"
   },
   "dependencies": {
     "jsonc-parser": "^3.2.0"

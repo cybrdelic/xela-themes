@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xela Themes - Professional VS Code theme collection">
+    <title>Xela Themes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #00ff88;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* WebGL Canvas Background */
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Screenshot Gallery */
+        .gallery {
+            padding: 6rem 0;
+        }
+
+        .gallery h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .loading-indicator {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .theme-card {
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            position: relative;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .theme-card-image {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .theme-card-image img.loaded {
+            opacity: 1;
+        }
+
+        .theme-card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent);
+        }
+
+        .theme-card-content {
+            padding: 1.5rem;
+        }
+
+        .theme-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Modal for Full-size Screenshots */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            flex-direction: column;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-header {
+            width: 100%;
+            max-width: 90vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 75vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 75vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+
+        .modal-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-nav.prev {
+            left: 1rem;
+        }
+
+        .modal-nav.next {
+            right: 1rem;
+        }
+
+        .modal-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .modal-footer {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .screenshot-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .screenshot-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        .screenshot-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WebGL Background -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Xela Themes</div>
+            <nav>
+                <ul>
+                    <li><a href="#themes">Themes</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="https://github.com/cybrdelic/xela-themes">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Xela Themes</h1>
+            <p>Professional VS Code themes crafted for developers who care about aesthetics and functionality.</p>
+            <a href="#themes" class="cta-button">Explore Themes</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="themes">
+        <div class="container">
+            <h2>Theme Collection</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 4rem;">Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Carefully Crafted</h3>
+                    <p>Each theme is designed with attention to detail for optimal readability and visual appeal.</p>
+                </div>
+                <div class="feature">
+                    <h3>Wide Selection</h3>
+                    <p>From dark to light, minimal to vibrant - find the perfect theme for your workflow.</p>
+                </div>
+                <div class="feature">
+                    <h3>Syntax Optimized</h3>
+                    <p>Thoughtful color choices that make code structure clear and reduce eye strain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Xela Themes. MIT Licensed.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Full-size Screenshots -->
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modal-title"></div>
+            <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <button class="modal-nav prev" id="modal-prev">‹</button>
+            <img id="modal-image" src="" alt="">
+            <button class="modal-nav next" id="modal-next">›</button>
+        </div>
+        <div class="modal-footer" id="modal-footer"></div>
+    </div>
+
+    <script>
+        // WebGL Background Animation
+        class WebGLBackground {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+                if (!this.gl) {
+                    console.warn('WebGL not supported');
+                    return;
+                }
+
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+
+                this.init();
+                this.animate();
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                if (this.gl) {
+                    this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+                }
+            }
+
+            init() {
+                const gl = this.gl;
+
+                const vertexShader = this.createShader(gl.VERTEX_SHADER, `
+                    attribute vec2 position;
+                    void main() {
+                        gl_Position = vec4(position, 0.0, 1.0);
+                    }
+                `);
+
+                const fragmentShader = this.createShader(gl.FRAGMENT_SHADER, `
+                    precision mediump float;
+                    uniform float time;
+                    uniform vec2 resolution;
+
+                    void main() {
+                        vec2 uv = gl_FragCoord.xy / resolution;
+                        vec3 color = vec3(0.0);
+
+                        // Animated gradient
+                        float pattern = sin(uv.x * 10.0 + time * 0.5) *
+                                      cos(uv.y * 10.0 + time * 0.3) * 0.5 + 0.5;
+
+                        color = vec3(pattern * 0.1, pattern * 0.3, pattern * 0.2);
+
+                        gl_FragColor = vec4(color, 1.0);
+                    }
+                `);
+
+                this.program = this.createProgram(vertexShader, fragmentShader);
+                gl.useProgram(this.program);
+
+                const vertices = new Float32Array([
+                    -1, -1,
+                     1, -1,
+                    -1,  1,
+                     1,  1
+                ]);
+
+                const buffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+                gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+                const position = gl.getAttribLocation(this.program, 'position');
+                gl.enableVertexAttribArray(position);
+                gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+
+                this.timeUniform = gl.getUniformLocation(this.program, 'time');
+                this.resolutionUniform = gl.getUniformLocation(this.program, 'resolution');
+
+                this.startTime = Date.now();
+            }
+
+            createShader(type, source) {
+                const gl = this.gl;
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+
+                if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                    console.error('Shader compile error:', gl.getShaderInfoLog(shader));
+                    gl.deleteShader(shader);
+                    return null;
+                }
+
+                return shader;
+            }
+
+            createProgram(vertexShader, fragmentShader) {
+                const gl = this.gl;
+                const program = gl.createProgram();
+                gl.attachShader(program, vertexShader);
+                gl.attachShader(program, fragmentShader);
+                gl.linkProgram(program);
+
+                if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+                    console.error('Program link error:', gl.getProgramInfoLog(program));
+                    gl.deleteProgram(program);
+                    return null;
+                }
+
+                return program;
+            }
+
+            animate() {
+                const gl = this.gl;
+                const time = (Date.now() - this.startTime) * 0.001;
+
+                gl.uniform1f(this.timeUniform, time);
+                gl.uniform2f(this.resolutionUniform, this.canvas.width, this.canvas.height);
+
+                gl.clearColor(0.0, 0.0, 0.0, 1.0);
+                gl.clear(gl.COLOR_BUFFER_BIT);
+                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize WebGL
+        const canvas = document.getElementById('webgl-canvas');
+        new WebGLBackground(canvas);
+
+        // Image Lazy Loading with Intersection Observer
+        class ImageLoader {
+            constructor() {
+                this.observer = new IntersectionObserver(
+                    (entries) => this.handleIntersection(entries),
+                    { rootMargin: '50px' }
+                );
+            }
+
+            observe(img) {
+                this.observer.observe(img);
+            }
+
+            handleIntersection(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        this.loadImage(img);
+                        this.observer.unobserve(img);
+                    }
+                });
+            }
+
+            loadImage(img) {
+                const src = img.dataset.src;
+                if (!src) return;
+
+                img.src = src;
+                img.onload = () => {
+                    img.classList.add('loaded');
+                };
+            }
+        }
+
+        // Theme Gallery Manager
+        class GalleryManager {
+            constructor() {
+                this.grid = document.getElementById('gallery-grid');
+                this.modal = document.getElementById('modal');
+                this.modalImage = document.getElementById('modal-image');
+                this.modalTitle = document.getElementById('modal-title');
+                this.modalClose = document.getElementById('modal-close');
+                this.modalPrev = document.getElementById('modal-prev');
+                this.modalNext = document.getElementById('modal-next');
+                this.modalFooter = document.getElementById('modal-footer');
+                this.imageLoader = new ImageLoader();
+
+                this.currentTheme = null;
+                this.currentIndex = 0;
+                this.allThemes = [];
+                this.renderedCount = 0;
+                this.batchSize = 12; // Load 12 themes at a time
+                this.isLoading = false;
+
+                this.setupModal();
+                this.setupInfiniteScroll();
+                this.loadThemes();
+            }
+
+            setupInfiniteScroll() {
+                const sentinel = document.createElement('div');
+                sentinel.id = 'sentinel';
+                sentinel.style.height = '1px';
+                this.grid.parentElement.appendChild(sentinel);
+
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && !this.isLoading) {
+                        this.renderNextBatch();
+                    }
+                }, { rootMargin: '200px' });
+
+                observer.observe(sentinel);
+            }
+
+            setupModal() {
+                this.modalClose.addEventListener('click', () => this.closeModal());
+                this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) this.closeModal();
+                });
+
+                this.modalPrev.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.navigateScreenshot(-1);
+                });
+
+                this.modalNext.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.navigateScreenshot(1);
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (!this.modal.classList.contains('active')) return;
+
+                    if (e.key === 'Escape') this.closeModal();
+                    if (e.key === 'ArrowLeft') this.navigateScreenshot(-1);
+                    if (e.key === 'ArrowRight') this.navigateScreenshot(1);
+                });
+            }
+
+            async loadThemes() {
+                try {
+                    const response = await fetch('/landing/themes-manifest.json');
+                    const manifest = await response.json();
+
+                    console.log(`Loaded ${manifest.count} themes from manifest`);
+
+                    this.allThemes = manifest.themes;
+                    this.renderNextBatch();
+                } catch (error) {
+                    console.error('Failed to load themes manifest:', error);
+                    this.showError('Failed to load themes. Please refresh the page.');
+                }
+            }
+
+            renderNextBatch() {
+                if (this.isLoading || this.renderedCount >= this.allThemes.length) return;
+
+                this.isLoading = true;
+                const start = this.renderedCount;
+                const end = Math.min(start + this.batchSize, this.allThemes.length);
+
+                console.log(`Rendering themes ${start + 1}-${end} of ${this.allThemes.length}`);
+
+                // Use requestIdleCallback for better performance
+                const renderBatch = () => {
+                    for (let i = start; i < end; i++) {
+                        this.createThemeCard(this.allThemes[i]);
+                    }
+                    this.renderedCount = end;
+                    this.isLoading = false;
+                };
+
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(renderBatch, { timeout: 1000 });
+                } else {
+                    setTimeout(renderBatch, 0);
+                }
+            }
+
+            showError(message) {
+                const error = document.createElement('div');
+                error.style.cssText = 'padding: 2rem; text-align: center; color: #ff4444;';
+                error.textContent = message;
+                this.grid.appendChild(error);
+            }
+
+            createThemeCard(theme) {
+                const card = document.createElement('div');
+                card.className = 'theme-card';
+                card.dataset.themeId = theme.id;
+
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'theme-card-image skeleton';
+
+                const img = document.createElement('img');
+                img.dataset.src = theme.thumbnail;
+                img.alt = theme.name;
+                img.loading = 'lazy'; // Native lazy loading
+                img.decoding = 'async'; // Async image decoding
+
+                // Error handling for missing images
+                img.onerror = () => {
+                    imageContainer.classList.remove('skeleton');
+                    imageContainer.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #666; font-size: 0.85rem;">Preview unavailable</div>`;
+                };
+
+                img.onload = () => {
+                    imageContainer.classList.remove('skeleton');
+                    img.classList.add('loaded');
+                };
+
+                imageContainer.appendChild(img);
+
+                const content = document.createElement('div');
+                content.className = 'theme-card-content';
+                content.innerHTML = `
+                    <h3>${theme.name}</h3>
+                    <p>${theme.screenshotCount} screenshots</p>
+                `;
+
+                card.appendChild(imageContainer);
+                card.appendChild(content);
+
+                card.addEventListener('click', () => {
+                    this.openModal(theme);
+                });
+
+                this.grid.appendChild(card);
+
+                // Use both native and intersection observer
+                this.imageLoader.observe(img);
+            }
+
+            openModal(theme, index = 0) {
+                this.currentTheme = theme;
+                this.currentIndex = index;
+                this.updateModalContent();
+                this.modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            closeModal() {
+                this.modal.classList.remove('active');
+                document.body.style.overflow = '';
+                this.currentTheme = null;
+            }
+
+            navigateScreenshot(delta) {
+                if (!this.currentTheme) return;
+
+                const newIndex = this.currentIndex + delta;
+                if (newIndex >= 0 && newIndex < this.currentTheme.screenshots.length) {
+                    this.currentIndex = newIndex;
+                    this.updateModalContent();
+                }
+            }
+
+            updateModalContent() {
+                if (!this.currentTheme) return;
+
+                const screenshot = this.currentTheme.screenshots[this.currentIndex];
+
+                this.modalTitle.textContent = `${this.currentTheme.name} - ${screenshot.type}`;
+                this.modalImage.src = screenshot.path;
+                this.modalImage.alt = `${this.currentTheme.name} - ${screenshot.filename}`;
+
+                // Update navigation buttons
+                this.modalPrev.disabled = this.currentIndex === 0;
+                this.modalNext.disabled = this.currentIndex === this.currentTheme.screenshots.length - 1;
+
+                // Update dots
+                this.modalFooter.innerHTML = '';
+                this.currentTheme.screenshots.forEach((_, idx) => {
+                    const dot = document.createElement('div');
+                    dot.className = `screenshot-dot ${idx === this.currentIndex ? 'active' : ''}`;
+                    dot.addEventListener('click', () => {
+                        this.currentIndex = idx;
+                        this.updateModalContent();
+                    });
+                    this.modalFooter.appendChild(dot);
+                });
+            }
+        }
+
+        // Initialize Gallery
+        const gallery = new GalleryManager();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
