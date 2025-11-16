@@ -30,6 +30,21 @@ export const dynamicThemes = [
       accentSelection: withAlpha('#6C8EEF', 0.22),
       accentLink: '#88C0D0'
     },
+    // Advanced color overrides for fine-grained control
+    colorOverrides: {
+      'editorGroupHeader.tabsBackground': '#161923',  // Custom tab bar
+      'tab.inactiveBackground': '#13151F',            // Match sidebar
+      'tab.activeBackground': '#1A1D2E',              // Match editor
+      'statusBar.background': '#0F1118',              // Extra dark status
+      'input.background': '#0F1118',                  // Extra dark inputs
+      'dropdown.background': '#161923',               // Medium dropdown
+      'list.hoverBackground': '#1E2233',              // Subtle hover
+      'list.activeSelectionBackground': '#232842',    // Lighter selection
+      'editor.lineHighlightBackground': '#1E2233',    // Subtle line highlight
+      'editorWidget.background': '#161923',           // Widget background
+      'peekViewEditor.background': '#13151F',         // Peek darker
+      'peekViewResult.background': '#0F1118'          // Peek results darkest
+    },
     tokens(c) {
       return {
         comment: '#616E88',
@@ -138,6 +153,22 @@ export const dynamicThemes = [
       accentSelection: withAlpha('#58A6FF', 0.2),
       accentLink: '#79C0FF'
     },
+    colorOverrides: {
+      'editorGroupHeader.tabsBackground': '#010409',  // Almost black tab bar
+      'tab.inactiveBackground': '#0D1117',            // Match editor dark
+      'tab.activeBackground': '#161B22',              // Slightly lighter active
+      'statusBar.background': '#010409',              // Darkest status bar
+      'titleBar.activeBackground': '#010409',         // Darkest title
+      'activityBar.background': '#0D1117',            // Dark activity bar
+      'panel.background': '#0A0E14',                  // Ultra dark panel
+      'sideBar.background': '#010409',                // Darkest sidebar
+      'input.background': '#0D1117',                  // Dark inputs
+      'dropdown.background': '#161B22',               // Medium dropdowns
+      'list.hoverBackground': '#161B2280',            // Subtle hover
+      'editor.lineHighlightBackground': '#161B2250',  // Very subtle line
+      'editorGutter.background': '#0D1117',           // Match editor
+      'minimap.background': '#010409'                 // Darkest minimap
+    },
     tokens(c) {
       return {
         comment: '#8B949E',
@@ -219,9 +250,10 @@ export const dynamicThemes = [
     htmlScheme: getHtmlColorScheme('sand', 'light')
   },
 
+  // BEFORE: Ocean Depths Classic (no overrides - uniform surfaces)
   {
-    id: 'xela-ocean-depths',
-    name: 'XELA Ocean Depths — Blue Gradient',
+    id: 'xela-ocean-depths-classic',
+    name: 'XELA Ocean Depths Classic — Before (Uniform)',
     type: 'dark',
     roles: {
       surface0: '#0B2942',      // Deep ocean editor
@@ -245,6 +277,114 @@ export const dynamicThemes = [
       accentSuccess: '#6DD4A0',
       accentSelection: withAlpha('#4FB8D6', 0.24),
       accentLink: '#6DCCE3'
+    },
+    // NO OVERRIDES - uses default surface distribution
+    tokens(c) {
+      return {
+        comment: '#5C8299',
+        keyword: '#8BB3D6',
+        function: '#6DCCE3',
+        variable: '#B8D4E0',
+        string: '#6DD4A0',
+        number: '#F2B866',
+        constant: '#8BB3D6',
+        storage: '#8BB3D6',
+        type: '#52D1E8',
+        punctuation: '#D4E8F0',
+        invalid: '#E76F6F',
+        code: c.textPrimary,
+        heading: c.accentPrimary,
+        h1: '#6DCCE3',
+        h2: '#4FB8D6',
+        h3: '#6DD4A0',
+        h4: '#F2B866',
+        h5: '#8BB3D6',
+        h6: c.textMuted,
+        textPrimary: c.textPrimary
+      };
+    },
+    htmlScheme: getHtmlColorScheme('ocean-classic', 'dark')
+  },
+
+  // AFTER: Ocean Depths Enhanced (dramatic layering)
+  {
+    id: 'xela-ocean-depths',
+    name: 'XELA Ocean Depths — After (Dramatic Layers)',
+    type: 'dark',
+    roles: {
+      surface0: '#0B2942',      // Deep ocean editor
+      surface1: '#082137',      // Darker sidebar
+      surface2: '#0E3450',      // Lighter panels
+      surface3: '#134060',      // Elevated
+      panel: '#051829',         // Deepest
+      overlay: '#0B2942F2',
+      backdrop: '#00000099',
+      border: '#1B4D6F',
+      focus: withAlpha('#4FB8D6', 0.7),
+      textPrimary: '#D4E8F0',
+      textSecondary: '#B8D4E0',
+      textMuted: '#6B95AB',
+      textInverted: '#082137',
+      accentPrimary: '#4FB8D6',
+      accentPrimaryAlt: '#6DCCE3',
+      accentInfo: '#52D1E8',
+      accentWarn: '#F2B866',
+      accentError: '#E76F6F',
+      accentSuccess: '#6DD4A0',
+      accentSelection: withAlpha('#4FB8D6', 0.24),
+      accentLink: '#6DCCE3'
+    },
+    // DRAMATIC OVERRIDES - very noticeable depth and contrast
+    colorOverrides: {
+      // DARKEST LAYER (almost black)
+      'titleBar.activeBackground': '#020D15',         // Almost black title
+      'titleBar.inactiveBackground': '#020D15',
+      'statusBar.background': '#020D15',              // Almost black status
+      'activityBar.background': '#041018',            // Near black activity
+
+      // DARK LAYER (deep ocean)
+      'sideBar.background': '#051829',                // Very dark sidebar
+      'panel.background': '#041018',                  // Very dark panel
+      'terminal.background': '#020D15',               // Darkest terminal
+
+      // MEDIUM-DARK LAYER
+      'editorGroupHeader.tabsBackground': '#0A1F31',  // Dark tab bar
+      'tab.inactiveBackground': '#051829',            // Very dark inactive tabs
+      'input.background': '#051829',                  // Dark inputs
+      'editorWidget.background': '#0A1F31',           // Dark widgets
+      'peekViewEditor.background': '#041018',         // Dark peek
+
+      // EDITOR LAYER (main blue)
+      'editor.background': '#0B2942',                 // Editor stays medium
+      'tab.activeBackground': '#0B2942',              // Active tab matches editor
+
+      // ELEVATED LAYER (lighter)
+      'dropdown.background': '#0E3450',               // Light dropdown
+      'list.activeSelectionBackground': '#134060',    // Very light selection
+      'list.hoverBackground': '#0F3856',              // Medium-light hover
+
+      // HIGHLIGHT LAYER (brightest)
+      'editor.lineHighlightBackground': '#0F385680',  // Visible line highlight
+      'list.inactiveSelectionBackground': '#0E345060',
+      'editorGutter.background': '#0A1F31',           // Different gutter
+
+      // BORDERS (more visible)
+      'tab.border': '#020D15',                        // Dark border for separation
+      'sideBar.border': '#1B4D6F',                    // Visible border
+      'panel.border': '#1B4D6F',
+      'editorGroup.border': '#1B4D6F',
+
+      // ACCENT HIGHLIGHTS
+      'button.background': '#4FB8D6',
+      'button.hoverBackground': '#6DCCE3',
+      'tab.activeBorderTop': '#4FB8D6',               // Bright top border
+      'activityBar.activeBorder': '#4FB8D6',
+
+      // MINIMAP
+      'minimap.background': '#020D15',                // Darkest minimap
+
+      // BREADCRUMBS
+      'breadcrumb.background': '#0A1F31'              // Dark breadcrumb
     },
     tokens(c) {
       return {

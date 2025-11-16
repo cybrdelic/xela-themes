@@ -111,6 +111,8 @@ export const alpha = (hex, a) => {
 // Hex with appended alpha (0..1) -> #RRGGBBAA
 export const withAlpha = (hex, a) => {
   const v = hex.replace('#','');
+  // Strip any existing alpha (take only first 6 characters for RRGGBB)
+  const base = v.substring(0, 6);
   const aa = Math.round(Math.min(1, Math.max(0, a)) * 255).toString(16).padStart(2,'0').toUpperCase();
-  return `#${v.toUpperCase()}${aa}`;
+  return `#${base.toUpperCase()}${aa}`;
 };

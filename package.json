@@ -637,7 +637,12 @@
         "path": "./themes/xela-sand-dune-color-theme.json"
       },
       {
-        "label": "XELA Ocean Depths — Blue Gradient",
+        "label": "XELA Ocean Depths Classic — Before (Uniform)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-ocean-depths-classic-color-theme.json"
+      },
+      {
+        "label": "XELA Ocean Depths — After (Dramatic Layers)",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-ocean-depths-color-theme.json"
       },
@@ -665,6 +670,156 @@
         "label": "XELA Mint Cream — Fresh Coolness",
         "uiTheme": "vs",
         "path": "./themes/xela-mint-cream-color-theme.json"
+      },
+      {
+        "label": "XELA Studio Pro — Designer Workspace",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-studio-pro-color-theme.json"
+      },
+      {
+        "label": "XELA Reader Mode — Optimal Legibility",
+        "uiTheme": "vs",
+        "path": "./themes/xela-reader-mode-color-theme.json"
+      },
+      {
+        "label": "XELA Deep Focus — Distraction-Free Code",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-deep-focus-color-theme.json"
+      },
+      {
+        "label": "XELA Paper White — Clean Manuscript",
+        "uiTheme": "vs",
+        "path": "./themes/xela-paper-white-color-theme.json"
+      },
+      {
+        "label": "XELA Espresso — Rich Coffee Brown",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-espresso-color-theme.json"
+      },
+      {
+        "label": "XELA Arctic Daylight — Cool Clarity",
+        "uiTheme": "vs",
+        "path": "./themes/xela-arctic-daylight-color-theme.json"
+      },
+      {
+        "label": "XELA Midnight Oil — Late Night Focus",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-midnight-oil-color-theme.json"
+      },
+      {
+        "label": "XELA Stone Garden — Natural Balance",
+        "uiTheme": "vs",
+        "path": "./themes/xela-stone-garden-color-theme.json"
+      },
+      {
+        "label": "XELA Velvet Night — Luxury Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-velvet-night-color-theme.json"
+      },
+      {
+        "label": "XELA Clean Slate — Minimal Precision",
+        "uiTheme": "vs",
+        "path": "./themes/xela-clean-slate-color-theme.json"
+      },
+      {
+        "label": "XELA Surgical — Medical Precision",
+        "uiTheme": "vs",
+        "path": "./themes/xela-surgical-color-theme.json"
+      },
+      {
+        "label": "XELA Boardroom — Executive Power",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-boardroom-color-theme.json"
+      },
+      {
+        "label": "XELA Atelier — Art Studio Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-atelier-color-theme.json"
+      },
+      {
+        "label": "XELA Laboratory — Scientific Precision",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-laboratory-color-theme.json"
+      },
+      {
+        "label": "XELA Publisher — Editorial Excellence",
+        "uiTheme": "vs",
+        "path": "./themes/xela-publisher-color-theme.json"
+      },
+      {
+        "label": "XELA Flow State — Deep Concentration",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-flow-state-color-theme.json"
+      },
+      {
+        "label": "XELA Speed Reading — Rapid Scan",
+        "uiTheme": "vs",
+        "path": "./themes/xela-speed-reading-color-theme.json"
+      },
+      {
+        "label": "XELA Memory Palace — Spatial Recall",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-memory-palace-color-theme.json"
+      },
+      {
+        "label": "XELA Debug Mode — Error Detection",
+        "uiTheme": "vs",
+        "path": "./themes/xela-debug-mode-color-theme.json"
+      },
+      {
+        "label": "XELA Zen Code — Mindful Simplicity",
+        "uiTheme": "vs",
+        "path": "./themes/xela-zen-code-color-theme.json"
+      },
+      {
+        "label": "XELA Retina XDR — Apple Display",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-retina-xdr-color-theme.json"
+      },
+      {
+        "label": "XELA OLED Perfect — True Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-oled-perfect-color-theme.json"
+      },
+      {
+        "label": "XELA E-Ink Pro — Grayscale Perfect",
+        "uiTheme": "vs",
+        "path": "./themes/xela-eink-pro-color-theme.json"
+      },
+      {
+        "label": "XELA HDR Studio — Wide Gamut",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-hdr-studio-color-theme.json"
+      },
+      {
+        "label": "XELA Color Blind Pro — Accessible",
+        "uiTheme": "vs",
+        "path": "./themes/xela-colorblind-pro-color-theme.json"
+      },
+      {
+        "label": "XELA Swiss Modern — Helvetica Grid",
+        "uiTheme": "vs",
+        "path": "./themes/xela-swiss-modern-color-theme.json"
+      },
+      {
+        "label": "XELA Tokyo Neon — Shibuya Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-tokyo-neon-color-theme.json"
+      },
+      {
+        "label": "XELA Scandinavian — Nordic Hygge",
+        "uiTheme": "vs",
+        "path": "./themes/xela-scandinavian-color-theme.json"
+      },
+      {
+        "label": "XELA Art Deco — 1920s Luxury",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-art-deco-color-theme.json"
+      },
+      {
+        "label": "XELA Brutalist Soft — Warm Concrete",
+        "uiTheme": "vs",
+        "path": "./themes/xela-brutalist-soft-color-theme.json"
       }
     ]
   },

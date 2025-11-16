@@ -8,6 +8,8 @@ import { eliteThemes } from './theme-config-elite.js';
 import { experimentalThemes } from './theme-config-experimental.js';
 import { finalThemes } from './theme-config-final.js';
 import { premiumThemes } from './theme-config-premium.js';
+import { professionalThemes } from './theme-config-professional.js';
+import { refinedThemes } from './theme-config-refined.js';
 import { ultimateThemes } from './theme-config-ultimate.js';
 
 // Complete theme definitions - migrated from manual to generated
@@ -664,5 +666,7 @@ export const themes = [
   ...experimentalThemes,
   ...premiumThemes,
   ...artisanThemes,
-  ...dynamicThemes
+  ...dynamicThemes,
+  ...refinedThemes,
+  ...professionalThemes
 ];

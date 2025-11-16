@@ -1,9 +1,10 @@
-// Complete VS Code color mapping system
+// Complete VS Code color mapping system with advanced customization support
 import { withAlpha } from './roles.js';
 
-export function buildCompleteColors(roles) {
+export function buildCompleteColors(roles, overrides = {}) {
   const r = roles;
 
+  // Base colors with intelligent surface distribution
   const colors = {
     // Title Bar (use surface1 for distinction)
     'titleBar.activeBackground': r.surface1,
@@ -88,7 +89,7 @@ export function buildCompleteColors(roles) {
     'editor.wordHighlightBackground': withAlpha(r.accentPrimary, 0.1),
     'editor.wordHighlightStrongBackground': withAlpha(r.accentPrimary, 0.17),
     'editor.foldBackground': withAlpha(r.surface1, 0.5),
-    'editor.findMatchBackground': 'transparent',
+    'editor.findMatchBackground': '#00000000',
     'editor.findMatchBorder': r.accentWarn,
     'editor.findMatchHighlightBackground': withAlpha(r.surface2, 0.5),
     'editor.findMatchHighlightBorder': withAlpha(r.accentWarn, 0.53),
@@ -315,7 +316,7 @@ export function buildCompleteColors(roles) {
   };
 
   // Borderless post-processing: if theme declares transparent base border, neutralize all structural borders
-  if (r.border === 'transparent') {
+  if (r.border === 'transparent' || r.border === '#00000000') {
     const preserve = new Set([
       'editor.findMatchBorder',
       'editor.findMatchHighlightBorder',
@@ -324,7 +325,7 @@ export function buildCompleteColors(roles) {
     ]);
     for (const k of Object.keys(colors)) {
       if (k.toLowerCase().includes('border') && !preserve.has(k)) {
-        colors[k] = 'transparent';
+        colors[k] = '#00000000';
       }
     }
 
@@ -340,10 +341,10 @@ export function buildCompleteColors(roles) {
       'pickerGroup.border',
       'listFilterWidget.outline'
     ];
-    explicitNeutral.forEach(k => { if (k in colors) colors[k] = 'transparent'; });
+    explicitNeutral.forEach(k => { if (k in colors) colors[k] = '#00000000'; });
 
     // Remove tab edge artifact
-    colors['tab.border'] = 'transparent';
+    colors['tab.border'] = '#00000000';
 
     // Subtle focus treatment: reduce focusBorder intensity (still accessible) instead of bright accent line
     if (colors['focusBorder']) {
@@ -355,5 +356,6 @@ export function buildCompleteColors(roles) {
     if (colors['list.activeSelectionBackground']) colors['list.activeSelectionBackground'] = r.surface2;
   }
 
-  return colors;
+  // Apply overrides for fine-grained control
+  return { ...colors, ...overrides };
 }

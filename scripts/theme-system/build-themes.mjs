@@ -14,8 +14,8 @@ function build(){
     const roles = t.roles; // surfaces + text + accents etc.
     const baseTokens = buildBaseTokens(t.tokens(roles));
 
-    // Use comprehensive color mapping that covers all VS Code color keys
-    const colors = buildCompleteColors(roles);
+    // Use comprehensive color mapping with optional per-theme overrides
+    const colors = buildCompleteColors(roles, t.colorOverrides || {});
 
     const json = {
       $schema: 'vscode://schemas/color-theme',
