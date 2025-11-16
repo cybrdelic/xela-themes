@@ -48,6 +48,86 @@
         "command": "xela.openPreset",
         "title": "XELA: Open Full Preset",
         "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.formatOnSave",
+        "title": "XELA: Toggle Format on Save",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.stickyScroll",
+        "title": "XELA: Toggle Sticky Scroll",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.bracketPairs",
+        "title": "XELA: Toggle Bracket Pair Guides",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.minimap",
+        "title": "XELA: Toggle Minimap",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.smoothScrolling",
+        "title": "XELA: Toggle Smooth Scrolling",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.cursorAnimation",
+        "title": "XELA: Toggle Cursor Animation",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.semanticHighlighting",
+        "title": "XELA: Toggle Semantic Highlighting",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.inlayHints",
+        "title": "XELA: Toggle Inlay Hints",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.preview",
+        "title": "XELA: Toggle Preview Editors",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.wrapTabs",
+        "title": "XELA: Toggle Wrap Tabs",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.breadcrumbs",
+        "title": "XELA: Toggle Breadcrumbs",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.organizeImports",
+        "title": "XELA: Toggle Auto Organize Imports",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.fixAll",
+        "title": "XELA: Toggle Auto Fix All",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.toggle.updateImportsOnMove",
+        "title": "XELA: Toggle Auto Update Imports on File Move",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.showConfigHistory",
+        "title": "XELA: Show Configuration History",
+        "category": "XELA"
+      },
+      {
+        "command": "xela.clearConfigHistory",
+        "title": "XELA: Clear Configuration History",
+        "category": "XELA"
       }
     ],
     "configurationDefaults": {
@@ -380,6 +460,211 @@
         "label": "XELA Zen Garden — Peaceful Minimalism",
         "uiTheme": "vs",
         "path": "./themes/xela-zen-garden-color-theme.json"
+      },
+      {
+        "label": "XELA Graphite Pro — Precision Grey",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-graphite-pro-color-theme.json"
+      },
+      {
+        "label": "XELA Silver Lining — Refined Neutrality",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-silver-lining-color-theme.json"
+      },
+      {
+        "label": "XELA Slate Modern — Contemporary Grey",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-slate-modern-color-theme.json"
+      },
+      {
+        "label": "XELA Charcoal Elite — Professional Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-charcoal-elite-color-theme.json"
+      },
+      {
+        "label": "XELA Storm Grey — Moody Atmosphere",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-storm-grey-color-theme.json"
+      },
+      {
+        "label": "XELA Pearl White — Luminous Clarity",
+        "uiTheme": "vs",
+        "path": "./themes/xela-pearl-white-color-theme.json"
+      },
+      {
+        "label": "XELA Cloud Nine — Soft Elegance",
+        "uiTheme": "vs",
+        "path": "./themes/xela-cloud-nine-color-theme.json"
+      },
+      {
+        "label": "XELA Daybreak — Morning Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-daybreak-color-theme.json"
+      },
+      {
+        "label": "XELA Ivory Tower — Refined Cream",
+        "uiTheme": "vs",
+        "path": "./themes/xela-ivory-tower-color-theme.json"
+      },
+      {
+        "label": "XELA Porcelain — Delicate Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-porcelain-color-theme.json"
+      },
+      {
+        "label": "XELA Tungsten — Industrial Grey",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-tungsten-color-theme.json"
+      },
+      {
+        "label": "XELA Ash Grey — Minimal Elegance",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-ash-grey-color-theme.json"
+      },
+      {
+        "label": "XELA Mercury — Liquid Metal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-mercury-color-theme.json"
+      },
+      {
+        "label": "XELA Crystal Clear — Pure Transparency",
+        "uiTheme": "vs",
+        "path": "./themes/xela-crystal-clear-color-theme.json"
+      },
+      {
+        "label": "XELA Linen — Natural Fabric",
+        "uiTheme": "vs",
+        "path": "./themes/xela-linen-color-theme.json"
+      },
+      {
+        "label": "XELA Chalk — Matte White",
+        "uiTheme": "vs",
+        "path": "./themes/xela-chalk-color-theme.json"
+      },
+      {
+        "label": "XELA Pewter — Refined Metal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-pewter-color-theme.json"
+      },
+      {
+        "label": "XELA Dove Grey — Soft Neutral",
+        "uiTheme": "vs",
+        "path": "./themes/xela-dove-grey-color-theme.json"
+      },
+      {
+        "label": "XELA Platinum — Premium Silver",
+        "uiTheme": "vs",
+        "path": "./themes/xela-platinum-color-theme.json"
+      },
+      {
+        "label": "XELA Limestone — Natural Stone",
+        "uiTheme": "vs",
+        "path": "./themes/xela-limestone-color-theme.json"
+      },
+      {
+        "label": "XELA Smoke — Atmospheric Grey",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-smoke-color-theme.json"
+      },
+      {
+        "label": "XELA Mojave Dusk — Desert Warmth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-mojave-dusk-color-theme.json"
+      },
+      {
+        "label": "XELA Sage Wisdom — Herbal Serenity",
+        "uiTheme": "vs",
+        "path": "./themes/xela-sage-wisdom-color-theme.json"
+      },
+      {
+        "label": "XELA Arctic Night — Northern Calm",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-arctic-night-color-theme.json"
+      },
+      {
+        "label": "XELA Rose Quartz — Soft Blush",
+        "uiTheme": "vs",
+        "path": "./themes/xela-rose-quartz-color-theme.json"
+      },
+      {
+        "label": "XELA Coffee House — Rich Espresso",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-coffee-house-color-theme.json"
+      },
+      {
+        "label": "XELA Lavender Fields — Provence Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-lavender-fields-color-theme.json"
+      },
+      {
+        "label": "XELA Midnight Cedar — Forest Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-midnight-cedar-color-theme.json"
+      },
+      {
+        "label": "XELA Birch Morning — Scandinavian Fresh",
+        "uiTheme": "vs",
+        "path": "./themes/xela-birch-morning-color-theme.json"
+      },
+      {
+        "label": "XELA Velvet Dusk — Plush Comfort",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-velvet-dusk-color-theme.json"
+      },
+      {
+        "label": "XELA Honey Glow — Golden Warmth",
+        "uiTheme": "vs",
+        "path": "./themes/xela-honey-glow-color-theme.json"
+      },
+      {
+        "label": "XELA Twilight Layers — Depth & Dimension",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-twilight-layers-color-theme.json"
+      },
+      {
+        "label": "XELA Café au Lait — Warm Gradient",
+        "uiTheme": "vs",
+        "path": "./themes/xela-cafe-au-lait-color-theme.json"
+      },
+      {
+        "label": "XELA Midnight Gradient — Deep Layers",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-midnight-gradient-color-theme.json"
+      },
+      {
+        "label": "XELA Sand Dune — Desert Warmth",
+        "uiTheme": "vs",
+        "path": "./themes/xela-sand-dune-color-theme.json"
+      },
+      {
+        "label": "XELA Ocean Depths — Blue Gradient",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-ocean-depths-color-theme.json"
+      },
+      {
+        "label": "XELA Lavender Mist — Soft Purple Hues",
+        "uiTheme": "vs",
+        "path": "./themes/xela-lavender-mist-color-theme.json"
+      },
+      {
+        "label": "XELA Forest Floor — Earthy Greens",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-forest-floor-color-theme.json"
+      },
+      {
+        "label": "XELA Rose Quartz — Gentle Pink",
+        "uiTheme": "vs",
+        "path": "./themes/xela-rose-quartz-color-theme.json"
+      },
+      {
+        "label": "XELA Ember Glow — Warm Fire",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-ember-glow-color-theme.json"
+      },
+      {
+        "label": "XELA Mint Cream — Fresh Coolness",
+        "uiTheme": "vs",
+        "path": "./themes/xela-mint-cream-color-theme.json"
       }
     ]
   },
@@ -389,6 +674,7 @@
     "install:vsix": "powershell -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
     "package-and-install": "npm run package && npm run install:vsix",
     "build:themes": "node ./scripts/theme-system/build-themes.mjs",
+    "optimize:themes": "node ./scripts/optimize-themes.mjs",
     "test:themes": "node ./scripts/theme-system/test-build.mjs",
     "update:package": "node ./scripts/theme-system/update-package-themes.mjs",
     "generate:manifest": "node scripts/generate-themes-manifest.js",

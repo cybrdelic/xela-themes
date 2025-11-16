@@ -1,9 +1,11 @@
-// XELA preset commands with robust logging and safeguards.
+// XELA preset commands with robust logging, safeguards, and granular toggles.
 
 const fs = require('fs');
 const path = require('path');
 const vscode = require('vscode');
 const { parse, parseTree, modify, applyEdits } = require('jsonc-parser');
+const { ConfigManager } = require('./src/config-manager');
+const { ToggleCommands } = require('./src/toggle-commands');
 
 let output;
 function getChannel() {
@@ -25,13 +27,22 @@ function log(msg, data) {
 
 /** @param {vscode.ExtensionContext} context */
 function activate(context) {
+  // Initialize config manager with history tracking
+  const configManager = new ConfigManager(context);
+  const toggleCommands = new ToggleCommands(configManager);
+
+  // Register all individual toggle commands
+  const registeredToggles = toggleCommands.register(context);
+  log('Registered toggle commands', { count: registeredToggles.length, commands: registeredToggles });
+
   const showLogs = vscode.commands.registerCommand('xela.showLogs', () => {
     getChannel().show(true);
+    configManager.output.show(true);
   });
 
   const applyAdditive = vscode.commands.registerCommand('xela.applyPreset.additive', async () => {
     try {
-      await applyPreset({ overwrite: false });
+      await applyPreset({ overwrite: false }, configManager);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
     vscode.window.showErrorMessage(`XELA preset failed: ${msg}`);
@@ -42,7 +53,7 @@ function activate(context) {
 
   const applyOverwrite = vscode.commands.registerCommand('xela.applyPreset.overwrite', async () => {
     try {
-      await applyPreset({ overwrite: true });
+      await applyPreset({ overwrite: true }, configManager);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
     vscode.window.showErrorMessage(`XELA preset failed: ${msg}`);
@@ -54,7 +65,7 @@ function activate(context) {
   // Global (User) settings variants
   const applyGlobalAdditive = vscode.commands.registerCommand('xela.applyPreset.globalAdditive', async () => {
     try {
-      await applyPresetGlobal({ overwrite: false });
+      await applyPresetGlobal({ overwrite: false }, configManager);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
     vscode.window.showErrorMessage(`XELA preset (global) failed: ${msg}`);
@@ -65,7 +76,7 @@ function activate(context) {
 
   const applyGlobalOverwrite = vscode.commands.registerCommand('xela.applyPreset.globalOverwrite', async () => {
     try {
-      await applyPresetGlobal({ overwrite: true });
+      await applyPresetGlobal({ overwrite: true }, configManager);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
     vscode.window.showErrorMessage(`XELA preset (global) failed: ${msg}`);
@@ -162,7 +173,7 @@ async function fileExists(p) {
   }
 }
 
-async function applyPreset({ overwrite }) {
+async function applyPreset({ overwrite }, configManager) {
   log('Begin applyPreset', { overwrite });
 
   const ext = vscode.extensions.getExtension('cybrdelic.xela-themes');
@@ -200,6 +211,20 @@ async function applyPreset({ overwrite }) {
           current = await fs.promises.readFile(settingsPath, 'utf8');
         } catch {
           // new file
+        }
+
+        // Save current state to history before applying preset
+        if (configManager) {
+          try {
+            const currentConfig = parse(current);
+            await configManager.history.saveState(
+              `Before applying XELA preset (${overwrite ? 'overwrite' : 'additive'})`,
+              currentConfig,
+              'workspace'
+            );
+          } catch (e) {
+            log('Failed to save history', e);
+          }
         }
 
         // If current JSON is invalid, back it up and start fresh
@@ -245,7 +270,7 @@ async function applyPreset({ overwrite }) {
   );
 }
 
-async function applyPresetGlobal({ overwrite }) {
+async function applyPresetGlobal({ overwrite }, configManager) {
   log('Begin applyPresetGlobal', { overwrite });
 
   const ext = vscode.extensions.getExtension('cybrdelic.xela-themes');
@@ -267,6 +292,27 @@ async function applyPresetGlobal({ overwrite }) {
   { location: vscode.ProgressLocation.Notification, title: 'Applying XELA preset to User Settings…', cancellable: false },
     async () => {
       const cfg = vscode.workspace.getConfiguration();
+
+      // Save current global state to history
+      if (configManager) {
+        try {
+          const currentState = {};
+          for (const key of Object.keys(preset)) {
+            const inspected = cfg.inspect(key);
+            if (inspected?.globalValue !== undefined) {
+              currentState[key] = inspected.globalValue;
+            }
+          }
+          await configManager.history.saveState(
+            `Before applying XELA preset globally (${overwrite ? 'overwrite' : 'additive'})`,
+            currentState,
+            'global'
+          );
+        } catch (e) {
+          log('Failed to save global history', e);
+        }
+      }
+
       let changed = 0, kept = 0;
 
       for (const [key, value] of Object.entries(preset)) {

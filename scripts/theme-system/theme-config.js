@@ -1,10 +1,13 @@
 // Theme configuration list
 import { getHtmlColorScheme } from './html-tokens.js';
 import { archetype, withAlpha } from './roles.js';
+import { artisanThemes } from './theme-config-artisan.js';
 import { additionalThemes } from './theme-config-batch2.js';
+import { dynamicThemes } from './theme-config-dynamic.js';
 import { eliteThemes } from './theme-config-elite.js';
 import { experimentalThemes } from './theme-config-experimental.js';
 import { finalThemes } from './theme-config-final.js';
+import { premiumThemes } from './theme-config-premium.js';
 import { ultimateThemes } from './theme-config-ultimate.js';
 
 // Complete theme definitions - migrated from manual to generated
@@ -658,5 +661,8 @@ export const themes = [
   ...finalThemes,
   ...eliteThemes,
   ...ultimateThemes,
-  ...experimentalThemes
+  ...experimentalThemes,
+  ...premiumThemes,
+  ...artisanThemes,
+  ...dynamicThemes
 ];

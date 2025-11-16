@@ -4,10 +4,10 @@ import { withAlpha } from './roles.js';
 export function buildCompleteColors(roles) {
   const r = roles;
 
-  return {
-    // Title Bar
-    'titleBar.activeBackground': r.surface0,
-    'titleBar.inactiveBackground': r.surface0,
+  const colors = {
+    // Title Bar (use surface1 for distinction)
+    'titleBar.activeBackground': r.surface1,
+    'titleBar.inactiveBackground': r.surface1,
     'titleBar.activeForeground': r.textPrimary,
     'titleBar.inactiveForeground': r.textMuted,
     'titleBar.border': r.border,
@@ -16,8 +16,8 @@ export function buildCompleteColors(roles) {
     'window.activeBorder': r.accentPrimary,
     'window.inactiveBorder': r.border,
 
-    // Activity Bar
-    'activityBar.background': r.surface0,
+    // Activity Bar (use surface1 - darker/different from editor)
+    'activityBar.background': r.surface1,
     'activityBar.foreground': r.textPrimary,
     'activityBar.inactiveForeground': r.textMuted,
     'activityBar.border': r.border,
@@ -25,59 +25,59 @@ export function buildCompleteColors(roles) {
     'activityBarBadge.background': r.accentPrimary,
     'activityBarBadge.foreground': r.textInverted,
 
-    // Side Bar
-    'sideBar.background': r.surface0,
+    // Side Bar (use surface1 - different from editor)
+    'sideBar.background': r.surface1,
     'sideBar.foreground': r.textPrimary,
     'sideBar.border': r.border,
     'sideBarTitle.foreground': r.textSecondary,
-    'sideBarSectionHeader.background': r.surface0,
+    'sideBarSectionHeader.background': r.surface2,
     'sideBar.dropBackground': withAlpha(r.accentPrimary, 0.13),
 
-    // Status Bar
-    'statusBar.background': r.surface0,
+    // Status Bar (use surface1 for distinction)
+    'statusBar.background': r.surface1,
     'statusBar.foreground': r.textPrimary,
     'statusBar.border': r.border,
-    'statusBar.noFolderBackground': r.surface1,
+    'statusBar.noFolderBackground': r.surface2,
     'statusBar.noFolderForeground': r.textSecondary,
     'statusBar.debuggingBackground': r.accentWarn,
     'statusBar.debuggingForeground': r.textInverted,
     'statusBarItem.hoverBackground': r.surface2,
     'statusBarItem.remoteBackground': r.accentInfo,
     'statusBarItem.remoteForeground': r.textInverted,
-    'statusBarItem.prominentBackground': r.surface1,
-    'statusBarItem.prominentHoverBackground': r.surface2,
+    'statusBarItem.prominentBackground': r.surface2,
+    'statusBarItem.prominentHoverBackground': r.surface3,
     'statusBarItem.errorBackground': r.accentError,
     'statusBarItem.errorForeground': r.textInverted,
     'statusBarItem.warningBackground': r.accentWarn,
     'statusBarItem.warningForeground': r.textInverted,
 
-    // Panel
-    'panel.background': r.surface0,
+    // Panel (use panel surface for distinction - often darker or lighter)
+    'panel.background': r.panel,
     'panel.border': r.border,
     'panel.dropBorder': r.accentPrimary,
     'panelTitle.activeForeground': r.textPrimary,
     'panelTitle.activeBorder': r.accentPrimary,
     'panelTitle.inactiveForeground': r.textSecondary,
 
-    // Editor Groups & Tabs
-    'editorGroupHeader.tabsBackground': r.surface0,
+    // Editor Groups & Tabs (use surface2 for tab bar)
+    'editorGroupHeader.tabsBackground': r.surface2,
     'editorGroupHeader.tabsBorder': r.border,
     'editorGroup.dropBackground': withAlpha(r.accentPrimary, 0.13),
     'tab.activeBackground': r.surface0,
-    'tab.inactiveBackground': r.surface0,
-    'tab.border': r.surface0,
+    'tab.inactiveBackground': r.surface2,
+    'tab.border': r.surface2,
     'tab.activeForeground': r.textPrimary,
     'tab.inactiveForeground': r.textMuted,
     'tab.activeBorderTop': r.accentPrimary,
     'tab.unfocusedActiveBorderTop': withAlpha(r.accentWarn, 0.53),
-    'tab.hoverBackground': r.surface1,
+    'tab.hoverBackground': r.surface3,
     'tab.hoverForeground': r.textPrimary,
-    'tab.unfocusedHoverBackground': r.surface1,
+    'tab.unfocusedHoverBackground': r.surface3,
     'tab.activeModifiedBorder': r.accentWarn,
-    'tab.hoverBorder': r.surface2,
+    'tab.hoverBorder': r.surface3,
     'tab.lastPinnedBorder': r.border,
 
-    // Editor
+    // Editor (surface0 is the main editor background)
     'editor.background': r.surface0,
     'editor.foreground': r.textPrimary,
     'editor.lineHighlightBackground': r.surface2,
@@ -99,15 +99,15 @@ export function buildCompleteColors(roles) {
     'editorLineNumber.foreground': r.textMuted,
     'editorLineNumber.activeForeground': r.textSecondary,
 
-    // Editor Widgets
-    'editorHoverWidget.background': r.surface1,
+    // Editor Widgets (use surface3 for elevated floating widgets)
+    'editorHoverWidget.background': r.surface3,
     'editorHoverWidget.border': r.border,
-    'editorWidget.background': r.surface1,
+    'editorWidget.background': r.surface3,
     'editorWidget.border': r.border,
     'editorWidget.resizeBorder': r.accentPrimary,
 
     // Editor Guides & Indentation
-    'editorIndentGuide.background1': r.surface3,
+    'editorIndentGuide.background1': r.surface2,
     'editorIndentGuide.activeBackground1': withAlpha(r.textMuted, 0.7),
 
     // Bracket Matching & Highlighting
@@ -165,8 +165,8 @@ export function buildCompleteColors(roles) {
     'list.errorForeground': r.accentError,
     'list.dropBackground': withAlpha(r.accentPrimary, 0.13),
 
-    // Inputs & Forms
-    'input.background': r.surface1,
+    // Inputs & Forms (use surface2 for input contrast)
+    'input.background': r.surface2,
     'input.foreground': r.textPrimary,
     'input.border': r.border,
     'input.placeholderForeground': r.textMuted,
@@ -178,14 +178,14 @@ export function buildCompleteColors(roles) {
     'inputValidation.infoBackground': withAlpha(r.accentInfo, 0.1),
     'inputValidation.infoBorder': r.accentInfo,
 
-    // Dropdowns & Buttons
-    'dropdown.background': r.surface1,
+    // Dropdowns & Buttons (use surface2 for contrast)
+    'dropdown.background': r.surface2,
     'dropdown.border': r.border,
     'dropdown.foreground': r.textPrimary,
     'button.background': r.accentPrimary,
     'button.foreground': r.textInverted,
     'button.hoverBackground': r.accentPrimaryAlt,
-    'checkbox.background': r.surface1,
+    'checkbox.background': r.surface2,
     'checkbox.foreground': r.textSecondary,
     'checkbox.border': r.border,
 
@@ -194,38 +194,38 @@ export function buildCompleteColors(roles) {
     'badge.foreground': r.textInverted,
     'progressBar.background': r.accentPrimary,
 
-    // Peek View
+    // Peek View (use surface3 for elevated overlay)
     'peekView.border': r.border,
-    'peekViewEditor.background': r.surface1,
+    'peekViewEditor.background': r.surface3,
     'peekViewEditor.matchHighlightBackground': withAlpha(r.accentWarn, 0.13),
     'peekViewEditor.matchHighlightBorder': withAlpha(r.accentWarn, 0.53),
-    'peekViewResult.background': r.surface1,
-    'peekViewResult.matchHighlightBackground': r.surface2,
-    'peekViewTitle.background': r.surface1,
+    'peekViewResult.background': r.surface2,
+    'peekViewResult.matchHighlightBackground': r.surface3,
+    'peekViewTitle.background': r.surface2,
     'peekViewTitleLabel.foreground': r.textPrimary,
     'peekViewTitleDescription.foreground': r.textMuted,
 
-    // Quick Input
+    // Quick Input (use overlay for floating)
     'quickInput.background': r.overlay,
     'quickInput.foreground': r.textPrimary,
-    'quickInputTitle.background': r.surface2,
+    'quickInputTitle.background': r.surface3,
     'pickerGroup.foreground': r.accentPrimary,
     'pickerGroup.border': r.border,
 
-    // Notifications
-    'notifications.background': r.surface1,
+    // Notifications (use surface3 for elevated)
+    'notifications.background': r.surface3,
     'notifications.border': r.border,
     'notificationCenterHeader.foreground': r.textPrimary,
 
-    // Breadcrumbs
+    // Breadcrumbs (keep on editor surface)
     'breadcrumb.background': r.surface0,
     'breadcrumb.foreground': r.textMuted,
     'breadcrumb.focusForeground': r.textPrimary,
     'breadcrumb.activeSelectionForeground': r.accentPrimary,
-    'breadcrumbPicker.background': r.surface1,
+    'breadcrumbPicker.background': r.surface3,
 
-    // Menu
-    'menu.background': r.surface1,
+    // Menu (use surface3 for elevated menus)
+    'menu.background': r.surface3,
     'menu.foreground': r.textPrimary,
     'menu.separatorBackground': r.border,
     'menu.selectionBackground': r.surface2,
@@ -313,4 +313,47 @@ export function buildCompleteColors(roles) {
     'editorStickyScroll.background': withAlpha(r.surface0, 0.95),
     'editorStickyScrollHover.background': r.surface1
   };
+
+  // Borderless post-processing: if theme declares transparent base border, neutralize all structural borders
+  if (r.border === 'transparent') {
+    const preserve = new Set([
+      'editor.findMatchBorder',
+      'editor.findMatchHighlightBorder',
+      'editorBracketMatch.border',
+      'editor.selectionHighlightBorder' // keep semantic highlight borders
+    ]);
+    for (const k of Object.keys(colors)) {
+      if (k.toLowerCase().includes('border') && !preserve.has(k)) {
+        colors[k] = 'transparent';
+      }
+    }
+
+    // Explicitly flatten high-visibility accent borders that are not always matched by generic loop or we want guaranteed off
+    const explicitNeutral = [
+      'window.activeBorder',
+      'activityBar.activeBorder',
+      'panel.dropBorder',
+      'panelTitle.activeBorder',
+      'tab.activeBorderTop',
+      'tab.unfocusedActiveBorderTop',
+      'tab.activeModifiedBorder',
+      'pickerGroup.border',
+      'listFilterWidget.outline'
+    ];
+    explicitNeutral.forEach(k => { if (k in colors) colors[k] = 'transparent'; });
+
+    // Remove tab edge artifact
+    colors['tab.border'] = 'transparent';
+
+    // Subtle focus treatment: reduce focusBorder intensity (still accessible) instead of bright accent line
+    if (colors['focusBorder']) {
+      colors['focusBorder'] = withAlpha(r.focus || r.accentPrimary || '#FFFFFF', 0.25);
+    }
+
+    // Harmonize hover/selection so absence of borders still gives spatial cues
+    if (colors['tab.hoverBackground']) colors['tab.hoverBackground'] = r.surface1;
+    if (colors['list.activeSelectionBackground']) colors['list.activeSelectionBackground'] = r.surface2;
+  }
+
+  return colors;
 }
