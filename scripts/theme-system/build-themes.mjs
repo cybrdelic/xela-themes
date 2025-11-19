@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { buildCompleteColors } from './color-mapping.js';
 import { getEnhancedHtmlTokens } from './html-tokens.js';
-import { themes } from './theme-config.js';
+import { themes } from './theme-config.mjs';
 import { buildBaseTokens } from './token-base.js';
 
 const outDir = path.resolve('./themes');

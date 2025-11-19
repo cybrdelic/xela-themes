@@ -1,0 +1,733 @@
+[
+  {
+    "file": "xela-apple-health-vitality-color-theme.json",
+    "name": "XELA Apple Health — Vitality Tracker",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 29,
+        "examples": [
+          "sideBar.border: #F9F9F960",
+          "sideBar.dropBackground: #F9F9F980",
+          "editorGroup.dropBackground: #F9F9F980"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-apple-imessage-bubbles-color-theme.json",
+    "name": "XELA Apple iMessage — Message Bubbles",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 29,
+        "examples": [
+          "sideBar.border: #F9F9F960",
+          "sideBar.dropBackground: #F9F9F980",
+          "editorGroup.dropBackground: #F9F9F980"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-apple-maps-navigation-color-theme.json",
+    "name": "XELA Apple Maps — Turn-by-Turn",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 29,
+        "examples": [
+          "sideBar.border: #F9F9F960",
+          "sideBar.dropBackground: #F9F9F980",
+          "editorGroup.dropBackground: #F9F9F980"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-arctic-daylight-color-theme.json",
+    "name": "XELA Arctic Daylight — Cool Clarity",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFFFF80",
+          "editor.hoverHighlightBackground: #FFFFFF80",
+          "quickInput.background: #F7FAFBF5"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-arctic-glass-color-theme.json",
+    "name": "XELA Arctic Glass — Crystal Light",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 9,
+        "examples": [
+          "editor.foldBackground: #F7FBFE80",
+          "editor.findMatchHighlightBackground: #F2F8FC80",
+          "editor.hoverHighlightBackground: #F2F8FC80"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-atelier-color-theme.json",
+    "name": "XELA Atelier — Art Studio Light",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FDFCFA80",
+          "editor.hoverHighlightBackground: #FDFCFA80",
+          "quickInput.background: #F9F7F4F8"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-bauhaus-color-theme.json",
+    "name": "XELA Bauhaus — Primary Geometry",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 18,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF0087",
+          "editor.findMatchHighlightBorder: #FFFF0087",
+          "editorBracketMatch.border: #FFFF0087"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-brutalist-color-theme.json",
+    "name": "XELA Brutalist — Raw Concrete",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 16,
+        "examples": [
+          "sideBar.dropBackground: #FFFFFF21",
+          "editorGroup.dropBackground: #FFFFFF21",
+          "editor.selectionBackground: #FFFFFF1A"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-circuitboard-color-theme.json",
+    "name": "XELA Circuitboard — Soldermask Green",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 17,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF0087",
+          "editor.findMatchHighlightBorder: #FFFF0087",
+          "editorBracketMatch.border: #FFFF0087"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-clean-slate-color-theme.json",
+    "name": "XELA Clean Slate — Minimal Precision",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 7,
+        "examples": [
+          "editor.lineHighlightBackground: #F5F5F580",
+          "editor.findMatchHighlightBackground: #FFFFFF80",
+          "editor.hoverHighlightBackground: #FFFFFF80"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-colorblind-pro-color-theme.json",
+    "name": "XELA Color Blind Pro — Accessible",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 7,
+        "examples": [
+          "editor.foldBackground: #F5F5F580",
+          "editor.findMatchHighlightBackground: #FFFFFF80",
+          "editor.hoverHighlightBackground: #FFFFFF80"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-debug-mode-color-theme.json",
+    "name": "XELA Debug Mode — Error Detection",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFBF780",
+          "editor.hoverHighlightBackground: #FFFBF780",
+          "quickInput.background: #FEF7F0F8"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-digital-rain-color-theme.json",
+    "name": "XELA Digital Rain — Data Cascade",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 16,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF9987",
+          "editor.findMatchHighlightBorder: #FFFF9987",
+          "editorBracketMatch.border: #FFFF9987"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-eink-pro-color-theme.json",
+    "name": "XELA E-Ink Pro — Grayscale Perfect",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFFFF80",
+          "editor.hoverHighlightBackground: #FFFFFF80",
+          "quickInput.background: #FFFFFFF8"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-hdr-studio-color-theme.json",
+    "name": "XELA HDR Studio — Wide Gamut",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 16,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF0087",
+          "editor.findMatchHighlightBorder: #FFFF0087",
+          "editorBracketMatch.border: #FFFF0087"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-holographic-color-theme.json",
+    "name": "XELA Holographic — Dimensional Shift",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 17,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF0087",
+          "editor.findMatchHighlightBorder: #FFFF0087",
+          "editorBracketMatch.border: #FFFF0087"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-ink-color-theme.json",
+    "name": "XELA Ink — Print Typography",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 7,
+        "examples": [
+          "editor.foldBackground: #FAF9F280",
+          "editor.findMatchHighlightBackground: #F5F4ED80",
+          "editor.hoverHighlightBackground: #F5F4ED80"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-iridescence-color-theme.json",
+    "name": "XELA Iridescence — Prismatic Black",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 17,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF6B87",
+          "editor.findMatchHighlightBorder: #FFFF6B87",
+          "editorBracketMatch.border: #FFFF6B87"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-ivory-tower-color-theme.json",
+    "name": "XELA Ivory Tower — Refined Cream",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 9,
+        "examples": [
+          "editor.foldBackground: #FFFEF580",
+          "editor.findMatchHighlightBackground: #FFFCF080",
+          "editor.hoverHighlightBackground: #FFFCF080"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-lavender-mist-color-theme.json",
+    "name": "XELA Lavender Mist — Soft Purple Hues",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FDFBFF80",
+          "editor.hoverHighlightBackground: #FDFBFF80",
+          "quickInput.background: #F7F4FAF2"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-liminal-whiteout-color-theme.json",
+    "name": "XELA Liminal Whiteout — Overexposed Minimal Field",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 7,
+        "examples": [
+          "editor.foldBackground: #F7F8FA80",
+          "editor.findMatchHighlightBackground: #F2F4F780",
+          "editor.hoverHighlightBackground: #F2F4F780"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-mint-cream-color-theme.json",
+    "name": "XELA Mint Cream — Fresh Coolness",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FCFFFD80",
+          "editor.hoverHighlightBackground: #FCFFFD80",
+          "quickInput.background: #F5FAF8F2"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-monastic-color-theme.json",
+    "name": "XELA Monastic — Near‑Monochrome Focus",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 15,
+        "examples": [
+          "sideBar.dropBackground: #FFFFFF21",
+          "editorGroup.dropBackground: #FFFFFF21",
+          "editor.selectionBackground: #FFFFFF1A"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-mr-robot-color-theme.json",
+    "name": "XELA Mr. Robot — fsociety Terminal",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 11,
+        "examples": [
+          "editor.findMatchBackground: #FFFF0050",
+          "editor.findMatchHighlightBackground: #FFFF0025",
+          "editorBracketPairGuide.activeBackground4: #FFFF0054"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-neon-noir-color-theme.json",
+    "name": "XELA Neon Noir — Cyber Noir",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 16,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF0087",
+          "editor.findMatchHighlightBorder: #FFFF0087",
+          "editorBracketMatch.border: #FFFF0087"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-paper-white-color-theme.json",
+    "name": "XELA Paper White — Clean Manuscript",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 8,
+        "examples": [
+          "editor.lineHighlightBackground: #F8F9FA80",
+          "editor.foldBackground: #F8F9FA80",
+          "editor.findMatchHighlightBackground: #FFFFFF80"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-porcelain-color-theme.json",
+    "name": "XELA Porcelain — Delicate Light",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 7,
+        "examples": [
+          "editor.foldBackground: #F9F9F980",
+          "editor.findMatchHighlightBackground: #F4F4F480",
+          "editor.hoverHighlightBackground: #F4F4F480"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-publisher-color-theme.json",
+    "name": "XELA Publisher — Editorial Excellence",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFFFE80",
+          "editor.hoverHighlightBackground: #FFFFFE80",
+          "quickInput.background: #FDFCFBF8"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-reader-mode-color-theme.json",
+    "name": "XELA Reader Mode — Optimal Legibility",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFFFF80",
+          "editor.hoverHighlightBackground: #FFFFFF80",
+          "quickInput.background: #FAF9F7F5"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-rose-quartz-color-theme.json",
+    "name": "XELA Rose Quartz — Gentle Pink",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFCFD80",
+          "editor.hoverHighlightBackground: #FFFCFD80",
+          "quickInput.background: #FCF7F8F2"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-sand-dune-color-theme.json",
+    "name": "XELA Sand Dune — Desert Warmth",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFBF580",
+          "editor.hoverHighlightBackground: #FFFBF580",
+          "quickInput.background: #FAF6F1F2"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-scandinavian-color-theme.json",
+    "name": "XELA Scandinavian — Nordic Hygge",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFFFE80",
+          "editor.hoverHighlightBackground: #FFFFFE80",
+          "quickInput.background: #F7F6F3F8"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-speed-reading-color-theme.json",
+    "name": "XELA Speed Reading — Rapid Scan",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 8,
+        "examples": [
+          "editor.lineHighlightBackground: #F5F5F550",
+          "editor.foldBackground: #F5F5F580",
+          "editor.findMatchHighlightBackground: #FFFFFF80"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-startup-agile-scrum-color-theme.json",
+    "name": "XELA Startup — Agile Sprint Board",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 20,
+        "examples": [
+          "sideBar.border: #F2F4F660",
+          "sideBar.dropBackground: #F2F4F680",
+          "editorGroup.dropBackground: #F2F4F680"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-startup-lean-canvas-color-theme.json",
+    "name": "XELA Startup Lean Canvas — Business Model",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 8,
+        "examples": [
+          "statusBar.foreground: #FFFFFF",
+          "editor.foldBackground: #FFFAED80",
+          "editor.findMatchHighlightBackground: #FFF4D980"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-startup-mvp-launch-color-theme.json",
+    "name": "XELA Startup — MVP Launch Day",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 29,
+        "examples": [
+          "sideBar.border: #F9F9F960",
+          "sideBar.dropBackground: #F9F9F980",
+          "editorGroup.dropBackground: #F9F9F980"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-startup-product-hunt-color-theme.json",
+    "name": "XELA Startup — Product Hunt Featured",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 20,
+        "examples": [
+          "sideBar.border: #F4F4F460",
+          "sideBar.dropBackground: #F4F4F480",
+          "editorGroup.dropBackground: #F4F4F480"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-startup-remote-first-color-theme.json",
+    "name": "XELA Startup — Remote-First Culture",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 29,
+        "examples": [
+          "sideBar.border: #F9F9F960",
+          "sideBar.dropBackground: #F9F9F980",
+          "editorGroup.dropBackground: #F9F9F980"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-startup-yc-color-theme.json",
+    "name": "XELA Startup YC — Y Combinator Orange",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 8,
+        "examples": [
+          "statusBar.foreground: #FFFFFF",
+          "editor.foldBackground: #FFFBF580",
+          "editor.findMatchHighlightBackground: #FFF4E680"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-swiss-modern-color-theme.json",
+    "name": "XELA Swiss Modern — Helvetica Grid",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FFFFFF80",
+          "editor.hoverHighlightBackground: #FFFFFF80",
+          "quickInput.background: #FAFAFAF8"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-synthwave-outrun-color-theme.json",
+    "name": "XELA Synthwave Outrun — Neon Highway",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 16,
+        "examples": [
+          "tab.unfocusedActiveBorderTop: #FFFF0087",
+          "editor.findMatchHighlightBorder: #FFFF0087",
+          "editorBracketMatch.border: #FFFF0087"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-unicorn-color-theme.json",
+    "name": "XELA Unicorn — Billion Dollar Vision",
+    "type": "dark",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 19,
+        "examples": [
+          "statusBarItem.hoverBackground: #FFFFFF30",
+          "editor.findMatchBackground: #FFFB9640",
+          "editor.findMatchHighlightBackground: #FFFB9625"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "xela-zen-code-color-theme.json",
+    "name": "XELA Zen Code — Mindful Simplicity",
+    "type": "light",
+    "issueCount": 1,
+    "issues": [
+      {
+        "type": "too_many_bright_colors",
+        "count": 6,
+        "examples": [
+          "editor.findMatchHighlightBackground: #FCFCFB80",
+          "editor.hoverHighlightBackground: #FCFCFB80",
+          "quickInput.background: #F8F8F6F8"
+        ]
+      }
+    ]
+  }
+]

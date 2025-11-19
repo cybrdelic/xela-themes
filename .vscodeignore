@@ -5,3 +5,16 @@
 **/*.log
 **/.DS_Store
 **/scripts/**
+**/.env
+.env
+node_modules/**
+screenshots-vscode/**
+src/**
+test-html-syntax.html
+landing/**
+docs/**
+presets/**
+images/**
+.gitignore
+*.md
+!README.md

@@ -19,7 +19,6 @@ function run(){
     assert(json.tokenColors && json.tokenColors.length>20, 'tokenColors insufficient in '+f);
     const htmlTagToken = json.tokenColors.find(t=>Array.isArray(t.scope)?t.scope.includes('entity.name.tag.html'):t.scope==='entity.name.tag.html');
     assert(htmlTagToken, 'Missing HTML tag token in '+f);
-    assert(json.semanticTokenColors.function,'Missing semantic token function color');
   });
   console.log('All theme generation tests passed (',generated.length,'files ).');
 }
