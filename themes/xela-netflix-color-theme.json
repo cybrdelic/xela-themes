@@ -747,12 +747,5 @@
         "foreground": "#F7F8FA"
       }
     }
-  ],
-  "semanticTokenColors": {
-    "function": "#00F5A0",
-    "string": "#22C55E",
-    "number": "#FFD166",
-    "keyword": "#FFD166",
-    "type": "#D8C8FF"
-  }
+  ]
 }

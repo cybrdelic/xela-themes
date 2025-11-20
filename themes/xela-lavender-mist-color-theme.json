@@ -743,10 +743,31 @@
     }
   ],
   "semanticTokenColors": {
-    "function": "#00F5A0",
-    "string": "#22C55E",
-    "number": "#FFD166",
-    "keyword": "#FFD166",
-    "type": "#D8C8FF"
+    "variable": "#352E42",
+    "variable.defaultLibrary": "#4B3D63",
+    "parameter": "#5F566F",
+    "property": "#4D445E",
+    "function": "#6A9FBA",
+    "method": "#6A9FBA",
+    "function.defaultLibrary": "#8B7AA8",
+    "method.defaultLibrary": "#8B7AA8",
+    "class": "#A594C0",
+    "type": "#6A9FBA",
+    "interface": "#8B7AA8",
+    "enum": "#C9A66E",
+    "enumMember": "#C96B78",
+    "namespace": "#8B7AA8",
+    "keyword": "#8B7AA8",
+    "modifier": "#A594C0",
+    "operator": "#4D445E",
+    "comment": "#9688A6",
+    "string": "#6FA27A",
+    "number": "#BD9257",
+    "regexp": "#B06486",
+    "decorator": "#C96B78",
+    "label": "#6A9FBA",
+    "macro": "#A594C0",
+    "event": "#7FA587",
+    "typeParameter": "#7E8DC2"
   }
 }

@@ -114,56 +114,6 @@
         "path": "./themes/xela-anime-hacker-color-theme.json"
       },
       {
-        "label": "XELA Apple AirTags — Precision Finding",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-apple-airtags-precision-color-theme.json"
-      },
-      {
-        "label": "XELA Apple FaceTime — Video Call",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-apple-facetime-call-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Fitness — Activity Rings",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-apple-fitness-rings-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Health — Vitality Tracker",
-        "uiTheme": "vs",
-        "path": "./themes/xela-apple-health-vitality-color-theme.json"
-      },
-      {
-        "label": "XELA Apple iMessage — Message Bubbles",
-        "uiTheme": "vs",
-        "path": "./themes/xela-apple-imessage-bubbles-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Maps — Turn-by-Turn",
-        "uiTheme": "vs",
-        "path": "./themes/xela-apple-maps-navigation-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Music — Spatial Audio",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-apple-music-spatial-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Photos — Memories",
-        "uiTheme": "vs",
-        "path": "./themes/xela-apple-photos-memories-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Siri — Voice Waveform",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-apple-siri-waveform-color-theme.json"
-      },
-      {
-        "label": "XELA Apple Wallet — Card Stack",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-apple-wallet-cards-color-theme.json"
-      },
-      {
         "label": "XELA Aqua Interface — Classic macOS",
         "uiTheme": "vs",
         "path": "./themes/xela-aqua-interface-color-theme.json"
@@ -202,6 +152,11 @@
         "label": "XELA Atelier — Art Studio Light",
         "uiTheme": "vs",
         "path": "./themes/xela-atelier-color-theme.json"
+      },
+      {
+        "label": "XELA Atelier Prisma — Chromatic Kinetic Studio",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-atelier-prisma-color-theme.json"
       },
       {
         "label": "XELA Aurora Borealis — Northern Lights",
@@ -344,6 +299,11 @@
         "path": "./themes/xela-cupertino-color-theme.json"
       },
       {
+        "label": "XELA Cupertino Prism — Dynamic Glass",
+        "uiTheme": "vs",
+        "path": "./themes/xela-cupertino-prism-color-theme.json"
+      },
+      {
         "label": "XELA Cyberpunk 2077 — Night City",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-cyberpunk-2077-color-theme.json"
@@ -389,6 +349,11 @@
         "path": "./themes/xela-dove-grey-color-theme.json"
       },
       {
+        "label": "XELA Hyperflux Studio — Dumbar Motion",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-dumbar-flux-color-theme.json"
+      },
+      {
         "label": "XELA E‑Ink Sepia — Paper Light",
         "uiTheme": "vs",
         "path": "./themes/xela-e-ink-sepia-color-theme.json"
@@ -424,6 +389,11 @@
         "path": "./themes/xela-financial-trader-color-theme.json"
       },
       {
+        "label": "XELA Botanica Nova — Atelier Bloom",
+        "uiTheme": "vs",
+        "path": "./themes/xela-flora-nova-color-theme.json"
+      },
+      {
         "label": "XELA Flow State — Deep Concentration",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-flow-state-color-theme.json"
@@ -447,6 +417,11 @@
         "label": "XELA Garage Mode — Origin Story",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-garage-mode-color-theme.json"
+      },
+      {
+        "label": "XELA GMUNK Spectral — Volumetric Prism Lab",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-gmunk-spectral-color-theme.json"
       },
       {
         "label": "XELA Golden Horizon — Sunset Blaze",
@@ -517,6 +492,11 @@
         "label": "XELA Ivory Tower — Refined Cream",
         "uiTheme": "vs",
         "path": "./themes/xela-ivory-tower-color-theme.json"
+      },
+      {
+        "label": "XELA Jongerius Loom — Textural Editorial Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-jongerius-loom-color-theme.json"
       },
       {
         "label": "XELA Laboratory — Scientific Precision",
@@ -602,6 +582,16 @@
         "label": "XELA Mint Cream — Fresh Coolness",
         "uiTheme": "vs",
         "path": "./themes/xela-mint-cream-color-theme.json"
+      },
+      {
+        "label": "XELA Mirage Meridian — Dusk Lagoon Geometry",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-mirage-meridian-color-theme.json"
+      },
+      {
+        "label": "XELA Mirage Pulse — Desert Prism",
+        "uiTheme": "vs",
+        "path": "./themes/xela-mirage-pulse-color-theme.json"
       },
       {
         "label": "XELA Mojave Dusk — Desert Warmth",
@@ -724,6 +714,11 @@
         "path": "./themes/xela-platinum-color-theme.json"
       },
       {
+        "label": "XELA Polar Lumen — Aurora Ice",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-polar-lumen-color-theme.json"
+      },
+      {
         "label": "XELA PopGirly — Kawaii Dreams",
         "uiTheme": "vs",
         "path": "./themes/xela-popgirly-color-theme.json"
@@ -732,6 +727,11 @@
         "label": "XELA Porcelain — Delicate Light",
         "uiTheme": "vs",
         "path": "./themes/xela-porcelain-color-theme.json"
+      },
+      {
+        "label": "XELA Prisma Bloom — Holographic Pastel",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-prisma-bloom-color-theme.json"
       },
       {
         "label": "XELA Pro Display — Reference Monitor",
@@ -799,6 +799,11 @@
         "path": "./themes/xela-sage-wisdom-color-theme.json"
       },
       {
+        "label": "XELA SANAA Lantern — Glass Pavilion Dusk",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-sanaa-lantern-color-theme.json"
+      },
+      {
         "label": "XELA Sand Dune — Desert Warmth",
         "uiTheme": "vs",
         "path": "./themes/xela-sand-dune-color-theme.json"
@@ -812,6 +817,11 @@
         "label": "XELA Security Researcher — Zero Day",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-security-researcher-color-theme.json"
+      },
+      {
+        "label": "XELA Seraphine Conservatory — Terracotta Botanical Gallery",
+        "uiTheme": "vs",
+        "path": "./themes/xela-seraphine-conservatory-color-theme.json"
       },
       {
         "label": "XELA Shadow Realm — Void Walker",
@@ -839,6 +849,11 @@
         "path": "./themes/xela-solar-ink-color-theme.json"
       },
       {
+        "label": "XELA Mirage Sonora — Desert Prism",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-sonoran-mirage-color-theme.json"
+      },
+      {
         "label": "XELA Space Gray — Pro Hardware",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-space-gray-color-theme.json"
@@ -854,94 +869,9 @@
         "path": "./themes/xela-spotify-color-theme.json"
       },
       {
-        "label": "XELA Startup — Agile Sprint Board",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-agile-scrum-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — Series A Fundraise",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-fundraise-series-color-theme.json"
-      },
-      {
-        "label": "XELA Startup Garage — Bootstrap Mode",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-garage-color-theme.json"
-      },
-      {
-        "label": "XELA Startup Hackathon — 48 Hour Sprint",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-hackathon-color-theme.json"
-      },
-      {
         "label": "XELA Startup — Hackathon Sprint",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-startup-hackathon-sprint-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — IPO NASDAQ Bell",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-ipo-nasdaq-color-theme.json"
-      },
-      {
-        "label": "XELA Startup Lean Canvas — Business Model",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-lean-canvas-color-theme.json"
-      },
-      {
-        "label": "XELA Startup MVP — Minimum Viable Product",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-mvp-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — MVP Launch Day",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-mvp-launch-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — Pitch Deck Midnight",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-pitch-deck-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — Product Hunt Featured",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-product-hunt-color-theme.json"
-      },
-      {
-        "label": "XELA Startup Ramen Profitable — Bootstrapper",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-ramen-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — Remote-First Culture",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-remote-first-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — SaaS Analytics Dashboard",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-saas-dashboard-color-theme.json"
-      },
-      {
-        "label": "XELA Startup Series A — First Round",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-series-a-color-theme.json"
-      },
-      {
-        "label": "XELA Startup — Unicorn Billion",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-unicorn-billion-color-theme.json"
-      },
-      {
-        "label": "XELA Startup Unicorn — $1B Valuation",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xela-startup-unicorn-color-theme.json"
-      },
-      {
-        "label": "XELA Startup YC — Y Combinator Orange",
-        "uiTheme": "vs",
-        "path": "./themes/xela-startup-yc-color-theme.json"
       },
       {
         "label": "XELA Stone Garden — Natural Balance",
