@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "XELA GMUNK Spectral — Volumetric Prism Lab",
+  "name": "XELA Pro Studio Pack • GMUNK Spectral — Volumetric Prism Lab",
   "type": "dark",
   "semanticHighlighting": true,
   "xGenerated": true,
@@ -769,5 +769,7 @@
     "macro": "#FF4F66",
     "event": "#00F0FF",
     "typeParameter": "#9C7DFF"
-  }
+  },
+  "xBaseName": "XELA GMUNK Spectral — Volumetric Prism Lab",
+  "xPackLabel": "XELA Pro Studio Pack"
 }

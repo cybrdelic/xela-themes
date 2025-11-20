@@ -1,0 +1,1156 @@
+[
+  {
+    "id": "xela-oled-obsidian",
+    "label": "XELA OLED Obsidian Pack",
+    "description": "Pure black, OLED, graphite, and ink-inspired palettes built for contrast purists.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-black",
+        "label": "XELA Black — Pure OLED",
+        "path": "./themes/xela-black-color-theme.json"
+      },
+      {
+        "id": "xela-amoled-plus",
+        "label": "XELA AMOLED+ — Pure Black Max",
+        "path": "./themes/xela-amoled-plus-color-theme.json"
+      },
+      {
+        "id": "xela-oled-perfect",
+        "label": "XELA OLED Perfect — True Black",
+        "path": "./themes/xela-oled-perfect-color-theme.json"
+      },
+      {
+        "id": "xela-carbon-fiber",
+        "label": "XELA Carbon Fiber — Technical Weave",
+        "path": "./themes/xela-carbon-fiber-color-theme.json"
+      },
+      {
+        "id": "xela-charcoal-elite",
+        "label": "XELA Charcoal Elite — Professional Dark",
+        "path": "./themes/xela-charcoal-elite-color-theme.json"
+      },
+      {
+        "id": "xela-dark",
+        "label": "XELA Dark — Balanced Dark",
+        "path": "./themes/xela-dark-color-theme.json"
+      },
+      {
+        "id": "xela-void-mist",
+        "label": "XELA Void Mist — Diffuse Nebula",
+        "path": "./themes/xela-void-mist-color-theme.json"
+      },
+      {
+        "id": "xela-shadow-realm",
+        "label": "XELA Shadow Realm — Void Walker",
+        "path": "./themes/xela-shadow-realm-color-theme.json"
+      },
+      {
+        "id": "xela-cosmic-void",
+        "label": "XELA Cosmic Void — Event Horizon",
+        "path": "./themes/xela-cosmic-void-color-theme.json"
+      },
+      {
+        "id": "xela-obsidian-glass",
+        "label": "XELA Obsidian Glass — Black + Glass",
+        "path": "./themes/xela-obsidian-glass-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-midnight-celestial-midnight-voyage",
+    "label": "XELA Midnight Voyage",
+    "description": "Aurora expeditions, cosmic wayfinding, and meditative night skies.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-aurora-borealis",
+        "label": "XELA Aurora Borealis — Northern Lights",
+        "path": "./themes/xela-aurora-borealis-color-theme.json"
+      },
+      {
+        "id": "xela-cosmic-aurora",
+        "label": "XELA Cosmic Aurora — Stellar Dance",
+        "path": "./themes/xela-cosmic-aurora-color-theme.json"
+      },
+      {
+        "id": "xela-midnight",
+        "label": "XELA Midnight — iPhone 13 Shadow",
+        "path": "./themes/xela-midnight-color-theme.json"
+      },
+      {
+        "id": "xela-midnight-cosmos",
+        "label": "XELA Midnight Cosmos — Stellar Deep",
+        "path": "./themes/xela-midnight-cosmos-color-theme.json"
+      },
+      {
+        "id": "xela-midnight-gradient",
+        "label": "XELA Midnight Gradient — Deep Layers",
+        "path": "./themes/xela-midnight-gradient-color-theme.json"
+      },
+      {
+        "id": "xela-midnight-oil",
+        "label": "XELA Midnight Oil — Late Night Focus",
+        "path": "./themes/xela-midnight-oil-color-theme.json"
+      },
+      {
+        "id": "xela-nebula-haze",
+        "label": "XELA Nebula Haze — Iridescent Fog",
+        "path": "./themes/xela-nebula-haze-color-theme.json"
+      },
+      {
+        "id": "xela-night-vision",
+        "label": "XELA Night Vision — Tactical Display",
+        "path": "./themes/xela-night-vision-color-theme.json"
+      },
+      {
+        "id": "xela-tokyo-neon",
+        "label": "XELA Tokyo Neon — Shibuya Night",
+        "path": "./themes/xela-tokyo-neon-color-theme.json"
+      },
+      {
+        "id": "xela-twilight-layers",
+        "label": "XELA Twilight Layers — Depth & Dimension",
+        "path": "./themes/xela-twilight-layers-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-midnight-celestial-midnight-pulse",
+    "label": "XELA Midnight Pulse",
+    "description": "Neon cities, electric rain, and high-energy nocturnal palettes.",
+    "themeCount": 2,
+    "themes": [
+      {
+        "id": "xela-velvet-dusk",
+        "label": "XELA Velvet Dusk — Plush Comfort",
+        "path": "./themes/xela-velvet-dusk-color-theme.json"
+      },
+      {
+        "id": "xela-velvet-night",
+        "label": "XELA Velvet Night — Luxury Dark",
+        "path": "./themes/xela-velvet-night-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-graphite-minimal-graphite-focus",
+    "label": "XELA Graphite Focus",
+    "description": "High-contrast monochrome workhorses for deep concentration.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-ash-grey",
+        "label": "XELA Ash Grey — Minimal Elegance",
+        "path": "./themes/xela-ash-grey-color-theme.json"
+      },
+      {
+        "id": "xela-borderless-minimal",
+        "label": "XELA Borderless Minimal — Chrome-less Focus",
+        "path": "./themes/xela-borderless-minimal-color-theme.json"
+      },
+      {
+        "id": "xela-chalk",
+        "label": "XELA Chalk — Matte White",
+        "path": "./themes/xela-chalk-color-theme.json"
+      },
+      {
+        "id": "xela-clean-slate",
+        "label": "XELA Clean Slate — Minimal Precision",
+        "path": "./themes/xela-clean-slate-color-theme.json"
+      },
+      {
+        "id": "xela-deep-focus",
+        "label": "XELA Deep Focus — Distraction-Free Code",
+        "path": "./themes/xela-deep-focus-color-theme.json"
+      },
+      {
+        "id": "xela-eink-pro",
+        "label": "XELA E-Ink Pro — Grayscale Perfect",
+        "path": "./themes/xela-eink-pro-color-theme.json"
+      },
+      {
+        "id": "xela-e-ink-sepia",
+        "label": "XELA E‑Ink Sepia — Paper Light",
+        "path": "./themes/xela-e-ink-sepia-color-theme.json"
+      },
+      {
+        "id": "xela-eye-care",
+        "label": "XELA Eye Care — Vision Optimized",
+        "path": "./themes/xela-eye-care-color-theme.json"
+      },
+      {
+        "id": "xela-graph-paper",
+        "label": "XELA Graph Paper — Light Grid",
+        "path": "./themes/xela-graph-paper-color-theme.json"
+      },
+      {
+        "id": "xela-hyperfocus-monochrome",
+        "label": "XELA Hyperfocus Monochrome — Cognitive Isolation",
+        "path": "./themes/xela-hyperfocus-monochrome-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-graphite-minimal-graphite-atelier",
+    "label": "XELA Graphite Atelier",
+    "description": "Designer-grade greys, editorial whites, and typographic precision.",
+    "themeCount": 9,
+    "themes": [
+      {
+        "id": "xela-pear",
+        "label": "XELA Graphite Atelier • Pear — Clean Minimal",
+        "path": "./themes/xela-pear-color-theme.json"
+      },
+      {
+        "id": "xela-graphite-pro",
+        "label": "XELA Graphite Pro — Precision Grey",
+        "path": "./themes/xela-graphite-pro-color-theme.json"
+      },
+      {
+        "id": "xela-inkwell-sepia",
+        "label": "XELA Inkwell Sepia — Vintage Manuscript",
+        "path": "./themes/xela-inkwell-sepia-color-theme.json"
+      },
+      {
+        "id": "xela-ivory-tower",
+        "label": "XELA Ivory Tower — Refined Cream",
+        "path": "./themes/xela-ivory-tower-color-theme.json"
+      },
+      {
+        "id": "xela-liminal-whiteout",
+        "label": "XELA Liminal Whiteout — Overexposed Minimal Field",
+        "path": "./themes/xela-liminal-whiteout-color-theme.json"
+      },
+      {
+        "id": "xela-linen",
+        "label": "XELA Linen — Natural Fabric",
+        "path": "./themes/xela-linen-color-theme.json"
+      },
+      {
+        "id": "xela-monastic",
+        "label": "XELA Monastic — Near‑Monochrome Focus",
+        "path": "./themes/xela-monastic-color-theme.json"
+      },
+      {
+        "id": "xela-pearl-white",
+        "label": "XELA Pearl White — Luminous Clarity",
+        "path": "./themes/xela-pearl-white-color-theme.json"
+      },
+      {
+        "id": "xela-pewter",
+        "label": "XELA Pewter — Refined Metal",
+        "path": "./themes/xela-pewter-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-graphite-minimal-graphite-zen",
+    "label": "XELA Graphite Zen",
+    "description": "Soft grayscale palettes tuned for wellness and mindful coding.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-phosphor-green",
+        "label": "XELA Phosphor Green — Monochrome CRT",
+        "path": "./themes/xela-phosphor-green-color-theme.json"
+      },
+      {
+        "id": "xela-porcelain",
+        "label": "XELA Porcelain — Delicate Light",
+        "path": "./themes/xela-porcelain-color-theme.json"
+      },
+      {
+        "id": "xela-reader-mode",
+        "label": "XELA Reader Mode — Optimal Legibility",
+        "path": "./themes/xela-reader-mode-color-theme.json"
+      },
+      {
+        "id": "xela-slate-modern",
+        "label": "XELA Slate Modern — Contemporary Grey",
+        "path": "./themes/xela-slate-modern-color-theme.json"
+      },
+      {
+        "id": "xela-smoke",
+        "label": "XELA Smoke — Atmospheric Grey",
+        "path": "./themes/xela-smoke-color-theme.json"
+      },
+      {
+        "id": "xela-storm-grey",
+        "label": "XELA Storm Grey — Moody Atmosphere",
+        "path": "./themes/xela-storm-grey-color-theme.json"
+      },
+      {
+        "id": "xela-titanium",
+        "label": "XELA Titanium — iPhone 15 Pro",
+        "path": "./themes/xela-titanium-color-theme.json"
+      },
+      {
+        "id": "xela-tungsten",
+        "label": "XELA Tungsten — Industrial Grey",
+        "path": "./themes/xela-tungsten-color-theme.json"
+      },
+      {
+        "id": "xela-zen-code",
+        "label": "XELA Zen Code — Mindful Simplicity",
+        "path": "./themes/xela-zen-code-color-theme.json"
+      },
+      {
+        "id": "xela-zen-garden",
+        "label": "XELA Zen Garden — Peaceful Minimalism",
+        "path": "./themes/xela-zen-garden-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-paper-studio-light-series-1",
+    "label": "XELA Paper Studio Light Pack — Set 1",
+    "description": "Notebook, manuscript, and daylight studio palettes tuned for calm clarity. (set 1/2).",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-atelier",
+        "label": "XELA Atelier — Art Studio Light",
+        "path": "./themes/xela-atelier-color-theme.json"
+      },
+      {
+        "id": "xela-atelier-prisma",
+        "label": "XELA Atelier Prisma — Chromatic Kinetic Studio",
+        "path": "./themes/xela-atelier-prisma-color-theme.json"
+      },
+      {
+        "id": "xela-cafe-au-lait",
+        "label": "XELA Café au Lait — Warm Gradient",
+        "path": "./themes/xela-cafe-au-lait-color-theme.json"
+      },
+      {
+        "id": "xela-coffee-house",
+        "label": "XELA Coffee House — Rich Espresso",
+        "path": "./themes/xela-coffee-house-color-theme.json"
+      },
+      {
+        "id": "xela-creative-writer",
+        "label": "XELA Creative Writer — Prose Flow",
+        "path": "./themes/xela-creative-writer-color-theme.json"
+      },
+      {
+        "id": "xela-espresso",
+        "label": "XELA Espresso — Rich Coffee Brown",
+        "path": "./themes/xela-espresso-color-theme.json"
+      },
+      {
+        "id": "xela-hdr-studio",
+        "label": "XELA HDR Studio — Wide Gamut",
+        "path": "./themes/xela-hdr-studio-color-theme.json"
+      },
+      {
+        "id": "xela-dumbar-flux",
+        "label": "XELA Hyperflux Studio — Dumbar Motion",
+        "path": "./themes/xela-dumbar-flux-color-theme.json"
+      },
+      {
+        "id": "xela-paper-white",
+        "label": "XELA Paper White — Clean Manuscript",
+        "path": "./themes/xela-paper-white-color-theme.json"
+      },
+      {
+        "id": "xela-publisher",
+        "label": "XELA Publisher — Editorial Excellence",
+        "path": "./themes/xela-publisher-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-paper-studio-light-series-2",
+    "label": "XELA Paper Studio Light Pack — Set 2",
+    "description": "Notebook, manuscript, and daylight studio palettes tuned for calm clarity. (set 2/2).",
+    "themeCount": 2,
+    "themes": [
+      {
+        "id": "xela-stone-garden",
+        "label": "XELA Stone Garden — Natural Balance",
+        "path": "./themes/xela-stone-garden-color-theme.json"
+      },
+      {
+        "id": "xela-studio-pro",
+        "label": "XELA Studio Pro — Designer Workspace",
+        "path": "./themes/xela-studio-pro-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-cupertino-luminous",
+    "label": "XELA Cupertino Luminous Pack",
+    "description": "Aqua, macOS, and Apple system palettes with luminous glass aesthetics.",
+    "themeCount": 7,
+    "themes": [
+      {
+        "id": "xela-continuity",
+        "label": "XELA Continuity — Handoff Flow",
+        "path": "./themes/xela-continuity-color-theme.json"
+      },
+      {
+        "id": "xela-cupertino",
+        "label": "XELA Cupertino — California Design",
+        "path": "./themes/xela-cupertino-color-theme.json"
+      },
+      {
+        "id": "xela-cupertino-prism",
+        "label": "XELA Cupertino Prism — Dynamic Glass",
+        "path": "./themes/xela-cupertino-prism-color-theme.json"
+      },
+      {
+        "id": "xela-monterey",
+        "label": "XELA Monterey — Big Sur Evolution",
+        "path": "./themes/xela-monterey-color-theme.json"
+      },
+      {
+        "id": "xela-pro-display",
+        "label": "XELA Pro Display — Reference Monitor",
+        "path": "./themes/xela-pro-display-color-theme.json"
+      },
+      {
+        "id": "xela-retina-xdr",
+        "label": "XELA Retina XDR — Apple Display",
+        "path": "./themes/xela-retina-xdr-color-theme.json"
+      },
+      {
+        "id": "xela-space-gray",
+        "label": "XELA Space Gray — Pro Hardware",
+        "path": "./themes/xela-space-gray-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-tech-nostalgia",
+    "label": "XELA Tech Nostalgia Pack",
+    "description": "Experience the charm of vintage computing, from the amber glow of DOS terminals to the glossy plastic of PlayStation 2, the friendly Luna blues of Windows XP, the classic monochrome Mac, the translucent Aqua of macOS. Includes early MySpace raw HTML aesthetic with glitter graphics and emo profile designs.",
+    "themeCount": 16,
+    "themes": [
+      {
+        "id": "xela-windows-xp",
+        "label": "XELA Tech Nostalgia • Windows XP — Bliss Desktop",
+        "path": "./themes/xela-windows-xp-color-theme.json"
+      },
+      {
+        "id": "xela-windows-xp-dark",
+        "label": "XELA Tech Nostalgia • Windows XP Dark — Midnight Luna",
+        "path": "./themes/xela-windows-xp-dark-color-theme.json"
+      },
+      {
+        "id": "xela-classic-ps2",
+        "label": "XELA Tech Nostalgia • Classic PS2 — PlayStation Interface",
+        "path": "./themes/xela-classic-ps2-color-theme.json"
+      },
+      {
+        "id": "xela-classic-ps2-light",
+        "label": "XELA Tech Nostalgia • Classic PS2 Light — Silver Tower",
+        "path": "./themes/xela-classic-ps2-light-color-theme.json"
+      },
+      {
+        "id": "xela-basic-dos",
+        "label": "XELA Tech Nostalgia • BASIC DOS — Command Prompt",
+        "path": "./themes/xela-basic-dos-color-theme.json"
+      },
+      {
+        "id": "xela-basic-dos-light",
+        "label": "XELA Tech Nostalgia • BASIC DOS Light — Amber Monitor",
+        "path": "./themes/xela-basic-dos-light-color-theme.json"
+      },
+      {
+        "id": "xela-macos-classic",
+        "label": "XELA Tech Nostalgia • macOS Classic — System 7 Platinum",
+        "path": "./themes/xela-macos-classic-color-theme.json"
+      },
+      {
+        "id": "xela-macos-classic-dark",
+        "label": "XELA Tech Nostalgia • macOS Classic Dark — Charcoal System",
+        "path": "./themes/xela-macos-classic-dark-color-theme.json"
+      },
+      {
+        "id": "xela-macos-aqua",
+        "label": "XELA Tech Nostalgia • macOS Aqua — OS X Transparent",
+        "path": "./themes/xela-macos-aqua-color-theme.json"
+      },
+      {
+        "id": "xela-macos-aqua-dark",
+        "label": "XELA Tech Nostalgia • macOS Aqua Dark — Deep Water",
+        "path": "./themes/xela-macos-aqua-dark-color-theme.json"
+      },
+      {
+        "id": "xela-myspace-raw-html",
+        "label": "XELA Tech Nostalgia • MySpace Raw HTML — Glitter Graphics",
+        "path": "./themes/xela-myspace-raw-html-color-theme.json"
+      },
+      {
+        "id": "xela-myspace-dark",
+        "label": "XELA Tech Nostalgia • MySpace Dark — Emo Profile",
+        "path": "./themes/xela-myspace-dark-color-theme.json"
+      },
+      {
+        "id": "xela-winamp-classic",
+        "label": "XELA Tech Nostalgia • Winamp Classic — Metallic Skin",
+        "path": "./themes/xela-winamp-classic-color-theme.json"
+      },
+      {
+        "id": "xela-apple-ii",
+        "label": "XELA Tech Nostalgia • Apple II — Green Phosphor",
+        "path": "./themes/xela-apple-ii-color-theme.json"
+      },
+      {
+        "id": "xela-commodore-64",
+        "label": "XELA Tech Nostalgia • Commodore 64 — PETSCII Blue",
+        "path": "./themes/xela-commodore-64-color-theme.json"
+      },
+      {
+        "id": "xela-hal-9000",
+        "label": "XELA Cinema • HAL 9000 — Red Eye",
+        "path": "./themes/xela-hal-9000-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-pastel-botanical",
+    "label": "XELA Pastel & Botanical Pack",
+    "description": "Soft lavender, floral, and plant-inspired palettes for gentle creative flow.",
+    "themeCount": 8,
+    "themes": [
+      {
+        "id": "xela-flora-nova",
+        "label": "XELA Botanica Nova — Atelier Bloom",
+        "path": "./themes/xela-flora-nova-color-theme.json"
+      },
+      {
+        "id": "xela-lavender-fields",
+        "label": "XELA Lavender Fields — Provence Light",
+        "path": "./themes/xela-lavender-fields-color-theme.json"
+      },
+      {
+        "id": "xela-lavender-mist",
+        "label": "XELA Lavender Mist — Soft Purple Hues",
+        "path": "./themes/xela-lavender-mist-color-theme.json"
+      },
+      {
+        "id": "xela-mint-cream",
+        "label": "XELA Mint Cream — Fresh Coolness",
+        "path": "./themes/xela-mint-cream-color-theme.json"
+      },
+      {
+        "id": "xela-prisma-bloom",
+        "label": "XELA Pastel & Botanical Pack • Prisma Bloom — Holographic Pastel",
+        "path": "./themes/xela-prisma-bloom-color-theme.json"
+      },
+      {
+        "id": "xela-rose-quartz",
+        "label": "XELA Rose Quartz — Gentle Pink",
+        "path": "./themes/xela-rose-quartz-color-theme.json"
+      },
+      {
+        "id": "xela-sage-wisdom",
+        "label": "XELA Sage Wisdom — Herbal Serenity",
+        "path": "./themes/xela-sage-wisdom-color-theme.json"
+      },
+      {
+        "id": "xela-seraphine-conservatory",
+        "label": "XELA Seraphine Conservatory — Terracotta Botanical Gallery",
+        "path": "./themes/xela-seraphine-conservatory-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-forest-earth",
+    "label": "XELA Forest & Earth Pack",
+    "description": "Verdant forest, moss, stone, and earthen palettes grounded in nature.",
+    "themeCount": 7,
+    "themes": [
+      {
+        "id": "xela-ember-glow",
+        "label": "XELA Ember Glow — Warm Fire",
+        "path": "./themes/xela-ember-glow-color-theme.json"
+      },
+      {
+        "id": "xela-forest-cathedral",
+        "label": "XELA Forest Cathedral — Sacred Canopy",
+        "path": "./themes/xela-forest-cathedral-color-theme.json"
+      },
+      {
+        "id": "xela-forest-floor",
+        "label": "XELA Forest Floor — Earthy Greens",
+        "path": "./themes/xela-forest-floor-color-theme.json"
+      },
+      {
+        "id": "xela-limestone",
+        "label": "XELA Limestone — Natural Stone",
+        "path": "./themes/xela-limestone-color-theme.json"
+      },
+      {
+        "id": "xela-midnight-cedar",
+        "label": "XELA Midnight Cedar — Forest Dark",
+        "path": "./themes/xela-midnight-cedar-color-theme.json"
+      },
+      {
+        "id": "xela-terra",
+        "label": "XELA Terra — Organic Warmth",
+        "path": "./themes/xela-terra-color-theme.json"
+      },
+      {
+        "id": "xela-volcanic-forge",
+        "label": "XELA Volcanic Forge — Molten Core",
+        "path": "./themes/xela-volcanic-forge-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-coastal-atmosphere",
+    "label": "XELA Coastal Atmosphere Pack",
+    "description": "Oceanic, polar, and mist-filled atmosphere palettes for airy focus.",
+    "themeCount": 9,
+    "themes": [
+      {
+        "id": "xela-arctic",
+        "label": "XELA Arctic — Crystal Light",
+        "path": "./themes/xela-arctic-color-theme.json"
+      },
+      {
+        "id": "xela-arctic-daylight",
+        "label": "XELA Arctic Daylight — Cool Clarity",
+        "path": "./themes/xela-arctic-daylight-color-theme.json"
+      },
+      {
+        "id": "xela-arctic-glass",
+        "label": "XELA Arctic Glass — Crystal Light",
+        "path": "./themes/xela-arctic-glass-color-theme.json"
+      },
+      {
+        "id": "xela-arctic-night",
+        "label": "XELA Arctic Night — Northern Calm",
+        "path": "./themes/xela-arctic-night-color-theme.json"
+      },
+      {
+        "id": "xela-ethereal-mist",
+        "label": "XELA Ethereal Mist — Spirit Realm",
+        "path": "./themes/xela-ethereal-mist-color-theme.json"
+      },
+      {
+        "id": "xela-mirage-meridian",
+        "label": "XELA Mirage Meridian — Dusk Lagoon Geometry",
+        "path": "./themes/xela-mirage-meridian-color-theme.json"
+      },
+      {
+        "id": "xela-ocean-depths",
+        "label": "XELA Ocean Depths — After (Dramatic Layers)",
+        "path": "./themes/xela-ocean-depths-color-theme.json"
+      },
+      {
+        "id": "xela-ocean-depths-classic",
+        "label": "XELA Ocean Depths Classic — Before (Uniform)",
+        "path": "./themes/xela-ocean-depths-classic-color-theme.json"
+      },
+      {
+        "id": "xela-polar-lumen",
+        "label": "XELA Coastal Atmosphere Pack • Polar Lumen — Aurora Ice",
+        "path": "./themes/xela-polar-lumen-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-sunrise-warm",
+    "label": "XELA Sunrise Warmth Pack",
+    "description": "Golden hour, ember, canyon, and desert palettes with warm energy.",
+    "themeCount": 8,
+    "themes": [
+      {
+        "id": "xela-daybreak",
+        "label": "XELA Daybreak — Morning Light",
+        "path": "./themes/xela-daybreak-color-theme.json"
+      },
+      {
+        "id": "xela-golden-horizon",
+        "label": "XELA Golden Horizon — Sunset Blaze",
+        "path": "./themes/xela-golden-horizon-color-theme.json"
+      },
+      {
+        "id": "xela-honey-glow",
+        "label": "XELA Honey Glow — Golden Warmth",
+        "path": "./themes/xela-honey-glow-color-theme.json"
+      },
+      {
+        "id": "xela-sonoran-mirage",
+        "label": "XELA Mirage Sonora — Desert Prism",
+        "path": "./themes/xela-sonoran-mirage-color-theme.json"
+      },
+      {
+        "id": "xela-mojave-dusk",
+        "label": "XELA Mojave Dusk — Desert Warmth",
+        "path": "./themes/xela-mojave-dusk-color-theme.json"
+      },
+      {
+        "id": "xela-sand-dune",
+        "label": "XELA Sand Dune — Desert Warmth",
+        "path": "./themes/xela-sand-dune-color-theme.json"
+      },
+      {
+        "id": "xela-solar-ink",
+        "label": "XELA Solar Ink — Warm Print Light",
+        "path": "./themes/xela-solar-ink-color-theme.json"
+      },
+      {
+        "id": "xela-mirage-pulse",
+        "label": "XELA Sunrise Warmth Pack • Mirage Pulse — Desert Prism",
+        "path": "./themes/xela-mirage-pulse-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-neon-grid",
+    "label": "XELA Neon Grid Pack",
+    "description": "Synthwave, outrun, and neon grid palettes for high-energy sessions.",
+    "themeCount": 7,
+    "themes": [
+      {
+        "id": "xela-anime-hacker",
+        "label": "XELA Anime Hacker — Cyberpunk Neon",
+        "path": "./themes/xela-anime-hacker-color-theme.json"
+      },
+      {
+        "id": "xela-neon-wireframe",
+        "label": "XELA Neon Wireframe — Vector Grid",
+        "path": "./themes/xela-neon-wireframe-color-theme.json"
+      },
+      {
+        "id": "xela-proto-grid",
+        "label": "XELA Proto Grid — Early Wireframe UX",
+        "path": "./themes/xela-proto-grid-color-theme.json"
+      },
+      {
+        "id": "xela-retrowave-synthesis",
+        "label": "XELA Retrowave Synthesis — Neon Dreams",
+        "path": "./themes/xela-retrowave-synthesis-color-theme.json"
+      },
+      {
+        "id": "xela-swiss-modern",
+        "label": "XELA Swiss Modern — Helvetica Grid",
+        "path": "./themes/xela-swiss-modern-color-theme.json"
+      },
+      {
+        "id": "xela-synthwave-outrun",
+        "label": "XELA Synthwave Outrun — Neon Highway",
+        "path": "./themes/xela-synthwave-outrun-color-theme.json"
+      },
+      {
+        "id": "xela-vapor",
+        "label": "XELA Vapor — Neon Retrowave",
+        "path": "./themes/xela-vapor-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-cyber-future",
+    "label": "XELA Cyber Future Pack",
+    "description": "Cyberpunk, matrix, AI, and data-stream palettes for futuristic stacks.",
+    "themeCount": 8,
+    "themes": [
+      {
+        "id": "xela-crystalline-matrix",
+        "label": "XELA Crystalline Matrix — Diamond Lattice",
+        "path": "./themes/xela-crystalline-matrix-color-theme.json"
+      },
+      {
+        "id": "xela-digital-rain",
+        "label": "XELA Digital Rain — Data Cascade",
+        "path": "./themes/xela-digital-rain-color-theme.json"
+      },
+      {
+        "id": "xela-matrix-rain",
+        "label": "XELA Matrix Rain — Hyperphosphor Cascade",
+        "path": "./themes/xela-matrix-rain-color-theme.json"
+      },
+      {
+        "id": "xela-neon-noir",
+        "label": "XELA Neon Noir — Cyber Noir",
+        "path": "./themes/xela-neon-noir-color-theme.json"
+      },
+      {
+        "id": "xela-neural-network",
+        "label": "XELA Neural Network — AI Synapses",
+        "path": "./themes/xela-neural-network-color-theme.json"
+      },
+      {
+        "id": "xela-plasma-storm",
+        "label": "XELA Plasma Storm — Electric Current",
+        "path": "./themes/xela-plasma-storm-color-theme.json"
+      },
+      {
+        "id": "xela-quantum-flux",
+        "label": "XELA Quantum Flux — Probability Waves",
+        "path": "./themes/xela-quantum-flux-color-theme.json"
+      },
+      {
+        "id": "xela-terminalist",
+        "label": "XELA Terminalist — ANSI Native",
+        "path": "./themes/xela-terminalist-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-retro-print",
+    "label": "XELA Retro Print Pack",
+    "description": "Retro tech, brutalist, and typographic palettes with nostalgic flair.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-50s-gangster",
+        "label": "XELA 50s Gangster — Noir Detective",
+        "path": "./themes/xela-50s-gangster-color-theme.json"
+      },
+      {
+        "id": "xela-barbie",
+        "label": "XELA Barbie — Dreamhouse Pink",
+        "path": "./themes/xela-barbie-color-theme.json"
+      },
+      {
+        "id": "xela-bauhaus",
+        "label": "XELA Bauhaus — Primary Geometry",
+        "path": "./themes/xela-bauhaus-color-theme.json"
+      },
+      {
+        "id": "xela-brutalist",
+        "label": "XELA Brutalist — Raw Concrete",
+        "path": "./themes/xela-brutalist-color-theme.json"
+      },
+      {
+        "id": "xela-brutalist-soft",
+        "label": "XELA Brutalist Soft — Warm Concrete",
+        "path": "./themes/xela-brutalist-soft-color-theme.json"
+      },
+      {
+        "id": "xela-jongerius-loom",
+        "label": "XELA Retro Print Pack • Jongerius Loom — Textural Editorial Light",
+        "path": "./themes/xela-jongerius-loom-color-theme.json"
+      },
+      {
+        "id": "xela-ink",
+        "label": "XELA Ink — Print Typography",
+        "path": "./themes/xela-ink-color-theme.json"
+      },
+      {
+        "id": "xela-mr-robot",
+        "label": "XELA Mr. Robot — fsociety Terminal",
+        "path": "./themes/xela-mr-robot-color-theme.json"
+      },
+      {
+        "id": "xela-retro-terminal-amber",
+        "label": "XELA Retro Terminal Amber — Monochrome CRT",
+        "path": "./themes/xela-retro-terminal-amber-color-theme.json"
+      },
+      {
+        "id": "xela-wwdc",
+        "label": "XELA WWDC — Developer Conference",
+        "path": "./themes/xela-wwdc-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-pro-studio",
+    "label": "XELA Pro Studio Pack",
+    "description": "Blueprint, drafting, finance, and studio-grade palettes for professional teams.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-blueprint",
+        "label": "XELA Blueprint — Technical Drafting",
+        "path": "./themes/xela-blueprint-color-theme.json"
+      },
+      {
+        "id": "xela-boardroom",
+        "label": "XELA Boardroom — Executive Power",
+        "path": "./themes/xela-boardroom-color-theme.json"
+      },
+      {
+        "id": "xela-data-analyst",
+        "label": "XELA Data Analyst — Insight Engine",
+        "path": "./themes/xela-data-analyst-color-theme.json"
+      },
+      {
+        "id": "xela-financial-trader",
+        "label": "XELA Financial Trader — Market Watch",
+        "path": "./themes/xela-financial-trader-color-theme.json"
+      },
+      {
+        "id": "xela-game-dev",
+        "label": "XELA Game Dev — Level Designer",
+        "path": "./themes/xela-game-dev-color-theme.json"
+      },
+      {
+        "id": "xela-laboratory",
+        "label": "XELA Laboratory — Scientific Precision",
+        "path": "./themes/xela-laboratory-color-theme.json"
+      },
+      {
+        "id": "xela-medical-coder",
+        "label": "XELA Medical Coder — Clinical Precision",
+        "path": "./themes/xela-medical-coder-color-theme.json"
+      },
+      {
+        "id": "xela-gmunk-spectral",
+        "label": "XELA Pro Studio Pack • GMUNK Spectral — Volumetric Prism Lab",
+        "path": "./themes/xela-gmunk-spectral-color-theme.json"
+      },
+      {
+        "id": "xela-surgical",
+        "label": "XELA Surgical — Medical Precision",
+        "path": "./themes/xela-surgical-color-theme.json"
+      },
+      {
+        "id": "xela-ux-designer",
+        "label": "XELA UX Designer — Interface Architect",
+        "path": "./themes/xela-ux-designer-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-startup-lab",
+    "label": "XELA Startup Lab Pack",
+    "description": "Pitch decks, product sprints, hackathons, and entrepreneurial palettes.",
+    "themeCount": 9,
+    "themes": [
+      {
+        "id": "xela-aws-credits",
+        "label": "XELA AWS Credits — Startup Pack",
+        "path": "./themes/xela-aws-credits-color-theme.json"
+      },
+      {
+        "id": "xela-garage-mode",
+        "label": "XELA Garage Mode — Origin Story",
+        "path": "./themes/xela-garage-mode-color-theme.json"
+      },
+      {
+        "id": "xela-mvp-sprint",
+        "label": "XELA MVP Sprint — Ship Fast Mode",
+        "path": "./themes/xela-mvp-sprint-color-theme.json"
+      },
+      {
+        "id": "xela-pitch-deck",
+        "label": "XELA Pitch Deck — Series A Ready",
+        "path": "./themes/xela-pitch-deck-color-theme.json"
+      },
+      {
+        "id": "xela-pivot",
+        "label": "XELA Pivot — Strategic Shift",
+        "path": "./themes/xela-pivot-color-theme.json"
+      },
+      {
+        "id": "xela-product-hunt",
+        "label": "XELA Product Hunt — Launch Day",
+        "path": "./themes/xela-product-hunt-color-theme.json"
+      },
+      {
+        "id": "xela-ramen-profitable",
+        "label": "XELA Ramen Profitable — Bootstrapped Grind",
+        "path": "./themes/xela-ramen-profitable-color-theme.json"
+      },
+      {
+        "id": "xela-startup-hackathon-sprint",
+        "label": "XELA Startup — Hackathon Sprint",
+        "path": "./themes/xela-startup-hackathon-sprint-color-theme.json"
+      },
+      {
+        "id": "xela-yc-batch",
+        "label": "XELA Y Combinator — Orange Accelerator",
+        "path": "./themes/xela-yc-batch-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-experimental-spectrum",
+    "label": "XELA Experimental Spectrum Pack",
+    "description": "Iridescent, holographic, and AI-inspired palettes pushing VS Code aesthetics.",
+    "themeCount": 4,
+    "themes": [
+      {
+        "id": "xela-sanaa-lantern",
+        "label": "XELA Experimental Spectrum Pack • SANAA Lantern — Glass Pavilion Dusk",
+        "path": "./themes/xela-sanaa-lantern-color-theme.json"
+      },
+      {
+        "id": "xela-holographic",
+        "label": "XELA Holographic — Dimensional Shift",
+        "path": "./themes/xela-holographic-color-theme.json"
+      },
+      {
+        "id": "xela-holographic-spectrum",
+        "label": "XELA Holographic Spectrum — Rainbow Prism",
+        "path": "./themes/xela-holographic-spectrum-color-theme.json"
+      },
+      {
+        "id": "xela-iridescence",
+        "label": "XELA Iridescence — Prismatic Black",
+        "path": "./themes/xela-iridescence-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-heritage-vault-heritage-classics",
+    "label": "XELA Heritage Classics",
+    "description": "Cult favorites and foundational palettes preserved from earlier eras.",
+    "themeCount": 9,
+    "themes": [
+      {
+        "id": "xela-art-deco",
+        "label": "XELA Art Deco — 1920s Luxury",
+        "path": "./themes/xela-art-deco-color-theme.json"
+      },
+      {
+        "id": "xela-awwwards",
+        "label": "XELA Awwwards — Site of the Day",
+        "path": "./themes/xela-awwwards-color-theme.json"
+      },
+      {
+        "id": "xela-birch-morning",
+        "label": "XELA Birch Morning — Scandinavian Fresh",
+        "path": "./themes/xela-birch-morning-color-theme.json"
+      },
+      {
+        "id": "xela-circuitboard",
+        "label": "XELA Circuitboard — Soldermask Green",
+        "path": "./themes/xela-circuitboard-color-theme.json"
+      },
+      {
+        "id": "xela-cloud-nine",
+        "label": "XELA Cloud Nine — Soft Elegance",
+        "path": "./themes/xela-cloud-nine-color-theme.json"
+      },
+      {
+        "id": "xela-colorblind-pro",
+        "label": "XELA Color Blind Pro — Accessible",
+        "path": "./themes/xela-colorblind-pro-color-theme.json"
+      },
+      {
+        "id": "xela-crystal-clear",
+        "label": "XELA Crystal Clear — Pure Transparency",
+        "path": "./themes/xela-crystal-clear-color-theme.json"
+      },
+      {
+        "id": "xela-cyberpunk-2077",
+        "label": "XELA Cyberpunk 2077 — Night City",
+        "path": "./themes/xela-cyberpunk-2077-color-theme.json"
+      },
+      {
+        "id": "xela-debug-mode",
+        "label": "XELA Debug Mode — Error Detection",
+        "path": "./themes/xela-debug-mode-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-heritage-vault-heritage-legends",
+    "label": "XELA Heritage Legends",
+    "description": "Celebrated experiments, seasonal specials, and community darlings.",
+    "themeCount": 10,
+    "themes": [
+      {
+        "id": "xela-deep",
+        "label": "XELA Deep — Abyssal Bioluminescence",
+        "path": "./themes/xela-deep-color-theme.json"
+      },
+      {
+        "id": "xela-dove-grey",
+        "label": "XELA Dove Grey — Soft Neutral",
+        "path": "./themes/xela-dove-grey-color-theme.json"
+      },
+      {
+        "id": "xela-flow-state",
+        "label": "XELA Flow State — Deep Concentration",
+        "path": "./themes/xela-flow-state-color-theme.json"
+      },
+      {
+        "id": "xela-graffiti",
+        "label": "XELA Graffiti — Street Art Canvas",
+        "path": "./themes/xela-graffiti-color-theme.json"
+      },
+      {
+        "id": "xela-hockey-stick",
+        "label": "XELA Hockey Stick — Exponential Growth",
+        "path": "./themes/xela-hockey-stick-color-theme.json"
+      },
+      {
+        "id": "xela-math-professor",
+        "label": "XELA Math Professor — Academic Rigor",
+        "path": "./themes/xela-math-professor-color-theme.json"
+      },
+      {
+        "id": "xela-memory-palace",
+        "label": "XELA Memory Palace — Spatial Recall",
+        "path": "./themes/xela-memory-palace-color-theme.json"
+      },
+      {
+        "id": "xela-mercury",
+        "label": "XELA Mercury — Liquid Metal",
+        "path": "./themes/xela-mercury-color-theme.json"
+      },
+      {
+        "id": "xela-netflix",
+        "label": "XELA Netflix — Streaming Cinema",
+        "path": "./themes/xela-netflix-color-theme.json"
+      },
+      {
+        "id": "xela-platinum",
+        "label": "XELA Platinum — Premium Silver",
+        "path": "./themes/xela-platinum-color-theme.json"
+      }
+    ]
+  },
+  {
+    "id": "xela-heritage-vault-heritage-archive",
+    "label": "XELA Heritage Archive",
+    "description": "Eclectic concepts, prototypes, and nostalgic throwbacks awaiting curation.",
+    "themeCount": 9,
+    "themes": [
+      {
+        "id": "xela-popgirly",
+        "label": "XELA PopGirly — Kawaii Dreams",
+        "path": "./themes/xela-popgirly-color-theme.json"
+      },
+      {
+        "id": "xela-rosetta",
+        "label": "XELA Rosetta — Translation Layer",
+        "path": "./themes/xela-rosetta-color-theme.json"
+      },
+      {
+        "id": "xela-scandinavian",
+        "label": "XELA Scandinavian — Nordic Hygge",
+        "path": "./themes/xela-scandinavian-color-theme.json"
+      },
+      {
+        "id": "xela-security-researcher",
+        "label": "XELA Security Researcher — Zero Day",
+        "path": "./themes/xela-security-researcher-color-theme.json"
+      },
+      {
+        "id": "xela-silver-lining",
+        "label": "XELA Silver Lining — Refined Neutrality",
+        "path": "./themes/xela-silver-lining-color-theme.json"
+      },
+      {
+        "id": "xela-speed-reading",
+        "label": "XELA Speed Reading — Rapid Scan",
+        "path": "./themes/xela-speed-reading-color-theme.json"
+      },
+      {
+        "id": "xela-spotify",
+        "label": "XELA Spotify — Music Streaming",
+        "path": "./themes/xela-spotify-color-theme.json"
+      },
+      {
+        "id": "xela-superman",
+        "label": "XELA Superman — Man of Steel",
+        "path": "./themes/xela-superman-color-theme.json"
+      },
+      {
+        "id": "xela-unicorn",
+        "label": "XELA Unicorn — Billion Dollar Vision",
+        "path": "./themes/xela-unicorn-color-theme.json"
+      }
+    ]
+  }
+]

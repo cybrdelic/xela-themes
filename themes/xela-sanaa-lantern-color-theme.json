@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "XELA SANAA Lantern — Glass Pavilion Dusk",
+  "name": "XELA Experimental Spectrum Pack • SANAA Lantern — Glass Pavilion Dusk",
   "type": "dark",
   "semanticHighlighting": true,
   "xGenerated": true,
@@ -769,5 +769,7 @@
     "macro": "#FF6B81",
     "event": "#F28F5E",
     "typeParameter": "#8AA9FF"
-  }
+  },
+  "xBaseName": "XELA SANAA Lantern — Glass Pavilion Dusk",
+  "xPackLabel": "XELA Experimental Spectrum Pack"
 }

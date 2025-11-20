@@ -14,6 +14,15 @@
 - **Automated testing and validation**: Ensures theme consistency, quality, and completeness
 - **Professional packaging**: @vscode/vsce integration with robust install scripts
 - **Optional CI workflow**: Streamlined publishing and distribution
+- **Pack-aware picker command**: Launch `XELA Themes: Select Theme Pack` to browse curated theme packs directly inside VS Code.
+
+## Pack-aware Theme Picker
+
+1. Press `Ctrl/Cmd + Shift + P` and run **`XELA Themes: Select Theme Pack`**.
+2. Pick any curated pack (Obsidian Core, Graphite Atelier, Coastal Drift, etc.).
+3. Choose a theme from that pack and it applies immediately via `workbench.colorTheme`.
+
+This command reads the auto-generated `theme-packs.json`, so whenever packs are regenerated, rerun `npm run build` (or `node scripts/theme-system/generate-pack-plan.mjs`) before packaging.
 
 ## Dev workflow
 

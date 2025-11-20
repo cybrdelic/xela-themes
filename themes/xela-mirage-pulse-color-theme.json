@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "XELA Mirage Pulse — Desert Prism",
+  "name": "XELA Sunrise Warmth Pack • Mirage Pulse — Desert Prism",
   "type": "light",
   "semanticHighlighting": true,
   "colors": {
@@ -107,146 +107,210 @@
   },
   "tokenColors": [
     {
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "foreground": "#B8A597",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["keyword", "storage.type", "storage.modifier"],
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier"
+      ],
       "settings": {
         "foreground": "#C75180",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["keyword.control"],
+      "scope": [
+        "keyword.control"
+      ],
       "settings": {
         "foreground": "#E86A33"
       }
     },
     {
-      "scope": ["entity.name.function", "meta.function-call"],
+      "scope": [
+        "entity.name.function",
+        "meta.function-call"
+      ],
       "settings": {
         "foreground": "#2E8A8C"
       }
     },
     {
-      "scope": ["entity.name.class", "entity.name.type", "support.class"],
+      "scope": [
+        "entity.name.class",
+        "entity.name.type",
+        "support.class"
+      ],
       "settings": {
         "foreground": "#2E668A"
       }
     },
     {
-      "scope": ["variable", "variable.other"],
+      "scope": [
+        "variable",
+        "variable.other"
+      ],
       "settings": {
         "foreground": "#2F1F1A"
       }
     },
     {
-      "scope": ["variable.parameter"],
+      "scope": [
+        "variable.parameter"
+      ],
       "settings": {
         "foreground": "#8A6E5B"
       }
     },
     {
-      "scope": ["constant", "constant.language"],
+      "scope": [
+        "constant",
+        "constant.language"
+      ],
       "settings": {
         "foreground": "#B85C9E"
       }
     },
     {
-      "scope": ["constant.numeric"],
+      "scope": [
+        "constant.numeric"
+      ],
       "settings": {
         "foreground": "#FFB347"
       }
     },
     {
-      "scope": ["string", "string.quoted", "string.template"],
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template"
+      ],
       "settings": {
         "foreground": "#D7772A"
       }
     },
     {
-      "scope": ["punctuation.definition.string", "constant.character.escape"],
+      "scope": [
+        "punctuation.definition.string",
+        "constant.character.escape"
+      ],
       "settings": {
         "foreground": "#C75180"
       }
     },
     {
-      "scope": ["support.function", "entity.name.function.preprocessor"],
+      "scope": [
+        "support.function",
+        "entity.name.function.preprocessor"
+      ],
       "settings": {
         "foreground": "#4DABA8"
       }
     },
     {
-      "scope": ["support.constant", "support.variable"],
+      "scope": [
+        "support.constant",
+        "support.variable"
+      ],
       "settings": {
         "foreground": "#A0634C"
       }
     },
     {
-      "scope": ["meta.decorator", "entity.name.section"],
+      "scope": [
+        "meta.decorator",
+        "entity.name.section"
+      ],
       "settings": {
         "foreground": "#C75180"
       }
     },
     {
-      "scope": ["entity.other.attribute-name"],
+      "scope": [
+        "entity.other.attribute-name"
+      ],
       "settings": {
         "foreground": "#2E8A8C"
       }
     },
     {
-      "scope": ["entity.name.tag", "entity.name.tag.html", "meta.tag"],
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.html",
+        "meta.tag"
+      ],
       "settings": {
         "foreground": "#C75180",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.heading", "markup.heading.setext"],
+      "scope": [
+        "markup.heading",
+        "markup.heading.setext"
+      ],
       "settings": {
         "foreground": "#E86A33"
       }
     },
     {
-      "scope": ["markup.bold"],
+      "scope": [
+        "markup.bold"
+      ],
       "settings": {
         "foreground": "#2E8A8C",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.italic"],
+      "scope": [
+        "markup.italic"
+      ],
       "settings": {
         "foreground": "#C75180",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["markup.inline.raw", "markup.fenced_code"],
+      "scope": [
+        "markup.inline.raw",
+        "markup.fenced_code"
+      ],
       "settings": {
         "foreground": "#3B2F2F",
         "background": "#F3DFC6"
       }
     },
     {
-      "scope": ["markup.list"],
+      "scope": [
+        "markup.list"
+      ],
       "settings": {
         "foreground": "#A0634C"
       }
     },
     {
-      "scope": ["markup.quote"],
+      "scope": [
+        "markup.quote"
+      ],
       "settings": {
         "foreground": "#7A8C7C",
         "background": "#F3DFC680"
       }
     },
     {
-      "scope": ["constant.character.entity"],
+      "scope": [
+        "constant.character.entity"
+      ],
       "settings": {
         "foreground": "#4DABA8"
       }
@@ -278,5 +342,7 @@
     "macro": "#C75180",
     "event": "#E86A33",
     "typeParameter": "#2E668A"
-  }
+  },
+  "xBaseName": "XELA Mirage Pulse — Desert Prism",
+  "xPackLabel": "XELA Sunrise Warmth Pack"
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "XELA Polar Lumen — Aurora Ice",
+  "name": "XELA Coastal Atmosphere Pack • Polar Lumen — Aurora Ice",
   "type": "dark",
   "semanticHighlighting": true,
   "colors": {
@@ -107,152 +107,217 @@
   },
   "tokenColors": [
     {
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "foreground": "#6C7B93",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["keyword", "storage.type", "storage.modifier"],
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier"
+      ],
       "settings": {
         "foreground": "#7F5CF5",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["keyword.control"],
+      "scope": [
+        "keyword.control"
+      ],
       "settings": {
         "foreground": "#50C4ED"
       }
     },
     {
-      "scope": ["entity.name.function", "meta.function-call"],
+      "scope": [
+        "entity.name.function",
+        "meta.function-call"
+      ],
       "settings": {
         "foreground": "#4FD1C5"
       }
     },
     {
-      "scope": ["support.function"],
+      "scope": [
+        "support.function"
+      ],
       "settings": {
         "foreground": "#8DEBFF"
       }
     },
     {
-      "scope": ["entity.name.class", "support.class", "entity.name.type"],
+      "scope": [
+        "entity.name.class",
+        "support.class",
+        "entity.name.type"
+      ],
       "settings": {
         "foreground": "#8BA4FF"
       }
     },
     {
-      "scope": ["variable", "variable.other"],
+      "scope": [
+        "variable",
+        "variable.other"
+      ],
       "settings": {
         "foreground": "#E3F6FF"
       }
     },
     {
-      "scope": ["variable.parameter"],
+      "scope": [
+        "variable.parameter"
+      ],
       "settings": {
         "foreground": "#9DB8D5"
       }
     },
     {
-      "scope": ["constant", "constant.language"],
+      "scope": [
+        "constant",
+        "constant.language"
+      ],
       "settings": {
         "foreground": "#FFC15E"
       }
     },
     {
-      "scope": ["constant.numeric"],
+      "scope": [
+        "constant.numeric"
+      ],
       "settings": {
         "foreground": "#50C4ED"
       }
     },
     {
-      "scope": ["string", "string.quoted", "string.template"],
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template"
+      ],
       "settings": {
         "foreground": "#84FFD4"
       }
     },
     {
-      "scope": ["constant.character.escape", "punctuation.definition.string"],
+      "scope": [
+        "constant.character.escape",
+        "punctuation.definition.string"
+      ],
       "settings": {
         "foreground": "#7F5CF5"
       }
     },
     {
-      "scope": ["support.constant", "support.variable"],
+      "scope": [
+        "support.constant",
+        "support.variable"
+      ],
       "settings": {
         "foreground": "#9BD3FF"
       }
     },
     {
-      "scope": ["meta.decorator", "entity.name.section"],
+      "scope": [
+        "meta.decorator",
+        "entity.name.section"
+      ],
       "settings": {
         "foreground": "#FFC15E"
       }
     },
     {
-      "scope": ["entity.other.attribute-name"],
+      "scope": [
+        "entity.other.attribute-name"
+      ],
       "settings": {
         "foreground": "#4FD1C5"
       }
     },
     {
-      "scope": ["entity.name.tag", "entity.name.tag.html", "meta.tag"],
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.html",
+        "meta.tag"
+      ],
       "settings": {
         "foreground": "#7F5CF5",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.heading", "markup.heading.setext"],
+      "scope": [
+        "markup.heading",
+        "markup.heading.setext"
+      ],
       "settings": {
         "foreground": "#50C4ED"
       }
     },
     {
-      "scope": ["markup.bold"],
+      "scope": [
+        "markup.bold"
+      ],
       "settings": {
         "foreground": "#E3F6FF",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.italic"],
+      "scope": [
+        "markup.italic"
+      ],
       "settings": {
         "foreground": "#7F5CF5",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["markup.inline.raw", "markup.fenced_code"],
+      "scope": [
+        "markup.inline.raw",
+        "markup.fenced_code"
+      ],
       "settings": {
         "foreground": "#E3F6FF",
         "background": "#0E1B2E"
       }
     },
     {
-      "scope": ["markup.list"],
+      "scope": [
+        "markup.list"
+      ],
       "settings": {
         "foreground": "#FFC15E"
       }
     },
     {
-      "scope": ["markup.quote"],
+      "scope": [
+        "markup.quote"
+      ],
       "settings": {
         "foreground": "#9DB8D5",
         "background": "#0E1B2E"
       }
     },
     {
-      "scope": ["constant.character.entity"],
+      "scope": [
+        "constant.character.entity"
+      ],
       "settings": {
         "foreground": "#4FD1C5"
       }
     },
     {
-      "scope": ["punctuation.section.embedded"],
+      "scope": [
+        "punctuation.section.embedded"
+      ],
       "settings": {
         "foreground": "#F05D5E"
       }
@@ -284,5 +349,7 @@
     "macro": "#F05D5E",
     "event": "#FFC15E",
     "typeParameter": "#7F5CF5"
-  }
+  },
+  "xBaseName": "XELA Polar Lumen — Aurora Ice",
+  "xPackLabel": "XELA Coastal Atmosphere Pack"
 }

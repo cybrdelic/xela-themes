@@ -5,7 +5,7 @@
  */
 
 const fs = require('fs');
-const path = require('path');
+const path = require('1path');
 
 const themesDir = path.join(__dirname, '..', 'themes');
 

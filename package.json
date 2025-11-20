@@ -3,8 +3,9 @@
   "displayName": "XELA Themes",
   "description": "A meticulously curated collection of 180+ high-quality XELA color themes for VS Code. Cleaned, optimized, and contrast-verified for professional coding environments.",
   "publisher": "cybrdelic",
-  "version": "0.3.1",
+  "version": "0.3.4",
   "type": "module",
+  "main": "./extension.js",
   "private": false,
   "repository": {
     "type": "git",
@@ -37,6 +38,13 @@
     "Themes"
   ],
   "contributes": {
+    "commands": [
+      {
+        "command": "xelaThemes.selectTheme",
+        "title": "XELA Themes: Select Theme Pack",
+        "category": "XELA Themes"
+      }
+    ],
     "configurationDefaults": {
       "[XELA Black]": {
         "editor.formatOnSave": true,
@@ -114,9 +122,9 @@
         "path": "./themes/xela-anime-hacker-color-theme.json"
       },
       {
-        "label": "XELA Aqua Interface — Classic macOS",
-        "uiTheme": "vs",
-        "path": "./themes/xela-aqua-interface-color-theme.json"
+        "label": "XELA Tech Nostalgia • Apple II — Green Phosphor",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-apple-ii-color-theme.json"
       },
       {
         "label": "XELA Arctic — Crystal Light",
@@ -177,6 +185,16 @@
         "label": "XELA Barbie — Dreamhouse Pink",
         "uiTheme": "vs",
         "path": "./themes/xela-barbie-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • BASIC DOS — Command Prompt",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-basic-dos-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • BASIC DOS Light — Amber Monitor",
+        "uiTheme": "vs",
+        "path": "./themes/xela-basic-dos-light-color-theme.json"
       },
       {
         "label": "XELA Bauhaus — Primary Geometry",
@@ -244,6 +262,16 @@
         "path": "./themes/xela-circuitboard-color-theme.json"
       },
       {
+        "label": "XELA Tech Nostalgia • Classic PS2 — PlayStation Interface",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-classic-ps2-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • Classic PS2 Light — Silver Tower",
+        "uiTheme": "vs",
+        "path": "./themes/xela-classic-ps2-light-color-theme.json"
+      },
+      {
         "label": "XELA Clean Slate — Minimal Precision",
         "uiTheme": "vs",
         "path": "./themes/xela-clean-slate-color-theme.json"
@@ -262,6 +290,11 @@
         "label": "XELA Color Blind Pro — Accessible",
         "uiTheme": "vs",
         "path": "./themes/xela-colorblind-pro-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • Commodore 64 — PETSCII Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-commodore-64-color-theme.json"
       },
       {
         "label": "XELA Continuity — Handoff Flow",
@@ -419,7 +452,7 @@
         "path": "./themes/xela-garage-mode-color-theme.json"
       },
       {
-        "label": "XELA GMUNK Spectral — Volumetric Prism Lab",
+        "label": "XELA Pro Studio Pack • GMUNK Spectral — Volumetric Prism Lab",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-gmunk-spectral-color-theme.json"
       },
@@ -442,6 +475,11 @@
         "label": "XELA Graphite Pro — Precision Grey",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-graphite-pro-color-theme.json"
+      },
+      {
+        "label": "XELA Cinema • HAL 9000 — Red Eye",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-hal-9000-color-theme.json"
       },
       {
         "label": "XELA HDR Studio — Wide Gamut",
@@ -494,7 +532,7 @@
         "path": "./themes/xela-ivory-tower-color-theme.json"
       },
       {
-        "label": "XELA Jongerius Loom — Textural Editorial Light",
+        "label": "XELA Retro Print Pack • Jongerius Loom — Textural Editorial Light",
         "uiTheme": "vs",
         "path": "./themes/xela-jongerius-loom-color-theme.json"
       },
@@ -527,6 +565,26 @@
         "label": "XELA Linen — Natural Fabric",
         "uiTheme": "vs",
         "path": "./themes/xela-linen-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • macOS Aqua — OS X Transparent",
+        "uiTheme": "vs",
+        "path": "./themes/xela-macos-aqua-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • macOS Aqua Dark — Deep Water",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-macos-aqua-dark-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • macOS Classic — System 7 Platinum",
+        "uiTheme": "vs",
+        "path": "./themes/xela-macos-classic-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • macOS Classic Dark — Charcoal System",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-macos-classic-dark-color-theme.json"
       },
       {
         "label": "XELA Math Professor — Academic Rigor",
@@ -589,7 +647,7 @@
         "path": "./themes/xela-mirage-meridian-color-theme.json"
       },
       {
-        "label": "XELA Mirage Pulse — Desert Prism",
+        "label": "XELA Sunrise Warmth Pack • Mirage Pulse — Desert Prism",
         "uiTheme": "vs",
         "path": "./themes/xela-mirage-pulse-color-theme.json"
       },
@@ -617,6 +675,16 @@
         "label": "XELA MVP Sprint — Ship Fast Mode",
         "uiTheme": "vs",
         "path": "./themes/xela-mvp-sprint-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • MySpace Dark — Emo Profile",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-myspace-dark-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • MySpace Raw HTML — Glitter Graphics",
+        "uiTheme": "vs",
+        "path": "./themes/xela-myspace-raw-html-color-theme.json"
       },
       {
         "label": "XELA Nebula Haze — Iridescent Fog",
@@ -674,7 +742,7 @@
         "path": "./themes/xela-paper-white-color-theme.json"
       },
       {
-        "label": "XELA Pear — Clean Minimal",
+        "label": "XELA Graphite Atelier • Pear — Clean Minimal",
         "uiTheme": "vs",
         "path": "./themes/xela-pear-color-theme.json"
       },
@@ -714,7 +782,7 @@
         "path": "./themes/xela-platinum-color-theme.json"
       },
       {
-        "label": "XELA Polar Lumen — Aurora Ice",
+        "label": "XELA Coastal Atmosphere Pack • Polar Lumen — Aurora Ice",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-polar-lumen-color-theme.json"
       },
@@ -729,7 +797,7 @@
         "path": "./themes/xela-porcelain-color-theme.json"
       },
       {
-        "label": "XELA Prisma Bloom — Holographic Pastel",
+        "label": "XELA Pastel & Botanical Pack • Prisma Bloom — Holographic Pastel",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-prisma-bloom-color-theme.json"
       },
@@ -799,7 +867,7 @@
         "path": "./themes/xela-sage-wisdom-color-theme.json"
       },
       {
-        "label": "XELA SANAA Lantern — Glass Pavilion Dusk",
+        "label": "XELA Experimental Spectrum Pack • SANAA Lantern — Glass Pavilion Dusk",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-sanaa-lantern-color-theme.json"
       },
@@ -974,9 +1042,34 @@
         "path": "./themes/xela-volcanic-forge-color-theme.json"
       },
       {
+        "label": "XELA Tech Nostalgia • Winamp Classic — Metallic Skin",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-winamp-classic-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • Windows XP — Bliss Desktop",
+        "uiTheme": "vs",
+        "path": "./themes/xela-windows-xp-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • Windows XP Dark — Midnight Luna",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-windows-xp-dark-color-theme.json"
+      },
+      {
         "label": "XELA WWDC — Developer Conference",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-wwdc-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • Y2K Skeumorphic — Glossy Chrome Web",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-y2k-skeumorphic-color-theme.json"
+      },
+      {
+        "label": "XELA Tech Nostalgia • Y2K Skeumorphic Dark — Neon Gel Matrix",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-y2k-skeumorphic-dark-color-theme.json"
       },
       {
         "label": "XELA Y Combinator — Orange Accelerator",

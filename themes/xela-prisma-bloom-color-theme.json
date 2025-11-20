@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "XELA Prisma Bloom — Holographic Pastel",
+  "name": "XELA Pastel & Botanical Pack • Prisma Bloom — Holographic Pastel",
   "type": "dark",
   "semanticHighlighting": true,
   "colors": {
@@ -107,152 +107,217 @@
   },
   "tokenColors": [
     {
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "foreground": "#9D8CB8",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["keyword", "storage.type", "storage.modifier"],
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier"
+      ],
       "settings": {
         "foreground": "#FF6AD5",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["keyword.control"],
+      "scope": [
+        "keyword.control"
+      ],
       "settings": {
         "foreground": "#B497FF"
       }
     },
     {
-      "scope": ["entity.name.function", "meta.function-call"],
+      "scope": [
+        "entity.name.function",
+        "meta.function-call"
+      ],
       "settings": {
         "foreground": "#7CFFCB"
       }
     },
     {
-      "scope": ["support.function"],
+      "scope": [
+        "support.function"
+      ],
       "settings": {
         "foreground": "#96D3FF"
       }
     },
     {
-      "scope": ["entity.name.class", "support.class", "entity.name.type"],
+      "scope": [
+        "entity.name.class",
+        "support.class",
+        "entity.name.type"
+      ],
       "settings": {
         "foreground": "#B497FF"
       }
     },
     {
-      "scope": ["variable", "variable.other"],
+      "scope": [
+        "variable",
+        "variable.other"
+      ],
       "settings": {
         "foreground": "#F6EFFF"
       }
     },
     {
-      "scope": ["variable.parameter"],
+      "scope": [
+        "variable.parameter"
+      ],
       "settings": {
         "foreground": "#CBBBED"
       }
     },
     {
-      "scope": ["constant", "constant.language"],
+      "scope": [
+        "constant",
+        "constant.language"
+      ],
       "settings": {
         "foreground": "#FFE577"
       }
     },
     {
-      "scope": ["constant.numeric"],
+      "scope": [
+        "constant.numeric"
+      ],
       "settings": {
         "foreground": "#B497FF"
       }
     },
     {
-      "scope": ["string", "string.quoted", "string.template"],
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template"
+      ],
       "settings": {
         "foreground": "#A8FFE0"
       }
     },
     {
-      "scope": ["constant.character.escape", "punctuation.definition.string"],
+      "scope": [
+        "constant.character.escape",
+        "punctuation.definition.string"
+      ],
       "settings": {
         "foreground": "#FF6AD5"
       }
     },
     {
-      "scope": ["support.constant", "support.variable"],
+      "scope": [
+        "support.constant",
+        "support.variable"
+      ],
       "settings": {
         "foreground": "#FFE577"
       }
     },
     {
-      "scope": ["meta.decorator", "entity.name.section"],
+      "scope": [
+        "meta.decorator",
+        "entity.name.section"
+      ],
       "settings": {
         "foreground": "#FF97E5"
       }
     },
     {
-      "scope": ["entity.other.attribute-name"],
+      "scope": [
+        "entity.other.attribute-name"
+      ],
       "settings": {
         "foreground": "#7CFFCB"
       }
     },
     {
-      "scope": ["entity.name.tag", "entity.name.tag.html", "meta.tag"],
+      "scope": [
+        "entity.name.tag",
+        "entity.name.tag.html",
+        "meta.tag"
+      ],
       "settings": {
         "foreground": "#FF6AD5",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.heading", "markup.heading.setext"],
+      "scope": [
+        "markup.heading",
+        "markup.heading.setext"
+      ],
       "settings": {
         "foreground": "#FFE577"
       }
     },
     {
-      "scope": ["markup.bold"],
+      "scope": [
+        "markup.bold"
+      ],
       "settings": {
         "foreground": "#F6EFFF",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.italic"],
+      "scope": [
+        "markup.italic"
+      ],
       "settings": {
         "foreground": "#FF97E5",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["markup.inline.raw", "markup.fenced_code"],
+      "scope": [
+        "markup.inline.raw",
+        "markup.fenced_code"
+      ],
       "settings": {
         "foreground": "#F6EFFF",
         "background": "#12052E"
       }
     },
     {
-      "scope": ["markup.list"],
+      "scope": [
+        "markup.list"
+      ],
       "settings": {
         "foreground": "#FFE577"
       }
     },
     {
-      "scope": ["markup.quote"],
+      "scope": [
+        "markup.quote"
+      ],
       "settings": {
         "foreground": "#CBBBED",
         "background": "#12052E"
       }
     },
     {
-      "scope": ["constant.character.entity"],
+      "scope": [
+        "constant.character.entity"
+      ],
       "settings": {
         "foreground": "#96D3FF"
       }
     },
     {
-      "scope": ["punctuation.section.embedded"],
+      "scope": [
+        "punctuation.section.embedded"
+      ],
       "settings": {
         "foreground": "#FF8CA8"
       }
@@ -284,5 +349,7 @@
     "macro": "#FF8CA8",
     "event": "#FFE577",
     "typeParameter": "#B497FF"
-  }
+  },
+  "xBaseName": "XELA Prisma Bloom — Holographic Pastel",
+  "xPackLabel": "XELA Pastel & Botanical Pack"
 }

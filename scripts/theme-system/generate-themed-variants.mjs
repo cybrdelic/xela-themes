@@ -126,26 +126,6 @@ const appleThemes = [
     }
   },
   {
-    id: 'xela-aqua-interface',
-    name: 'XELA Aqua Interface — Classic macOS',
-    type: 'light',
-    description: 'Lickable buttons and glassy refinement',
-    palette: {
-      base: '#FFFFFF',
-      surface: '#E8E8E8',
-      surfaceAlt: '#D4D4D4',
-      text: '#000000',
-      textSecondary: '#4D4D4D',
-      textMuted: '#8E8E8E',
-      accent: '#3B7DD7',
-      accentAlt: '#5A9AEB',
-      success: '#5FB951',
-      warning: '#FFB627',
-      error: '#E9423E',
-      info: '#7C7CFF'
-    }
-  },
-  {
     id: 'xela-rosetta',
     name: 'XELA Rosetta — Translation Layer',
     type: 'light',

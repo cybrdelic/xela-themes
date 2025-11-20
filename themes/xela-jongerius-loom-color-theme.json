@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "XELA Jongerius Loom — Textural Editorial Light",
+  "name": "XELA Retro Print Pack • Jongerius Loom — Textural Editorial Light",
   "type": "light",
   "semanticHighlighting": true,
   "xGenerated": true,
@@ -769,5 +769,7 @@
     "macro": "#B4483C",
     "event": "#D67D4E",
     "typeParameter": "#2D8A8F"
-  }
+  },
+  "xBaseName": "XELA Jongerius Loom — Textural Editorial Light",
+  "xPackLabel": "XELA Retro Print Pack"
 }
