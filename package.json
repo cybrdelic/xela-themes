@@ -34,6 +34,11 @@
   "engines": {
     "vscode": "^1.86.0"
   },
+  "activationEvents": [
+    "onCommand:xelaThemes.selectTheme",
+    "onCommand:xelaThemes.fuzzTheme",
+    "onCommand:xelaThemes.quickFuzz"
+  ],
   "categories": [
     "Themes"
   ],
@@ -42,6 +47,21 @@
       {
         "command": "xelaThemes.selectTheme",
         "title": "XELA Themes: Select Theme Pack",
+        "category": "XELA Themes"
+      },
+      {
+        "command": "xelaThemes.fuzzTheme",
+        "title": "XELA Themes: Fuzz Theme (with Panel)",
+        "category": "XELA Themes"
+      },
+      {
+        "command": "xelaThemes.quickFuzz",
+        "title": "XELA Themes: Quick Fuzz (Random Accessible Theme)",
+        "category": "XELA Themes"
+      },
+      {
+        "command": "xelaThemes.clearFuzz",
+        "title": "XELA Themes: Clear Fuzzed Colors",
         "category": "XELA Themes"
       }
     ],
@@ -1002,6 +1022,11 @@
         "path": "./themes/xela-tungsten-color-theme.json"
       },
       {
+        "label": "XELA IDE Classics • Turbo Pascal — Blue Screen",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-turbo-pascal-color-theme.json"
+      },
+      {
         "label": "XELA Twilight Layers — Depth & Dimension",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-twilight-layers-color-theme.json"
@@ -1030,6 +1055,11 @@
         "label": "XELA Velvet Night — Luxury Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-velvet-night-color-theme.json"
+      },
+      {
+        "label": "XELA IDE Classics • Visual Basic 6 — Windows Forms",
+        "uiTheme": "vs",
+        "path": "./themes/xela-visual-basic-6-color-theme.json"
       },
       {
         "label": "XELA Void Mist — Diffuse Nebula",
@@ -1063,7 +1093,7 @@
       },
       {
         "label": "XELA Tech Nostalgia • Y2K Skeumorphic — Glossy Chrome Web",
-        "uiTheme": "vs-dark",
+        "uiTheme": "vs",
         "path": "./themes/xela-y2k-skeumorphic-color-theme.json"
       },
       {
@@ -1096,6 +1126,18 @@
     "build:themes": "node ./scripts/theme-system/build-themes.mjs",
     "optimize:themes": "node ./scripts/optimize-themes.mjs",
     "test:themes": "node ./scripts/theme-system/test-build.mjs",
+    "test:completeness": "node ./scripts/test-theme-completeness.cjs",
+    "test:all": "npm run test:themes && npm run test:completeness && npm run a11y:audit",
+    "fix:themes": "node ./scripts/auto-fix-themes.cjs",
+    "a11y:audit": "node ./scripts/accessibility/run-accessibility.cjs audit",
+    "a11y:audit:aaa": "node ./scripts/accessibility/run-accessibility.cjs audit --target-level AAA",
+    "a11y:check": "node ./scripts/accessibility/run-accessibility.cjs check",
+    "a11y:fix": "node ./scripts/accessibility/run-accessibility.cjs fix",
+    "a11y:fix:all": "node ./scripts/accessibility/auto-fix.cjs",
+    "a11y:fix:dry": "node ./scripts/accessibility/auto-fix.cjs --dry-run",
+    "a11y:fuzz": "node ./scripts/accessibility/run-accessibility.cjs fuzz",
+    "a11y:simulate": "node ./scripts/accessibility/run-accessibility.cjs simulate",
+    "a11y:test": "node ./scripts/accessibility/test-accessibility.cjs",
     "update:package": "node ./scripts/theme-system/update-package-themes.mjs",
     "generate:manifest": "node scripts/generate-themes-manifest.js",
     "serve": "npm run generate:manifest && npx serve .",

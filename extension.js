@@ -125,13 +125,31 @@ async function runPackPicker(context) {
  * Extension activation
  * @param {import('vscode').ExtensionContext} context
  */
-export function activate(context) {
+export async function activate(context) {
   console.log('XELA Themes activated');
+
+  // Register theme picker command
   const disposable = vscode.commands.registerCommand('xelaThemes.selectTheme', () => runPackPicker(context));
   context.subscriptions.push(disposable);
-}
 
-/**
+  // Try to load and register fuzzer commands
+  try {
+    // Use the refactored modular fuzzer extension
+    const fuzzerModule = await import('./src/theme-fuzzer/fuzzer-extension-refactored.js');
+    if (fuzzerModule.registerFuzzerCommands) {
+      fuzzerModule.registerFuzzerCommands(context);
+      console.log('XELA Themes: Fuzzer commands registered successfully');
+    }
+  } catch (e) {
+    console.error('XELA Themes: Failed to load fuzzer module:', e.message);
+    // Register a placeholder command that shows an error
+    context.subscriptions.push(
+      vscode.commands.registerCommand('xelaThemes.fuzzTheme', () => {
+        vscode.window.showErrorMessage(`Fuzzer not available: ${e.message}`);
+      })
+    );
+  }
+}/**
  * Extension deactivation
  */
 export function deactivate() {

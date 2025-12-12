@@ -9,8 +9,6 @@
 .env
 node_modules/**
 screenshots-vscode/**
-src/**
-test-html-syntax.html
 landing/**
 docs/**
 presets/**

@@ -26,7 +26,6 @@
     "sideBar.border": "#004400",
     "sideBarTitle.foreground": "#33FF33",
     "sideBarSectionHeader.background": "#001100",
-    "sideBarSectionHeader.foreground": "#33FF33",
     "sideBarSectionHeader.border": "#004400",
     "statusBar.background": "#000000",
     "statusBar.foreground": "#33FF33",
@@ -82,6 +81,7 @@
     "editorHoverWidget.border": "#33FF33",
     "editorWidget.background": "#001100",
     "editorWidget.border": "#33FF33",
+    "editorWidget.foreground": "#33FF33",
     "editorWidget.resizeBorder": "#33FF33",
     "editorIndentGuide.background1": "#001A00",
     "editorIndentGuide.activeBackground1": "#1A9919",
@@ -118,13 +118,13 @@
     "dropdown.listBackground": "#000000",
     "list.activeSelectionBackground": "#33FF33",
     "list.activeSelectionForeground": "#000000",
-    "list.inactiveSelectionBackground": "#1A9919",
+    "list.inactiveSelectionBackground": "#0D6B0D",
     "list.inactiveSelectionForeground": "#33FF33",
     "list.hoverBackground": "#001A00",
     "list.hoverForeground": "#33FF33",
     "list.focusBackground": "#001A00",
     "list.focusForeground": "#33FF33",
-    "list.highlightForeground": "#33FF33",
+    "list.highlightForeground": "#1A1A1A",
     "list.errorForeground": "#FF0000",
     "list.warningForeground": "#FFFF00",
     "list.dropBackground": "#33FF3340",
@@ -136,7 +136,7 @@
     "button.background": "#33FF33",
     "button.foreground": "#000000",
     "button.hoverBackground": "#00CC00",
-    "button.secondaryBackground": "#1A9919",
+    "button.secondaryBackground": "#0D6B0D",
     "button.secondaryForeground": "#33FF33",
     "button.secondaryHoverBackground": "#00AA00",
     "badge.background": "#33FF33",
@@ -241,169 +241,259 @@
     "focusBorder": "#33FF33",
     "selection.background": "#33FF3350",
     "widget.shadow": "#00000080",
-    "sash.hoverBorder": "#33FF33"
+    "sash.hoverBorder": "#33FF33",
+    "peekView.border": "#33FF33",
+    "quickInput.background": "#000000",
+    "quickInput.foreground": "#33FF33",
+    "sideBarSectionHeader.foreground": "#33FF33",
+    "problemsErrorIcon.foreground": "#FF0000",
+    "problemsWarningIcon.foreground": "#FFFF00",
+    "problemsInfoIcon.foreground": "#33FF33",
+    "testing.iconFailed": "#FF0000",
+    "testing.iconPassed": "#00FF00",
+    "peekViewResult.background": "#000000",
+    "peekViewEditor.background": "#000000",
+    "peekViewResult.lineForeground": "#33FF33",
+    "peekViewResult.selectionBackground": "#33FF33",
+    "peekViewResult.selectionForeground": "#000000",
+    "peekViewTitle.background": "#000000",
+    "peekViewTitleDescription.foreground": "#33FF33",
+    "peekViewTitleLabel.foreground": "#33FF33",
+    "peekViewEditorGutter.background": "#000000",
+    "peekViewEditor.matchHighlightBackground": "#FFFF0080",
+    "peekViewResult.matchHighlightBackground": "#FFFF0080",
+    "editorError.border": "#FF5555",
+    "inputValidation.errorForeground": "#FF5555",
+    "editorWarning.border": "#FFAA00",
+    "inputValidation.warningForeground": "#FFAA00",
+    "editorInfo.border": "#5599FF",
+    "inputValidation.infoForeground": "#5599FF"
   },
   "tokenColors": [
     {
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "foreground": "#1A9919",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["keyword", "storage", "storage.type"],
+      "scope": [
+        "keyword",
+        "storage",
+        "storage.type"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["constant", "constant.numeric", "constant.language"],
+      "scope": [
+        "constant",
+        "constant.numeric",
+        "constant.language"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["string", "string.quoted"],
+      "scope": [
+        "string",
+        "string.quoted"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["variable", "variable.parameter"],
+      "scope": [
+        "variable",
+        "variable.parameter"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["entity.name.function", "support.function"],
+      "scope": [
+        "entity.name.function",
+        "support.function"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["entity.name.type", "support.class", "support.type"],
+      "scope": [
+        "entity.name.type",
+        "support.class",
+        "support.type"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["entity.name.tag"],
+      "scope": [
+        "entity.name.tag"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["entity.other.attribute-name"],
+      "scope": [
+        "entity.other.attribute-name"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["markup.heading"],
+      "scope": [
+        "markup.heading"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.bold"],
+      "scope": [
+        "markup.bold"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["markup.italic"],
+      "scope": [
+        "markup.italic"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": ["invalid"],
+      "scope": [
+        "invalid"
+      ],
       "settings": {
         "foreground": "#FF0000",
         "fontStyle": "bold underline"
       }
     },
     {
-      "scope": ["storage.modifier", "storage.type.function"],
+      "scope": [
+        "storage.modifier",
+        "storage.type.function"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["constant.character.escape"],
+      "scope": [
+        "constant.character.escape"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["meta.function-call", "support.function.console"],
+      "scope": [
+        "meta.function-call",
+        "support.function.console"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["support.type.property-name"],
+      "scope": [
+        "support.type.property-name"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["support.constant"],
+      "scope": [
+        "support.constant"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["punctuation.definition.parameters", "punctuation.section.group"],
+      "scope": [
+        "punctuation.definition.parameters",
+        "punctuation.section.group"
+      ],
       "settings": {
         "foreground": "#1A9919"
       }
     },
     {
-      "scope": ["punctuation.separator", "punctuation.terminator"],
+      "scope": [
+        "punctuation.separator",
+        "punctuation.terminator"
+      ],
       "settings": {
         "foreground": "#1A9919"
       }
     },
     {
-      "scope": ["entity.name.tag.html"],
+      "scope": [
+        "entity.name.tag.html"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": ["meta.tag"],
+      "scope": [
+        "meta.tag"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["support.type.property-name.css"],
+      "scope": [
+        "support.type.property-name.css"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
     },
     {
-      "scope": ["markup.underline"],
+      "scope": [
+        "markup.underline"
+      ],
       "settings": {
         "foreground": "#33FF33",
         "fontStyle": "underline"
       }
     },
     {
-      "scope": ["markup.list"],
+      "scope": [
+        "markup.list"
+      ],
       "settings": {
         "foreground": "#33FF33"
       }
