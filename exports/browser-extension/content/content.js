@@ -1,11 +1,154 @@
-// XELA Themes — content script
+// XELA Themes — content script (bundled, no imports)
 // Injects via document.adoptedStyleSheets (never in DOM, immune to SPA stripping)
 // Runs at document_start to beat the site's own CSS load
 
-import { buildCss as githubCss } from './sites/github.js';
-import { buildCss as googleCss } from './sites/google.js';
-import { buildCss as chatgptCss } from './sites/chatgpt.js';
-import { buildCss as linkedinCss } from './sites/linkedin.js';
+// --- Site adapters (inlined) ---
+function githubCss(p) {
+  return `
+/* Force GitHub color mode */
+html { color-scheme: ${p._type === 'light' ? 'light' : 'dark'} !important; }
+
+/* Override Primer design tokens */
+html, [data-color-mode] {
+  --color-canvas-default:        ${p.bg} !important;
+  --color-canvas-subtle:         ${p.bgAlt} !important;
+  --color-canvas-inset:          ${p.bgElevated} !important;
+  --color-canvas-overlay:        ${p.bgFloating} !important;
+  --color-fg-default:            ${p.text} !important;
+  --color-fg-muted:              ${p.textMuted} !important;
+  --color-fg-subtle:             ${p.textSoft} !important;
+  --color-border-default:        ${p.border} !important;
+  --color-border-muted:          ${p.border} !important;
+  --color-border-subtle:         ${p.border} !important;
+  --color-accent-fg:             ${p.link} !important;
+  --color-accent-emphasis:       ${p.accent} !important;
+  --color-accent-muted:          ${p.selection} !important;
+  --color-success-fg:            ${p.success} !important;
+  --color-attention-fg:          ${p.warning} !important;
+  --color-danger-fg:             ${p.error} !important;
+  --color-btn-bg:                ${p.buttonBg} !important;
+  --color-btn-text:              ${p.buttonFg} !important;
+  --color-btn-border:            ${p.border} !important;
+  --color-btn-hover-bg:          ${p.accentAlt} !important;
+  --color-btn-primary-bg:        ${p.accent} !important;
+  --color-btn-primary-text:      ${p.buttonFg} !important;
+  --color-input-bg:              ${p.inputBg} !important;
+  --color-input-contrast:        ${p.inputBg} !important;
+  --color-neutral-muted:         ${p.bgElevated} !important;
+  --color-neutral-subtle:        ${p.bgAlt} !important;
+  --bgColor-default:             ${p.bg} !important;
+  --bgColor-muted:               ${p.bgAlt} !important;
+  --bgColor-inset:               ${p.bgElevated} !important;
+  --fgColor-default:             ${p.text} !important;
+  --fgColor-muted:               ${p.textMuted} !important;
+  --fgColor-link:                ${p.link} !important;
+  --borderColor-default:         ${p.border} !important;
+  --borderColor-muted:           ${p.border} !important;
+}
+
+/* Fallback element rules */
+body, .AppHeader, .Header { background: ${p.bg} !important; color: ${p.text} !important; }
+.markdown-body { color: ${p.text} !important; }
+.markdown-body pre, .markdown-body code { background: ${p.codeBg} !important; }
+`;
+}
+
+function googleCss(p) {
+  return `
+html, body {
+  --gm3-sys-color-background:               ${p.bg} !important;
+  --gm3-sys-color-on-background:            ${p.text} !important;
+  --gm3-sys-color-surface:                  ${p.bgAlt} !important;
+  --gm3-sys-color-surface-variant:          ${p.bgElevated} !important;
+  --gm3-sys-color-on-surface:               ${p.text} !important;
+  --gm3-sys-color-on-surface-variant:       ${p.textSoft} !important;
+  --gm3-sys-color-outline:                  ${p.border} !important;
+  --gm3-sys-color-outline-variant:          ${p.border} !important;
+  --gm3-sys-color-primary:                  ${p.accent} !important;
+  --gm3-sys-color-on-primary:               ${p.buttonFg} !important;
+  --gm3-sys-color-surface-container-high:   ${p.bgElevated} !important;
+  --gm3-sys-color-surface-container:        ${p.bgAlt} !important;
+  --gm3-sys-color-surface-container-low:    ${p.bg} !important;
+}
+
+body, #searchform, .sfbg, #appbar, #top_nav { background: ${p.bg} !important; color: ${p.text} !important; }
+.RNNXgb, .a4bIc, .gLFyf, .APjFqb, .A8SBwf {
+  background: ${p.inputBg} !important;
+  color: ${p.inputFg} !important;
+  border-color: ${p.inputBorder} !important;
+}
+.MjjYud, .tF2Cxc, .g { background: ${p.bgAlt} !important; color: ${p.text} !important; }
+a:link, a:visited { color: ${p.link} !important; }
+`;
+}
+
+function chatgptCss(p) {
+  return `
+:root {
+  --token-main-surface-primary:       ${p.bg} !important;
+  --token-main-surface-secondary:     ${p.bgAlt} !important;
+  --token-sidebar-surface-primary:    ${p.bgAlt} !important;
+  --token-sidebar-surface-secondary:  ${p.bgElevated} !important;
+  --token-message-surface:            ${p.bgElevated} !important;
+  --token-text-primary:               ${p.text} !important;
+  --token-text-secondary:             ${p.textSoft} !important;
+  --token-text-tertiary:              ${p.textMuted} !important;
+  --token-text-error:                 ${p.error} !important;
+  --token-border-light:               ${p.border} !important;
+  --token-border-medium:              ${p.border} !important;
+  --token-border-heavy:               ${p.border} !important;
+  --token-brand-purple:               ${p.accent} !important;
+  --token-input-bg:                   ${p.inputBg} !important;
+  --background-token-main-surface-primary:    ${p.bg} !important;
+  --background-token-sidebar-surface-primary: ${p.bgAlt} !important;
+}
+
+html, body, #__next, main { background: ${p.bg} !important; color: ${p.text} !important; }
+nav, aside, [class*="sidebar"] { background: ${p.bgAlt} !important; }
+[class*="bg-token-main-surface-primary"] { background: ${p.bg} !important; }
+[class*="bg-token-main-surface-secondary"] { background: ${p.bgAlt} !important; }
+[class*="bg-token-sidebar"] { background: ${p.bgAlt} !important; }
+[class*="text-token-text-primary"] { color: ${p.text} !important; }
+[class*="text-token-text-secondary"] { color: ${p.textSoft} !important; }
+pre, code, [class*="bg-black"] { background: ${p.codeBg} !important; color: ${p.text} !important; }
+textarea, input { background: ${p.inputBg} !important; color: ${p.inputFg} !important; border-color: ${p.inputBorder} !important; }
+`;
+}
+
+function linkedinCss(p) {
+  return `
+:root {
+  --color-background-canvas:    ${p.bg} !important;
+  --color-background-container: ${p.bgAlt} !important;
+  --color-text:                 ${p.text} !important;
+  --color-text-low-emphasis:    ${p.textMuted} !important;
+  --color-brand-accent-2:       ${p.accent} !important;
+}
+
+html, body,
+.scaffold-layout__main,
+.scaffold-layout__sidebar,
+.scaffold-layout__aside,
+.global-nav__content,
+.authentication-outlet { background: ${p.bg} !important; color: ${p.text} !important; }
+
+.artdeco-card,
+.feed-shared-update-v2,
+.pv-top-card,
+.msg-thread,
+.msg-overlay-list-bubble { background: ${p.bgElevated} !important; border-color: ${p.border} !important; }
+
+.global-nav { background: ${p.bgAlt} !important; border-color: ${p.border} !important; }
+
+input, textarea, select,
+.search-global-typeahead__input,
+input.artdeco-text-input--input,
+.msg-form__contenteditable { background: ${p.inputBg} !important; color: ${p.inputFg} !important; border-color: ${p.inputBorder} !important; }
+
+a, a:visited { color: ${p.link} !important; }
+.artdeco-button--primary { background: ${p.buttonBg} !important; color: ${p.buttonFg} !important; border-color: ${p.buttonBg} !important; }
+`;
+}
 
 const STORAGE_KEY = 'xela_theme_id';
 const DEFAULT_THEME_ID = 'xela-space-gray';

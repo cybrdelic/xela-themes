@@ -28,8 +28,7 @@
       ],
       "js": ["content/content.js"],
       "run_at": "document_start",
-      "world": "MAIN",
-      "type": "module"
+      "world": "MAIN"
     }
   ],
   "action": {
