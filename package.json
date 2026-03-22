@@ -1,11 +1,14 @@
 {
   "name": "xela-themes",
   "displayName": "XELA Themes",
-  "description": "A meticulously curated collection of 180+ high-quality XELA color themes for VS Code. Cleaned, optimized, and contrast-verified for professional coding environments.",
+  "description": "A curated collection of 200+ distinctive XELA color themes for VS Code, including Tech Nostalgia, Apple/Pro, and handpicked dark/light themes.",
   "publisher": "cybrdelic",
   "version": "0.3.4",
   "type": "module",
   "main": "./extension.js",
+  "bin": {
+    "xela-themes": "./bin/xela-themes.mjs"
+  },
   "private": false,
   "repository": {
     "type": "git",
@@ -34,10 +37,79 @@
   "engines": {
     "vscode": "^1.86.0"
   },
+  "scripts": {
+    "lint": "eslint --ext .js src/ || true",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "test": "npm run test:smoke",
+    "test:smoke": "npm run test:themes",
+    "ci": "npm run lint && npm run test:all",
+    "package": "npx @vscode/vsce package",
+    "install:vsix": "powershell -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
+    "package-and-install": "npm run package && npm run install:vsix",
+    "build:themes": "node ./scripts/theme-system/build-themes.mjs && node ./scripts/auto-fix-themes.cjs",
+    "build:windows-terminal": "node ./scripts/theme-system/build-windows-terminal.mjs",
+    "build:windows-personalization": "npm run build:windows-terminal && node ./scripts/theme-system/build-windows-personalization.mjs",
+    "build:userscript": "node ./scripts/theme-system/build-userscript.mjs",
+    "build:extension": "node ./scripts/theme-system/build-userscript.mjs && node ./scripts/theme-system/build-extension.mjs",
+    "windows-terminal:install": "node ./scripts/theme-system/install-windows-terminal.mjs",
+    "windows-terminal:select": "node ./scripts/theme-system/select-windows-terminal-theme.mjs",
+    "windows:apply": "node ./scripts/theme-system/install-windows-personalization.mjs",
+    "optimize:themes": "node ./scripts/optimize-themes.mjs",
+    "test:themes": "node ./scripts/theme-system/test-build.mjs",
+    "test:windows-terminal": "node ./scripts/theme-system/test-windows-terminal.mjs",
+    "test:windows-terminal:install": "node ./scripts/theme-system/test-windows-terminal-install.mjs",
+    "test:windows-personalization": "node ./scripts/theme-system/test-windows-personalization.mjs",
+    "test:windows-personalization:install": "node ./scripts/theme-system/test-windows-personalization-install.mjs",
+    "test:userscript": "node ./scripts/theme-system/test-userscript.mjs",
+    "test:completeness": "node ./scripts/test-theme-completeness.cjs",
+    "test:all": "npm run test:themes && npm run test:windows-terminal && npm run test:windows-personalization && npm run test:userscript && npm run test:completeness && npm run a11y:audit",
+    "fix:themes": "node ./scripts/auto-fix-themes.cjs",
+    "a11y:audit": "node ./scripts/accessibility/run-accessibility.cjs audit",
+    "a11y:audit:aaa": "node ./scripts/accessibility/run-accessibility.cjs audit --target-level AAA",
+    "a11y:check": "node ./scripts/accessibility/run-accessibility.cjs check",
+    "a11y:fix": "node ./scripts/accessibility/run-accessibility.cjs fix",
+    "a11y:fix:all": "node ./scripts/accessibility/auto-fix.cjs",
+    "a11y:fix:dry": "node ./scripts/accessibility/auto-fix.cjs --dry-run",
+    "a11y:fuzz": "node ./scripts/accessibility/run-accessibility.cjs fuzz",
+    "a11y:simulate": "node ./scripts/accessibility/run-accessibility.cjs simulate",
+    "a11y:test": "node ./scripts/accessibility/test-accessibility.cjs",
+    "update:package": "node ./scripts/theme-system/update-package-themes.mjs",
+    "generate:manifest": "node scripts/generate-themes-manifest.js",
+    "serve": "npm run generate:manifest && npx serve .",
+    "build:test": "npm run build:themes && npm run test:smoke",
+    "prepackage": "npm run build:themes && npm run update:package && npm run test:smoke",
+    "rebuild": "npm run build:themes && npm run update:package && npm run package-and-install",
+    "commit": "git add . && git commit -m",
+    "push": "git push origin master",
+    "quick": "git add . && git commit -m 'chore: quick save' && git push origin master",
+    "release:tag": "node scripts/release-tag.js",
+    "publish:force": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true",
+    "publish:dry": "gh workflow run publish.yml -f force_publish=true -f dry_run=true",
+    "ci:dry": "node scripts/ci-trigger.js --dry",
+    "ci:publish": "node scripts/ci-trigger.js --publish",
+    "ci:logs": "node scripts/ci-trigger.js --logs",
+    "capture:screens": "node scripts/theme-system/capture-theme-screenshots.mjs",
+    "capture:vscode": "node scripts/theme-system/capture-theme-vscode.mjs"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.26.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-node": "^11.0.0",
+    "playwright": "^1.47.2",
+    "prettier": "^2.0.0",
+    "puppeteer": "^22.13.1"
+  },
+  "extensionDependencies": [
+    "github.copilot-chat"
+  ],
   "activationEvents": [
     "onCommand:xelaThemes.selectTheme",
+    "onCommand:xelaThemes.openEditor",
     "onCommand:xelaThemes.fuzzTheme",
-    "onCommand:xelaThemes.quickFuzz"
+    "onCommand:xelaThemes.quickFuzz",
+    "onCommand:xelaThemes.clearCustomizations",
+    "onCommand:xelaThemes.clearFuzz"
   ],
   "categories": [
     "Themes"
@@ -47,6 +119,16 @@
       {
         "command": "xelaThemes.selectTheme",
         "title": "XELA Themes: Select Theme Pack",
+        "category": "XELA Themes"
+      },
+      {
+        "command": "xelaThemes.openEditor",
+        "title": "XELA Themes: Open Theme Editor",
+        "category": "XELA Themes"
+      },
+      {
+        "command": "xelaThemes.clearCustomizations",
+        "title": "XELA Themes: Clear Theme Customizations",
         "category": "XELA Themes"
       },
       {
@@ -357,6 +439,21 @@
         "path": "./themes/xela-cupertino-prism-color-theme.json"
       },
       {
+        "label": "XELA Custom: XELA Lakers",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-custom-xela-lakers-color-theme.json"
+      },
+      {
+        "label": "XELA Light",
+        "uiTheme": "vs",
+        "path": "./themes/xela-custom-xela-light-color-theme.json"
+      },
+      {
+        "label": "XELA Custom: XELA Robot",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-custom-xela-robot-color-theme.json"
+      },
+      {
         "label": "XELA Cyberpunk 2077 — Night City",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-cyberpunk-2077-color-theme.json"
@@ -550,6 +647,11 @@
         "label": "XELA Ivory Tower — Refined Cream",
         "uiTheme": "vs",
         "path": "./themes/xela-ivory-tower-color-theme.json"
+      },
+      {
+        "label": "XELA Jarvis Command — Agentic Control",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-jarvis-command-color-theme.json"
       },
       {
         "label": "XELA Retro Print Pack • Jongerius Loom — Textural Editorial Light",
@@ -817,6 +919,11 @@
         "path": "./themes/xela-porcelain-color-theme.json"
       },
       {
+        "label": "XELA Portfolio Grid — Editorial Systems",
+        "uiTheme": "vs",
+        "path": "./themes/xela-portfolio-grid-color-theme.json"
+      },
+      {
         "label": "XELA Pastel & Botanical Pack • Prisma Bloom — Holographic Pastel",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-prisma-bloom-color-theme.json"
@@ -857,6 +964,11 @@
         "path": "./themes/xela-reader-mode-color-theme.json"
       },
       {
+        "label": "XELA Resonance Studio — Creative Nights",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-resonance-studio-color-theme.json"
+      },
+      {
         "label": "XELA Retina XDR — Apple Display",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-retina-xdr-color-theme.json"
@@ -880,6 +992,11 @@
         "label": "XELA Rosetta — Translation Layer",
         "uiTheme": "vs",
         "path": "./themes/xela-rosetta-color-theme.json"
+      },
+      {
+        "label": "XELA Runtime Forge — Systems Heat",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-runtime-forge-color-theme.json"
       },
       {
         "label": "XELA Sage Wisdom — Herbal Serenity",
@@ -912,9 +1029,19 @@
         "path": "./themes/xela-seraphine-conservatory-color-theme.json"
       },
       {
+        "label": "XELA Shadernetic Flux — Render Lab",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-shadernetic-flux-color-theme.json"
+      },
+      {
         "label": "XELA Shadow Realm — Void Walker",
         "uiTheme": "vs-dark",
         "path": "./themes/xela-shadow-realm-color-theme.json"
+      },
+      {
+        "label": "XELA Signal Watch — Reliability Deck",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xela-signal-watch-color-theme.json"
       },
       {
         "label": "XELA Silver Lining — Refined Neutrality",
@@ -1117,49 +1244,6 @@
         "path": "./themes/xela-zen-garden-color-theme.json"
       }
     ]
-  },
-  "scripts": {
-    "lint": "echo 'No lint configured'",
-    "package": "npx @vscode/vsce package",
-    "install:vsix": "powershell -NoProfile -Command \"$pkg = Get-ChildItem -Filter *.vsix | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($pkg){ code --install-extension $pkg.FullName --force } else { Write-Error 'No VSIX found' }\"",
-    "package-and-install": "npm run package && npm run install:vsix",
-    "build:themes": "node ./scripts/theme-system/build-themes.mjs",
-    "optimize:themes": "node ./scripts/optimize-themes.mjs",
-    "test:themes": "node ./scripts/theme-system/test-build.mjs",
-    "test:completeness": "node ./scripts/test-theme-completeness.cjs",
-    "test:all": "npm run test:themes && npm run test:completeness && npm run a11y:audit",
-    "fix:themes": "node ./scripts/auto-fix-themes.cjs",
-    "a11y:audit": "node ./scripts/accessibility/run-accessibility.cjs audit",
-    "a11y:audit:aaa": "node ./scripts/accessibility/run-accessibility.cjs audit --target-level AAA",
-    "a11y:check": "node ./scripts/accessibility/run-accessibility.cjs check",
-    "a11y:fix": "node ./scripts/accessibility/run-accessibility.cjs fix",
-    "a11y:fix:all": "node ./scripts/accessibility/auto-fix.cjs",
-    "a11y:fix:dry": "node ./scripts/accessibility/auto-fix.cjs --dry-run",
-    "a11y:fuzz": "node ./scripts/accessibility/run-accessibility.cjs fuzz",
-    "a11y:simulate": "node ./scripts/accessibility/run-accessibility.cjs simulate",
-    "a11y:test": "node ./scripts/accessibility/test-accessibility.cjs",
-    "update:package": "node ./scripts/theme-system/update-package-themes.mjs",
-    "generate:manifest": "node scripts/generate-themes-manifest.js",
-    "serve": "npm run generate:manifest && npx serve .",
-    "build:test": "npm run build:themes && npm run test:themes",
-    "prepackage": "npm run build:themes && npm run update:package && npm run test:themes",
-    "rebuild": "npm run build:themes && npm run update:package && npm run package-and-install",
-    "commit": "git add . && git commit -m",
-    "push": "git push origin master",
-    "quick": "git add . && git commit -m 'chore: quick save' && git push origin master",
-    "release:tag": "node scripts/release-tag.js",
-    "publish:force": "gh workflow run 'CI / Publish VS Code Extension' -f force_publish=true",
-    "publish:dry": "gh workflow run publish.yml -f force_publish=true -f dry_run=true",
-    "ci:dry": "node scripts/ci-trigger.js --dry",
-    "ci:publish": "node scripts/ci-trigger.js --publish",
-    "ci:logs": "node scripts/ci-trigger.js --logs",
-    "capture:screens": "node scripts/theme-system/capture-theme-screenshots.mjs",
-    "capture:vscode": "node scripts/theme-system/capture-theme-vscode.mjs"
-  },
-  "devDependencies": {
-    "@vscode/vsce": "^2.26.0",
-    "puppeteer": "^22.13.1",
-    "playwright": "^1.47.2"
   },
   "dependencies": {
     "jsonc-parser": "^3.2.0"
