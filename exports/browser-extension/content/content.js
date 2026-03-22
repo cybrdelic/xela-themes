@@ -115,12 +115,14 @@ function reapply() {
 
 // --- MutationObserver: reattach sheet if adoptedStyleSheets gets cleared ---
 let reapplyTimer = null;
-const observer = new MutationObserver(() => {
-  if (sheet && !document.adoptedStyleSheets.includes(sheet)) {
+function scheduleReapply() {
+  if (!sheet) return;
+  if (!document.adoptedStyleSheets.includes(sheet)) {
     clearTimeout(reapplyTimer);
     reapplyTimer = setTimeout(reapply, 50);
   }
-});
+}
+const observer = new MutationObserver(scheduleReapply);
 
 // --- Message listener: popup sends theme changes ---
 chrome.runtime.onMessage.addListener((msg) => {
@@ -134,7 +136,16 @@ async function boot() {
   const stored = await chrome.storage.sync.get(STORAGE_KEY);
   const themeId = stored[STORAGE_KEY] || DEFAULT_THEME_ID;
   await applyTheme(themeId);
-  observer.observe(document.documentElement, { childList: true, subtree: false, attributes: false });
+  // Watch documentElement attributes (SPAs change class/data attrs on navigation)
+  // and body childList (SPAs re-render body children on route change)
+  observer.observe(document.documentElement, { attributes: true, childList: true, subtree: false });
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: false });
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      observer.observe(document.body, { childList: true, subtree: false });
+    }, { once: true });
+  }
   interceptHistory();
 }
 
