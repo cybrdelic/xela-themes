@@ -3,7 +3,7 @@
   "name": "XELA Themes",
   "version": "0.3.4",
   "description": "Apply XELA color themes to GitHub, Google, ChatGPT, and LinkedIn.",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
   "host_permissions": [
     "https://github.com/*",
     "https://www.google.com/*",
@@ -28,7 +28,8 @@
       ],
       "js": ["content/content.js"],
       "run_at": "document_start",
-      "world": "MAIN"
+      "world": "MAIN",
+      "type": "module"
     }
   ],
   "action": {
@@ -43,5 +44,18 @@
     "16": "icons/icon16.svg",
     "48": "icons/icon48.svg",
     "128": "icons/icon128.svg"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["themes.json"],
+      "matches": [
+        "https://github.com/*",
+        "https://www.google.com/*",
+        "https://google.com/*",
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://www.linkedin.com/*"
+      ]
+    }
+  ]
 }

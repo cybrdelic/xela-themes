@@ -101,9 +101,14 @@ async function applyTheme(themeId) {
 
 // --- SPA navigation harness ---
 function interceptHistory() {
-  const orig = history.pushState.bind(history);
+  const origPush = history.pushState.bind(history);
   history.pushState = function (...args) {
-    orig(...args);
+    origPush(...args);
+    reapply();
+  };
+  const origReplace = history.replaceState.bind(history);
+  history.replaceState = function (...args) {
+    origReplace(...args);
     reapply();
   };
   window.addEventListener('popstate', reapply);
