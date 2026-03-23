@@ -1,0 +1,2040 @@
+{
+  "themes": [
+    {
+      "id": "xela-50s-gangster",
+      "name": "XELA 50s Gangster — Noir Detective",
+      "vscodeName": "XELA 50s Gangster — Noir Detective",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-amoled-plus",
+      "name": "XELA AMOLED+ — Pure Black Max",
+      "vscodeName": "XELA AMOLED+ — Pure Black Max",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-anime-hacker",
+      "name": "XELA Anime Hacker — Cyberpunk Neon",
+      "vscodeName": "XELA Anime Hacker — Cyberpunk Neon",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-arctic-daylight",
+      "name": "XELA Arctic Daylight — Cool Clarity",
+      "vscodeName": "XELA Arctic Daylight — Cool Clarity",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-arctic-glass",
+      "name": "XELA Arctic Glass — Crystal Light",
+      "vscodeName": "XELA Arctic Glass — Crystal Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-arctic-night",
+      "name": "XELA Arctic Night — Northern Calm",
+      "vscodeName": "XELA Arctic Night — Northern Calm",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-arctic",
+      "name": "XELA Arctic — Crystal Light",
+      "vscodeName": "XELA Arctic — Crystal Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-art-deco",
+      "name": "XELA Art Deco — 1920s Luxury",
+      "vscodeName": "XELA Art Deco — 1920s Luxury",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ash-grey",
+      "name": "XELA Ash Grey — Minimal Elegance",
+      "vscodeName": "XELA Ash Grey — Minimal Elegance",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-atelier-prisma",
+      "name": "XELA Atelier Prisma — Chromatic Kinetic Studio",
+      "vscodeName": "XELA Atelier Prisma — Chromatic Kinetic Studio",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-atelier",
+      "name": "XELA Atelier — Art Studio Light",
+      "vscodeName": "XELA Atelier — Art Studio Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-aurora-borealis",
+      "name": "XELA Aurora Borealis — Northern Lights",
+      "vscodeName": "XELA Aurora Borealis — Northern Lights",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-aws-credits",
+      "name": "XELA AWS Credits — Startup Pack",
+      "vscodeName": "XELA AWS Credits — Startup Pack",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-awwwards",
+      "name": "XELA Awwwards — Site of the Day",
+      "vscodeName": "XELA Awwwards — Site of the Day",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-barbie",
+      "name": "XELA Barbie — Dreamhouse Pink",
+      "vscodeName": "XELA Barbie — Dreamhouse Pink",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-bauhaus",
+      "name": "XELA Bauhaus — Primary Geometry",
+      "vscodeName": "XELA Bauhaus — Primary Geometry",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-birch-morning",
+      "name": "XELA Birch Morning — Scandinavian Fresh",
+      "vscodeName": "XELA Birch Morning — Scandinavian Fresh",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-black",
+      "name": "XELA Black — Pure OLED",
+      "vscodeName": "XELA Black — Pure OLED",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-blueprint",
+      "name": "XELA Blueprint — Technical Drafting",
+      "vscodeName": "XELA Blueprint — Technical Drafting",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-boardroom",
+      "name": "XELA Boardroom — Executive Power",
+      "vscodeName": "XELA Boardroom — Executive Power",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-borderless-minimal",
+      "name": "XELA Borderless Minimal — Chrome-less Focus",
+      "vscodeName": "XELA Borderless Minimal — Chrome-less Focus",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-brutalist-soft",
+      "name": "XELA Brutalist Soft — Warm Concrete",
+      "vscodeName": "XELA Brutalist Soft — Warm Concrete",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-brutalist",
+      "name": "XELA Brutalist — Raw Concrete",
+      "vscodeName": "XELA Brutalist — Raw Concrete",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-cafe-au-lait",
+      "name": "XELA Café au Lait — Warm Gradient",
+      "vscodeName": "XELA Café au Lait — Warm Gradient",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-carbon-fiber",
+      "name": "XELA Carbon Fiber — Technical Weave",
+      "vscodeName": "XELA Carbon Fiber — Technical Weave",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-chalk",
+      "name": "XELA Chalk — Matte White",
+      "vscodeName": "XELA Chalk — Matte White",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-charcoal-elite",
+      "name": "XELA Charcoal Elite — Professional Dark",
+      "vscodeName": "XELA Charcoal Elite — Professional Dark",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-circuitboard",
+      "name": "XELA Circuitboard — Soldermask Green",
+      "vscodeName": "XELA Circuitboard — Soldermask Green",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-clean-slate",
+      "name": "XELA Clean Slate — Minimal Precision",
+      "vscodeName": "XELA Clean Slate — Minimal Precision",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-cloud-nine",
+      "name": "XELA Cloud Nine — Soft Elegance",
+      "vscodeName": "XELA Cloud Nine — Soft Elegance",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-coffee-house",
+      "name": "XELA Coffee House — Rich Espresso",
+      "vscodeName": "XELA Coffee House — Rich Espresso",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-colorblind-pro",
+      "name": "XELA Color Blind Pro — Accessible",
+      "vscodeName": "XELA Color Blind Pro — Accessible",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-continuity",
+      "name": "XELA Continuity — Handoff Flow",
+      "vscodeName": "XELA Continuity — Handoff Flow",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-cosmic-aurora",
+      "name": "XELA Cosmic Aurora — Stellar Dance",
+      "vscodeName": "XELA Cosmic Aurora — Stellar Dance",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-cosmic-void",
+      "name": "XELA Cosmic Void — Event Horizon",
+      "vscodeName": "XELA Cosmic Void — Event Horizon",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-creative-writer",
+      "name": "XELA Creative Writer — Prose Flow",
+      "vscodeName": "XELA Creative Writer — Prose Flow",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-crystal-clear",
+      "name": "XELA Crystal Clear — Pure Transparency",
+      "vscodeName": "XELA Crystal Clear — Pure Transparency",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-light"
+      ],
+      "packLabels": [
+        "XELA Curated Light"
+      ]
+    },
+    {
+      "id": "xela-crystalline-matrix",
+      "name": "XELA Crystalline Matrix — Diamond Lattice",
+      "vscodeName": "XELA Crystalline Matrix — Diamond Lattice",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-cupertino-prism",
+      "name": "XELA Cupertino Prism — Dynamic Glass",
+      "vscodeName": "XELA Cupertino Prism — Dynamic Glass",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-cupertino",
+      "name": "XELA Cupertino — California Design",
+      "vscodeName": "XELA Cupertino — California Design",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-cyberpunk-2077",
+      "name": "XELA Cyberpunk 2077 — Night City",
+      "vscodeName": "XELA Cyberpunk 2077 — Night City",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-dark",
+      "name": "XELA Dark — Balanced Dark",
+      "vscodeName": "XELA Dark — Balanced Dark",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-data-analyst",
+      "name": "XELA Data Analyst — Insight Engine",
+      "vscodeName": "XELA Data Analyst — Insight Engine",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-daybreak",
+      "name": "XELA Daybreak — Morning Light",
+      "vscodeName": "XELA Daybreak — Morning Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-debug-mode",
+      "name": "XELA Debug Mode — Error Detection",
+      "vscodeName": "XELA Debug Mode — Error Detection",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-deep-focus",
+      "name": "XELA Deep Focus — Distraction-Free Code",
+      "vscodeName": "XELA Deep Focus — Distraction-Free Code",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-deep",
+      "name": "XELA Deep — Abyssal Bioluminescence",
+      "vscodeName": "XELA Deep — Abyssal Bioluminescence",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-digital-rain",
+      "name": "XELA Digital Rain — Data Cascade",
+      "vscodeName": "XELA Digital Rain — Data Cascade",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-dove-grey",
+      "name": "XELA Dove Grey — Soft Neutral",
+      "vscodeName": "XELA Dove Grey — Soft Neutral",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-dumbar-flux",
+      "name": "XELA Hyperflux Studio — Dumbar Motion",
+      "vscodeName": "XELA Hyperflux Studio — Dumbar Motion",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-e-ink-sepia",
+      "name": "XELA E‑Ink Sepia — Paper Light",
+      "vscodeName": "XELA E‑Ink Sepia — Paper Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-eink-pro",
+      "name": "XELA E-Ink Pro — Grayscale Perfect",
+      "vscodeName": "XELA E-Ink Pro — Grayscale Perfect",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ember-glow",
+      "name": "XELA Ember Glow — Warm Fire",
+      "vscodeName": "XELA Ember Glow — Warm Fire",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-espresso",
+      "name": "XELA Espresso — Rich Coffee Brown",
+      "vscodeName": "XELA Espresso — Rich Coffee Brown",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ethereal-mist",
+      "name": "XELA Ethereal Mist — Spirit Realm",
+      "vscodeName": "XELA Ethereal Mist — Spirit Realm",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-eye-care",
+      "name": "XELA Eye Care — Vision Optimized",
+      "vscodeName": "XELA Eye Care — Vision Optimized",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-financial-trader",
+      "name": "XELA Financial Trader — Market Watch",
+      "vscodeName": "XELA Financial Trader — Market Watch",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-flora-nova",
+      "name": "XELA Botanica Nova — Atelier Bloom",
+      "vscodeName": "XELA Botanica Nova — Atelier Bloom",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-flow-state",
+      "name": "XELA Flow State — Deep Concentration",
+      "vscodeName": "XELA Flow State — Deep Concentration",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-forest-cathedral",
+      "name": "XELA Forest Cathedral — Sacred Canopy",
+      "vscodeName": "XELA Forest Cathedral — Sacred Canopy",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-forest-floor",
+      "name": "XELA Forest Floor — Earthy Greens",
+      "vscodeName": "XELA Forest Floor — Earthy Greens",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-game-dev",
+      "name": "XELA Game Dev — Level Designer",
+      "vscodeName": "XELA Game Dev — Level Designer",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-garage-mode",
+      "name": "XELA Garage Mode — Origin Story",
+      "vscodeName": "XELA Garage Mode — Origin Story",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-golden-horizon",
+      "name": "XELA Golden Horizon — Sunset Blaze",
+      "vscodeName": "XELA Golden Horizon — Sunset Blaze",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-graffiti",
+      "name": "XELA Graffiti — Street Art Canvas",
+      "vscodeName": "XELA Graffiti — Street Art Canvas",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-graph-paper",
+      "name": "XELA Graph Paper — Light Grid",
+      "vscodeName": "XELA Graph Paper — Light Grid",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-light"
+      ],
+      "packLabels": [
+        "XELA Curated Light"
+      ]
+    },
+    {
+      "id": "xela-graphite-pro",
+      "name": "XELA Graphite Pro — Precision Grey",
+      "vscodeName": "XELA Graphite Pro — Precision Grey",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-hdr-studio",
+      "name": "XELA HDR Studio — Wide Gamut",
+      "vscodeName": "XELA HDR Studio — Wide Gamut",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-hockey-stick",
+      "name": "XELA Hockey Stick — Exponential Growth",
+      "vscodeName": "XELA Hockey Stick — Exponential Growth",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-holographic-spectrum",
+      "name": "XELA Holographic Spectrum — Rainbow Prism",
+      "vscodeName": "XELA Holographic Spectrum — Rainbow Prism",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-holographic",
+      "name": "XELA Holographic — Dimensional Shift",
+      "vscodeName": "XELA Holographic — Dimensional Shift",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-honey-glow",
+      "name": "XELA Honey Glow — Golden Warmth",
+      "vscodeName": "XELA Honey Glow — Golden Warmth",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-hyperfocus-monochrome",
+      "name": "XELA Hyperfocus Monochrome — Cognitive Isolation",
+      "vscodeName": "XELA Hyperfocus Monochrome — Cognitive Isolation",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ink",
+      "name": "XELA Ink — Print Typography",
+      "vscodeName": "XELA Ink — Print Typography",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-light"
+      ],
+      "packLabels": [
+        "XELA Curated Light"
+      ]
+    },
+    {
+      "id": "xela-inkwell-sepia",
+      "name": "XELA Inkwell Sepia — Vintage Manuscript",
+      "vscodeName": "XELA Inkwell Sepia — Vintage Manuscript",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-iridescence",
+      "name": "XELA Iridescence — Prismatic Black",
+      "vscodeName": "XELA Iridescence — Prismatic Black",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-ivory-tower",
+      "name": "XELA Ivory Tower — Refined Cream",
+      "vscodeName": "XELA Ivory Tower — Refined Cream",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-jarvis-command",
+      "name": "XELA Jarvis Command — Agentic Shell",
+      "vscodeName": "XELA Jarvis Command — Agentic Control",
+      "description": "Terminal-native orchestration palette for agent loops, tool calls, and high-signal command work.",
+      "source": "source",
+      "packIds": [
+        "xela-personal-systems"
+      ],
+      "packLabels": [
+        "XELA Personal Systems Pack"
+      ]
+    },
+    {
+      "id": "xela-laboratory",
+      "name": "XELA Laboratory — Scientific Precision",
+      "vscodeName": "XELA Laboratory — Scientific Precision",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-lavender-fields",
+      "name": "XELA Lavender Fields — Provence Light",
+      "vscodeName": "XELA Lavender Fields — Provence Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-lavender-mist",
+      "name": "XELA Lavender Mist — Soft Purple Hues",
+      "vscodeName": "XELA Lavender Mist — Soft Purple Hues",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-limestone",
+      "name": "XELA Limestone — Natural Stone",
+      "vscodeName": "XELA Limestone — Natural Stone",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-liminal-whiteout",
+      "name": "XELA Liminal Whiteout — Overexposed Minimal Field",
+      "vscodeName": "XELA Liminal Whiteout — Overexposed Minimal Field",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-linen",
+      "name": "XELA Linen — Natural Fabric",
+      "vscodeName": "XELA Linen — Natural Fabric",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-math-professor",
+      "name": "XELA Math Professor — Academic Rigor",
+      "vscodeName": "XELA Math Professor — Academic Rigor",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-matrix-rain",
+      "name": "XELA Matrix Rain — Hyperphosphor Cascade",
+      "vscodeName": "XELA Matrix Rain — Hyperphosphor Cascade",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-medical-coder",
+      "name": "XELA Medical Coder — Clinical Precision",
+      "vscodeName": "XELA Medical Coder — Clinical Precision",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-memory-palace",
+      "name": "XELA Memory Palace — Spatial Recall",
+      "vscodeName": "XELA Memory Palace — Spatial Recall",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-mercury",
+      "name": "XELA Mercury — Liquid Metal",
+      "vscodeName": "XELA Mercury — Liquid Metal",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-midnight-cedar",
+      "name": "XELA Midnight Cedar — Forest Dark",
+      "vscodeName": "XELA Midnight Cedar — Forest Dark",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-midnight-cosmos",
+      "name": "XELA Midnight Cosmos — Stellar Deep",
+      "vscodeName": "XELA Midnight Cosmos — Stellar Deep",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-midnight-gradient",
+      "name": "XELA Midnight Gradient — Deep Layers",
+      "vscodeName": "XELA Midnight Gradient — Deep Layers",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-midnight-oil",
+      "name": "XELA Midnight Oil — Late Night Focus",
+      "vscodeName": "XELA Midnight Oil — Late Night Focus",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-midnight",
+      "name": "XELA Midnight — iPhone 13 Shadow",
+      "vscodeName": "XELA Midnight — iPhone 13 Shadow",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-mint-cream",
+      "name": "XELA Mint Cream — Fresh Coolness",
+      "vscodeName": "XELA Mint Cream — Fresh Coolness",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-mirage-meridian",
+      "name": "XELA Mirage Meridian — Dusk Lagoon Geometry",
+      "vscodeName": "XELA Mirage Meridian — Dusk Lagoon Geometry",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-mojave-dusk",
+      "name": "XELA Mojave Dusk — Desert Warmth",
+      "vscodeName": "XELA Mojave Dusk — Desert Warmth",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-monastic",
+      "name": "XELA Monastic — Near‑Monochrome Focus",
+      "vscodeName": "XELA Monastic — Near‑Monochrome Focus",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-monterey",
+      "name": "XELA Monterey — Big Sur Evolution",
+      "vscodeName": "XELA Monterey — Big Sur Evolution",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-mr-robot",
+      "name": "XELA Mr. Robot — fsociety Terminal",
+      "vscodeName": "XELA Mr. Robot — fsociety Terminal",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-mvp-sprint",
+      "name": "XELA MVP Sprint — Ship Fast Mode",
+      "vscodeName": "XELA MVP Sprint — Ship Fast Mode",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-nebula-haze",
+      "name": "XELA Nebula Haze — Iridescent Fog",
+      "vscodeName": "XELA Nebula Haze — Iridescent Fog",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-neon-noir",
+      "name": "XELA Neon Noir — Cyber Noir",
+      "vscodeName": "XELA Neon Noir — Cyber Noir",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-neon-wireframe",
+      "name": "XELA Neon Wireframe — Vector Grid",
+      "vscodeName": "XELA Neon Wireframe — Vector Grid",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-netflix",
+      "name": "XELA Netflix — Streaming Cinema",
+      "vscodeName": "XELA Netflix — Streaming Cinema",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-neural-network",
+      "name": "XELA Neural Network — AI Synapses",
+      "vscodeName": "XELA Neural Network — AI Synapses",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-night-vision",
+      "name": "XELA Night Vision — Tactical Display",
+      "vscodeName": "XELA Night Vision — Tactical Display",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-obsidian-glass",
+      "name": "XELA Obsidian Glass — Black + Glass",
+      "vscodeName": "XELA Obsidian Glass — Black + Glass",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ocean-depths-classic",
+      "name": "XELA Ocean Depths Classic — Before (Uniform)",
+      "vscodeName": "XELA Ocean Depths Classic — Before (Uniform)",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ocean-depths",
+      "name": "XELA Ocean Depths — After (Dramatic Layers)",
+      "vscodeName": "XELA Ocean Depths — After (Dramatic Layers)",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-oled-perfect",
+      "name": "XELA OLED Perfect — True Black",
+      "vscodeName": "XELA OLED Perfect — True Black",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-paper-white",
+      "name": "XELA Paper White — Clean Manuscript",
+      "vscodeName": "XELA Paper White — Clean Manuscript",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-pearl-white",
+      "name": "XELA Pearl White — Luminous Clarity",
+      "vscodeName": "XELA Pearl White — Luminous Clarity",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-pewter",
+      "name": "XELA Pewter — Refined Metal",
+      "vscodeName": "XELA Pewter — Refined Metal",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-phosphor-green",
+      "name": "XELA Phosphor Green — Monochrome CRT",
+      "vscodeName": "XELA Phosphor Green — Monochrome CRT",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-pitch-deck",
+      "name": "XELA Pitch Deck — Series A Ready",
+      "vscodeName": "XELA Pitch Deck — Series A Ready",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-light"
+      ],
+      "packLabels": [
+        "XELA Curated Light"
+      ]
+    },
+    {
+      "id": "xela-pivot",
+      "name": "XELA Pivot — Strategic Shift",
+      "vscodeName": "XELA Pivot — Strategic Shift",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-plasma-storm",
+      "name": "XELA Plasma Storm — Electric Current",
+      "vscodeName": "XELA Plasma Storm — Electric Current",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-platinum",
+      "name": "XELA Platinum — Premium Silver",
+      "vscodeName": "XELA Platinum — Premium Silver",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-popgirly",
+      "name": "XELA PopGirly — Kawaii Dreams",
+      "vscodeName": "XELA PopGirly — Kawaii Dreams",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-porcelain",
+      "name": "XELA Porcelain — Delicate Light",
+      "vscodeName": "XELA Porcelain — Delicate Light",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-portfolio-grid",
+      "name": "XELA Portfolio Grid — Editorial Shell",
+      "vscodeName": "XELA Portfolio Grid — Editorial Systems",
+      "description": "Terminal-native editorial palette with warm paper whites, cobalt anchors, and precise terracotta accents.",
+      "source": "source",
+      "packIds": [
+        "xela-personal-systems"
+      ],
+      "packLabels": [
+        "XELA Personal Systems Pack"
+      ]
+    },
+    {
+      "id": "xela-pro-display",
+      "name": "XELA Pro Display — Reference Monitor",
+      "vscodeName": "XELA Pro Display — Reference Monitor",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-product-hunt",
+      "name": "XELA Product Hunt — Launch Day",
+      "vscodeName": "XELA Product Hunt — Launch Day",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-proto-grid",
+      "name": "XELA Proto Grid — Early Wireframe UX",
+      "vscodeName": "XELA Proto Grid — Early Wireframe UX",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-publisher",
+      "name": "XELA Publisher — Editorial Excellence",
+      "vscodeName": "XELA Publisher — Editorial Excellence",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-quantum-flux",
+      "name": "XELA Quantum Flux — Probability Waves",
+      "vscodeName": "XELA Quantum Flux — Probability Waves",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ramen-profitable",
+      "name": "XELA Ramen Profitable — Bootstrapped Grind",
+      "vscodeName": "XELA Ramen Profitable — Bootstrapped Grind",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-reader-mode",
+      "name": "XELA Reader Mode — Optimal Legibility",
+      "vscodeName": "XELA Reader Mode — Optimal Legibility",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-resonance-studio",
+      "name": "XELA Resonance Studio — Night Session",
+      "vscodeName": "XELA Resonance Studio — Creative Nights",
+      "description": "Terminal-native studio nocturne blending synth magenta, teal signal, and low-light plum for creative work.",
+      "source": "source",
+      "packIds": [
+        "xela-personal-systems"
+      ],
+      "packLabels": [
+        "XELA Personal Systems Pack"
+      ]
+    },
+    {
+      "id": "xela-retina-xdr",
+      "name": "XELA Retina XDR — Apple Display",
+      "vscodeName": "XELA Retina XDR — Apple Display",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-retro-terminal-amber",
+      "name": "XELA Retro Terminal Amber — Monochrome CRT",
+      "vscodeName": "XELA Retro Terminal Amber — Monochrome CRT",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-retrowave-synthesis",
+      "name": "XELA Retrowave Synthesis — Neon Dreams",
+      "vscodeName": "XELA Retrowave Synthesis — Neon Dreams",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-rose-quartz",
+      "name": "XELA Rose Quartz — Gentle Pink",
+      "vscodeName": "XELA Rose Quartz — Gentle Pink",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-rosetta",
+      "name": "XELA Rosetta — Translation Layer",
+      "vscodeName": "XELA Rosetta — Translation Layer",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-runtime-forge",
+      "name": "XELA Runtime Forge — Systems Heat",
+      "vscodeName": "XELA Runtime Forge — Systems Heat",
+      "description": "Terminal-native systems palette with forge amber, steel blues, and warm telemetry for build-and-debug sessions.",
+      "source": "source",
+      "packIds": [
+        "xela-personal-systems"
+      ],
+      "packLabels": [
+        "XELA Personal Systems Pack"
+      ]
+    },
+    {
+      "id": "xela-sage-wisdom",
+      "name": "XELA Sage Wisdom — Herbal Serenity",
+      "vscodeName": "XELA Sage Wisdom — Herbal Serenity",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-sand-dune",
+      "name": "XELA Sand Dune — Desert Warmth",
+      "vscodeName": "XELA Sand Dune — Desert Warmth",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-scandinavian",
+      "name": "XELA Scandinavian — Nordic Hygge",
+      "vscodeName": "XELA Scandinavian — Nordic Hygge",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-security-researcher",
+      "name": "XELA Security Researcher — Zero Day",
+      "vscodeName": "XELA Security Researcher — Zero Day",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-seraphine-conservatory",
+      "name": "XELA Seraphine Conservatory — Terracotta Botanical Gallery",
+      "vscodeName": "XELA Seraphine Conservatory — Terracotta Botanical Gallery",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-shadernetic-flux",
+      "name": "XELA Shadernetic Flux — Render Lab",
+      "vscodeName": "XELA Shadernetic Flux — Render Lab",
+      "description": "Terminal-native render-lab palette with electric cyan, violet spill, and solar orange highlights for GPU work.",
+      "source": "source",
+      "packIds": [
+        "xela-personal-systems"
+      ],
+      "packLabels": [
+        "XELA Personal Systems Pack"
+      ]
+    },
+    {
+      "id": "xela-shadow-realm",
+      "name": "XELA Shadow Realm — Void Walker",
+      "vscodeName": "XELA Shadow Realm — Void Walker",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-signal-watch",
+      "name": "XELA Signal Watch — Reliability Deck",
+      "vscodeName": "XELA Signal Watch — Reliability Deck",
+      "description": "Terminal-native ops palette for telemetry, perf investigations, and watchdog work with crisp alert states.",
+      "source": "source",
+      "packIds": [
+        "xela-personal-systems"
+      ],
+      "packLabels": [
+        "XELA Personal Systems Pack"
+      ]
+    },
+    {
+      "id": "xela-silver-lining",
+      "name": "XELA Silver Lining — Refined Neutrality",
+      "vscodeName": "XELA Silver Lining — Refined Neutrality",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-slate-modern",
+      "name": "XELA Slate Modern — Contemporary Grey",
+      "vscodeName": "XELA Slate Modern — Contemporary Grey",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-smoke",
+      "name": "XELA Smoke — Atmospheric Grey",
+      "vscodeName": "XELA Smoke — Atmospheric Grey",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-solar-ink",
+      "name": "XELA Solar Ink — Warm Print Light",
+      "vscodeName": "XELA Solar Ink — Warm Print Light",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-light"
+      ],
+      "packLabels": [
+        "XELA Curated Light"
+      ]
+    },
+    {
+      "id": "xela-sonoran-mirage",
+      "name": "XELA Mirage Sonora — Desert Prism",
+      "vscodeName": "XELA Mirage Sonora — Desert Prism",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-space-gray",
+      "name": "XELA Space Gray — Pro Hardware",
+      "vscodeName": "XELA Space Gray — Pro Hardware",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-apple-pro"
+      ],
+      "packLabels": [
+        "XELA Apple Pro"
+      ]
+    },
+    {
+      "id": "xela-speed-reading",
+      "name": "XELA Speed Reading — Rapid Scan",
+      "vscodeName": "XELA Speed Reading — Rapid Scan",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-spotify",
+      "name": "XELA Spotify — Music Streaming",
+      "vscodeName": "XELA Spotify — Music Streaming",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-startup-hackathon-sprint",
+      "name": "XELA Startup — Hackathon Sprint",
+      "vscodeName": "XELA Startup — Hackathon Sprint",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-stone-garden",
+      "name": "XELA Stone Garden — Natural Balance",
+      "vscodeName": "XELA Stone Garden — Natural Balance",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-storm-grey",
+      "name": "XELA Storm Grey — Moody Atmosphere",
+      "vscodeName": "XELA Storm Grey — Moody Atmosphere",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-studio-pro",
+      "name": "XELA Studio Pro — Designer Workspace",
+      "vscodeName": "XELA Studio Pro — Designer Workspace",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-superman",
+      "name": "XELA Superman — Man of Steel",
+      "vscodeName": "XELA Superman — Man of Steel",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-surgical",
+      "name": "XELA Surgical — Medical Precision",
+      "vscodeName": "XELA Surgical — Medical Precision",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-swiss-modern",
+      "name": "XELA Swiss Modern — Helvetica Grid",
+      "vscodeName": "XELA Swiss Modern — Helvetica Grid",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-synthwave-outrun",
+      "name": "XELA Synthwave Outrun — Neon Highway",
+      "vscodeName": "XELA Synthwave Outrun — Neon Highway",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-terminalist",
+      "name": "XELA Terminalist — ANSI Native",
+      "vscodeName": "XELA Terminalist — ANSI Native",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-terra",
+      "name": "XELA Terra — Organic Warmth",
+      "vscodeName": "XELA Terra — Organic Warmth",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-titanium",
+      "name": "XELA Titanium — iPhone 15 Pro",
+      "vscodeName": "XELA Titanium — iPhone 15 Pro",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-tokyo-neon",
+      "name": "XELA Tokyo Neon — Shibuya Night",
+      "vscodeName": "XELA Tokyo Neon — Shibuya Night",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-tungsten",
+      "name": "XELA Tungsten — Industrial Grey",
+      "vscodeName": "XELA Tungsten — Industrial Grey",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-twilight-layers",
+      "name": "XELA Twilight Layers — Depth & Dimension",
+      "vscodeName": "XELA Twilight Layers — Depth & Dimension",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-unicorn",
+      "name": "XELA Unicorn — Billion Dollar Vision",
+      "vscodeName": "XELA Unicorn — Billion Dollar Vision",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-ux-designer",
+      "name": "XELA UX Designer — Interface Architect",
+      "vscodeName": "XELA UX Designer — Interface Architect",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-vapor",
+      "name": "XELA Vapor — Neon Retrowave",
+      "vscodeName": "XELA Vapor — Neon Retrowave",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-velvet-dusk",
+      "name": "XELA Velvet Dusk — Plush Comfort",
+      "vscodeName": "XELA Velvet Dusk — Plush Comfort",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-velvet-night",
+      "name": "XELA Velvet Night — Luxury Dark",
+      "vscodeName": "XELA Velvet Night — Luxury Dark",
+      "description": "",
+      "source": "source",
+      "packIds": [
+        "xela-curated-dark"
+      ],
+      "packLabels": [
+        "XELA Curated Dark"
+      ]
+    },
+    {
+      "id": "xela-void-mist",
+      "name": "XELA Void Mist — Diffuse Nebula",
+      "vscodeName": "XELA Void Mist — Diffuse Nebula",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-volcanic-forge",
+      "name": "XELA Volcanic Forge — Molten Core",
+      "vscodeName": "XELA Volcanic Forge — Molten Core",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-wwdc",
+      "name": "XELA WWDC — Developer Conference",
+      "vscodeName": "XELA WWDC — Developer Conference",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-yc-batch",
+      "name": "XELA Y Combinator — Orange Accelerator",
+      "vscodeName": "XELA Y Combinator — Orange Accelerator",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-zen-code",
+      "name": "XELA Zen Code — Mindful Simplicity",
+      "vscodeName": "XELA Zen Code — Mindful Simplicity",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-zen-garden",
+      "name": "XELA Zen Garden — Peaceful Minimalism",
+      "vscodeName": "XELA Zen Garden — Peaceful Minimalism",
+      "description": "",
+      "source": "source",
+      "packIds": [],
+      "packLabels": []
+    },
+    {
+      "id": "xela-apple-ii",
+      "name": "XELA Apple II Phosphor — 40 Column CRT",
+      "vscodeName": "XELA Tech Nostalgia • Apple II — Green Phosphor",
+      "description": "Terminal-native Apple II reinterpretation with green phosphor glow and restrained warm accents.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-commodore-64",
+      "name": "XELA C64 PETSCII — Blue Screen",
+      "vscodeName": "XELA Tech Nostalgia • Commodore 64 — PETSCII Blue",
+      "description": "Terminal-native Commodore 64 palette with PETSCII blues, pastel brights, and soft lavender highs.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-basic-dos",
+      "name": "XELA DOS EGA — Command Shell",
+      "vscodeName": "XELA Tech Nostalgia • BASIC DOS — Command Prompt",
+      "description": "Terminal-native DOS palette with IBM-style EGA primaries and bright cyan command focus.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-basic-dos-light",
+      "name": "XELA Amber DOS — Monitor Glow",
+      "vscodeName": "XELA Tech Nostalgia • BASIC DOS Light — Amber Monitor",
+      "description": "Terminal-native amber monitor variant with warm phosphor text and sepia warning tones.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-macos-classic",
+      "name": "XELA Platinum Finder — Classic Mac",
+      "vscodeName": "XELA Tech Nostalgia • macOS Classic — System 7 Platinum",
+      "description": "Terminal-native System 7 reinterpretation with platinum chrome, navy highlights, and restrained pastel accents.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-macos-classic-dark",
+      "name": "XELA Charcoal Finder — Classic Mac",
+      "vscodeName": "XELA Tech Nostalgia • macOS Classic Dark — Charcoal System",
+      "description": "Terminal-native Charcoal reinterpretation with graphite panels, pale text, and softened desktop-era accents.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-macos-aqua",
+      "name": "XELA Aqua Finder — Pinstripe Glass",
+      "vscodeName": "XELA Tech Nostalgia • macOS Aqua — OS X Transparent",
+      "description": "Terminal-native Aqua reinterpretation with bright glass blues, pinstripe whites, and candy-coated brights.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-macos-aqua-dark",
+      "name": "XELA Aqua After Dark — Deep Water",
+      "vscodeName": "XELA Tech Nostalgia • macOS Aqua Dark — Deep Water",
+      "description": "Terminal-native Aqua dark reinterpretation with saturated cobalt glass and cooler neon cyans.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-classic-ps2",
+      "name": "XELA PS2 Boot — Midnight Vector",
+      "vscodeName": "XELA Tech Nostalgia • Classic PS2 — PlayStation Interface",
+      "description": "Terminal-native PS2 reinterpretation with boot-screen indigo, cool electric blues, and holographic violet edges.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-classic-ps2-light",
+      "name": "XELA PS2 Silver — Tower Glow",
+      "vscodeName": "XELA Tech Nostalgia • Classic PS2 Light — Silver Tower",
+      "description": "Terminal-native PS2 silver reinterpretation with aluminum neutrals, soft indigo, and violet edge lights.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-windows-xp",
+      "name": "XELA Luna Day — XP Shell",
+      "vscodeName": "XELA Tech Nostalgia • Windows XP — Bliss Desktop",
+      "description": "Terminal-native XP reinterpretation with sky blues, grassy greens, and bright Luna-era interface contrast.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-windows-xp-dark",
+      "name": "XELA Luna Midnight — XP Shell",
+      "vscodeName": "XELA Tech Nostalgia • Windows XP Dark — Midnight Luna",
+      "description": "Terminal-native XP dark reinterpretation with navy Luna chrome and warm amber focus states.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-winamp-classic",
+      "name": "XELA Winamp Spectrum — Chrome EQ",
+      "vscodeName": "XELA Tech Nostalgia • Winamp Classic — Metallic Skin",
+      "description": "Terminal-native Winamp reinterpretation with gunmetal chrome, royal blue edges, and luminous EQ green.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-myspace-raw-html",
+      "name": "XELA MySpace HTML — Glitter Web",
+      "vscodeName": "XELA Tech Nostalgia • MySpace Raw HTML — Glitter Graphics",
+      "description": "Terminal-native MySpace reinterpretation with white page chrome, hot pink selections, and loud blue link energy.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-myspace-dark",
+      "name": "XELA MySpace After Hours — Profile Blackout",
+      "vscodeName": "XELA Tech Nostalgia • MySpace Dark — Emo Profile",
+      "description": "Terminal-native dark MySpace reinterpretation with black profile chrome, candy pink highlights, and cool cyan status text.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    },
+    {
+      "id": "xela-hal-9000",
+      "name": "XELA HAL 9000 — Red Eye",
+      "vscodeName": "XELA Cinema • HAL 9000 — Red Eye",
+      "description": "Terminal-native HAL reinterpretation with low-light charcoal, alert reds, and molten amber telemetry.",
+      "source": "legacy",
+      "packIds": [
+        "xela-tech-nostalgia"
+      ],
+      "packLabels": [
+        "XELA Tech Nostalgia"
+      ]
+    }
+  ],
+  "packs": [
+    {
+      "id": "xela-tech-nostalgia",
+      "label": "XELA Tech Nostalgia",
+      "description": "Retro computing interfaces from the 80s, 90s, and 2000s.",
+      "themeIds": [
+        "xela-apple-ii",
+        "xela-commodore-64",
+        "xela-basic-dos",
+        "xela-basic-dos-light",
+        "xela-macos-classic",
+        "xela-macos-classic-dark",
+        "xela-macos-aqua",
+        "xela-macos-aqua-dark",
+        "xela-classic-ps2",
+        "xela-classic-ps2-light",
+        "xela-windows-xp",
+        "xela-windows-xp-dark",
+        "xela-winamp-classic",
+        "xela-myspace-raw-html",
+        "xela-myspace-dark",
+        "xela-hal-9000"
+      ],
+      "availableThemeIds": [
+        "xela-apple-ii",
+        "xela-commodore-64",
+        "xela-basic-dos",
+        "xela-basic-dos-light",
+        "xela-macos-classic",
+        "xela-macos-classic-dark",
+        "xela-macos-aqua",
+        "xela-macos-aqua-dark",
+        "xela-classic-ps2",
+        "xela-classic-ps2-light",
+        "xela-windows-xp",
+        "xela-windows-xp-dark",
+        "xela-winamp-classic",
+        "xela-myspace-raw-html",
+        "xela-myspace-dark",
+        "xela-hal-9000"
+      ]
+    },
+    {
+      "id": "xela-apple-pro",
+      "label": "XELA Apple Pro",
+      "description": "Modern Apple-inspired professional themes.",
+      "themeIds": [
+        "xela-cupertino",
+        "xela-cupertino-prism",
+        "xela-monterey",
+        "xela-continuity",
+        "xela-pro-display",
+        "xela-retina-xdr",
+        "xela-space-gray"
+      ],
+      "availableThemeIds": [
+        "xela-cupertino",
+        "xela-cupertino-prism",
+        "xela-monterey",
+        "xela-continuity",
+        "xela-pro-display",
+        "xela-retina-xdr",
+        "xela-space-gray"
+      ]
+    },
+    {
+      "id": "xela-curated-dark",
+      "label": "XELA Curated Dark",
+      "description": "Handpicked dark themes with excellent contrast and aesthetics.",
+      "themeIds": [
+        "xela-iridescence",
+        "xela-velvet-night",
+        "xela-blueprint",
+        "xela-charcoal-elite",
+        "xela-ocean-depths",
+        "xela-coffee-house",
+        "xela-midnight-oil",
+        "xela-ember-glow"
+      ],
+      "availableThemeIds": [
+        "xela-iridescence",
+        "xela-velvet-night",
+        "xela-blueprint",
+        "xela-charcoal-elite",
+        "xela-ocean-depths",
+        "xela-coffee-house",
+        "xela-midnight-oil",
+        "xela-ember-glow"
+      ]
+    },
+    {
+      "id": "xela-curated-light",
+      "label": "XELA Curated Light",
+      "description": "Handpicked light themes for daytime coding.",
+      "themeIds": [
+        "xela-pitch-deck",
+        "xela-ink",
+        "xela-solar-ink",
+        "xela-graph-paper",
+        "xela-crystal-clear"
+      ],
+      "availableThemeIds": [
+        "xela-pitch-deck",
+        "xela-ink",
+        "xela-solar-ink",
+        "xela-graph-paper",
+        "xela-crystal-clear"
+      ]
+    },
+    {
+      "id": "xela-personal-systems",
+      "label": "XELA Personal Systems Pack",
+      "description": "Agentic tooling, realtime graphics, reliability ops, editorial product craft, and creative studio work translated into one personal developer system.",
+      "themeIds": [
+        "xela-jarvis-command",
+        "xela-runtime-forge",
+        "xela-shadernetic-flux",
+        "xela-signal-watch",
+        "xela-portfolio-grid",
+        "xela-resonance-studio"
+      ],
+      "availableThemeIds": [
+        "xela-jarvis-command",
+        "xela-runtime-forge",
+        "xela-shadernetic-flux",
+        "xela-signal-watch",
+        "xela-portfolio-grid",
+        "xela-resonance-studio"
+      ]
+    }
+  ]
+}

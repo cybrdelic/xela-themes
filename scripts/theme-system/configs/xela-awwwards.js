@@ -75,6 +75,7 @@ export default {
       "terminal.background": "#FFFFFF",
       "terminal.foreground": "#333333",
       "terminalCursor.foreground": "#000000",
+      "terminal.ansiMagenta": "#9B59B6",
       "editorLineNumber.foreground": "#DADADA",
       "editorLineNumber.activeForeground": "#757575",
       "editor.lineHighlightBackground": "#EEEEEEAA",

@@ -1,16 +1,88 @@
 // Complete VS Code color mapping system with advanced customization support
-import { withAlpha } from './roles.js';
+// All critical UI elements are contrast-enforced for WCAG compliance
+import { withAlpha, enforceContrast, getLuminance, lighten } from './roles.js';
+
+// WCAG contrast requirements
+const CONTRAST = {
+  AA: 4.5,       // Normal text
+  AA_LARGE: 3.0, // Large text, UI components
+  UI: 3.0        // Non-text elements
+};
+
+const FINAL_CONTRAST_PAIRS = [
+  ['titleBar.activeBackground', 'titleBar.activeForeground'],
+  ['activityBar.background', 'activityBar.foreground'],
+  ['sideBar.background', 'sideBar.foreground'],
+  ['sideBarSectionHeader.background', 'sideBarSectionHeader.foreground'],
+  ['statusBar.background', 'statusBar.foreground'],
+  ['statusBar.noFolderBackground', 'statusBar.noFolderForeground'],
+  ['statusBar.debuggingBackground', 'statusBar.debuggingForeground'],
+  ['panel.background', 'panelTitle.activeForeground'],
+  ['tab.activeBackground', 'tab.activeForeground'],
+  ['tab.inactiveBackground', 'tab.inactiveForeground'],
+  ['editor.background', 'editor.foreground'],
+  ['editor.background', 'editorLineNumber.activeForeground'],
+  ['editorWidget.background', 'editorWidget.foreground'],
+  ['editorHoverWidget.background', 'editorWidget.foreground'],
+  ['list.activeSelectionBackground', 'list.activeSelectionForeground'],
+  ['list.inactiveSelectionBackground', 'list.inactiveSelectionForeground'],
+  ['button.background', 'button.foreground'],
+  ['button.secondaryBackground', 'button.secondaryForeground'],
+  ['input.background', 'input.foreground'],
+  ['badge.background', 'badge.foreground'],
+  ['activityBarBadge.background', 'activityBarBadge.foreground'],
+  ['terminal.background', 'terminal.foreground'],
+  ['notifications.background', 'notifications.foreground'],
+  ['notificationCenterHeader.background', 'notificationCenterHeader.foreground'],
+  ['menu.background', 'menu.foreground'],
+  ['menu.selectionBackground', 'menu.selectionForeground'],
+  ['quickInput.background', 'quickInput.foreground']
+];
+
+function normalizeFinalContrast(colors) {
+  for (const [bgKey, fgKey] of FINAL_CONTRAST_PAIRS) {
+    const bg = colors[bgKey];
+    const fg = colors[fgKey];
+    if (!bg || !fg || bg.length > 7 || fg.length > 7) {
+      continue;
+    }
+    colors[fgKey] = enforceContrast(fg, bg, CONTRAST.AA);
+  }
+  return colors;
+}
 
 export function buildCompleteColors(roles, overrides = {}) {
   const r = roles;
+  const isLight = getLuminance(r.surface0 || '#000000') > 0.45;
+
+  // Pre-compute contrast-safe variants for badge/button foregrounds
+  const badgeFg = enforceContrast(r.textInverted, r.accentPrimary, CONTRAST.AA);
+  const errorFg = enforceContrast(r.textInverted, r.accentError, CONTRAST.AA);
+  const warnFg = enforceContrast(r.textInverted, r.accentWarn, CONTRAST.AA);
+  const infoFg = enforceContrast(r.textInverted, r.accentInfo, CONTRAST.AA);
+  const successFg = enforceContrast(r.textInverted, r.accentSuccess, CONTRAST.AA);
+  const sidebarSectionBg = r.surface2;
+  const sidebarSectionFg = enforceContrast(r.textPrimary, sidebarSectionBg, CONTRAST.AA);
+  const widgetBg = r.surface3;
+  const widgetFg = enforceContrast(r.textPrimary, widgetBg, CONTRAST.AA);
+  const listInactiveBg = r.surface1;
+  const listInactiveFg = enforceContrast(r.textPrimary, listInactiveBg, CONTRAST.AA);
+  const listFocusBg = r.surface1;
+  const listFocusFg = enforceContrast(r.textPrimary, listFocusBg, CONTRAST.AA);
+  const secondaryButtonBg = r.surface2;
+  const secondaryButtonFg = enforceContrast(r.textPrimary, secondaryButtonBg, CONTRAST.AA);
+  const notificationBg = r.surface3;
+  const notificationFg = enforceContrast(r.textPrimary, notificationBg, CONTRAST.AA);
+  const notificationHeaderBg = r.surface2;
+  const notificationHeaderFg = enforceContrast(r.textPrimary, notificationHeaderBg, CONTRAST.AA);
 
   // Base colors with intelligent surface distribution
   const colors = {
     // Title Bar (use surface1 for distinction)
     'titleBar.activeBackground': r.surface1,
     'titleBar.inactiveBackground': r.surface1,
-    'titleBar.activeForeground': r.textPrimary,
-    'titleBar.inactiveForeground': r.textMuted,
+    'titleBar.activeForeground': enforceContrast(r.textPrimary, r.surface1, CONTRAST.AA),
+    'titleBar.inactiveForeground': enforceContrast(r.textMuted, r.surface1, CONTRAST.AA_LARGE),
     'titleBar.border': r.border,
 
     // Window
@@ -19,60 +91,62 @@ export function buildCompleteColors(roles, overrides = {}) {
 
     // Activity Bar (use surface1 - darker/different from editor)
     'activityBar.background': r.surface1,
-    'activityBar.foreground': r.textPrimary,
-    'activityBar.inactiveForeground': r.textMuted,
+    'activityBar.foreground': enforceContrast(r.textPrimary, r.surface1, CONTRAST.UI),
+    'activityBar.inactiveForeground': enforceContrast(r.textMuted, r.surface1, CONTRAST.UI),
     'activityBar.border': r.border,
     'activityBar.activeBorder': r.accentPrimary,
     'activityBarBadge.background': r.accentPrimary,
-    'activityBarBadge.foreground': r.textInverted,
+    'activityBarBadge.foreground': badgeFg,
 
     // Side Bar (use surface1 - different from editor)
     'sideBar.background': r.surface1,
-    'sideBar.foreground': r.textPrimary,
+    'sideBar.foreground': enforceContrast(r.textPrimary, r.surface1, CONTRAST.AA),
     'sideBar.border': r.border,
-    'sideBarTitle.foreground': r.textSecondary,
-    'sideBarSectionHeader.background': r.surface2,
+    'sideBarTitle.foreground': enforceContrast(r.textSecondary, r.surface1, CONTRAST.AA),
+    'sideBarSectionHeader.background': sidebarSectionBg,
+    'sideBarSectionHeader.foreground': sidebarSectionFg,
     'sideBar.dropBackground': withAlpha(r.accentPrimary, 0.13),
 
     // Status Bar (use surface1 for distinction)
     'statusBar.background': r.surface1,
-    'statusBar.foreground': r.textPrimary,
+    'statusBar.foreground': enforceContrast(r.textPrimary, r.surface1, CONTRAST.AA),
     'statusBar.border': r.border,
     'statusBar.noFolderBackground': r.surface2,
-    'statusBar.noFolderForeground': r.textSecondary,
+    'statusBar.noFolderForeground': enforceContrast(r.textSecondary, r.surface2, CONTRAST.AA),
     'statusBar.debuggingBackground': r.accentWarn,
-    'statusBar.debuggingForeground': r.textInverted,
+    'statusBar.debuggingForeground': warnFg,
     'statusBarItem.hoverBackground': r.surface2,
     'statusBarItem.remoteBackground': r.accentInfo,
-    'statusBarItem.remoteForeground': r.textInverted,
+    'statusBarItem.remoteForeground': infoFg,
     'statusBarItem.prominentBackground': r.surface2,
     'statusBarItem.prominentHoverBackground': r.surface3,
     'statusBarItem.errorBackground': r.accentError,
-    'statusBarItem.errorForeground': r.textInverted,
+    'statusBarItem.errorForeground': errorFg,
     'statusBarItem.warningBackground': r.accentWarn,
-    'statusBarItem.warningForeground': r.textInverted,
+    'statusBarItem.warningForeground': warnFg,
 
     // Panel (use panel surface for distinction - often darker or lighter)
     'panel.background': r.panel,
     'panel.border': r.border,
     'panel.dropBorder': r.accentPrimary,
-    'panelTitle.activeForeground': r.textPrimary,
+    'panelTitle.activeForeground': enforceContrast(r.textPrimary, r.panel, CONTRAST.AA),
     'panelTitle.activeBorder': r.accentPrimary,
-    'panelTitle.inactiveForeground': r.textSecondary,
+    'panelTitle.inactiveForeground': enforceContrast(r.textSecondary, r.panel, CONTRAST.AA_LARGE),
 
     // Editor Groups & Tabs (use surface2 for tab bar)
     'editorGroupHeader.tabsBackground': r.surface2,
     'editorGroupHeader.tabsBorder': r.border,
+    'editorGroup.border': r.border,
     'editorGroup.dropBackground': withAlpha(r.accentPrimary, 0.13),
     'tab.activeBackground': r.surface0,
     'tab.inactiveBackground': r.surface2,
     'tab.border': r.surface2,
-    'tab.activeForeground': r.textPrimary,
-    'tab.inactiveForeground': r.textMuted,
+    'tab.activeForeground': enforceContrast(r.textPrimary, r.surface0, CONTRAST.AA),
+    'tab.inactiveForeground': enforceContrast(r.textMuted, r.surface2, CONTRAST.AA_LARGE),
     'tab.activeBorderTop': r.accentPrimary,
     'tab.unfocusedActiveBorderTop': withAlpha(r.accentWarn, 0.53),
     'tab.hoverBackground': r.surface3,
-    'tab.hoverForeground': r.textPrimary,
+    'tab.hoverForeground': enforceContrast(r.textPrimary, r.surface3, CONTRAST.AA),
     'tab.unfocusedHoverBackground': r.surface3,
     'tab.activeModifiedBorder': r.accentWarn,
     'tab.hoverBorder': r.surface3,
@@ -95,15 +169,16 @@ export function buildCompleteColors(roles, overrides = {}) {
     'editor.findMatchHighlightBorder': withAlpha(r.accentWarn, 0.53),
     'editor.hoverHighlightBackground': withAlpha(r.surface2, 0.5),
 
-    // Editor Cursor & Line Numbers
-    'editorCursor.foreground': r.accentPrimary,
-    'editorLineNumber.foreground': r.textMuted,
-    'editorLineNumber.activeForeground': r.textSecondary,
+    // Editor Cursor & Line Numbers - CRITICAL for accessibility
+    'editorCursor.foreground': enforceContrast(r.accentPrimary, r.surface0, CONTRAST.UI),
+    'editorLineNumber.foreground': enforceContrast(r.textMuted, r.surface0, CONTRAST.AA_LARGE),
+    'editorLineNumber.activeForeground': enforceContrast(r.textSecondary, r.surface0, CONTRAST.AA),
 
     // Editor Widgets (use surface3 for elevated floating widgets)
     'editorHoverWidget.background': r.surface3,
     'editorHoverWidget.border': r.border,
-    'editorWidget.background': r.surface3,
+    'editorWidget.background': widgetBg,
+    'editorWidget.foreground': widgetFg,
     'editorWidget.border': r.border,
     'editorWidget.resizeBorder': r.accentPrimary,
 
@@ -157,20 +232,22 @@ export function buildCompleteColors(roles, overrides = {}) {
 
     // Lists
     'list.activeSelectionBackground': r.surface2,
-    'list.activeSelectionForeground': r.textPrimary,
-    'list.inactiveSelectionBackground': r.surface1,
+    'list.activeSelectionForeground': enforceContrast(r.textPrimary, r.surface2, CONTRAST.AA),
+    'list.inactiveSelectionBackground': listInactiveBg,
+    'list.inactiveSelectionForeground': listInactiveFg,
     'list.hoverBackground': r.surface2,
-    'list.focusBackground': r.surface1,
-    'list.highlightForeground': r.accentPrimary,
+    'list.focusBackground': listFocusBg,
+    'list.focusForeground': listFocusFg,
+    'list.highlightForeground': enforceContrast(r.accentPrimary, r.surface2, CONTRAST.AA),
     'list.warningForeground': r.accentWarn,
     'list.errorForeground': r.accentError,
     'list.dropBackground': withAlpha(r.accentPrimary, 0.13),
 
     // Inputs & Forms (use surface2 for input contrast)
     'input.background': r.surface2,
-    'input.foreground': r.textPrimary,
+    'input.foreground': enforceContrast(r.textPrimary, r.surface2, CONTRAST.AA),
     'input.border': r.border,
-    'input.placeholderForeground': r.textMuted,
+    'input.placeholderForeground': enforceContrast(r.textMuted, r.surface2, CONTRAST.AA_LARGE),
     'inputOption.activeBorder': withAlpha(r.accentPrimary, 0.67),
     'inputValidation.errorBackground': withAlpha(r.accentError, 0.1),
     'inputValidation.errorBorder': r.accentError,
@@ -182,17 +259,19 @@ export function buildCompleteColors(roles, overrides = {}) {
     // Dropdowns & Buttons (use surface2 for contrast)
     'dropdown.background': r.surface2,
     'dropdown.border': r.border,
-    'dropdown.foreground': r.textPrimary,
+    'dropdown.foreground': enforceContrast(r.textPrimary, r.surface2, CONTRAST.AA),
     'button.background': r.accentPrimary,
-    'button.foreground': r.textInverted,
+    'button.foreground': badgeFg,
     'button.hoverBackground': r.accentPrimaryAlt,
+    'button.secondaryBackground': secondaryButtonBg,
+    'button.secondaryForeground': secondaryButtonFg,
     'checkbox.background': r.surface2,
-    'checkbox.foreground': r.textSecondary,
+    'checkbox.foreground': enforceContrast(r.textSecondary, r.surface2, CONTRAST.AA),
     'checkbox.border': r.border,
 
     // Badges & Progress
     'badge.background': r.accentPrimary,
-    'badge.foreground': r.textInverted,
+    'badge.foreground': badgeFg,
     'progressBar.background': r.accentPrimary,
 
     // Peek View (use surface3 for elevated overlay)
@@ -214,45 +293,52 @@ export function buildCompleteColors(roles, overrides = {}) {
     'pickerGroup.border': r.border,
 
     // Notifications (use surface3 for elevated)
-    'notifications.background': r.surface3,
+    'notifications.background': notificationBg,
+    'notifications.foreground': notificationFg,
     'notifications.border': r.border,
-    'notificationCenterHeader.foreground': r.textPrimary,
+    'notificationCenter.border': r.border,
+    'notificationCenterHeader.background': notificationHeaderBg,
+    'notificationCenterHeader.foreground': notificationHeaderFg,
+    'notificationsErrorIcon.foreground': r.accentError,
+    'notificationsWarningIcon.foreground': r.accentWarn,
+    'notificationsInfoIcon.foreground': r.accentInfo,
 
     // Breadcrumbs (keep on editor surface)
     'breadcrumb.background': r.surface0,
-    'breadcrumb.foreground': r.textMuted,
-    'breadcrumb.focusForeground': r.textPrimary,
-    'breadcrumb.activeSelectionForeground': r.accentPrimary,
+    'breadcrumb.foreground': enforceContrast(r.textMuted, r.surface0, CONTRAST.AA_LARGE),
+    'breadcrumb.focusForeground': enforceContrast(r.textPrimary, r.surface0, CONTRAST.AA),
+    'breadcrumb.activeSelectionForeground': enforceContrast(r.accentPrimary, r.surface0, CONTRAST.AA),
     'breadcrumbPicker.background': r.surface3,
 
     // Menu (use surface3 for elevated menus)
     'menu.background': r.surface3,
-    'menu.foreground': r.textPrimary,
+    'menu.foreground': enforceContrast(r.textPrimary, r.surface3, CONTRAST.AA),
     'menu.separatorBackground': r.border,
     'menu.selectionBackground': r.surface2,
-    'menu.selectionForeground': r.textPrimary,
+    'menu.selectionForeground': enforceContrast(r.textPrimary, r.surface2, CONTRAST.AA),
     'menu.selectionBorder': r.border,
 
     // Terminal
     'terminal.background': r.surface0,
-    'terminal.foreground': r.textPrimary,
-    'terminalCursor.foreground': r.accentPrimary,
-    'terminal.ansiBlack': r.surface0,
-    'terminal.ansiRed': r.accentError,
-    'terminal.ansiGreen': r.accentSuccess,
-    'terminal.ansiYellow': r.accentWarn,
-    'terminal.ansiBlue': r.accentInfo,
-    'terminal.ansiMagenta': r.accentError,
-    'terminal.ansiCyan': r.accentPrimary,
-    'terminal.ansiWhite': r.textSecondary,
-    'terminal.ansiBrightBlack': r.textMuted,
-    'terminal.ansiBrightRed': withAlpha(r.accentError, 0.8),
-    'terminal.ansiBrightGreen': withAlpha(r.accentSuccess, 0.8),
-    'terminal.ansiBrightYellow': withAlpha(r.accentWarn, 0.8),
-    'terminal.ansiBrightBlue': withAlpha(r.accentInfo, 0.8),
-    'terminal.ansiBrightMagenta': withAlpha(r.accentError, 0.8),
-    'terminal.ansiBrightCyan': r.accentPrimaryAlt,
-    'terminal.ansiBrightWhite': r.textPrimary,
+    'terminal.foreground': enforceContrast(r.textPrimary, r.surface0, CONTRAST.AA),
+    'terminalCursor.foreground': enforceContrast(r.accentPrimary, r.surface0, CONTRAST.UI),
+    'terminal.selectionBackground': r.accentSelection,
+    'terminal.ansiBlack':   isLight ? '#1A1A1A' : r.surface0,
+    'terminal.ansiRed':     r.accentError,
+    'terminal.ansiGreen':   r.accentSuccess,
+    'terminal.ansiYellow':  r.accentWarn,
+    'terminal.ansiBlue':    r.accentInfo,
+    'terminal.ansiMagenta': r.accentPrimaryAlt || r.accentPrimary,
+    'terminal.ansiCyan':    r.accentPrimary,
+    'terminal.ansiWhite':   r.textSecondary,
+    'terminal.ansiBrightBlack':   r.textMuted,
+    'terminal.ansiBrightRed':     lighten(r.accentError,   0.15),
+    'terminal.ansiBrightGreen':   lighten(r.accentSuccess, 0.15),
+    'terminal.ansiBrightYellow':  lighten(r.accentWarn,    0.15),
+    'terminal.ansiBrightBlue':    lighten(r.accentInfo,    0.15),
+    'terminal.ansiBrightMagenta': lighten(r.accentPrimaryAlt || r.accentPrimary, 0.15),
+    'terminal.ansiBrightCyan':    lighten(r.accentPrimaryAlt || r.accentPrimary, 0.15),
+    'terminal.ansiBrightWhite':   r.textPrimary,
 
     // Scrollbars
     'scrollbar.shadow': r.backdrop,
@@ -356,6 +442,6 @@ export function buildCompleteColors(roles, overrides = {}) {
     if (colors['list.activeSelectionBackground']) colors['list.activeSelectionBackground'] = r.surface2;
   }
 
-  // Apply overrides for fine-grained control
-  return { ...colors, ...overrides };
+  // Apply overrides for fine-grained control, then normalize critical text contrast.
+  return normalizeFinalContrast({ ...colors, ...overrides });
 }

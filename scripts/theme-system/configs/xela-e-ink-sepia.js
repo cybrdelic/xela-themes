@@ -34,6 +34,9 @@ export default {
       accentSelection: withAlpha('#8B4513',0.1),
       accentLink: '#5D4E37'
     },
+    colorOverrides: {
+      "terminal.ansiMagenta": "#7B6D8D",
+    },
     tokens(c){
       return {
         comment: '#8B7355',
