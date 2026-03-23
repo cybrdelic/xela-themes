@@ -1,6 +1,6 @@
 // Complete VS Code color mapping system with advanced customization support
 // All critical UI elements are contrast-enforced for WCAG compliance
-import { withAlpha, enforceContrast, getLuminance, lighten } from './roles.js';
+import { withAlpha, enforceContrast, getLuminance, lighten, darken } from './roles.js';
 
 // WCAG contrast requirements
 const CONTRAST = {
@@ -322,7 +322,7 @@ export function buildCompleteColors(roles, overrides = {}) {
     'terminal.background': r.surface0,
     'terminal.foreground': enforceContrast(r.textPrimary, r.surface0, CONTRAST.AA),
     'terminalCursor.foreground': enforceContrast(r.accentPrimary, r.surface0, CONTRAST.UI),
-    'terminal.selectionBackground': r.accentSelection,
+    'terminal.selectionBackground': r.surface2,
     'terminal.ansiBlack':   isLight ? '#1A1A1A' : r.surface0,
     'terminal.ansiRed':     r.accentError,
     'terminal.ansiGreen':   r.accentSuccess,
@@ -332,12 +332,12 @@ export function buildCompleteColors(roles, overrides = {}) {
     'terminal.ansiCyan':    r.accentPrimary,
     'terminal.ansiWhite':   r.textSecondary,
     'terminal.ansiBrightBlack':   r.textMuted,
-    'terminal.ansiBrightRed':     lighten(r.accentError,   0.15),
-    'terminal.ansiBrightGreen':   lighten(r.accentSuccess, 0.15),
-    'terminal.ansiBrightYellow':  lighten(r.accentWarn,    0.15),
-    'terminal.ansiBrightBlue':    lighten(r.accentInfo,    0.15),
-    'terminal.ansiBrightMagenta': lighten(r.accentPrimaryAlt || r.accentPrimary, 0.15),
-    'terminal.ansiBrightCyan':    lighten(r.accentPrimaryAlt || r.accentPrimary, 0.15),
+    'terminal.ansiBrightRed':     isLight ? darken(r.accentError,   0.15) : lighten(r.accentError,   0.15),
+    'terminal.ansiBrightGreen':   isLight ? darken(r.accentSuccess, 0.15) : lighten(r.accentSuccess, 0.15),
+    'terminal.ansiBrightYellow':  isLight ? darken(r.accentWarn,    0.15) : lighten(r.accentWarn,    0.15),
+    'terminal.ansiBrightBlue':    isLight ? darken(r.accentInfo,    0.15) : lighten(r.accentInfo,    0.15),
+    'terminal.ansiBrightMagenta': isLight ? darken(r.accentPrimaryAlt || r.accentPrimary, 0.15) : lighten(r.accentPrimaryAlt || r.accentPrimary, 0.15),
+    'terminal.ansiBrightCyan':    isLight ? darken(r.accentPrimary, 0.15) : lighten(r.accentPrimary, 0.15),
     'terminal.ansiBrightWhite':   r.textPrimary,
 
     // Scrollbars
