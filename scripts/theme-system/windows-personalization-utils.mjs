@@ -286,7 +286,7 @@ export function buildThemeFileContent(theme, wallpaperPath) {
     : mixColor(buttonFace, scheme.brightWhite || scheme.white, 0.50);
   const infoWindow = mode === 'light'
     ? mixColor(scheme.yellow, scheme.white, 0.65)
-    : mixColor(scheme.foreground, scheme.yellow, 0.15);
+    : mixColor(scheme.background, scheme.yellow, 0.4);
   const infoText = mode === 'light' ? scheme.black : scheme.foreground;
   const {
     interactiveAccent,
@@ -336,7 +336,7 @@ InactiveBorder=${rgbString(buttonDeepShadow)}\r
 AppWorkspace=${rgbString(mixColor(scheme.background, scheme.black, 0.25))}\r
 ButtonFace=${rgbString(buttonFace)}\r
 ButtonShadow=${rgbString(buttonShadow)}\r
-GrayText=${rgbString(mode === 'light' ? mixColor(scheme.brightBlack, scheme.black, 0.3) : scheme.brightBlack)}\r
+GrayText=${rgbString(mode === 'light' ? mixColor(scheme.brightBlack, '#000000', 0.3) : scheme.brightBlack)}\r
 ButtonText=${rgbString(mode === 'light' ? scheme.black : scheme.foreground)}\r
 InactiveTitleText=${rgbString(mixColor(scheme.foreground, scheme.background, 0.35))}\r
 ButtonHilight=${rgbString(buttonHilight)}\r
