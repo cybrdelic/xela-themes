@@ -26,8 +26,7 @@ const getArg = (flag, def) => {
 };
 
 const PORT     = parseInt(getArg('--port', '7420'), 10);
-const LOG_FILE = getArg('--log',
-  'C:/Users/alexf/AppData/Local/Temp/claude/C--Users-alexf-projects-xela-themes/0d661f96-baa1-4e5b-a4ce-54f108d2fd66/tasks/bpun2i6o4.output');
+const LOG_FILE = getArg('--log', '/tmp/dashboard.log');
 const TOTAL_FRAMES = 450;
 const RENDER_DIR   = path.join(__dirname, 'render');
 

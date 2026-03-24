@@ -23,3 +23,6 @@ test-workspace/
 
 # Claude Code session data
 .claude/
+
+# Local planning notes
+docs/plans/

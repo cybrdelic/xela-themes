@@ -286,7 +286,7 @@ function renderPreviewPanel(previewScheme, width) {
       previewScheme
     ),
     panelLine(
-      token('alexf@xela', previewScheme.green, null, BOLD) + ':' +
+      token('user@xela', previewScheme.green, null, BOLD) + ':' +
       token('~/projects/xela-themes', previewScheme.blue) + ' ' +
       token('main', previewScheme.purple, null, BOLD) + ' ' +
       token('±2', previewScheme.yellow) + ' ' +
