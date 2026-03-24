@@ -2,6 +2,24 @@ node_modules/
 *.vsix
 *.log
 .DS_Store
+.env
+.npm-cache/
 
 screenshots-vscode/
 landing/themes-manifest.json
+
+# Generated outputs
+render/
+blender/__pycache__/
+blender/render/
+exports/browser-themes/
+exports/windows-icons/
+exports/windows-personalization/
+exports/browser-extension/Cached Theme.pak
+accessibility-reports/
+
+# Test workspace (playwright state, browser profiles)
+test-workspace/
+
+# Claude Code session data
+.claude/

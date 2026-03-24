@@ -337,7 +337,18 @@
     "focusBorder": "#FF1493",
     "selection.background": "#0000EE40",
     "widget.shadow": "#00000020",
-    "sash.hoverBorder": "#FF1493"
+    "sash.hoverBorder": "#FF1493",
+    "editorWidget.foreground": "#000000",
+    "problemsErrorIcon.foreground": "#FF0000",
+    "problemsWarningIcon.foreground": "#FF8800",
+    "problemsInfoIcon.foreground": "#0000EE",
+    "testing.iconFailed": "#FF0000",
+    "testing.iconPassed": "#00FF00",
+    "peekViewResult.background": "#FFFFFF",
+    "peekViewEditor.background": "#FFFFFF",
+    "peekView.border": "#FF1493",
+    "quickInput.background": "#FFFFCC",
+    "quickInput.foreground": "#000000"
   },
   "tokenColors": [
     {

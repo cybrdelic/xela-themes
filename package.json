@@ -49,20 +49,22 @@
     "build:themes": "node ./scripts/theme-system/build-themes.mjs && node ./scripts/auto-fix-themes.cjs",
     "build:windows-terminal": "node ./scripts/theme-system/build-windows-terminal.mjs",
     "build:windows-personalization": "npm run build:windows-terminal && node ./scripts/theme-system/build-windows-personalization.mjs",
-    "build:userscript": "node ./scripts/theme-system/build-userscript.mjs",
-    "build:extension": "node ./scripts/theme-system/build-userscript.mjs && node ./scripts/theme-system/build-extension.mjs",
+    "build:extension": "node ./scripts/theme-system/build-extension.mjs",
+    "build:browser-themes": "node ./scripts/theme-system/build-browser-themes.mjs",
     "windows-terminal:install": "node ./scripts/theme-system/install-windows-terminal.mjs",
     "windows-terminal:select": "node ./scripts/theme-system/select-windows-terminal-theme.mjs",
     "windows:apply": "node ./scripts/theme-system/install-windows-personalization.mjs",
+    "icons:generate": "node ./scripts/theme-system/generate-icons.mjs",
+    "icons:apply": "node ./scripts/theme-system/apply-icons.mjs",
+    "icons:restore": "node ./scripts/theme-system/apply-icons.mjs --restore",
     "optimize:themes": "node ./scripts/optimize-themes.mjs",
     "test:themes": "node ./scripts/theme-system/test-build.mjs",
     "test:windows-terminal": "node ./scripts/theme-system/test-windows-terminal.mjs",
     "test:windows-terminal:install": "node ./scripts/theme-system/test-windows-terminal-install.mjs",
     "test:windows-personalization": "node ./scripts/theme-system/test-windows-personalization.mjs",
     "test:windows-personalization:install": "node ./scripts/theme-system/test-windows-personalization-install.mjs",
-    "test:userscript": "node ./scripts/theme-system/test-userscript.mjs",
     "test:completeness": "node ./scripts/test-theme-completeness.cjs",
-    "test:all": "npm run test:themes && npm run test:windows-terminal && npm run test:windows-personalization && npm run test:userscript && npm run test:completeness && npm run a11y:audit",
+    "test:all": "npm run test:themes && npm run test:windows-terminal && npm run test:windows-personalization && npm run test:completeness && npm run a11y:audit",
     "fix:themes": "node ./scripts/auto-fix-themes.cjs",
     "a11y:audit": "node ./scripts/accessibility/run-accessibility.cjs audit",
     "a11y:audit:aaa": "node ./scripts/accessibility/run-accessibility.cjs audit --target-level AAA",
@@ -1246,7 +1248,10 @@
     ]
   },
   "dependencies": {
-    "jsonc-parser": "^3.2.0"
+    "@imgly/background-removal-node": "^1.4.5",
+    "jsonc-parser": "^3.2.0",
+    "openai": "^6.32.0",
+    "sharp": "^0.34.5"
   },
   "license": "MIT"
 }

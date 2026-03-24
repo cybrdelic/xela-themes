@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XELA Themes</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:1920px; height:1080px; overflow:hidden; background:#000; font-family:monospace; }
+canvas { display:block; position:fixed; inset:0; }
+#ui {
+  position:fixed; bottom:44px; left:60px; z-index:10; pointer-events:none;
+}
+#theme-name {
+  font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.6); margin-bottom:5px;
+  transition:opacity .3s;
+}
+#theme-sub {
+  font-size:10px; letter-spacing:.15em; text-transform:uppercase;
+  color:rgba(255,255,255,.25);
+}
+#logo {
+  position:fixed; top:44px; left:60px; z-index:10; pointer-events:none;
+  font-size:30px; font-weight:900; letter-spacing:.1em;
+  color:#fff; transition:color .5s;
+}
+#shot-label {
+  position:fixed; top:52px; right:60px; z-index:10; pointer-events:none;
+  font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.25);
+}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui">
+  <div id="theme-name">Loading…</div>
+  <div id="theme-sub">XELA Themes · 208 for VS Code · Windows Terminal · Personalization</div>
+</div>
+<div id="logo">XELA</div>
+<div id="shot-label"></div>
+<script>
+// ─── Setup ────────────────────────────────────────────────────────────────────
+const W = 1920, H = 1080;
+const cv = document.getElementById('c');
+cv.width = W; cv.height = H;
+const cx = cv.getContext('2d');
+
+// ─── Util ─────────────────────────────────────────────────────────────────────
+const lerp  = (a, b, t) => a + (b - a) * t;
+const ease  = t => t < .5 ? 2*t*t : -1 + (4 - 2*t)*t;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+function hex2rgb(h) {
+  const s = (h||'#888888').replace('#','');
+  return [parseInt(s.slice(0,2),16)||0, parseInt(s.slice(2,4),16)||0, parseInt(s.slice(4,6),16)||0];
+}
+function rgba(h, a=1) {
+  const [r,g,b] = hex2rgb(h); return `rgba(${r},${g},${b},${a})`;
+}
+function isLight(h) {
+  const [r,g,b] = hex2rgb(h); return (.299*r+.587*g+.114*b) > 140;
+}
+function lerpColor(h1, h2, t) {
+  const [r1,g1,b1]=hex2rgb(h1), [r2,g2,b2]=hex2rgb(h2);
+  return `rgb(${Math.round(lerp(r1,r2,t))},${Math.round(lerp(g1,g2,t))},${Math.round(lerp(b1,b2,t))})`;
+}
+
+// ─── Themes ───────────────────────────────────────────────────────────────────
+let themes = [];
+let themeIdx = [0, 0, 0];
+let themeTimer = 0;
+const THEME_MS = 1500;
+
+fetch('/api/themes')
+  .then(r => r.json())
+  .then(data => {
+    themes = data.filter(t => t.bg);
+    themeIdx = [0, Math.floor(themes.length/3), Math.floor(themes.length*2/3)];
+    document.getElementById('shot-label').textContent = `${themes.length} themes`;
+  });
+
+function getTheme(i) {
+  return themes[themeIdx[i] % (themes.length||1)] || FALLBACK[i%3];
+}
+
+const FALLBACK = [
+  { name:'XELA Midnight',  bg:'#07070d', fg:'#d9e0f2', accent:'#008cff', sidebar:'#0d0d16',
+    comment:'#3d4466', keyword:'#008cff', string:'#00e573', fn:'#00d9d9',
+    type:'#8c33ff', num:'#ffa600', var:'#d9e0f2', prop:'#00d9d9' },
+  { name:'XELA Cyberpunk',  bg:'#0a0010', fg:'#f0e0ff', accent:'#ff00aa', sidebar:'#120018',
+    comment:'#4a2a6a', keyword:'#ff00aa', string:'#00ff88', fn:'#00ffee',
+    type:'#cc00ff', num:'#ffee00', var:'#f0e0ff', prop:'#00ffee' },
+  { name:'XELA Synthwave',  bg:'#0d0721', fg:'#f0e6ff', accent:'#ff6ec7', sidebar:'#130930',
+    comment:'#4a2a6a', keyword:'#ff6ec7', string:'#72f1b8', fn:'#36f9f6',
+    type:'#a855f7', num:'#ffd200', var:'#f0e6ff', prop:'#36f9f6' },
+];
+
+// ─── Offscreen screen canvases ────────────────────────────────────────────────
+const SCW = 880, SCH = 520;
+const screens = [0,1,2].map(() => {
+  const c = document.createElement('canvas');
+  c.width = SCW; c.height = SCH;
+  return { canvas: c, ctx: c.getContext('2d') };
+});
+
+// ─── Draw screen content ──────────────────────────────────────────────────────
+function drawVSCode(ctx, t) {
+  const { bg, fg, accent, sidebar, comment, keyword, string:str, fn, type:ty, num, var:varC, prop } = t;
+  ctx.fillStyle = bg; ctx.fillRect(0,0,SCW,SCH);
+
+  // sidebar
+  ctx.fillStyle = sidebar; ctx.fillRect(0,0,148,SCH);
+  const files = ['theme-builder.js','palette-gen.js','extension.js','package.json','README.md'];
+  files.forEach((f,i) => {
+    if (i===0){ ctx.fillStyle=rgba(accent,.12); ctx.fillRect(0,30+i*22,148,22); }
+    ctx.fillStyle = i===0?fg:rgba(fg,.45);
+    ctx.font='11px monospace'; ctx.fillText('  '+f, 2, 45+i*22);
+  });
+
+  // tabs
+  ctx.fillStyle = rgba(bg,.9); ctx.fillRect(148,0,SCW-148,30);
+  ctx.fillStyle = rgba(accent,.1); ctx.fillRect(148,0,170,30);
+  ctx.fillStyle = accent; ctx.fillRect(148,0,170,2);
+  ctx.fillStyle = fg; ctx.font='12px monospace'; ctx.fillText('theme-builder.js',156,19);
+  ctx.fillStyle = rgba(fg,.35); ctx.fillText('extension.js',330,19);
+
+  // code lines
+  const code = [
+    [[comment,'// XELA Theme Builder — 208 color themes']],
+    [[fg,'']],
+    [[keyword,'import'],[fg,' { '],[fn,'generatePalette'],[fg,' } from '],[str,"'./palette.js';"]]],
+    [[keyword,'import'],[fg,' { '],[fn,'applyContrast'],[fg,' } from '],[str,"'./utils.js';"]]],
+    [[fg,'']],
+    [[comment,'/** @param {ThemeConfig} config */']],
+    [[keyword,'export function '],[fn,'buildTheme'],[fg,'(config) {']],
+    [[fg,'  '],[keyword,'const '],[varC,'palette'],[fg,' = '],[fn,'generatePalette'],[fg,'(config.base);']],
+    [[fg,'  '],[keyword,'const '],[varC,'contrast'],[fg,' = '],[fn,'applyContrast'],[fg,'(palette);']],
+    [[fg,'']],
+    [[fg,'  '],[keyword,'return'],[fg,' {']],
+    [[fg,'    '],[prop,'name'],[fg,': config.name,']],
+    [[fg,'    '],[prop,'type'],[fg,': config.type ?? '],[str,"'dark',"]]],
+    [[fg,'    '],[prop,'colors'],[fg,': {']],
+    [[fg,'      '],[str,"'editor.background'"],[fg,': contrast.'],[varC,'bg'],[fg,',']],
+    [[fg,'      '],[str,"'editor.foreground'"],[fg,': contrast.'],[varC,'fg'],[fg,',']],
+    [[fg,'      '],[str,"'statusBar.background'"],[fg,': palette.'],[varC,'accent'],[fg,',']],
+    [[fg,'    },']],
+    [[fg,'    '],[prop,'tokenColors'],[fg,': '],[fn,'buildTokens'],[fg,'(palette),']],
+    [[fg,'  };']],
+    [[fg,'}']],
+  ];
+
+  const lh=22, sy=42, sx=165;
+  code.forEach((parts,i) => {
+    // line number
+    ctx.fillStyle=rgba(fg,.18); ctx.font='10px monospace';
+    ctx.fillText(String(i+1).padStart(2),sx-24,sy+i*lh);
+    // highlight active line
+    if(i===6){ ctx.fillStyle=rgba(accent,.06); ctx.fillRect(148,sy+i*lh-14,SCW-148,lh); }
+    let x=sx;
+    parts.forEach(([col,text]) => {
+      ctx.fillStyle=col; ctx.font='11.5px monospace';
+      ctx.fillText(text,x,sy+i*lh); x+=ctx.measureText(text).width;
+    });
+  });
+
+  // minimap
+  ctx.fillStyle=rgba(bg,.9); ctx.fillRect(SCW-64,30,64,SCH-30);
+  const mcols=[comment,keyword,str,fn,ty,num,fg,prop];
+  for(let i=0;i<28;i++){
+    ctx.fillStyle=rgba(mcols[i%mcols.length],.45);
+    ctx.fillRect(SCW-58,36+i*13, 14+Math.sin(i*1.9)*12, 3);
+  }
+
+  // status bar
+  ctx.fillStyle=accent; ctx.fillRect(148,SCH-22,SCW-148,22);
+  ctx.fillStyle = isLight(accent)?'#000':'#fff';
+  ctx.font='10px monospace';
+  ctx.fillText(`  ⎇ master   ${t.name}   JS   UTF-8`,152,SCH-7);
+}
+
+function drawTerminal(ctx, t) {
+  const { bg, fg, accent, comment, keyword, string:str, fn, type:ty, num } = t;
+  ctx.fillStyle=bg; ctx.fillRect(0,0,SCW,SCH);
+
+  // title bar
+  ctx.fillStyle=rgba(bg,.7); ctx.fillRect(0,0,SCW,36);
+  ctx.fillStyle=bg; ctx.fillRect(0,4,130,32);
+  ctx.fillStyle=accent; ctx.fillRect(0,4,130,2);
+  ctx.fillStyle=fn; ctx.font='12px monospace'; ctx.fillText(' ❯ pwsh',4,24);
+  ctx.fillStyle=rgba(fg,.3); ctx.fillText(' ❯ pwsh',136,24); ctx.fillText(' +',264,24);
+
+  // content
+  const user = t.name.split(' ').pop().toLowerCase().slice(0,8);
+  const rows=[
+    [[rgba(fn,1),user],[rgba(fg,.4),'@'],[fn,'dev'],[fg,' '],[accent,'~/xela-themes'],[ty,' (master)'],[fg,' ❯ '],[fg,'npm run build:themes']],
+    [[comment,'> xela-themes@0.4.0 build:themes']],
+    [[str,'✔ '],[fg,'Building 208 themes...']],
+    [[fn,'  ◆ '],[fg,t.name],[str,'   done']],
+    [[fn,'  ◆ '],[fg,'xela-arctic        '],[str,'done']],
+    [[fn,'  ◆ '],[fg,'xela-cyberpunk     '],[str,'done']],
+    [[fn,'  ◆ '],[fg,'xela-synthwave     '],[str,'done']],
+    [[str,'✔ '],[fg,'All 208 themes built in '],[num,'1.24s']],
+    [[fg,'']],
+    [[rgba(fn,1),user],[rgba(fg,.4),'@'],[fn,'dev'],[fg,' '],[accent,'~/xela-themes'],[ty,' (master)'],[fg,' ❯ '],[fg,'npm test']],
+    [[str,'✔ '],[fg,'All theme tests passed '],[ty,'( 208 files )']],
+    [[fg,'']],
+    [[rgba(fn,1),user],[rgba(fg,.4),'@'],[fn,'dev'],[fg,' '],[accent,'~/xela-themes'],[ty,' (master)'],[fg,' ❯ '],[fg,'git push && npm run publish:force']],
+    [[comment,'  Counting objects: 428, done.']],
+    [[str,'✔ '],[fg,'Published xela-themes@0.4.0 to marketplace']],
+    [[fg,'']],
+    [[rgba(fn,1),user],[rgba(fg,.4),'@'],[fn,'dev'],[fg,' '],[accent,'~/xela-themes'],[ty,' (master)'],[fg,' ❯ '],[fg,'']],
+  ];
+
+  const lh=27, sy=44;
+  rows.forEach((parts,i) => {
+    let x=14;
+    parts.forEach(([col,text]) => {
+      ctx.fillStyle=col; ctx.font='12.5px monospace';
+      ctx.fillText(text,x,sy+i*lh); x+=ctx.measureText(text).width;
+    });
+  });
+
+  // ANSI swatches
+  [accent,str,fn,ty,num,keyword,comment,fg].forEach((col,i) => {
+    ctx.fillStyle=col; ctx.fillRect(14+i*50, SCH-36, 42,18);
+  });
+}
+
+function drawPersonalization(ctx, t) {
+  const { bg, fg, accent, sidebar, comment, keyword, string:str, fn, type:ty, num } = t;
+
+  // desktop gradient
+  const g=ctx.createLinearGradient(0,0,SCW,SCH);
+  g.addColorStop(0, bg); g.addColorStop(1, rgba(accent,.1));
+  ctx.fillStyle=g; ctx.fillRect(0,0,SCW,SCH);
+
+  // settings window
+  const wx=50,wy=24,ww=SCW-100,wh=SCH-80;
+  ctx.fillStyle=rgba(bg,.97); ctx.fillRect(wx,wy,ww,wh);
+  ctx.strokeStyle=rgba(accent,.25); ctx.lineWidth=1; ctx.strokeRect(wx,wy,ww,wh);
+  // accent top border
+  ctx.fillStyle=accent; ctx.fillRect(wx,wy,ww,2);
+
+  // nav
+  ctx.fillStyle=rgba(sidebar,.8); ctx.fillRect(wx,wy,200,wh);
+  const navItems=['System','Bluetooth','Personalization','Apps','Accounts'];
+  navItems.forEach((item,i) => {
+    if(i===2){ ctx.fillStyle=rgba(accent,.15); ctx.fillRect(wx,wy+36+i*34,200,34);
+               ctx.fillStyle=accent; ctx.fillRect(wx,wy+36+i*34,3,34); }
+    ctx.fillStyle=i===2?accent:rgba(fg,.45);
+    ctx.font='13px sans-serif'; ctx.fillText(item,wx+22,wy+58+i*34);
+  });
+
+  // content area
+  const cx2=wx+215, cy2=wy+16;
+  ctx.fillStyle=fg; ctx.font='bold 20px sans-serif'; ctx.fillText('Colors',cx2,cy2+24);
+  ctx.fillStyle=rgba(fg,.4); ctx.font='11px sans-serif';
+  ctx.fillText('Choose your accent color to personalize Windows',cx2,cy2+44);
+
+  // accent swatch card
+  ctx.fillStyle=rgba(sidebar,.35); ctx.fillRect(cx2,cy2+54,ww-230,108);
+  ctx.fillStyle=rgba(fg,.65); ctx.font='12px sans-serif';
+  ctx.fillText('Accent color',cx2+14,cy2+76);
+  const swatches=[accent,fn,str,ty,num,keyword,'#ff6ec7','#ffffff'];
+  swatches.forEach((col,i) => {
+    const sx=cx2+14+i*50, sy=cy2+88;
+    ctx.fillStyle=col; ctx.fillRect(sx,sy,40,40);
+    if(i===0){
+      ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.strokeRect(sx-2,sy-2,44,44);
+      ctx.fillStyle='#fff'; ctx.font='18px monospace'; ctx.fillText('✓',sx+9,sy+27);
+    }
+  });
+
+  // active theme badge
+  ctx.fillStyle=accent; ctx.fillRect(cx2,cy2+172,220,32);
+  ctx.fillStyle=isLight(accent)?'#000':'rgba(255,255,255,.9)';
+  ctx.font='bold 12px monospace'; ctx.fillText(t.name,cx2+10,cy2+192);
+
+  // taskbar
+  ctx.fillStyle=rgba(bg,.96); ctx.fillRect(0,SCH-44,SCW,44);
+  ctx.fillStyle=accent; ctx.fillRect(0,SCH-44,SCW,2);
+  ctx.fillStyle=accent; ctx.fillRect(12,SCH-38,26,26);
+  ctx.fillStyle=isLight(accent)?'#000':'#fff'; ctx.font='14px monospace'; ctx.fillText('⊞',14,SCH-18);
+  [fn,str,ty,comment,accent].forEach((col,i) => {
+    ctx.fillStyle=col; ctx.fillRect(50+i*36,SCH-38,26,26);
+  });
+}
+
+const DRAW_FNS = [drawVSCode, drawTerminal, drawPersonalization];
+const LABELS   = ['VS Code', 'Windows Terminal', 'Windows Personalization'];
+
+// ─── 3D Projection ────────────────────────────────────────────────────────────
+// Simple perspective: project 3D point to 2D canvas
+const FL = 900; // focal length
+
+function project(x, y, z, cam) {
+  const dx = x - cam.x, dy = y - cam.y, dz = z - cam.z;
+  // rotate around Y
+  const cy2 = Math.cos(cam.ry), sy2 = Math.sin(cam.ry);
+  const rx = dx*cy2 + dz*sy2, rz = -dx*sy2 + dz*cy2;
+  // rotate around X
+  const cx2 = Math.cos(cam.rx), sx2 = Math.sin(cam.rx);
+  const ry2 = dy*cx2 - rz*sx2, rz2 = dy*sx2 + rz*cx2;
+  if (rz2 >= -0.1) return null; // object behind camera (cam looks toward -z)
+  const scale = FL / (-rz2);
+  return { x: W/2 + rx*scale, y: H/2 + ry2*scale, z: -rz2, scale };
+}
+
+// Draw a perspective-correct quad with an image
+function drawQuad(ctx, pts, img, alpha=1, glow=null) {
+  if (pts.some(p => !p)) return;
+  // Find min z for depth sort
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  if (glow) {
+    ctx.shadowColor = glow;
+    ctx.shadowBlur = 40;
+  }
+  // Draw as path + clip, then draw scaled image
+  ctx.beginPath();
+  ctx.moveTo(pts[0].x, pts[0].y);
+  ctx.lineTo(pts[1].x, pts[1].y);
+  ctx.lineTo(pts[2].x, pts[2].y);
+  ctx.lineTo(pts[3].x, pts[3].y);
+  ctx.closePath();
+  ctx.clip();
+  // Approximate: use the average projected width/height
+  const w = Math.hypot(pts[1].x-pts[0].x, pts[1].y-pts[0].y);
+  const h = Math.hypot(pts[3].x-pts[0].x, pts[3].y-pts[0].y);
+  if (img && w > 1 && h > 1) {
+    ctx.drawImage(img, pts[0].x, pts[0].y, w, h);
+  }
+  ctx.restore();
+}
+
+// Draw a solid perspective quad (for bezel etc)
+function fillQuad(ctx, pts, color, alpha=1, glow=null) {
+  if (pts.some(p => !p)) return;
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  if (glow) { ctx.shadowColor = glow; ctx.shadowBlur = 30; }
+  ctx.beginPath();
+  ctx.moveTo(pts[0].x, pts[0].y);
+  ctx.lineTo(pts[1].x, pts[1].y);
+  ctx.lineTo(pts[2].x, pts[2].y);
+  ctx.lineTo(pts[3].x, pts[3].y);
+  ctx.closePath();
+  ctx.fillStyle = color; ctx.fill();
+  ctx.restore();
+}
+
+// ─── Monitor definition ───────────────────────────────────────────────────────
+// Each monitor: center3D, rotation, content index
+const MONITORS = [
+  { cx:-4.8, cy: 0,    cz:0, ry:-0.28, w:4.0, h:2.6, si:0 },
+  { cx: 0,   cy: 0.3,  cz:-0.8, ry:0,  w:4.2, h:2.8, si:1 },
+  { cx: 4.8, cy: 0,    cz:0, ry: 0.28, w:4.0, h:2.6, si:2 },
+];
+
+// Build 3D corners for a monitor (bezel slightly larger than screen)
+function monitorCorners(m, scale=1.0) {
+  const hw = m.w/2*scale, hh = m.h/2*scale;
+  const cos = Math.cos(m.ry), sin = Math.sin(m.ry);
+  function pt(lx, ly) {
+    return { x: m.cx + lx*cos, y: m.cy + ly, z: m.cz + lx*sin };
+  }
+  return [pt(-hw,-hh), pt(hw,-hh), pt(hw,hh), pt(-hw,hh)];
+}
+
+// ─── Camera shots ─────────────────────────────────────────────────────────────
+const SHOTS = [
+  { x:0,   y:0,   z:14,  rx:0,     ry:0,    fov:0.7,  label:'Wide — All Monitors' },
+  { x:0,   y:4.5, z:8,   rx:-.42,  ry:0,    fov:0.75, label:'Top-Down' },
+  { x:-4.8,y:0.2, z:5.5, rx:0,     ry:.18,  fov:0.55, label:'VS Code Close-Up' },
+  { x:0,   y:0,   z:7,   rx:0,     ry:0,    fov:0.6,  label:'Center Medium' },
+  { x:4.8, y:0.2, z:5.5, rx:0,     ry:-.18, fov:0.55, label:'Personalization Close-Up' },
+  { x:3.5, y:1.5, z:10,  rx:-.12,  ry:-.2,  fov:0.68, label:'Three-Quarter Right' },
+  { x:-3.5,y:1.5, z:10,  rx:-.12,  ry:.2,   fov:0.68, label:'Three-Quarter Left' },
+  { x:0,   y:-1.5,z:10,  rx:.14,   ry:0,    fov:0.72, label:'Low Angle' },
+  { x:0,   y:0.4, z:5.5, rx:0,     ry:0,    fov:0.48, label:'Extreme Close-Up' },
+  { x:7,   y:1,   z:11,  rx:-.05,  ry:-.45, fov:0.65, label:'Side Right' },
+];
+
+let shotIdx=0, shotT=0;
+const SHOT_MS = 4800;
+let camCur = {...SHOTS[0]};
+let camFrom = {...SHOTS[0]};
+let camTo   = {...SHOTS[1]};
+let camBlend = 1;
+
+function nextShot() {
+  camFrom = {...camCur};
+  shotIdx = (shotIdx+1) % SHOTS.length;
+  camTo   = {...SHOTS[shotIdx]};
+  camBlend = 0;
+  document.getElementById('shot-label').textContent = SHOTS[shotIdx].label + (themes.length ? `  ·  ${themes.length} themes` : '');
+}
+
+// ─── Animation state ──────────────────────────────────────────────────────────
+let t0 = performance.now();
+let lastT = 0;
+let frame = 0;
+
+// ─── Particle system ─────────────────────────────────────────────────────────
+const PARTICLES = Array.from({length:80},()=>({
+  x: (Math.random()-.5)*20, y: (Math.random()-.5)*8, z: (Math.random()-.5)*12,
+  vx:(Math.random()-.5)*.004, vy:(Math.random()-.5)*.002, vz:(Math.random()-.5)*.003,
+  r: Math.random()*.06+.03, a: Math.random()*.5+.1,
+}));
+
+// ─── Main render loop ─────────────────────────────────────────────────────────
+function render(now) {
+  requestAnimationFrame(render);
+  const dt = clamp(now - lastT, 0, 50);
+  lastT = now;
+  const elapsed = now - t0;
+
+  // Theme cycling
+  themeTimer += dt;
+  if (themeTimer > THEME_MS && themes.length) {
+    themeTimer = 0;
+    themeIdx = themeIdx.map((v,i) => (v + 1 + i) % themes.length);
+    // Redraw screens
+    screens.forEach((s,i) => {
+      DRAW_FNS[i](s.ctx, getTheme(i));
+    });
+    const t = getTheme(0);
+    document.getElementById('theme-name').textContent = t.name;
+    document.getElementById('logo').style.color = t.accent || '#fff';
+  }
+
+  // Shot timing
+  shotT += dt;
+  if (shotT > SHOT_MS) { shotT = 0; nextShot(); }
+  if (camBlend < 1) {
+    camBlend = clamp(camBlend + dt/1200, 0, 1);
+    const e = ease(camBlend);
+    ['x','y','z','rx','ry','fov'].forEach(k => {
+      camCur[k] = lerp(camFrom[k], camTo[k], e);
+    });
+  }
+
+  // ── Draw ──────────────────────────────────────────────────────────────────
+  cx.fillStyle = '#03030a'; cx.fillRect(0,0,W,H);
+
+  // Space gradient background
+  const bg2 = cx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.7);
+  bg2.addColorStop(0, rgba(getTheme(1).accent,.04));
+  bg2.addColorStop(1,'rgba(0,0,0,0)');
+  cx.fillStyle=bg2; cx.fillRect(0,0,W,H);
+
+  const cam = { x:camCur.x, y:camCur.y, z:camCur.z, rx:camCur.rx, ry:camCur.ry };
+
+  // Particles
+  PARTICLES.forEach(p => {
+    p.x+=p.vx; p.y+=p.vy; p.z+=p.vz;
+    ['x','y','z'].forEach(k=>{ if(Math.abs(p[k])>10) p[k]*=-1; });
+    const pt = project(p.x, p.y, p.z, cam);
+    if (!pt) return;
+    const r = p.r * pt.scale;
+    cx.beginPath(); cx.arc(pt.x,pt.y,Math.max(.5,r),0,Math.PI*2);
+    cx.fillStyle=rgba(getTheme(0).accent, p.a*.4);
+    cx.fill();
+  });
+
+  // Floor reflection (simple gradient)
+  const floorY = project(0,-2.6,0,cam);
+  if (floorY) {
+    const fg2=cx.createLinearGradient(0,floorY.y,0,H);
+    fg2.addColorStop(0,rgba(getTheme(1).accent,.07));
+    fg2.addColorStop(1,'rgba(0,0,0,0)');
+    cx.fillStyle=fg2; cx.fillRect(0,floorY.y,W,H-floorY.y);
+  }
+
+  // Sort monitors back-to-front
+  const mDepths = MONITORS.map((m,i) => {
+    const p = project(m.cx,m.cy,m.cz,cam);
+    return { i, z: p ? p.z : 999 };
+  }).sort((a,b) => b.z - a.z);
+
+  mDepths.forEach(({i}) => {
+    const m = MONITORS[i];
+    const t = getTheme(i);
+    const float = Math.sin(elapsed*.0006 + i*2.1) * .12;
+    const mx = m.cx, my = m.cy + float, mz = m.cz;
+    const M = {...m, cx:mx, cy:my, cz:mz};
+
+    // Project bezel corners
+    const bezelHW = m.w/2+0.18, bezelHH = m.h/2+0.15;
+    const cos=Math.cos(m.ry), sin=Math.sin(m.ry);
+    function proj3(lx,ly,offset=0) {
+      return project(mx+lx*cos, my+ly, mz+lx*sin+offset, cam);
+    }
+    const b = [proj3(-bezelHW,-bezelHH), proj3(bezelHW,-bezelHH),
+                proj3(bezelHW,bezelHH),  proj3(-bezelHW,bezelHH)];
+    const s = [proj3(-m.w/2,-m.h/2,.08), proj3(m.w/2,-m.h/2,.08),
+               proj3(m.w/2,m.h/2,.08),  proj3(-m.w/2,m.h/2,.08)];
+
+    // Bezel (dark metallic gradient)
+    if (b.every(Boolean)) {
+      const avgX = b.reduce((sum,p)=>sum+p.x,0)/4;
+      const avgY = b.reduce((sum,p)=>sum+p.y,0)/4;
+      cx.save();
+      cx.shadowColor=rgba(t.accent,.5); cx.shadowBlur=60;
+      cx.beginPath();
+      cx.moveTo(b[0].x,b[0].y); b.slice(1).forEach(p=>cx.lineTo(p.x,p.y));
+      cx.closePath();
+      const grad=cx.createLinearGradient(b[0].x,b[0].y,b[2].x,b[2].y);
+      grad.addColorStop(0,'#1a1a26'); grad.addColorStop(.5,'#0d0d14'); grad.addColorStop(1,'#080810');
+      cx.fillStyle=grad; cx.fill();
+      cx.restore();
+
+      // Bezel edge highlight
+      cx.save(); cx.globalAlpha=.3;
+      cx.strokeStyle=rgba(t.accent,.4); cx.lineWidth=1.5;
+      cx.beginPath();
+      cx.moveTo(b[0].x,b[0].y); b.forEach(p=>cx.lineTo(p.x,p.y)); cx.closePath();
+      cx.stroke(); cx.restore();
+    }
+
+    // Screen
+    if (s.every(Boolean)) {
+      const sw = Math.hypot(s[1].x-s[0].x, s[1].y-s[0].y);
+      const sh = Math.hypot(s[3].x-s[0].x, s[3].y-s[0].y);
+      if (sw > 10 && sh > 10) {
+        cx.save();
+        cx.shadowColor=rgba(t.accent,.8); cx.shadowBlur=50;
+        cx.beginPath();
+        cx.moveTo(s[0].x,s[0].y); s.forEach(p=>cx.lineTo(p.x,p.y)); cx.closePath();
+        cx.clip();
+        cx.drawImage(screens[i].canvas, s[0].x,s[0].y, sw,sh);
+        cx.restore();
+
+        // Screen glass glare
+        cx.save(); cx.globalAlpha=.04;
+        cx.beginPath();
+        cx.moveTo(s[0].x,s[0].y); s.forEach(p=>cx.lineTo(p.x,p.y)); cx.closePath();
+        const gl=cx.createLinearGradient(s[0].x,s[0].y,s[2].x,s[2].y);
+        gl.addColorStop(0,'rgba(255,255,255,1)'); gl.addColorStop(.4,'rgba(255,255,255,0)');
+        cx.fillStyle=gl; cx.fill(); cx.restore();
+
+        // Screen reflection on floor
+        if (floorY) {
+          cx.save(); cx.globalAlpha=.07;
+          cx.beginPath();
+          cx.moveTo(s[0].x,s[0].y); s.forEach(p=>cx.lineTo(p.x,p.y)); cx.closePath();
+          cx.clip();
+          cx.scale(1,-1); cx.translate(0,-H);
+          const sy2 = H - s[0].y;
+          cx.drawImage(screens[i].canvas, s[0].x, sy2, sw, sh);
+          cx.restore();
+        }
+      }
+    }
+
+    // Stand
+    const standT = proj3(0, m.h/2,.04);
+    const standB = proj3(0, m.h/2+0.8,.04);
+    if (standT && standB) {
+      cx.save(); cx.globalAlpha=.7;
+      cx.strokeStyle='#0d0d14'; cx.lineWidth=Math.max(2,standT.scale*0.18*2);
+      cx.beginPath(); cx.moveTo(standT.x,standT.y); cx.lineTo(standB.x,standB.y);
+      cx.stroke(); cx.restore();
+    }
+  });
+
+  // ── Vignette ──────────────────────────────────────────────────────────────
+  const vig=cx.createRadialGradient(W/2,H/2,H*.25,W/2,H/2,H*.75);
+  vig.addColorStop(0,'rgba(0,0,0,0)');
+  vig.addColorStop(1,'rgba(0,0,0,.72)');
+  cx.fillStyle=vig; cx.fillRect(0,0,W,H);
+
+  frame++;
+}
+
+// ── Initial screen draw ───────────────────────────────────────────────────────
+screens.forEach((s,i) => DRAW_FNS[i](s.ctx, FALLBACK[i]));
+document.getElementById('theme-name').textContent = FALLBACK[0].name;
+nextShot();
+requestAnimationFrame(render);
+</script>
+</body>
+</html>

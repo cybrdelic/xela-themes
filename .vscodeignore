@@ -1,4 +1,5 @@
 **/.git/**
+**/.claude/**
 **/.github/**
 **/.vscode/**
 **/*.vsix
@@ -7,12 +8,18 @@
 **/scripts/**
 **/.env
 .env
+**/.npm-cache/**
+accessibility-reports/**
 node_modules/**
 screenshots-vscode/**
 landing/**
 docs/**
 presets/**
 images/**
+test-files/**
+test-workspace/**
+themes/**/*.backup
+exports/
 .gitignore
 *.md
 !README.md

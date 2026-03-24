@@ -282,6 +282,19 @@ export const manualPackPlan = [
     ]
   },
   {
+    id: 'xela-personal-systems',
+    label: 'XELA Personal Systems Pack',
+    description: 'Agentic tooling, realtime graphics, reliability ops, editorial product craft, and creative studio work translated into one personal developer system.',
+    themeIds: [
+      'xela-jarvis-command',
+      'xela-runtime-forge',
+      'xela-shadernetic-flux',
+      'xela-signal-watch',
+      'xela-portfolio-grid',
+      'xela-resonance-studio'
+    ]
+  },
+  {
     id: 'xela-experimental-spectrum',
     label: 'XELA Experimental Spectrum Pack',
     description: 'Iridescent, holographic, and AI-inspired palettes pushing VS Code aesthetics.',

@@ -431,7 +431,8 @@
     "extensionIcon.verifiedForeground": "#A67B5B",
     "extensionIcon.preReleaseForeground": "#E67E22",
     "ports.iconRunningProcessForeground": "#A67B5B",
-    "contrastBorder": "#00000000"
+    "contrastBorder": "#00000000",
+    "editorWidget.foreground": "#B45F00"
   },
   "tokenColors": [
     {

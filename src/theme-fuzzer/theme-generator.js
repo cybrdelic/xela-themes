@@ -11,6 +11,8 @@ import {
     generateValidPalette,
 } from '../lib/index.js';
 
+import { debug } from '../logging.js';
+
 import {
     getCategories,
     getPalettesByCategory,
@@ -34,14 +36,14 @@ export function generateThemeBatch(count = 10, options = {}) {
   const items = [];
   const { mode = 'random', category = null, themeType = null } = options;
 
-  console.log(`[XELA Fuzzer] Generating ${count} themes in ${mode} mode, category: ${category}`);
+  debug(`[XELA Fuzzer] Generating ${count} themes in ${mode} mode, category: ${category}`);
 
   for (let i = 0; i < count; i++) {
     let result;
 
     if (mode === 'retro') {
       result = generateValidRetroPaletteLocal(category);
-      console.log(`[XELA Fuzzer] Retro result:`, result.retroSource, result.palette?.meta?.colorScheme);
+      debug(`[XELA Fuzzer] Retro result:`, result.retroSource, result.palette?.meta?.colorScheme);
     } else {
       result = generateValidPalette();
     }

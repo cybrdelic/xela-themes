@@ -18,6 +18,63 @@ const toRGB = hex => {
 };
 const toHex = ({r,g,b}) => '#' + [r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase();
 
+/**
+ * Get relative luminance (WCAG)
+ */
+export const getLuminance = hex => {
+  const {r,g,b} = toRGB(hex);
+  const [rs,gs,bs] = [r,g,b].map(c => {
+    c = c/255;
+    return c <= 0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4);
+  });
+  return 0.2126*rs + 0.7152*gs + 0.0722*bs;
+};
+
+/**
+ * Calculate WCAG contrast ratio
+ */
+export const getContrastRatio = (fg, bg) => {
+  const l1 = getLuminance(fg);
+  const l2 = getLuminance(bg);
+  const lighter = Math.max(l1,l2);
+  const darker = Math.min(l1,l2);
+  return (lighter + 0.05)/(darker + 0.05);
+};
+
+/**
+ * Adjust color to meet contrast requirement
+ */
+export const enforceContrast = (fg, bg, minContrast) => {
+  if (!fg || !bg) return fg;
+  let ratio = getContrastRatio(fg, bg);
+  if (ratio >= minContrast) return fg;
+
+  const blackRatio = getContrastRatio('#000000', bg);
+  const whiteRatio = getContrastRatio('#FFFFFF', bg);
+  const target = blackRatio >= whiteRatio ? '#000000' : '#FFFFFF';
+  const targetRatio = Math.max(blackRatio, whiteRatio);
+
+  if (targetRatio >= minContrast) {
+    return target;
+  }
+
+  const targetRgb = toRGB(target);
+  const start = toRGB(fg);
+
+  for (let step = 1; step <= 20; step++) {
+    const mixRatio = step / 20;
+    const adjusted = toHex({
+      r: clamp(Math.round(start.r + (targetRgb.r - start.r) * mixRatio)),
+      g: clamp(Math.round(start.g + (targetRgb.g - start.g) * mixRatio)),
+      b: clamp(Math.round(start.b + (targetRgb.b - start.b) * mixRatio))
+    });
+    ratio = getContrastRatio(adjusted, bg);
+    if (ratio >= minContrast) return adjusted;
+  }
+
+  return target;
+};
+
 export const lighten = (hex, amount=0.1) => {
   const {r,g,b} = toRGB(hex);
   return toHex({

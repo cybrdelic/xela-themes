@@ -2,8 +2,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import * as vscode from 'vscode';
+import { initLogging, debug } from './src/logging.js';
 
 let cachedPacks = null;
+let editorModulePromise = null;
+let fuzzerModulePromise = null;
 
 function loadThemePacks(context) {
   if (cachedPacks) {
@@ -121,38 +124,103 @@ async function runPackPicker(context) {
   quickPick.show();
 }
 
+function loadEditorModule() {
+  editorModulePromise ??= import('./src/theme-editor/theme-editor-panel.js');
+  return editorModulePromise;
+}
+
+function loadFuzzerModule() {
+  fuzzerModulePromise ??= import('./src/theme-fuzzer/fuzzer-extension-refactored.js');
+  return fuzzerModulePromise;
+}
+
 /**
  * Extension activation
  * @param {import('vscode').ExtensionContext} context
  */
 export async function activate(context) {
-  console.log('XELA Themes activated');
+  // Initialize extension logging.
+  initLogging();
+  debug('XELA Themes activated');
 
   // Register theme picker command
   const disposable = vscode.commands.registerCommand('xelaThemes.selectTheme', () => runPackPicker(context));
   context.subscriptions.push(disposable);
 
-  // Try to load and register fuzzer commands
-  try {
-    // Use the refactored modular fuzzer extension
-    const fuzzerModule = await import('./src/theme-fuzzer/fuzzer-extension-refactored.js');
-    if (fuzzerModule.registerFuzzerCommands) {
-      fuzzerModule.registerFuzzerCommands(context);
-      console.log('XELA Themes: Fuzzer commands registered successfully');
-    }
-  } catch (e) {
-    console.error('XELA Themes: Failed to load fuzzer module:', e.message);
-    // Register a placeholder command that shows an error
-    context.subscriptions.push(
-      vscode.commands.registerCommand('xelaThemes.fuzzTheme', () => {
+  // Register Theme Editor command lazily to keep activation memory lower.
+  context.subscriptions.push(
+    vscode.commands.registerCommand('xelaThemes.openEditor', async () => {
+      try {
+        const editorModule = await loadEditorModule();
+        if (!editorModule.ThemeEditorPanel?.createOrShow) {
+          throw new Error('ThemeEditorPanel.createOrShow not found in module');
+        }
+        editorModule.ThemeEditorPanel.createOrShow(context);
+      } catch (e) {
+        console.error('XELA Theme Editor failed to load:', e.message, e.stack);
+        vscode.window.showErrorMessage(`Theme Editor failed to load: ${e.message}`);
+      }
+    })
+  );
+
+  // Register command to clear any lingering theme customizations
+  // This fixes issues where fuzzer overrides persist and affect other themes
+  const clearCmd = vscode.commands.registerCommand('xelaThemes.clearCustomizations', async () => {
+    const workbenchConfig = vscode.workspace.getConfiguration('workbench');
+    const editorConfig = vscode.workspace.getConfiguration('editor');
+
+    await workbenchConfig.update('colorCustomizations', undefined, vscode.ConfigurationTarget.Global);
+    await editorConfig.update('tokenColorCustomizations', undefined, vscode.ConfigurationTarget.Global);
+    await editorConfig.update('semanticTokenColorCustomizations', undefined, vscode.ConfigurationTarget.Global);
+
+    vscode.window.showInformationMessage('XELA: Theme customizations cleared. Your selected theme should now display correctly.');
+  });
+  context.subscriptions.push(clearCmd);
+
+  // Register fuzzer commands lazily so activation does not pull in generator code up front.
+  context.subscriptions.push(
+    vscode.commands.registerCommand('xelaThemes.fuzzTheme', async () => {
+      try {
+        const fuzzerModule = await loadFuzzerModule();
+        await fuzzerModule.runFuzzerPicker(context);
+      } catch (e) {
+        console.error('XELA Themes: Failed to load fuzzer module:', e.message, e.stack);
         vscode.window.showErrorMessage(`Fuzzer not available: ${e.message}`);
-      })
-    );
-  }
-}/**
+      }
+    })
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('xelaThemes.quickFuzz', async () => {
+      try {
+        const fuzzerModule = await loadFuzzerModule();
+        await fuzzerModule.quickFuzz(context);
+      } catch (e) {
+        console.error('XELA Themes: Failed to load quick fuzz:', e.message, e.stack);
+        vscode.window.showErrorMessage(`Quick fuzz not available: ${e.message}`);
+      }
+    })
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('xelaThemes.clearFuzz', async () => {
+      try {
+        const fuzzerModule = await loadFuzzerModule();
+        await fuzzerModule.clearFuzzCustomizations();
+      } catch (e) {
+        console.error('XELA Themes: Failed to clear fuzz customizations:', e.message, e.stack);
+        vscode.window.showErrorMessage(`Clear fuzz not available: ${e.message}`);
+      }
+    })
+  );
+}
+
+/**
  * Extension deactivation
  */
 export function deactivate() {
-  console.log('XELA Themes deactivated');
+  debug('XELA Themes deactivated');
   cachedPacks = null;
+  editorModulePromise = null;
+  fuzzerModulePromise = null;
 }

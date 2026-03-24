@@ -24,6 +24,65 @@ import {
 import { validatePalette } from './theme-validator.js';
 
 /**
+ * Default configuration for palette generation. Consumers can override
+ * by passing `options.config` to the generator functions.
+ */
+export const DEFAULT_PALETTE_CONFIG = {
+  colorSchemes: ['complementary', 'analogous', 'triadic', 'splitComplementary'],
+  saturationRange: { min: 30, max: 80 },
+  dark: {
+    baseLightnessRange: [5, 15], // percent
+    baseSaturationRange: [0, 15],
+    bgAltDelta: 5, // lightness delta
+    bgElevatedDelta: 10,
+    borderDelta: 15
+  },
+  light: {
+    baseLightnessRange: [92, 98],
+    baseSaturationRange: [0, 10],
+    bgAltDelta: -3,
+    bgElevatedDelta: -6,
+    borderDelta: -15
+  },
+  contrast: {
+    aaa: 7,
+    aa: 4.5,
+    aaLarge: 3, // Large text and UI components
+    ui: 3
+  },
+  semanticHues: {
+    error: 0,
+    warning: 35,
+    success: 120,
+    info: 210
+  },
+  syntaxHues: {
+    string: 120,
+    type: 200,
+    storage: 300
+  },
+  terminal: {
+    magentaHue: 300,
+    cyanHue: 180
+  },
+  retro: {
+    accentSaturationThreshold: 30,
+    accentLightnessMin: 20,
+    accentLightnessMax: 80,
+    defaultSaturationLevel: 60,
+    // retro luminance thresholds and fallback deltas for legacy palettes
+    darkBgLuminanceMax: 0.2,
+    lightFgLuminanceMin: 0.5,
+    lightBgLuminanceMin: 0.7,
+    lightDarkLuminanceMax: 0.4,
+    fallbackDeltas: {
+      dark: { bgAlt: 5, bgElevated: 10, border: 15 },
+      light: { bgAlt: -3, bgElevated: -6, border: -15 }
+    }
+  }
+};
+
+/**
  * @typedef {Object} ColorPalette
  * @property {string} bg - Main background color
  * @property {string} bgAlt - Alternate background color
@@ -89,11 +148,12 @@ import { validatePalette } from './theme-validator.js';
  * @returns {ThemePalette}
  */
 export function generateAccessiblePalette(options = {}) {
+  const cfg = { ...DEFAULT_PALETTE_CONFIG, ...(options.config || {}) };
   const {
     type = Math.random() > 0.5 ? 'dark' : 'light',
     baseHue = randomHue(),
-    colorScheme = ['complementary', 'analogous', 'triadic', 'splitComplementary'][Math.floor(Math.random() * 4)],
-    saturationLevel = 30 + Math.random() * 50, // 30-80%
+    colorScheme = cfg.colorSchemes[Math.floor(Math.random() * cfg.colorSchemes.length)],
+    saturationLevel = typeof options.saturationLevel === 'number' ? options.saturationLevel : (cfg.saturationRange.min + Math.random() * (cfg.saturationRange.max - cfg.saturationRange.min)),
   } = options;
 
   const hues = generateHarmoniousHues(baseHue, colorScheme);
@@ -104,57 +164,61 @@ export function generateAccessiblePalette(options = {}) {
 
   if (type === 'dark') {
     // Dark theme: dark backgrounds, light text
-    const baseLightness = 5 + Math.random() * 10; // 5-15%
-    const baseSaturation = Math.random() * 15; // 0-15% (mostly neutral)
+    const [minL, maxL] = cfg.dark.baseLightnessRange;
+    const [minS, maxS] = cfg.dark.baseSaturationRange;
+    const baseLightness = minL + Math.random() * (maxL - minL);
+    const baseSaturation = minS + Math.random() * (maxS - minS);
 
     const bgRgb = hslToRgb(baseHue, baseSaturation, baseLightness);
     bg = rgbToHex(bgRgb.r, bgRgb.g, bgRgb.b);
-    bgAlt = adjustLightness(bg, 5);
-    bgElevated = adjustLightness(bg, 10);
-    border = adjustLightness(bg, 15);
+    bgAlt = adjustLightness(bg, cfg.dark.bgAltDelta);
+    bgElevated = adjustLightness(bg, cfg.dark.bgElevatedDelta);
+    border = adjustLightness(bg, cfg.dark.borderDelta);
 
     // Generate accessible foreground colors
-    fg = generateAccessibleColor(bg, 7); // AAA contrast for main text
-    fgMuted = generateAccessibleColor(bg, 4.5); // AA contrast
-    fgSubtle = generateAccessibleColor(bg, 3); // UI contrast
+    fg = generateAccessibleColor(bg, cfg.contrast.aaa); // AAA contrast for main text
+    fgMuted = generateAccessibleColor(bg, cfg.contrast.aa); // AA contrast
+    fgSubtle = generateAccessibleColor(bg, cfg.contrast.ui); // UI contrast
 
   } else {
     // Light theme: light backgrounds, dark text
-    const baseLightness = 92 + Math.random() * 6; // 92-98%
-    const baseSaturation = Math.random() * 10; // 0-10%
+    const [minL, maxL] = cfg.light.baseLightnessRange;
+    const [minS, maxS] = cfg.light.baseSaturationRange;
+    const baseLightness = minL + Math.random() * (maxL - minL);
+    const baseSaturation = minS + Math.random() * (maxS - minS);
 
     const bgRgb = hslToRgb(baseHue, baseSaturation, baseLightness);
     bg = rgbToHex(bgRgb.r, bgRgb.g, bgRgb.b);
-    bgAlt = adjustLightness(bg, -3);
-    bgElevated = adjustLightness(bg, -6);
-    border = adjustLightness(bg, -15);
+    bgAlt = adjustLightness(bg, cfg.light.bgAltDelta);
+    bgElevated = adjustLightness(bg, cfg.light.bgElevatedDelta);
+    border = adjustLightness(bg, cfg.light.borderDelta);
 
-    fg = generateAccessibleColor(bg, 7);
-    fgMuted = generateAccessibleColor(bg, 4.5);
-    fgSubtle = generateAccessibleColor(bg, 3);
+    fg = generateAccessibleColor(bg, cfg.contrast.aaa);
+    fgMuted = generateAccessibleColor(bg, cfg.contrast.aa);
+    fgSubtle = generateAccessibleColor(bg, cfg.contrast.ui);
   }
 
   // Generate accent colors that are accessible
-  const accent = generateAccessibleColor(bg, 3, saturationLevel, accentHue);
-  const accentAlt = generateAccessibleColor(bg, 3, saturationLevel, secondaryHue);
+  const accent = generateAccessibleColor(bg, cfg.contrast.ui, saturationLevel, accentHue);
+  const accentAlt = generateAccessibleColor(bg, cfg.contrast.ui, saturationLevel, secondaryHue);
 
   // Semantic colors (must be distinguishable and accessible)
-  const error = generateAccessibleColor(bg, 3, 70, 0); // Red hue
-  const warning = generateAccessibleColor(bg, 3, 80, 35); // Orange/yellow hue
-  const success = generateAccessibleColor(bg, 3, 60, 120); // Green hue
-  const info = generateAccessibleColor(bg, 3, 60, 210); // Blue hue
+  const error = generateAccessibleColor(bg, cfg.contrast.ui, 70, cfg.semanticHues.error);
+  const warning = generateAccessibleColor(bg, cfg.contrast.ui, 80, cfg.semanticHues.warning);
+  const success = generateAccessibleColor(bg, cfg.contrast.ui, 60, cfg.semanticHues.success);
+  const info = generateAccessibleColor(bg, cfg.contrast.ui, 60, cfg.semanticHues.info);
 
   // Syntax colors - all must be accessible against bg
   const syntax = {
     comment: fgSubtle,
-    keyword: generateAccessibleColor(bg, 4.5, saturationLevel, accentHue),
-    function: generateAccessibleColor(bg, 4.5, saturationLevel, (accentHue + 60) % 360),
-    string: generateAccessibleColor(bg, 4.5, saturationLevel, 120), // Greenish
-    number: generateAccessibleColor(bg, 4.5, saturationLevel, accentHue),
+    keyword: generateAccessibleColor(bg, cfg.contrast.aa, saturationLevel, accentHue),
+    function: generateAccessibleColor(bg, cfg.contrast.aa, saturationLevel, (accentHue + 60) % 360),
+    string: generateAccessibleColor(bg, cfg.contrast.aa, saturationLevel, cfg.syntaxHues.string),
+    number: generateAccessibleColor(bg, cfg.contrast.aa, saturationLevel, accentHue),
     variable: fg,
     constant: generateAccessibleColor(bg, 4.5, saturationLevel, secondaryHue),
-    type: generateAccessibleColor(bg, 4.5, saturationLevel, 200), // Cyan-ish
-    storage: generateAccessibleColor(bg, 4.5, saturationLevel, 300), // Magenta-ish
+    type: generateAccessibleColor(bg, cfg.contrast.aa, saturationLevel, cfg.syntaxHues.type),
+    storage: generateAccessibleColor(bg, cfg.contrast.aa, saturationLevel, cfg.syntaxHues.storage),
     punctuation: fgMuted,
     invalid: error,
     link: accent,
@@ -168,8 +232,25 @@ export function generateAccessiblePalette(options = {}) {
     green: success,
     yellow: warning,
     blue: info,
-    magenta: generateAccessibleColor(bg, 3, 60, 300),
-    cyan: generateAccessibleColor(bg, 3, 60, 180),
+    magenta: generateAccessibleColor(bg, cfg.contrast.ui, 60, cfg.terminal.magentaHue),
+    cyan: generateAccessibleColor(bg, cfg.contrast.ui, 60, cfg.terminal.cyanHue),
+  };
+
+  // UI-specific colors with exact contrast requirements
+  // These are separate from general foreground colors to ensure they meet
+  // WCAG requirements for their specific use cases
+  const ui = {
+    // Line numbers need AA_LARGE (3:1) - use fgMuted which has 4.5:1 for safety margin
+    lineNumber: fgMuted,
+    lineNumberActive: fg,
+    // Badge foreground needs AA (4.5:1) against accent background
+    badgeFg: adjustColorForContrast(type === 'dark' ? bg : '#FFFFFF', accent, cfg.contrast.aa),
+    // Cursor needs UI (3:1) against editor background - use accent but ensure contrast
+    cursor: adjustColorForContrast(accent, bg, cfg.contrast.ui),
+    // Button foreground needs AA (4.5:1) against accent
+    buttonFg: adjustColorForContrast(type === 'dark' ? bg : '#FFFFFF', accent, cfg.contrast.aa),
+    // Placeholder text needs AA_LARGE (3:1)
+    placeholder: fgSubtle,
   };
 
   return {
@@ -178,6 +259,7 @@ export function generateAccessiblePalette(options = {}) {
       bg, bgAlt, bgElevated, fg, fgMuted, fgSubtle, accent, accentAlt, border,
       borderSubtle: border + '80', error, warning, success, info, remote: info
     },
+    ui,
     syntax,
     terminal,
     meta: { baseHue, colorScheme, saturationLevel }
@@ -212,6 +294,7 @@ export function generateValidPalette(maxAttempts = 50) {
  * @returns {ThemePalette}
  */
 export function generateRetroInspiredPalette(retroPalette, retroPalettes = {}) {
+  const cfg = DEFAULT_PALETTE_CONFIG;
   const retroColors = Object.values(retroPalette.colors).filter(c => c && c.startsWith('#'));
   const type = retroPalette.type || (Math.random() > 0.5 ? 'dark' : 'light');
 
@@ -224,59 +307,59 @@ export function generateRetroInspiredPalette(retroPalette, retroPalettes = {}) {
 
   if (type === 'dark') {
     // Use actual darkest retro colors for background
-    const darkColors = colorsByLuminance.filter(c => c.lum < 0.2);
-    const lightColors = colorsByLuminance.filter(c => c.lum > 0.5);
+    const darkColors = colorsByLuminance.filter(c => c.lum < cfg.retro.darkBgLuminanceMax);
+    const lightColors = colorsByLuminance.filter(c => c.lum > cfg.retro.lightFgLuminanceMin);
 
     if (darkColors.length > 0) {
       bg = darkColors[0].color;
-      bgAlt = darkColors[1]?.color || adjustLightness(bg, 5);
-      bgElevated = darkColors[2]?.color || adjustLightness(bg, 10);
+      bgAlt = darkColors[1]?.color || adjustLightness(bg, cfg.retro.fallbackDeltas.dark.bgAlt);
+      bgElevated = darkColors[2]?.color || adjustLightness(bg, cfg.retro.fallbackDeltas.dark.bgElevated);
     } else {
       const baseHue = getHueFromHex(retroColors[0]) || 0;
       const rgb = hslToRgb(baseHue, 15, 8);
       bg = rgbToHex(rgb.r, rgb.g, rgb.b);
-      bgAlt = adjustLightness(bg, 5);
-      bgElevated = adjustLightness(bg, 10);
+      bgAlt = adjustLightness(bg, cfg.retro.fallbackDeltas.dark.bgAlt);
+      bgElevated = adjustLightness(bg, cfg.retro.fallbackDeltas.dark.bgElevated);
     }
 
     if (lightColors.length > 0) {
-      fg = adjustColorForContrast(lightColors[lightColors.length - 1].color, bg, 7);
-      fgMuted = adjustColorForContrast(lightColors[Math.max(0, lightColors.length - 2)]?.color || fg, bg, 4.5);
-      fgSubtle = adjustColorForContrast(lightColors[Math.max(0, lightColors.length - 3)]?.color || fgMuted, bg, 3);
+      fg = adjustColorForContrast(lightColors[lightColors.length - 1].color, bg, cfg.contrast.aaa);
+      fgMuted = adjustColorForContrast(lightColors[Math.max(0, lightColors.length - 2)]?.color || fg, bg, cfg.contrast.aa);
+      fgSubtle = adjustColorForContrast(lightColors[Math.max(0, lightColors.length - 3)]?.color || fgMuted, bg, cfg.contrast.ui);
     } else {
-      fg = generateAccessibleColor(bg, 7);
-      fgMuted = generateAccessibleColor(bg, 4.5);
-      fgSubtle = generateAccessibleColor(bg, 3);
+      fg = generateAccessibleColor(bg, cfg.contrast.aaa);
+      fgMuted = generateAccessibleColor(bg, cfg.contrast.aa);
+      fgSubtle = generateAccessibleColor(bg, cfg.contrast.ui);
     }
-    border = adjustLightness(bg, 15);
+    border = adjustLightness(bg, cfg.retro.fallbackDeltas.dark.border);
 
   } else {
     // Light theme
-    const lightColors = colorsByLuminance.filter(c => c.lum > 0.7);
-    const darkColors = colorsByLuminance.filter(c => c.lum < 0.4);
+    const lightColors = colorsByLuminance.filter(c => c.lum > cfg.retro.lightBgLuminanceMin);
+    const darkColors = colorsByLuminance.filter(c => c.lum < cfg.retro.lightDarkLuminanceMax);
 
     if (lightColors.length > 0) {
       bg = lightColors[lightColors.length - 1].color;
-      bgAlt = lightColors[lightColors.length - 2]?.color || adjustLightness(bg, -3);
-      bgElevated = adjustLightness(bg, -6);
+      bgAlt = lightColors[lightColors.length - 2]?.color || adjustLightness(bg, cfg.retro.fallbackDeltas.light.bgAlt);
+      bgElevated = adjustLightness(bg, cfg.retro.fallbackDeltas.light.bgElevated);
     } else {
       const baseHue = getHueFromHex(retroColors[0]) || 0;
       const rgb = hslToRgb(baseHue, 10, 95);
       bg = rgbToHex(rgb.r, rgb.g, rgb.b);
-      bgAlt = adjustLightness(bg, -3);
-      bgElevated = adjustLightness(bg, -6);
+      bgAlt = adjustLightness(bg, cfg.retro.fallbackDeltas.light.bgAlt);
+      bgElevated = adjustLightness(bg, cfg.retro.fallbackDeltas.light.bgElevated);
     }
 
     if (darkColors.length > 0) {
-      fg = adjustColorForContrast(darkColors[0].color, bg, 7);
-      fgMuted = adjustColorForContrast(darkColors[1]?.color || fg, bg, 4.5);
-      fgSubtle = adjustColorForContrast(darkColors[2]?.color || fgMuted, bg, 3);
+      fg = adjustColorForContrast(darkColors[0].color, bg, cfg.contrast.aaa);
+      fgMuted = adjustColorForContrast(darkColors[1]?.color || fg, bg, cfg.contrast.aa);
+      fgSubtle = adjustColorForContrast(darkColors[2]?.color || fgMuted, bg, cfg.contrast.ui);
     } else {
-      fg = generateAccessibleColor(bg, 7);
-      fgMuted = generateAccessibleColor(bg, 4.5);
-      fgSubtle = generateAccessibleColor(bg, 3);
+      fg = generateAccessibleColor(bg, cfg.contrast.aaa);
+      fgMuted = generateAccessibleColor(bg, cfg.contrast.aa);
+      fgSubtle = generateAccessibleColor(bg, cfg.contrast.ui);
     }
-    border = adjustLightness(bg, -15);
+    border = adjustLightness(bg, cfg.retro.fallbackDeltas.light.border);
   }
 
   // Get vibrant accent colors from the retro palette

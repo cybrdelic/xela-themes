@@ -44,7 +44,7 @@ let currentPalette = null;
  * Run the fuzzer with complete live preview
  * @param {vscode.ExtensionContext} context - Extension context
  */
-async function runFuzzerPicker(context) {
+export async function runFuzzerPicker(context) {
   // Save current settings to restore on cancel
   saveOriginalSettings();
 
@@ -212,7 +212,7 @@ async function runFuzzerPicker(context) {
  * Quick fuzz - instantly apply a random accessible theme
  * @param {vscode.ExtensionContext} context - Extension context
  */
-async function quickFuzz(context) {
+export async function quickFuzz(context) {
   saveOriginalSettings();
 
   const { palette, validation } = generateValidPalette();
@@ -238,6 +238,11 @@ async function quickFuzz(context) {
   }
 }
 
+export async function clearFuzzCustomizations() {
+  await clearAllCustomizations();
+  vscode.window.showInformationMessage('All theme customizations cleared!');
+}
+
 /**
  * Register fuzzer commands with VS Code
  * @param {vscode.ExtensionContext} context - Extension context
@@ -257,8 +262,7 @@ export function registerFuzzerCommands(context) {
 
   context.subscriptions.push(
     vscode.commands.registerCommand('xelaThemes.clearFuzz', async () => {
-      await clearAllCustomizations();
-      vscode.window.showInformationMessage('All theme customizations cleared!');
+      await clearFuzzCustomizations();
     })
   );
 }

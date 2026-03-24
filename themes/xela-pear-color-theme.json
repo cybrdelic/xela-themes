@@ -141,7 +141,7 @@
     "button.foreground": "#000000",
     "button.hoverBackground": "#0051D5",
     "button.secondaryBackground": "#86868B",
-    "button.secondaryForeground": "#F2F2F2",
+    "button.secondaryForeground": "#000000",
     "button.secondaryHoverBackground": "#6E6E73",
     "input.background": "#F2F2F2",
     "input.border": "#D2D2D7",
@@ -259,7 +259,19 @@
     "debugToolBar.background": "#F2F2F2",
     "debugToolBar.border": "#D2D2D7",
     "debugExceptionWidget.background": "#F2F2F2",
-    "debugExceptionWidget.border": "#FF3B30"
+    "debugExceptionWidget.border": "#FF3B30",
+    "editorWidget.foreground": "#1D1D1F",
+    "editorGroup.border": "#D2D2D7",
+    "sideBarSectionHeader.foreground": "#1D1D1F",
+    "problemsErrorIcon.foreground": "#FF3B30",
+    "problemsWarningIcon.foreground": "#FF9500",
+    "problemsInfoIcon.foreground": "#007AFF",
+    "testing.iconFailed": "#FF3B30",
+    "testing.iconPassed": "#00FF00",
+    "editorIndentGuide.background1": "#D2D2D740",
+    "editorIndentGuide.activeBackground1": "#86868B60",
+    "gitDecoration.addedResourceForeground": "#81b88b",
+    "selection.background": "#B3D7FF60"
   },
   "tokenColors": [
     {

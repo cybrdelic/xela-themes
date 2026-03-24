@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XELA Themes Research Paper</title>
+  <style>
+    :root {
+      --bg: #f1ece2;
+      --paper: rgba(255, 251, 244, 0.82);
+      --paper-strong: rgba(255, 252, 247, 0.94);
+      --ink: #171b22;
+      --muted: #5e6775;
+      --line: rgba(23, 27, 34, 0.12);
+      --accent: #1457ff;
+      --accent-warm: #c75b32;
+      --accent-cool: #0e8c8e;
+      --shadow: 0 24px 80px rgba(33, 26, 12, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(20, 87, 255, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(199, 91, 50, 0.12), transparent 30%),
+        linear-gradient(180deg, #f5f0e6 0%, #ede6d9 46%, #e8dfcf 100%);
+      font-family: Aptos, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(20, 87, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 87, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 90%);
+    }
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      z-index: 20;
+      background: linear-gradient(90deg, var(--accent), var(--accent-cool), var(--accent-warm));
+      box-shadow: 0 0 24px rgba(20, 87, 255, 0.4);
+      transform-origin: left center;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 28px auto 80px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .side,
+    .paper {
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .side {
+      position: sticky;
+      top: 24px;
+      padding: 24px 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(14, 20, 32, 0.93), rgba(17, 25, 38, 0.9));
+      color: #f5f8ff;
+      overflow: hidden;
+    }
+
+    .side::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(123, 224, 255, 0.28), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font: 700 0.72rem/1.2 Bahnschrift, "Arial Narrow", sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9bc8ff;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .side h1 {
+      margin: 0 0 12px;
+      font: 700 clamp(1.8rem, 2vw, 2.4rem)/0.95 Bahnschrift, "Segoe UI Variable Display", "Arial Narrow", sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .side p,
+    .side li {
+      color: rgba(245, 248, 255, 0.76);
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      display: grid;
+      gap: 10px;
+      padding: 18px 0;
+      margin: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .meta-row span:first-child {
+      color: rgba(245, 248, 255, 0.56);
+    }
+
+    .toc {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .toc a {
+      color: #dfeaff;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .toc a:hover {
+      transform: translateX(4px);
+      background: rgba(88, 166, 255, 0.12);
+      border-color: rgba(123, 224, 255, 0.28);
+    }
+
+    .paper {
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, var(--paper-strong), var(--paper)),
+        linear-gradient(135deg, rgba(20, 87, 255, 0.03), rgba(199, 91, 50, 0.02));
+      padding: 48px clamp(22px, 4vw, 58px) 56px;
+    }
+
+    .title-block {
+      padding-bottom: 28px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .title-block h2 {
+      margin: 0 0 14px;
+      font: 700 clamp(2.4rem, 5vw, 4.9rem)/0.92 Bahnschrift, "Segoe UI Variable Display", "Arial Narrow", sans-serif;
+      letter-spacing: -0.05em;
+    }
+
+    .dek {
+      margin: 0;
+      max-width: 800px;
+      font-size: clamp(1.06rem, 2vw, 1.3rem);
+      color: var(--muted);
+    }
+
+    .abstract {
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      margin: 0 0 32px;
+      border-radius: 20px;
+      background: rgba(20, 87, 255, 0.05);
+      border: 1px solid rgba(20, 87, 255, 0.1);
+    }
+
+    .abstract h3,
+    section h3 {
+      margin: 0 0 10px;
+      font: 700 clamp(1.15rem, 2vw, 1.5rem)/1.1 Bahnschrift, "Segoe UI Variable Display", "Arial Narrow", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .abstract p:last-child,
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    section {
+      margin-top: 34px;
+      scroll-margin-top: 24px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .keywords span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(20, 87, 255, 0.12);
+      background: rgba(255, 255, 255, 0.66);
+      font: 600 0.84rem/1 Bahnschrift, "Arial Narrow", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #24456b;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0 8px;
+    }
+
+    .stat {
+      padding: 18px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 6px;
+      font: 700 clamp(1.2rem, 2vw, 1.8rem)/1 Bahnschrift, "Arial Narrow", sans-serif;
+      color: var(--accent);
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .figure,
+    .evidence,
+    .refs {
+      padding: 22px 22px 20px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+      margin-top: 18px;
+    }
+
+    .figure-title {
+      margin: 0 0 14px;
+      font: 700 0.92rem/1.2 Bahnschrift, "Arial Narrow", sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .step {
+      position: relative;
+      padding: 18px 14px;
+      min-height: 126px;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(160deg, #172033, #1f345e);
+      overflow: hidden;
+    }
+
+    .step:nth-child(2) {
+      background: linear-gradient(160deg, #1f1a2f, #33408c);
+    }
+
+    .step:nth-child(3) {
+      background: linear-gradient(160deg, #19281c, #1f5f57);
+    }
+
+    .step:nth-child(4) {
+      background: linear-gradient(160deg, #301d19, #8f4f30);
+    }
+
+    .step:nth-child(5) {
+      background: linear-gradient(160deg, #26181e, #6b3058);
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 10px;
+      font: 700 1rem/1 Bahnschrift, "Arial Narrow", sans-serif;
+    }
+
+    .step span {
+      display: block;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.92rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .callout {
+      padding: 20px;
+      border-left: 4px solid var(--accent);
+      background: rgba(20, 87, 255, 0.05);
+      border-radius: 0 16px 16px 0;
+      color: #304055;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(20, 27, 34, 0.06);
+      font-family: Consolas, "Cascadia Code", monospace;
+      font-size: 0.92em;
+    }
+
+    .refs ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .refs li {
+      font-size: 0.98rem;
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1024px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        position: static;
+      }
+
+      .stat-grid,
+      .pipeline,
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100% - 20px, 100%);
+        margin-top: 12px;
+      }
+
+      .paper,
+      .side {
+        border-radius: 20px;
+      }
+
+      .stat-grid,
+      .pipeline,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .paper {
+        padding: 28px 18px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <main class="shell">
+    <aside class="side">
+      <div class="eyebrow">Repository Study</div>
+      <h1>XELA Themes</h1>
+      <p>A research-oriented reading of the project as a software system, design language, and multi-surface personalization platform.</p>
+
+      <div class="meta">
+        <div class="meta-row"><span>Project</span><strong>xela-themes</strong></div>
+        <div class="meta-row"><span>Version</span><strong>0.3.4</strong></div>
+        <div class="meta-row"><span>Primary Target</span><strong>VS Code</strong></div>
+        <div class="meta-row"><span>Secondary Targets</span><strong>Windows Terminal, Windows OS</strong></div>
+      </div>
+
+      <nav class="toc">
+        <a href="#abstract">Abstract</a>
+        <a href="#definition">1. What XELA Themes Is</a>
+        <a href="#architecture">2. System Architecture</a>
+        <a href="#design">3. Design Theory</a>
+        <a href="#surfaces">4. Multi-Surface Outputs</a>
+        <a href="#argument">5. Research Argument</a>
+        <a href="#conclusion">6. Conclusion</a>
+        <a href="#references">References</a>
+      </nav>
+    </aside>
+
+    <article class="paper">
+      <header class="title-block">
+        <div class="eyebrow">Working Paper</div>
+        <h2>XELA Themes as Design Infrastructure: A Study of Generated Interface Identity, Accessibility, and Cross-Surface Theming</h2>
+        <p class="dek">This paper argues that XELA Themes is not merely a VS Code theme pack. It is a theme production system that treats interface color as a programmable design discipline and extends that discipline across editor, terminal, and operating-system surfaces.</p>
+      </header>
+
+      <section class="abstract" id="abstract">
+        <h3>Abstract</h3>
+        <p>XELA Themes is best understood as a layered software artifact with three simultaneous roles: a published theme collection for Visual Studio Code, a generation engine for maintaining a large and diverse palette family, and a personalization pipeline that exports that family to Windows Terminal and Windows OS theme assets. The repository currently exposes 207 generated VS Code theme files and 193 Windows Terminal and Windows personalization exports, indicating a project that has moved beyond hand-authored cosmetic styling into infrastructure for systematic interface identity.</p>
+        <p>The core contribution of the project lies in translating design language into reusable program structure. Colors are modeled as semantic roles, UI surfaces are mapped through centralized build logic, accessibility constraints are validated in code, and themed outputs are compiled into multiple target formats. As a result, XELA Themes operates as an applied research environment for interface aesthetics, maintainability, and developer experience.</p>
+        <div class="keywords">
+          <span>Theme Engine</span>
+          <span>Design Systems</span>
+          <span>Accessibility</span>
+          <span>VS Code</span>
+          <span>Windows Terminal</span>
+          <span>Personalization</span>
+        </div>
+      </section>
+
+      <div class="stat-grid" aria-label="Repository metrics">
+        <div class="stat"><strong>207</strong><span>generated VS Code theme JSON files</span></div>
+        <div class="stat"><strong>193</strong><span>Windows Terminal scheme records</span></div>
+        <div class="stat"><strong>193</strong><span>Windows personalization exports</span></div>
+        <div class="stat"><strong>177</strong><span>theme config sources loaded by the build system</span></div>
+      </div>
+
+      <section id="definition">
+        <h3>1. What XELA Themes Is</h3>
+        <p>XELA Themes presents itself publicly as a theme collection, but the repository shows a more ambitious reality. The project contains a VS Code extension manifest, a theme picker command, a theme editor, a theme fuzzer, accessibility auditing tools, Windows Terminal export scripts, Windows personalization builders, and curated pack metadata. This structure suggests that the project is not oriented around one canonical style. Instead, it explores how many coherent styles can be generated, validated, and distributed without collapsing into inconsistency.</p>
+        <p>In practical terms, the project solves a real scaling problem. Small theme projects usually rely on hand-edited JSON files. XELA Themes moves in the opposite direction: source theme definitions are separated from generated outputs, token systems are shared, and build scripts derive final artifacts. That shift changes the nature of the repository. It becomes less like a static gallery and more like a theming compiler.</p>
+        <div class="callout">Research claim: XELA Themes should be classified as design infrastructure rather than a decorative asset pack, because its primary innovation is the formalization of theme production as code.</div>
+      </section>
+
+      <section id="architecture">
+        <h3>2. System Architecture</h3>
+        <p>The architecture centers on a pipeline that starts with per-theme source modules and ends with deployable artifacts. Source themes define semantic roles, token mappings, and optional UI overrides. Build scripts convert those definitions into full VS Code themes, while companion builders transform them into Windows Terminal schemes and Windows OS personalization files.</p>
+        <div class="figure">
+          <p class="figure-title">Figure 1. Repository pipeline</p>
+          <div class="pipeline">
+            <div class="step"><strong>Theme Configs</strong><span>Per-theme source modules define roles, tokens, and overrides.</span></div>
+            <div class="step"><strong>Color Mapping</strong><span>Shared logic distributes surfaces, borders, status colors, and contrast-safe UI values.</span></div>
+            <div class="step"><strong>Theme Build</strong><span>Build scripts emit final VS Code theme JSON and HTML token scopes.</span></div>
+            <div class="step"><strong>Terminal Export</strong><span>ANSI palettes and scheme metadata are derived for Windows Terminal.</span></div>
+            <div class="step"><strong>OS Export</strong><span>Wallpapers and <code>.theme</code> files extend identity to Windows personalization.</span></div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="evidence">
+            <p class="figure-title">Observed architectural components</p>
+            <ul>
+              <li><code>scripts/theme-system/build-themes.mjs</code> compiles source themes into VS Code JSON outputs.</li>
+              <li><code>scripts/theme-system/color-mapping.js</code> centralizes UI surface distribution and contrast enforcement.</li>
+              <li><code>scripts/theme-system/build-windows-terminal.mjs</code> derives terminal schemes from source colors and presets.</li>
+              <li><code>scripts/theme-system/build-windows-personalization.mjs</code> generates Windows theme files and wallpapers.</li>
+              <li><code>extension.js</code> exposes pack-aware theme selection inside VS Code.</li>
+            </ul>
+          </div>
+          <div class="evidence">
+            <p class="figure-title">Why this matters</p>
+            <ul>
+              <li>It reduces drift between concept and implementation.</li>
+              <li>It allows one design vocabulary to drive multiple products.</li>
+              <li>It makes large-scale theme maintenance realistic.</li>
+              <li>It transforms aesthetic experimentation into repeatable engineering.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="design">
+        <h3>3. Design Theory in the Codebase</h3>
+        <p>The strongest conceptual move in XELA Themes is the use of semantic roles rather than raw color assignment. Source themes describe <code>surface0</code>, <code>surface1</code>, <code>panel</code>, <code>textPrimary</code>, <code>accentWarn</code>, and related categories. This means the author is not simply coloring isolated widgets. The author is designing a hierarchy of depth, attention, status, and readability that can be projected into multiple interfaces.</p>
+        <p>This role-based model matters because developer environments are dense with competing signals. Editors require line emphasis, terminals require ANSI compatibility, status bars require legibility under semantic color load, and sidebars must remain useful without stealing attention from code. The repository's customization documents show awareness of this problem and propose layered control: base roles for structure, automatic surface mapping for coherence, and fine-grained overrides for final tuning.</p>
+        <p>The result is a design philosophy that balances expressiveness with discipline. XELA Themes supports nostalgia, editorial minimalism, neon futurism, accessibility-first monochrome, cinematic dark modes, and professional interface schemes. Yet those styles are all pulled through the same engineering grammar. Diversity of look is achieved through consistency of method.</p>
+      </section>
+
+      <section id="surfaces">
+        <h3>4. Multi-Surface Theming as a Product Strategy</h3>
+        <p>Many theme repositories stop at the editor. XELA Themes extends the same visual logic to Windows Terminal and Windows OS personalization. This is not a trivial export feature. It reframes theming as environment design rather than application skinning. Once a user selects a theme language, the project can carry that language into shell work, wallpapers, and desktop treatment.</p>
+        <p>This expansion is especially important for power users and developers because their workflow spans more than one interface. A theme that only colors the editor leaves the terminal visually detached. A theme that reaches editor, terminal, and desktop creates continuity. In HCI terms, XELA Themes reduces identity fragmentation across the working environment and gives visual coherence to long sessions that move between reading, coding, build output, and system monitoring.</p>
+        <div class="figure">
+          <p class="figure-title">Figure 2. Surface model</p>
+          <ul>
+            <li><strong>Editor layer:</strong> syntax tokens, panels, tabs, lists, forms, and editor widgets.</li>
+            <li><strong>Terminal layer:</strong> full ANSI palette, cursor, foreground, background, and selection.</li>
+            <li><strong>Desktop layer:</strong> wallpaper generation and Windows <code>.theme</code> output.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="argument">
+        <h3>5. Research Argument: Why XELA Themes Matters</h3>
+        <p>The value of XELA Themes is not simply that it contains many themes. Large counts alone are easy to fake and often produce low-quality redundancy. The more meaningful observation is that the repository treats theme production as a design-engineering problem with explicit mechanisms for consistency, extensibility, and validation. That is the mark of a mature internal model.</p>
+        <p>Three arguments follow from the repository evidence. First, XELA Themes operationalizes aesthetic variation without abandoning system coherence. Second, it treats accessibility as a build-time concern rather than an afterthought, as seen in dedicated color utilities, validators, and audits. Third, it broadens the scope of theming from code editor cosmetics to total developer-environment identity. Together, these qualities make the project a useful case study in how design systems thinking can be applied to developer tools.</p>
+        <p>There is also a secondary research significance. The project demonstrates that interface taste can be encoded. The repository contains themes inspired by operating systems, design movements, media, product archetypes, and personal modes of work. Yet those references are not only descriptive labels. They are translated into controlled palettes, contrast relationships, and surface behaviors. In that sense, the project is a practical experiment in computationalized visual authorship.</p>
+      </section>
+
+      <section id="conclusion">
+        <h3>6. Conclusion</h3>
+        <p>XELA Themes is best described as a programmable interface identity platform centered on developer workflows. It uses code to formalize color semantics, uses scripts to compile those semantics into multiple artifacts, and uses validation tooling to sustain quality at scale. The repository therefore exceeds the category of "theme pack" and enters the territory of design tooling.</p>
+        <p>If one asks what XELA Themes is in one sentence, the most defensible answer is this: it is a system for authoring, testing, packaging, and extending interface aesthetics across the environments where developers actually work.</p>
+      </section>
+
+      <section class="refs" id="references">
+        <h3>References</h3>
+        <ol>
+          <li><code>package.json</code> - project metadata, scripts, extension commands, and published theme manifest.</li>
+          <li><code>extension.js</code> - pack-aware picker and extension activation model.</li>
+          <li><code>scripts/theme-system/build-themes.mjs</code> - primary VS Code theme generation path.</li>
+          <li><code>scripts/theme-system/color-mapping.js</code> - centralized UI color distribution and contrast handling.</li>
+          <li><code>scripts/theme-system/build-windows-terminal.mjs</code> - Windows Terminal export pipeline.</li>
+          <li><code>scripts/theme-system/build-windows-personalization.mjs</code> - Windows OS personalization pipeline.</li>
+          <li><code>docs/MODULE-STRUCTURE.md</code> - modular decomposition of library and fuzzer systems.</li>
+          <li><code>docs/THEME-CUSTOMIZATION.md</code> - layered customization strategy and role-based theming model.</li>
+        </ol>
+      </section>
+
+      <p class="footer-note">Prepared from the local repository state on March 21, 2026. Counts and architectural claims reflect the workspace currently open in this environment.</p>
+    </article>
+  </main>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = docHeight > 0 ? scrollTop / docHeight : 0;
+      progress.style.width = `${Math.max(0, Math.min(1, ratio)) * 100}%`;
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+  </script>
+</body>
+</html>

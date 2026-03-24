@@ -155,6 +155,92 @@ const AUTO_FIXES = {
   },
 };
 
+const CONTRAST_PAIRS = [
+  ['titleBar.activeBackground', 'titleBar.activeForeground'],
+  ['activityBar.background', 'activityBar.foreground'],
+  ['sideBar.background', 'sideBar.foreground'],
+  ['sideBarSectionHeader.background', 'sideBarSectionHeader.foreground'],
+  ['statusBar.background', 'statusBar.foreground'],
+  ['statusBar.debuggingBackground', 'statusBar.debuggingForeground'],
+  ['panel.background', 'panelTitle.activeForeground'],
+  ['tab.activeBackground', 'tab.activeForeground'],
+  ['tab.inactiveBackground', 'tab.inactiveForeground'],
+  ['editor.background', 'editor.foreground'],
+  ['editor.background', 'editorLineNumber.activeForeground'],
+  ['editorWidget.background', 'editorWidget.foreground'],
+  ['editorHoverWidget.background', 'editorWidget.foreground'],
+  ['list.activeSelectionBackground', 'list.activeSelectionForeground'],
+  ['list.inactiveSelectionBackground', 'list.inactiveSelectionForeground'],
+  ['button.background', 'button.foreground'],
+  ['button.secondaryBackground', 'button.secondaryForeground'],
+  ['input.background', 'input.foreground'],
+  ['badge.background', 'badge.foreground'],
+  ['activityBarBadge.background', 'activityBarBadge.foreground'],
+  ['terminal.background', 'terminal.foreground'],
+  ['notifications.background', 'notifications.foreground'],
+  ['notificationCenterHeader.background', 'notificationCenterHeader.foreground'],
+  ['menu.background', 'menu.foreground'],
+  ['menu.selectionBackground', 'menu.selectionForeground'],
+  ['quickInput.background', 'quickInput.foreground']
+];
+
+function hexToRgb(hex) {
+  const clean = hex.replace(/^#/, '').substring(0, 6);
+  if (clean.length !== 6) return null;
+  return {
+    r: parseInt(clean.substring(0, 2), 16),
+    g: parseInt(clean.substring(2, 4), 16),
+    b: parseInt(clean.substring(4, 6), 16)
+  };
+}
+
+function getLuminance(hex) {
+  const rgb = hexToRgb(hex);
+  if (!rgb) return 0;
+  const [r, g, b] = [rgb.r, rgb.g, rgb.b].map((value) => {
+    const normalized = value / 255;
+    return normalized <= 0.03928
+      ? normalized / 12.92
+      : Math.pow((normalized + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+function getContrastRatio(fg, bg) {
+  const lighter = Math.max(getLuminance(fg), getLuminance(bg));
+  const darker = Math.min(getLuminance(fg), getLuminance(bg));
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function enforceContrast(fg, bg, minContrast = 4.5) {
+  if (!fg || !bg || fg.length > 7 || bg.length > 7) return fg;
+  if (getContrastRatio(fg, bg) >= minContrast) return fg;
+
+  const blackRatio = getContrastRatio('#000000', bg);
+  const whiteRatio = getContrastRatio('#FFFFFF', bg);
+  const target = blackRatio >= whiteRatio ? '#000000' : '#FFFFFF';
+  const targetRgb = hexToRgb(target);
+  const start = hexToRgb(fg) || { r: 255, g: 255, b: 255 };
+
+  if (Math.max(blackRatio, whiteRatio) >= minContrast) {
+    return target;
+  }
+
+  for (let step = 1; step <= 20; step++) {
+    const mixRatio = step / 20;
+    const adjusted = '#' + [start.r, start.g, start.b].map((value, index) => {
+      const targetValue = [targetRgb.r, targetRgb.g, targetRgb.b][index];
+      return Math.round(value + (targetValue - value) * mixRatio).toString(16).padStart(2, '0');
+    }).join('').toUpperCase();
+
+    if (getContrastRatio(adjusted, bg) >= minContrast) {
+      return adjusted;
+    }
+  }
+
+  return target;
+}
+
 function lightenDarken(color, amount) {
   // Simple lighten/darken function
   if (!color || color === 'transparent') return '#00000030';
@@ -200,6 +286,8 @@ function fixTheme(themePath) {
 
   let addedCount = 0;
   const added = [];
+  let contrastAdjustedCount = 0;
+  const contrastAdjusted = [];
 
   // Check and add missing properties
   for (const [prop, generator] of Object.entries(AUTO_FIXES)) {
@@ -213,8 +301,21 @@ function fixTheme(themePath) {
     }
   }
 
-  if (addedCount === 0) {
-    return { fixed: false, added: [] };
+  for (const [bgKey, fgKey] of CONTRAST_PAIRS) {
+    const bg = theme.colors[bgKey];
+    const fg = theme.colors[fgKey];
+    if (!bg || !fg) continue;
+
+    const adjusted = enforceContrast(fg, bg, 4.5);
+    if (adjusted !== fg) {
+      theme.colors[fgKey] = adjusted;
+      contrastAdjusted.push(fgKey);
+      contrastAdjustedCount++;
+    }
+  }
+
+  if (addedCount === 0 && contrastAdjustedCount === 0) {
+    return { fixed: false, added: [], contrastAdjusted: [] };
   }
 
   // Write back with proper formatting (preserve original structure)
@@ -319,13 +420,14 @@ function fixTheme(themePath) {
     return `${indent}"${prop}": "${value}"${comma}`;
   });
 
-  // Insert before closing brace
-  lines.splice(colorsEnd, 0, ...newProps);
+  if (newProps.length > 0) {
+    lines.splice(colorsEnd, 0, ...newProps);
+    fs.writeFileSync(themePath, lines.join('\n'), 'utf8');
+  } else {
+    fs.writeFileSync(themePath, `${JSON.stringify(theme, null, 2)}\n`, 'utf8');
+  }
 
-  // Write back
-  fs.writeFileSync(themePath, lines.join('\n'), 'utf8');
-
-  return { fixed: true, added, count: addedCount };
+  return { fixed: true, added, contrastAdjusted, count: addedCount, contrastCount: contrastAdjustedCount };
 }
 
 function main() {
@@ -347,7 +449,10 @@ function main() {
     const result = fixTheme(themePath);
 
     if (result.fixed) {
-      console.log(`✅ ${name} - Added ${result.count} properties`);
+      const parts = [];
+      if (result.count > 0) parts.push(`added ${result.count} properties`);
+      if (result.contrastCount > 0) parts.push(`normalized ${result.contrastCount} contrast pairs`);
+      console.log(`✅ ${name} - ${parts.join(', ')}`);
       fixedCount++;
       results.push({ name, ...result });
     } else if (result.error) {
@@ -375,6 +480,23 @@ function main() {
     });
 
     Object.entries(propCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10)
+      .forEach(([prop, count]) => {
+        console.log(`   ${prop}: ${count} themes`);
+      });
+  }
+
+  const contrastCounts = {};
+  results.forEach(r => {
+    (r.contrastAdjusted || []).forEach(prop => {
+      contrastCounts[prop] = (contrastCounts[prop] || 0) + 1;
+    });
+  });
+
+  if (Object.keys(contrastCounts).length > 0) {
+    console.log('\n📝 Most commonly normalized contrast properties:');
+    Object.entries(contrastCounts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 10)
       .forEach(([prop, count]) => {
